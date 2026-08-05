@@ -1,0 +1,22 @@
+{
+  "classification_system": {
+    "system_id": "gpt56_mrhkc_v1",
+    "system_name": "Model-Reconstructed Human Knowledge Classification",
+    "model_name": "GPT-5.6 Thinking",
+    "scope": "human_knowledge",
+    "epistemic_status": "model_reconstructed_perspective",
+    "status": "draft"
+  },
+  "root_categories": [
+    {"concept_id": "root_formal_symbolic", "name_ar": "الأنظمة الشكلية والرمزية", "name_en": "Formal and Symbolic Systems", "confidence": 0.97},
+    {"concept_id": "root_natural_physical", "name_ar": "العالم الطبيعي والمادي", "name_en": "Natural and Physical World", "confidence": 0.98},
+    {"concept_id": "root_life_biological", "name_ar": "الحياة والأنظمة الحيوية", "name_en": "Life and Biological Systems", "confidence": 0.98},
+    {"concept_id": "root_mind_behavior", "name_ar": "العقل والإدراك والسلوك", "name_en": "Mind, Cognition, and Behavior", "confidence": 0.91},
+    {"concept_id": "root_society_institutions", "name_ar": "المجتمع والمؤسسات والعلاقات الإنسانية", "name_en": "Society, Institutions, and Human Relations", "confidence": 0.96},
+    {"concept_id": "root_culture_meaning", "name_ar": "الثقافة والمعنى والتعبير", "name_en": "Culture, Meaning, and Expression", "confidence": 0.94},
+    {"concept_id": "root_values_beliefs", "name_ar": "القيم والمعتقدات والمعايير", "name_en": "Values, Beliefs, and Normative Systems", "confidence": 0.86},
+    {"concept_id": "root_technology_practice", "name_ar": "التقنية والتصميم والممارسة", "name_en": "Technology, Design, and Practice", "confidence": 0.96},
+    {"concept_id": "root_reflexive_integrative", "name_ar": "المعرفة الانعكاسية والبينية", "name_en": "Reflexive and Integrative Knowledge", "confidence": 0.88}
+  ],
+  "notice": "Seed sample only. Not approved canonical truth; requires schema enrichment, provenance, source validation, and human review."
+}
