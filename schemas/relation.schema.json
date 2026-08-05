@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://knowledge-os.dev/schemas/relation.schema.json",
+  "title": "Knowledge-OS Relation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["relation_id", "source_id", "relation_type", "target_id", "direction", "status", "provenance"],
+  "properties": {
+    "relation_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]+$"},
+    "source_id": {"type": "string"},
+    "relation_type": {
+      "type": "string",
+      "enum": ["broader_than", "narrower_than", "part_of", "has_part", "has_subfield", "subfield_of", "depends_on", "supports", "prerequisite_for", "has_prerequisite", "overlaps_with", "applies", "applied_by", "uses_method", "method_used_by", "uses_tool", "tool_used_by", "studies", "studied_by", "produces", "produced_by", "contrasts_with", "historically_emerged_from", "historically_contributed_to", "classified_as", "classifies", "equivalent_to", "close_match", "related_to"]
+    },
+    "target_id": {"type": "string"},
+    "direction": {"type": "string", "enum": ["directed", "undirected"]},
+    "perspective_id": {"type": ["string", "null"]},
+    "classification_system_id": {"type": ["string", "null"]},
+    "explanation": {"type": ["string", "null"]},
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "status": {"type": "string", "enum": ["proposed", "supported", "disputed", "rejected", "deprecated"]},
+    "review_state": {"type": "string", "enum": ["unreviewed", "machine_validated", "human_reviewed", "approved", "rejected"]},
+    "provenance": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["source_type", "source_id"],
+        "properties": {
+          "source_type": {"type": "string"},
+          "source_id": {"type": "string"},
+          "locator": {"type": ["string", "null"]},
+          "claim_text": {"type": ["string", "null"]}
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
