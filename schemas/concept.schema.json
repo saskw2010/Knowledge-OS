@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://knowledge-os.dev/schemas/concept.schema.json",
+  "title": "Knowledge-OS Concept",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["concept_id", "name_en", "concept_type", "definition", "status", "provenance"],
+  "properties": {
+    "concept_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]+$"},
+    "name_ar": {"type": ["string", "null"]},
+    "name_en": {"type": "string", "minLength": 1},
+    "aliases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["label", "language"],
+        "properties": {
+          "label": {"type": "string"},
+          "language": {"type": "string"},
+          "scope": {"type": ["string", "null"]}
+        },
+        "additionalProperties": false
+      }
+    },
+    "concept_type": {
+      "type": "string",
+      "enum": ["domain", "discipline", "subfield", "method", "tool", "skill", "profession", "application", "institution", "knowledge_type", "cross_domain_concept", "interdisciplinary_field", "other"]
+    },
+    "definition": {"type": "string", "minLength": 1},
+    "scope_includes": {"type": "array", "items": {"type": "string"}},
+    "scope_excludes": {"type": "array", "items": {"type": "string"}},
+    "parent_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "perspective_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "status": {"type": "string", "enum": ["proposed", "common", "stable", "disputed", "deprecated"]},
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "review_state": {"type": "string", "enum": ["unreviewed", "machine_validated", "human_reviewed", "approved", "rejected"]},
+    "provenance": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["source_type", "source_id"],
+        "properties": {
+          "source_type": {"type": "string", "enum": ["classification", "publication", "model_run", "expert_review", "dataset", "other"]},
+          "source_id": {"type": "string"},
+          "locator": {"type": ["string", "null"]},
+          "license": {"type": ["string", "null"]}
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
