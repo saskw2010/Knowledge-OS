@@ -1,11 +1,20 @@
-# Stage 2 — Controlled LoRA Execution Prompt
+# Stage 2 — Gemma 3 270M IT LoRA Execution Prompt
 
-Use this prompt with Codex or the local coding agent **before starting the second training stage**.
+Use this prompt with Codex or the local coding agent **before starting Stage 2**.
 
 ```text
 You are the execution engineer for Stage 2 of the Sky365 Tiny local-training program.
 
-Your goal is to prepare and run one controlled, reproducible LoRA experiment that proves or disproves a single task on the verified local environment. You are not allowed to broaden scope, change model family silently, introduce QLoRA without evidence, or report training completion as task success.
+Your approved target is standard Gemma, not FunctionGemma.
+
+Approved model identity
+
+- Exact target repository: google/gemma-3-270m-it
+- Model family: standard Gemma 3 text model
+- Variant: instruction-tuned
+- FunctionGemma is explicitly out of scope for this experiment
+- Do not substitute google/functiongemma-270m-it
+- Do not substitute google/gemma-3-270m base unless a separate owner decision approves continued pretraining
 
 Repository and documentation context
 
@@ -21,116 +30,127 @@ Repository and documentation context
 Verified local environment
 
 - Active environment: Q:\Colibri\training\venv-py311
+- Exact interpreter: Q:\Colibri\training\venv-py311\Scripts\python.exe
 - Python: 3.11.9
 - PyTorch: 2.6.0+cu124
 - CUDA available: true
 - GPU: Quadro P2000, 4GB VRAM
 - Verified packages: transformers, datasets, accelerate, peft, trl, safetensors, sentencepiece
-- bitsandbytes is not verified and must not be added unless LoRA cannot fit and a measured QLoRA decision is approved.
+- bitsandbytes is not required for the first LoRA experiment
 
-Known history
+Current local-model fact
 
-- The ByT5 GPU training loop completed, but task outputs remained semantically incorrect.
-- The ByT5 dataset had only four known-fact rows plus one unknown row and is not sufficient evidence of useful learning.
-- Device mismatch and Windows console-encoding failures were previously observed.
-- FunctionGemma assets exist at:
-  - Q:\Colibri\models\functiongemma-270m-it
-  - Q:\Colibri\models\functiongemma-270m-it-training
-- Gemma 3 270M, Gemma 3 270M IT, and FunctionGemma 270M IT are separate identities. Never substitute one for another silently.
+The previous audit found FunctionGemma assets, but did not confirm local weights for google/gemma-3-270m-it.
+
+Therefore, before any dataset or training work:
+
+1. Search all approved local model and Hugging Face cache locations for the exact standard Gemma model.
+2. Confirm the candidate directory contains at minimum:
+   - model.safetensors
+   - config.json
+   - tokenizer.json or tokenizer.model
+   - tokenizer_config.json
+   - chat_template.jinja
+3. Read config.json and prove the identity matches google/gemma-3-270m-it.
+4. Reject any directory whose config or README identifies FunctionGemma.
+5. If exact weights are absent, stop with MODEL-WEIGHTS-MISSING and produce the precise gated-model download command. Do not silently train FunctionGemma instead.
 
 Operating rules
 
 1. Start in read-only discovery mode.
-2. Do not install or update packages unless a verified missing dependency blocks the approved experiment.
-3. Do not use the PATH Python. Invoke the exact environment executable.
-4. Do not overwrite any prior dataset, run, checkpoint, adapter, model, or report.
-5. Create one unique run directory with an ISO date/time or monotonic experiment ID.
-6. Preserve all commands, configs, package versions, seeds, logs, metrics, checkpoints, and evaluation outputs.
-7. Never expose tokens, API keys, or secrets.
-8. Do not merge the adapter, export GGUF, or deploy until the adapter passes evaluation.
-9. Do not introduce QLoRA, DeepSpeed, Unsloth, LLaMA-Factory, MoE, model merging, or a second model during this experiment.
-10. Stop rather than improvise if the exact model identity, dataset schema, or success criterion cannot be proven.
+2. Do not use PATH Python.
+3. Do not overwrite any prior dataset, run, checkpoint, adapter, model, or report.
+4. Do not start QLoRA, MoE, model merging, GGUF export, or FunctionGemma work.
+5. Do not start training until the experiment contract and dataset contract are approved.
+6. Preserve commands, configs, seeds, logs, metrics, checkpoints, and evaluation outputs.
+7. Never expose secrets or Hugging Face tokens.
+8. Training completion is not semantic success.
 
-Phase A — Lock the experiment contract
+Phase A — Verify exact model availability
 
-Before writing or running training code, produce `EXPERIMENT-CONTRACT.md` containing:
+Produce MODEL-AVAILABILITY-REPORT.md with:
 
-- Experiment ID
-- Exact task in one sentence
-- Exact model repository identity
-- Exact local model path
-- Base or instruction-tuned status
-- Standard Gemma or FunctionGemma status
-- Exact tokenizer path
-- Exact chat template or function-call template
-- Dataset paths
-- Dataset schema
-- Train/validation/test counts
-- Output contract
-- Baseline evaluation cases
-- Success criteria
-- Failure criteria
-- Stop conditions
-- Expected output directory
-- Chosen training method: LoRA
-- Explicit statement that QLoRA is not in scope
-
-Do not continue until every contract field is resolved from files or approved project documents.
-
-Phase B — Verify the active environment
-
-Use the exact interpreter:
-
-Q:\Colibri\training\venv-py311\Scripts\python.exe
-
-Record the output of:
-
-- Python version and executable
-- torch version
-- torch CUDA version
-- torch.cuda.is_available()
-- GPU name
-- GPU total and free memory
-- transformers version
-- datasets version
-- accelerate version
-- peft version
-- trl version
-- safetensors version
-- sentencepiece version
-
-Fail the preflight if:
-
-- the interpreter differs from the approved path;
-- CUDA is false for the GPU run;
-- the model cannot be loaded;
-- the tokenizer or required template is missing;
-- free disk space is unsafe;
-- another process leaves insufficient VRAM.
-
-Phase C — Audit the selected model
-
-Load config and architecture without training. Record:
-
-- model_type
+- exact approved identity: google/gemma-3-270m-it
+- all searched locations
+- candidate local paths
+- file inventory for each candidate
+- config model_type
 - architectures
-- parameter count
-- dtype
 - tokenizer class
-- special tokens
-- chat template
-- all named linear modules
-- candidate LoRA target modules
+- chat template presence
+- safetensors presence and size
+- final status: VERIFIED or MISSING or CONFLICT
 
-Discover LoRA target modules from the actual loaded architecture. Do not copy target-module names from Llama, Qwen, or another model without verification.
+Do not proceed unless status is VERIFIED.
 
-Run a one-example baseline inference and save the raw prompt, tokenized length, generated output, latency, RAM, and VRAM.
+Phase B — Lock the first task before creating data
 
-Phase D — Build and validate the dataset
+The first local smoke task must test ordinary instruction following, not function calling.
 
-Create a versioned dataset directory. Never train directly from an unversioned scratch file.
+Recommended task contract:
 
-Required outputs:
+Convert short Arabic, English, and mixed-language instructions into concise, deterministic text or structured JSON responses for one narrow Sky365 behavior domain.
+
+Before finalizing, create DATASET-DECISION.md comparing exactly three candidate first datasets:
+
+A. Identity and boundary behavior
+- model identity
+- approved role
+- known vs unknown behavior
+- concise refusal when information is absent
+
+B. Arabic ERP intent classification
+- classify short Arabic and mixed-language requests into a fixed intent label set
+- deterministic output schema
+
+C. Simple structured extraction
+- extract fixed fields from short Arabic and English requests into JSON
+- no external tool call syntax
+
+Score each candidate on:
+
+- alignment with standard Gemma 3 270M IT
+- deterministic evaluation
+- dataset creation speed
+- Arabic value
+- risk of leakage
+- suitability for 48-example smoke dataset
+- usefulness to Sky365
+
+Recommend one candidate only. Do not create the dataset until the recommendation and schema are written.
+
+Phase C — Dataset contract
+
+For the selected task, create EXPERIMENT-CONTRACT.md containing:
+
+- experiment ID
+- one-sentence task
+- exact model identity and local path
+- tokenizer and chat template
+- input schema
+- output schema
+- label or field definitions
+- train/validation/test counts
+- baseline evaluation cases
+- success criteria
+- failure criteria
+- stop conditions
+- output directory
+- LoRA method
+- explicit exclusion of FunctionGemma and QLoRA
+
+Default smoke-dataset envelope, subject to validation:
+
+- total examples: 48
+- train: 32
+- validation: 8
+- held-out test: 8
+
+The test set must use unseen wording and must not be used to tune prompts or hyperparameters.
+
+Phase D — Validate dataset
+
+Create versioned files:
 
 - train.jsonl
 - validation.jsonl
@@ -142,27 +162,22 @@ Required outputs:
 - leakage-report.json
 - token-length-report.json
 
-Validation must check:
+Validate:
 
-- valid UTF-8 and JSONL
-- required fields and roles
-- model-compatible prompt/template format
-- empty values
-- malformed records
-- duplicate prompts
-- duplicate answers
+- UTF-8 and JSONL correctness
+- required roles and fields
+- Gemma chat-template compatibility
+- empty and malformed values
+- duplicates and near-duplicates
 - train/validation/test overlap
-- answer leakage in prompts
-- invalid function names or JSON arguments
-- Arabic encoding and normalization issues
-- maximum, average, and percentile token lengths
-- provenance and license metadata where required
+- answer leakage
+- Arabic normalization
+- output parse validity where structured
+- token-length percentiles
 
-The held-out test records must not be used for training decisions or prompt repair.
+Phase E — Frozen baseline
 
-Phase E — Establish the frozen baseline
-
-Before training, evaluate the untouched model on the complete frozen evaluation set.
+Evaluate untouched Gemma 3 270M IT on the full held-out test set before training.
 
 Store:
 
@@ -170,206 +185,103 @@ Store:
 - baseline-metrics.json
 - baseline-summary.md
 
-At minimum measure:
+Use task-appropriate deterministic metrics. For structured output include parse success, schema validity, exact label or field accuracy. For text behavior include rubric-backed exact criteria and error categories.
 
-- exact match where appropriate
-- JSON parse success
-- schema validity
-- function/tool name accuracy if applicable
-- argument accuracy
-- known-answer accuracy
-- unknown/refusal behavior
-- Arabic cases
-- English cases
-- mixed-language cases
-- latency
-- peak VRAM
+Phase F — Discover LoRA targets from Gemma architecture
 
-Phase F — Create the LoRA script
+Inspect model.named_modules() and record all candidate linear modules.
 
-Create a new script rather than patching the old ByT5 script in place.
+Do not copy target modules from Llama, Qwen, or FunctionGemma assumptions without verifying the loaded standard Gemma architecture.
 
-The script must:
+Create LORA-TARGET-REPORT.md with:
 
-- use the approved exact interpreter and local model path;
-- set a deterministic seed;
-- load the correct tokenizer and template;
-- use PEFT LoRA, not QLoRA;
-- discover or assert validated target modules;
-- use an isolated output directory;
-- write the full resolved configuration to JSON;
-- log trainable and total parameter counts;
-- log loss, learning rate, steps, epochs, RAM, and VRAM;
-- save adapter checkpoints only;
-- support safe resume from its own checkpoint;
-- include validation during training when feasible;
-- use UTF-8 files and avoid fragile console-only reporting;
-- fail clearly on non-finite loss;
-- avoid `device_map="auto"` misuse during Trainer training;
-- avoid accidental full-model training;
-- avoid overwriting the base model.
+- candidate modules
+- selected modules
+- excluded modules
+- trainable parameter count
+- rationale
 
-Initial conservative configuration for the 4GB Quadro P2000 should be treated as a hypothesis, not a fact:
+Phase G — One-step LoRA preflight
 
-- per-device batch size: 1
-- gradient accumulation: 8 or measured equivalent
-- sequence length: begin at 256; increase only after measurement
-- LoRA rank: 4 or 8
-- LoRA alpha: 8 or 16
-- LoRA dropout: 0.05
-- gradient checkpointing: enabled if supported and useful
-- fp16: enable only after a verified runtime test on this GPU/model combination
-- bf16: false on the P2000
-- evaluation and save steps: small and explicit
-- maximum steps for the first controlled run: small, with early stop on failure
+Create a new script. Do not patch the ByT5 script in place.
 
-Do not choose the final values blindly. Run a memory preflight and document the measured peak.
+Use conservative hypotheses for the 4GB P2000:
 
-Phase G — Run a preflight before real training
+- batch size: 1
+- sequence length: 256 initially
+- LoRA rank: 4 or 8 after parameter measurement
+- alpha: 8 or 16
+- dropout: 0.05
+- bf16: false
+- fp16: only after verified runtime test
+- gradient checkpointing: use only if compatible and beneficial
+- QLoRA: disabled
 
-Perform, in order:
+Perform:
 
-1. Dataset load test.
-2. Tokenization test for shortest, median, and longest records.
-3. Model forward pass without gradients.
-4. One training step.
-5. Save adapter checkpoint.
-6. Reload adapter checkpoint.
-7. Run inference with the reloaded adapter.
+1. dataset load
+2. shortest/median/longest tokenization
+3. forward pass
+4. one backward pass
+5. one optimizer step
+6. verify only LoRA parameters are trainable
+7. save adapter
+8. close process
+9. reload untouched base plus adapter in a fresh process
+10. run one inference
+11. record peak VRAM and RAM
 
-The experiment cannot proceed if any preflight artifact cannot be reloaded.
+Required output directory:
 
-Phase H — Execute one controlled LoRA run
+Q:\Colibri\training\runs\gemma3-270m-it-lora-smoke-v0.1-<timestamp>\
 
-Run only the approved experiment. Capture stdout and stderr to UTF-8 log files.
+Required artifacts:
 
-Monitor:
+- MODEL-AVAILABILITY-REPORT.md
+- DATASET-DECISION.md
+- EXPERIMENT-CONTRACT.md
+- environment.json
+- model-identity.json
+- dataset-manifest.json
+- dataset-validation.json
+- baseline-results.jsonl
+- LORA-TARGET-REPORT.md
+- lora-config.json
+- preflight-results.json
+- adapter\
+- reload-test.json
+- PREFLIGHT-REPORT.md
 
-- training loss trend
-- validation loss
-- non-finite values
-- GPU utilization
-- peak VRAM
-- host RAM
-- step time
-- checkpoint integrity
-- disk growth
+Execution boundary
 
-Stop conditions include:
-
-- CUDA out-of-memory after one documented conservative retry;
-- non-finite loss;
-- corrupted output;
-- invalid dataset record;
-- repeated runtime error;
-- no ability to reload the adapter;
-- accidental base-model modification;
-- evidence the selected output template is wrong.
-
-Phase I — Independent post-training evaluation
-
-Reload the untouched base model plus the saved LoRA adapter in a fresh process.
-
-Run the exact frozen baseline evaluation set with identical decoding settings.
-
-Store:
-
-- adapter-predictions.jsonl
-- adapter-metrics.json
-- baseline-vs-adapter.md
-- error-analysis.md
-
-Compare baseline and adapter by category. Do not use training loss as the primary proof of success.
-
-Classify every evaluation case:
-
-- improved
-- unchanged correct
-- unchanged wrong
-- regressed
-- invalid format
-- hallucinated
-- correct refusal
-- incorrect refusal
-
-Phase J — Decision gate
+Stop after adapter save and fresh-process reload. Do not start the multi-step controlled LoRA run in this pass.
 
 Return exactly one decision:
 
-- PASS: adapter met the declared success criteria;
-- ITERATE-DATA: main issue is dataset quality, coverage, format, or leakage;
-- ITERATE-CONFIG: task is learnable but hyperparameters or target modules need adjustment;
-- CHANGE-MODEL: evidence shows the selected model architecture is unsuitable;
-- BLOCKED-ENVIRONMENT: runtime or hardware prevents a valid experiment.
+- PREFLIGHT-PASS
+- MODEL-WEIGHTS-MISSING
+- PREFLIGHT-FAIL-DATA
+- PREFLIGHT-FAIL-MODEL
+- PREFLIGHT-FAIL-ENVIRONMENT
+- PREFLIGHT-FAIL-CONFIG
 
-QLoRA may be recommended only if ordinary LoRA failed because measured memory usage exceeded available VRAM after conservative settings. It must not be recommended merely because the GPU has 4GB.
+Final response fields
 
-Phase K — Required artifacts
-
-Create a single run directory containing:
-
-- EXPERIMENT-CONTRACT.md
-- environment.json
-- model-inventory.json
-- lora-config.json
-- resolved-training-config.json
-- dataset/
-- baseline/
-- checkpoints/
-- final-adapter/
-- evaluation/
-- logs/
-- RUN-SUMMARY.md
-- machine-readable-run.json
-- reproduce.ps1
-
-The PowerShell reproduction script must activate or directly call the approved environment and must not depend on the user's current PATH.
-
-Phase L — Update project documentation
-
-After the run, update the Knowledge-OS documentation proposal, but do not merge it automatically:
-
-- docs/training/CURRENT-STATE.md
-- docs/training/LESSONS-LEARNED.md
-- docs/training/audits/<date>/ or a new experiment record
-
-Record:
-
-- exact model
-- exact dataset version
-- exact environment
-- exact command
-- adapter path
-- baseline metrics
-- post-training metrics
-- primary error classes
-- decision gate result
-- one next action
-
-Final response format
-
-Return:
-
-Experiment ID:
-Task:
 Exact model identity:
 Exact local model path:
+Model availability status:
+Selected dataset task:
+Dataset rationale:
+Dataset version and split:
 Environment:
-Dataset version:
-Train/validation/test counts:
 LoRA target modules:
 Trainable parameters:
-Run status:
-Baseline result:
-Post-training result:
-Semantic success:
+Preflight status:
 Peak VRAM:
 Adapter path:
-Decision gate:
+Fresh-process reload result:
 Primary blocker:
 One recommended next action:
 Artifacts created:
-Files proposed for Knowledge-OS update:
-
-Do not claim success unless the frozen evaluation and declared task-level metrics pass.
+Knowledge-OS files proposed for update:
 ```
