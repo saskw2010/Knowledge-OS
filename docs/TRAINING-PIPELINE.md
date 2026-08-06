@@ -2,55 +2,54 @@
 
 > A reproducible operating system for moving from validated knowledge to a tested small-model release.
 
-[![Status](https://img.shields.io/badge/status-stage%202%20preflight-f59e0b)](./training/CURRENT-STATE.md)
-[![Target](https://img.shields.io/badge/target-270M%20identity%20gate-7c3aed)](./training/CURRENT-STATE.md)
-[![Method](https://img.shields.io/badge/default-LoRA-0f766e)](./training/prompts/STAGE-2-LORA-EXECUTION-PROMPT.md)
-[![Environment](https://img.shields.io/badge/GPU%20environment-ready-15803d)](./training/audits/2026-08-06/INDEX.md)
+[![Status](https://img.shields.io/badge/status-PASS%20after%20parser%20fix-15803d)](./training/experiments/GEMMA-3-270M-IT-LORA-v0.1.md)
+[![Model](https://img.shields.io/badge/model-Gemma%203%20270M%20IT-7c3aed)](./training/CURRENT-STATE.md)
+[![Method](https://img.shields.io/badge/method-LoRA-0f766e)](./training/experiments/GEMMA-3-270M-IT-LORA-v0.1.md)
+[![Hardware](https://img.shields.io/badge/GPU-Quadro%20P2000%204GB-2563eb)](./training/CURRENT-STATE.md)
+[![Next](https://img.shields.io/badge/next-unseen%20challenge%20set-f59e0b)](./training/CURRENT-STATE.md)
 [![Policy](https://img.shields.io/badge/data-licensed%20%26%20traceable-92400e)](./DATA-AND-LEGAL-POLICY.md)
 
 ## Mission
 
-Build a small, local, reproducible model-training pipeline that can prove one task end to end before expanding scope.
+Build a small, local, reproducible model-training pipeline that proves one scoped task end to end before expanding to larger datasets, more modules, or more advanced optimization.
 
-The immediate goal is not to add every optimization technique. It is to achieve one verified training success with:
+## Latest milestone — Gemma 3 270M IT LoRA v0.1
 
-- one clearly identified model;
-- one clean dataset;
-- one isolated environment;
-- one repeatable command;
-- one measurable evaluation;
-- one preserved training record.
-
-## Current status
-
-The local audit is complete enough to prove that the machine is capable of small GPU training runs.
+The first controlled Gemma experiment has reached:
 
 ```text
-Active environment: Q:\Colibri\training\venv-py311
-Python: 3.11.9
-PyTorch: 2.6.0+cu124
-CUDA available: true
-GPU: Quadro P2000 4GB
-PEFT / TRL: verified
+Decision: PASS-AFTER-PARSER-FIX
+Model: google/gemma-3-270m-it
+Dataset: 64 train / 16 validation / 20 held-out test
+Validation parsed accuracy: 16/16
+Held-out test parsed accuracy: 20/20
+Valid JSON after parser correction: 48/48
+Wrong intents: 0
+Parser failures remaining: 0
 ```
 
-The previous ByT5 run proved that the GPU training loop works, but its outputs remained semantically incorrect. Therefore the project is now at the **Stage 2 LoRA preflight**, not at a successful trained-model release.
+The initial evaluator reported 0% because the model repeated correct JSON objects with `<end_of_turn>` and the parser combined them into one invalid value. The preserved predictions were rescored after one isolated parser correction, without retraining or changing weights, data, or decoding.
 
-See:
+> **Interpretation boundary:** This is a successful controlled experiment, not a production-readiness claim. The next gate is a newly authored unseen 60-case robustness challenge.
 
-- [Current State](./training/CURRENT-STATE.md)
-- [Audit Snapshot Index — 2026-08-06](./training/audits/2026-08-06/INDEX.md)
-- [Stage 2 LoRA Execution Prompt](./training/prompts/STAGE-2-LORA-EXECUTION-PROMPT.md)
+### Read the evidence
+
+- [Full methodology and experiment record](./training/experiments/GEMMA-3-270M-IT-LORA-v0.1.md)
+- [Current Training State](./training/CURRENT-STATE.md)
+- [Experiments Index](./training/experiments/INDEX.md)
+- [Standalone public HTML case study](./training/public/gemma-3-270m-it-lora-v0.1.html)
+- [Build in Public video brief](./training/public/VIDEO-BRIEF-GEMMA-270M-LORA-v0.1.md)
 
 ## Current operating model
 
 | Layer | Purpose | Exit condition |
 |---|---|---|
-| **Infrastructure** | Prove the runtime, device, packages, paths, and model loading | A deterministic smoke test completes |
-| **Training Pipeline** | Train one scoped task and preserve all evidence | A valid checkpoint or adapter passes evaluation |
-| **Optimization** | Reduce memory, improve speed, or extend capability | Improvement is measured against the baseline |
+| **Infrastructure** | Prove runtime, device, packages, paths, and model loading | Deterministic smoke/preflight completes |
+| **Training Pipeline** | Train one scoped task and preserve all evidence | Adapter reloads and passes held-out task evaluation |
+| **Robustness** | Test frozen artifacts on newly authored challenge cases | Thresholds pass without training leakage |
+| **Optimization** | Reduce memory, improve speed, or expand capability | Improvement is measured against the frozen baseline |
 
-> **Rule:** Optimization cannot replace proof. QLoRA, quantization, merging, routers, and MoE are introduced only after the baseline pipeline is verified.
+> **Rule:** Optimization cannot replace proof. QLoRA, quantization, merging, routers, and MoE are introduced only after baseline and robustness gates justify them.
 
 ## Training mind map
 
@@ -60,74 +59,81 @@ mindmap
     Objective
       Single task
       Success criteria
-      Fixed evaluation set
+      Frozen evaluation
       Release gate
     Infrastructure
       Hardware inventory
-      Python environments
+      Exact Python environment
       PyTorch and CUDA
-      WSL or native runtime
-      Model and tokenizer loading
+      Model identity
+      Tokenizer and template
     Data
       Licensed sources
-      Cleaning
+      Versioned dataset
       Schema validation
       Train validation test split
-      Leakage and duplication checks
+      Leakage and duplicates
       Provenance
-    Baseline
-      CPU or GPU smoke test
-      Few training steps
-      Loss and checkpoint validation
-      Before and after inference
-    Training
-      LoRA default
-      Full fine tuning measured option
-      QLoRA only when memory requires it
-      Isolated run directory
+    Diagnostic gates
+      One-step preflight
+      Label mask audit
+      Micro-overfit
+      Fresh-process reload
+    Controlled training
+      LoRA baseline
+      Validation and early stop
+      Adapter checkpoints
       Reproducible seed
     Evaluation
-      Known answers
-      Unknown and refusal behavior
-      JSON accuracy
-      Function calling
-      Arabic and English
-      Regression tests
+      Raw generation audit
+      Parser validation
+      Known and unknown intents
+      Arabic English mixed
+      Per-class metrics
+    Robustness
+      New challenge set
+      Dialect and spelling noise
+      Ambiguity
+      Multi-intent
+      Boundary cases
     Release
-      Adapter or full model
-      Optional merge
-      Optional GGUF export
+      Frozen adapter
+      Parser contract
+      Model card
       Deployment test
-      Model card and run record
-    Learning System
+      Monitoring
+    Learning system
       Failure registry
-      Root cause analysis
+      Root-cause analysis
       Lessons learned
-      Next experiment
+      Build in public
 ```
 
 ## Canonical flow
 
 ```mermaid
 flowchart LR
-    A[Validated graph claims] --> B[Dataset Factory]
-    B --> C[Schema and provenance validation]
-    C --> D[Train / Validation / Test]
-    D --> E[Frozen baseline and preflight]
-    E --> F{Preflight passes?}
-    F -- No --> G[Repair environment, data, model identity, or script]
-    G --> E
-    F -- Yes --> H[GPU LoRA baseline]
-    H --> I[Independent held-out evaluation]
-    I --> J{Task metrics pass?}
-    J -- No --> K[Root-cause decision]
+    A[Validated task contract] --> B[Versioned dataset]
+    B --> C[Schema and leakage validation]
+    C --> D[Frozen baseline]
+    D --> E[One-step LoRA preflight]
+    E --> F[Micro-overfit gate]
+    F --> G[Controlled LoRA run]
+    G --> H[Fresh-process evaluation]
+    H --> I[Raw output and parser audit]
+    I --> J{Controlled metrics pass?}
+    J -- No --> K[One root-cause iteration]
     K --> B
-    J -- Yes --> L[Versioned adapter release]
+    J -- Yes --> L[Freeze model, adapter, parser, data]
+    L --> M[Unseen challenge set]
+    M --> N{Robustness thresholds pass?}
+    N -- No --> O[Dataset v0.2 or scope decision]
+    N -- Yes --> P[Scoped release candidate]
 ```
 
-## Knowledge-to-training flow
+## Knowledge-to-training controls
 
-The original Knowledge OS controls remain mandatory:
+The original Knowledge-OS controls remain mandatory:
 
 ```text
 Validated Graph Claims
@@ -140,69 +146,52 @@ Validated Graph Claims
 → Monitoring and Feedback
 ```
 
-### Teacher model
+The same model configuration must not generate, validate, and judge the same records without independent controls. Source verification, deterministic validators, held-out data, different models where appropriate, and human review remain required.
 
-Generates, critiques, compares, and revises candidate learning items. Teacher approval is not sufficient by itself; outputs remain bound to source and graph validation.
-
-### Dataset Factory
-
-Converts eligible graph claims into task-specific records, deduplicates them, assigns difficulty and domain metadata, and preserves claim-level provenance.
-
-### Student model
-
-Learns from approved training records. Student behavior must be evaluated independently from the teacher used to generate the data.
-
-## Required dataset partitions
-
-- training;
-- validation;
-- held-out test;
-- adversarial and contradiction set;
-- provenance audit sample;
-- multilingual consistency sample;
-- domain-expert review sample.
-
-## Release gates
+## Required release gates
 
 A dataset or model release must pass:
 
 1. schema validation;
 2. source and license eligibility;
-3. claim-to-evidence traceability;
+3. claim-to-evidence traceability where applicable;
 4. duplicate and contamination checks;
-5. unsupported-claim threshold;
-6. bias and representation review;
+5. frozen held-out evaluation;
+6. raw-output and parser verification;
 7. multilingual terminology checks;
 8. domain-specific safety checks;
-9. independent benchmark evaluation;
-10. documented human approval for the release scope.
-
-## Non-circular evaluation rule
-
-The same model configuration must not generate, validate, and judge the same records without independent controls. Use source verification, different models where appropriate, deterministic validators, held-out data, and human review.
-
-## Feedback loop
-
-Evaluation failures must update the graph or dataset lineage rather than being patched only in model prompts. The system should identify whether the root cause is source quality, concept mapping, relation error, generation prompt, dataset transformation, environment mismatch, training configuration, or model limitation.
+9. independent robustness evaluation;
+10. documented human approval for the declared scope.
 
 ## Training Lab navigation
 
 | Page | Purpose |
 |---|---|
-| [Current State](./training/CURRENT-STATE.md) | Live source of truth for environment, target, blockers, and next action |
-| [Audit Index](./training/audits/2026-08-06/INDEX.md) | Indexed snapshot of the completed local discovery audit |
-| [Stage 2 LoRA Prompt](./training/prompts/STAGE-2-LORA-EXECUTION-PROMPT.md) | Full preflight, execution, evaluation, and documentation contract |
+| [Current State](./training/CURRENT-STATE.md) | Live source of truth for model, environment, result, limitation, and next action |
+| [Experiments Index](./training/experiments/INDEX.md) | Durable records of completed experiments and decision gates |
+| [Gemma LoRA v0.1 Methodology](./training/experiments/GEMMA-3-270M-IT-LORA-v0.1.md) | Complete technical record of the first successful controlled Gemma experiment |
+| [Public HTML Case Study](./training/public/gemma-3-270m-it-lora-v0.1.html) | Self-contained visual page for demos and future GitHub Pages publication |
+| [Build in Public Video Brief](./training/public/VIDEO-BRIEF-GEMMA-270M-LORA-v0.1.md) | Analytical live-video structure, evidence rules, and short-form clips |
+| [Audit Index](./training/audits/2026-08-06/INDEX.md) | Indexed snapshot of the local discovery audit |
 | [Training Mind Map](./training/TRAINING-MIND-MAP.md) | Complete conceptual map and decision gates |
 | [Training Playbook](./training/TRAINING-PLAYBOOK.md) | Repeatable route from an empty environment to a verified result |
-| [Environment Setup](./training/ENVIRONMENT-SETUP.md) | Runtime discovery and environment isolation rules |
 | [Dataset Pipeline](./training/DATASET-PIPELINE.md) | Dataset lifecycle, formats, validation, and provenance |
-| [Experiment Lifecycle](./training/EXPERIMENT-LIFECYCLE.md) | Run naming, logging, checkpoints, and comparison |
 | [Evaluation Framework](./training/EVALUATION-FRAMEWORK.md) | Baselines, metrics, release gates, and regression tests |
 | [Troubleshooting](./training/TROUBLESHOOTING.md) | Evidence-first diagnosis and common failure classes |
 | [Lessons Learned](./training/LESSONS-LEARNED.md) | Durable record of discoveries, failures, and corrections |
 
 ## Immediate next action
 
-Run only the **contract, model audit, dataset validation, frozen baseline, and adapter save/reload preflight** from the [Stage 2 LoRA Execution Prompt](./training/prompts/STAGE-2-LORA-EXECUTION-PROMPT.md).
+Freeze the current base model, LoRA adapter, parser fix, dataset v0.1, and training configuration. Run the existing adapter—without new training—against a newly authored 60-case challenge set.
 
-The full LoRA run starts only after those gates pass. QLoRA is not part of the next step unless ordinary LoRA fails due to measured VRAM pressure.
+Proposed thresholds:
+
+```text
+Valid JSON: 60/60
+Overall parsed accuracy: at least 85%
+Known-intent accuracy: at least 90%
+Unknown handling: at least 80%
+Parser failures: 0
+```
+
+The challenge-set result will be appended to the methodology document and public HTML page as the next Build in Public milestone.
