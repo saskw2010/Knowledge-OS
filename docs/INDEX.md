@@ -17,9 +17,21 @@ This index is the navigation layer for the current Knowledge-OS foundation. It s
 - [Foundations](FOUNDATIONS.md) — data, information, knowledge, understanding, wisdom, and meta-knowledge distinctions.
 - [Classification Systems](CLASSIFICATION-SYSTEMS.md) — registry model for philosophical, educational, research, library, bibliometric, and model-generated systems.
 - [Knowledge Factory](KNOWLEDGE-FACTORY.md) — ingestion, normalization, expansion, validation, graph publication, and dataset production.
-- [Training Pipeline](TRAINING-PIPELINE.md) — teacher, dataset, student, evaluation, and release gates.
+- [Training Pipeline](TRAINING-PIPELINE.md) — Sky365 Tiny Training Lab landing page, knowledge-to-training flow, evaluation, and release gates.
 - [Glossary](GLOSSARY.md) — canonical project terms.
 - [Open Questions](OPEN-QUESTIONS.md) — unresolved research and engineering decisions.
+
+## Sky365 Tiny Training Lab
+
+- [Training Mind Map](training/TRAINING-MIND-MAP.md) — full map of the training system and decision gates.
+- [Training Playbook](training/TRAINING-PLAYBOOK.md) — shortest safe route from discovery to verified release.
+- [Current State](training/CURRENT-STATE.md) — single source of truth for the active model, environment, run history, blocker, and next action.
+- [Environment Setup](training/ENVIRONMENT-SETUP.md) — multi-environment discovery, CUDA checks, and isolation rules.
+- [Dataset Pipeline](training/DATASET-PIPELINE.md) — formats, validation, legal provenance, splits, and versioning.
+- [Experiment Lifecycle](training/EXPERIMENT-LIFECYCLE.md) — run manifests, logging, checkpoints, comparison, and failure preservation.
+- [Evaluation Framework](training/EVALUATION-FRAMEWORK.md) — task, syntax, language, regression, and release evaluation.
+- [Troubleshooting](training/TROUBLESHOOTING.md) — evidence-first diagnosis and recurring failure classes.
+- [Lessons Learned](training/LESSONS-LEARNED.md) — durable corrections and reusable training knowledge.
 
 ## Brainstorm and source review
 
