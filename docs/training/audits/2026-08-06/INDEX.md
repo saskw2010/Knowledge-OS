@@ -5,6 +5,8 @@
 
 > This directory is a historical snapshot. Do not rewrite old findings to match later state. New discoveries should create a new dated audit or update the live state in `../../CURRENT-STATE.md`.
 
+> **Source-file status:** The complete `00`–`10` audit files and `machine-readable-report.json` were supplied as external handover attachments and reviewed during this session. This commit adds their canonical index and consolidated conclusions. The source attachments themselves are not yet copied into this repository, so the filenames below are an inventory, not repository links.
+
 ## Executive conclusion
 
 The local machine is capable of small GPU training runs through:
@@ -23,7 +25,7 @@ The latest ByT5 experiment completed its GPU training loop and saved a checkpoin
 
 ## Audit documents
 
-| No. | Document | Purpose | Key conclusion |
+| No. | Source attachment | Purpose | Key conclusion |
 |---:|---|---|---|
 | 00 | `00-executive-summary.md` | One-page handover | GPU environment verified; semantic learning still blocked |
 | 01 | `01-project-tree.txt` | Local directory map | Colibri contains separate training, models, datasets, outputs, runs, and experiments |
