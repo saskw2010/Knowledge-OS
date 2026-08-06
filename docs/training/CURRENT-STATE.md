@@ -3,27 +3,30 @@
 > This file is the single source of truth for the active Sky365 Tiny training effort. Update it after every meaningful discovery, run, failure, or decision.
 
 **Last reviewed:** 2026-08-06  
-**Status:** Audit complete; Stage 2 LoRA contract and dataset validation required
+**Status:** Controlled Gemma 3 270M IT LoRA v0.1 passed after an isolated parser correction; unseen robustness challenge is next.
 
 ## Active target
 
 | Field | Current value | Confidence |
 |---|---|---|
 | Project | Sky365 Tiny local training pipeline | Confirmed |
-| Immediate objective | Complete one controlled, reproducible LoRA experiment with frozen baseline and held-out evaluation | Confirmed |
-| Intended model family | Gemma 3 / FunctionGemma 270M instruction family | Partial |
-| Strongest local training asset | `Q:\Colibri\models\functiongemma-270m-it-training` | Confirmed |
-| Exact next model identity | Must be locked from `config.json`, tokenizer, template, and experiment contract before execution | Unresolved gate |
-| Default training method | Ordinary PEFT LoRA | Confirmed |
-| QLoRA | Not approved unless measured LoRA memory usage proves it necessary | Confirmed |
-| Full fine-tuning | Not the default; may be measured later because the model is small | Deferred |
-| MoE / model merging | Out of current scope | Confirmed |
+| Canonical model | `google/gemma-3-270m-it` | Confirmed |
+| Canonical local path | `Q:\Colibri\models\google\gemma-3-270m-it` | Confirmed |
+| Architecture | `Gemma3ForCausalLM` | Confirmed |
+| Model type | `gemma3_text` | Confirmed |
+| Current task | Four-class Arabic/English/mixed ERP intent classification with JSON-only output | Confirmed |
+| Training method | Ordinary PEFT LoRA | Confirmed |
+| QLoRA | Out of current scope | Confirmed |
+| FunctionGemma | Separate project; out of this experiment | Confirmed |
+| Current experiment decision | `PASS-AFTER-PARSER-FIX` | Confirmed |
+| Production readiness | Not established | Confirmed limitation |
 
 ## Verified active environment
 
 | Component | Verified state |
 |---|---|
 | Environment | `Q:\Colibri\training\venv-py311` |
+| Interpreter | `Q:\Colibri\training\venv-py311\Scripts\python.exe` |
 | Python | 3.11.9 |
 | PyTorch | `2.6.0+cu124` |
 | CUDA available to PyTorch | `True` |
@@ -36,116 +39,168 @@
 | TRL | 1.9.2 |
 | Safetensors | 0.8.0 |
 | SentencePiece | 0.2.2 |
-| bitsandbytes | Missing / not required for first LoRA run |
+| bitsandbytes | Not used or required for v0.1 |
 
-### Environment rule
+## Dataset v0.1
 
-Use the exact interpreter:
+| Item | State |
+|---|---|
+| Dataset | `sky365-gemma-intent-v0.1` |
+| Train | 64 |
+| Validation | 16 |
+| Held-out test | 20 |
+| Total | 100 |
+| Classes | `employee.create`, `inventory.stock_query`, `sales.order_create`, `general.unknown` |
+| UTF-8 / JSONL validation | PASS |
+| Duplicate input check | PASS |
+| Split-overlap check | PASS |
+| Frozen held-out test | Preserved |
+
+## LoRA configuration
 
 ```text
-Q:\Colibri\training\venv-py311\Scripts\python.exe
+r = 8
+alpha = 16
+dropout = 0.05
+QLoRA = false
 ```
 
-Do not use the PATH Python or infer machine-wide package state from `C:\Python313\python.exe`.
+Validated target modules:
 
-## Verified previous work
+```text
+q_proj
+k_proj
+v_proj
+o_proj
+gate_proj
+up_proj
+down_proj
+```
 
-### Latest ByT5 POC
+## Verified experiment history
 
-| Field | State |
-|---|---|
-| Script | `Q:\Colibri\training\run_byt5_poc.py` |
-| Model | `Q:\Colibri\models\byt5-small` |
-| Dataset | `Q:\Colibri\training\datasets\byt5_poc_known_facts.jsonl` plus unknown example |
-| Device | GPU |
-| Technical result | Training loop completed and checkpoint saved |
-| Task result | Semantic outputs remained incorrect / unstable |
-| Conclusion | Runtime proof only; not a successful model-learning POC |
+### One-step preflight
 
-### Known prior tiny-model proof
+| Metric | Result |
+|---|---:|
+| Trainable parameters | 1,898,496 |
+| Total parameters | 269,996,672 |
+| One-step loss | 7.618429183959961 |
+| Peak allocated VRAM | Approximately 2,141 MB |
+| Adapter save | PASS |
+| Fresh-process reload | PASS |
 
-A custom `llama2c` Sky365 Tiny experiment previously produced an exact known answer and an unknown-answer refusal on its narrow test, with a GGUF artifact. It is historical evidence, not the current Gemma/FunctionGemma LoRA baseline.
+### Micro-overfit gate
 
-## Dataset state
+| Metric | Result |
+|---|---:|
+| Records | 8 — two per class |
+| Steps | 50 |
+| Initial loss | 5.782916 |
+| Final loss | 0.000636 |
+| Strict accuracy | 8/8 — 100% |
+| Parsed accuracy | 8/8 — 100% |
+| Valid JSON | 8/8 — 100% |
+| Adapter reload | PASS |
+| Peak allocated VRAM | Approximately 1.32 GB |
 
-| Item | Status |
-|---|---|
-| ByT5 four-row POC dataset | Too small; unsuitable as evidence of generalization |
-| Sky365 QA behavior datasets | Present |
-| Sky365 identity datasets | Present |
-| Known/unknown POC dataset | Present |
-| Train/validation/test contract for Stage 2 | Not yet locked |
-| Dataset schema validation | Missing |
-| Duplicate and leakage report | Missing |
-| Frozen baseline evaluation set | Partial / must be formalized |
+### Controlled LoRA run v0.1
 
-## Readiness matrix
+| Metric | Result |
+|---|---:|
+| Epochs | 4 |
+| Initial train loss | 0.299114 |
+| Final train loss | 0.000063 |
+| Peak allocated VRAM | Approximately 2.1 GB |
+| Fresh-process adapter reload | PASS |
+| Initial reported validation/test accuracy | 0% — invalidated by parser audit |
 
-| Component | Status |
-|---|---|
-| Active Python environment | READY |
-| PyTorch and CUDA | READY |
-| GPU visibility | READY |
-| PEFT and TRL | READY |
-| Local model files | READY / identity gate remains |
-| Tokenizer and template | PARTIAL until selected model is locked |
-| Dataset | PARTIAL |
-| Dataset validation | MISSING |
-| Baseline evaluation | PARTIAL |
-| LoRA script | PARTIAL / new controlled script required |
-| QLoRA support | PARTIAL and not required |
-| Logging and reproducibility | PARTIAL |
-| Post-training semantic evaluation | PARTIAL |
+## Evaluator failure and correction
 
-## Primary blocker
+The controlled run initially appeared to fail because the model repeated a correct JSON object with `<end_of_turn>` until the generation limit. The original parser captured from the first opening brace to the last closing brace, combining multiple JSON objects into invalid JSON.
 
-The machine and GPU environment are no longer the primary blocker.
+Parser fix v1:
 
-The primary blocker is the **experiment contract**:
+1. stop at the first `<end_of_turn>` when present;
+2. otherwise extract the first balanced JSON object;
+3. parse and validate the first object only;
+4. verify `intent` against the approved label set.
 
-- exact model identity;
-- one narrowly defined task;
-- correct model-specific input/output template;
-- clean versioned train/validation/test dataset;
-- frozen task-level success criteria;
-- validated LoRA target modules;
-- isolated reproducible run directory.
+No model weights, adapter, dataset, or decoding configuration was changed during rescoring.
+
+## Final verified controlled result
+
+| Split | Parsed accuracy | Valid JSON | Wrong intents | Parser failures |
+|---|---:|---:|---:|---:|
+| Train audit sample | 12/12 — 100% | 12/12 | 0 | 0 |
+| Validation | 16/16 — 100% | 16/16 | 0 | 0 |
+| Held-out test | 20/20 — 100% | 20/20 | 0 | 0 |
+
+Per-class accuracy and unknown handling were 100% on this controlled dataset.
+
+Final decision:
+
+```text
+PASS-AFTER-PARSER-FIX
+```
+
+## Interpretation boundary
+
+This experiment proves:
+
+- the local environment is capable of Gemma 3 270M IT LoRA training;
+- the model can learn the declared four-intent task;
+- adapter save and fresh-process reload work;
+- the held-out controlled set passed after correcting the evaluator;
+- the apparent 0% result was a parser false negative.
+
+It does not yet prove:
+
+- production readiness;
+- wide real-world Arabic/ERP robustness;
+- multi-intent reliability;
+- adversarial robustness;
+- performance across many ERP modules and intents.
 
 ## Next action — one action only
 
-Execute the read-only and preflight sections of:
+Freeze the current base model, adapter, parser, dataset, and training configuration. Evaluate the existing adapter without new training on a fully unseen 60-case challenge set covering:
 
-[Stage 2 — Controlled LoRA Execution Prompt](./prompts/STAGE-2-LORA-EXECUTION-PROMPT.md)
+- new Arabic, English, and mixed-language wording;
+- Egyptian dialect and realistic spelling noise;
+- ambiguous requests;
+- out-of-domain requests;
+- multi-intent prompts;
+- close class-boundary cases.
 
-The agent must first produce `EXPERIMENT-CONTRACT.md`, validate the selected model and dataset, record the untouched baseline, and pass the one-step adapter save/reload preflight. It must not start the full LoRA run until those gates pass.
+Proposed challenge thresholds:
 
-## Success criteria for Stage 2
+```text
+Valid JSON: 60/60
+Overall parsed accuracy: at least 85%
+Known-intent accuracy: at least 90%
+Unknown handling: at least 80%
+Parser failures: 0
+```
 
-Stage 2 is successful only when:
+## Documentation and public assets
 
-1. the exact base model and tokenizer are recorded;
-2. the frozen baseline is stored;
-3. a LoRA adapter is trained without modifying the base model;
-4. the adapter reloads in a fresh process;
-5. the same held-out evaluation is run before and after training;
-6. task-level metrics improve to the declared threshold;
-7. regressions and invalid outputs remain within the declared limits;
-8. logs, config, adapter, metrics, and reproduction script are preserved;
-9. one explicit decision is returned: PASS, ITERATE-DATA, ITERATE-CONFIG, CHANGE-MODEL, or BLOCKED-ENVIRONMENT.
-
-Training completion or lower loss alone is not success.
-
-## Audit references
-
+- [Full methodology and experiment record](./experiments/GEMMA-3-270M-IT-LORA-v0.1.md)
+- [Experiments index](./experiments/INDEX.md)
+- [Standalone public HTML case study](./public/gemma-3-270m-it-lora-v0.1.html)
+- [Build in Public video brief](./public/VIDEO-BRIEF-GEMMA-270M-LORA-v0.1.md)
 - [Audit Snapshot Index — 2026-08-06](./audits/2026-08-06/INDEX.md)
-- [Training Playbook](./TRAINING-PLAYBOOK.md)
-- [Dataset Pipeline](./DATASET-PIPELINE.md)
-- [Evaluation Framework](./EVALUATION-FRAMEWORK.md)
-- [Troubleshooting](./TROUBLESHOOTING.md)
+
+## Local evidence path
+
+```text
+Q:\Colibri\training\runs\gemma-3-270m-it-lora-controlled-v0.1
+```
 
 ## Change log
 
 | Date | Change |
 |---|---|
 | 2026-08-06 | Created the single source of truth and recorded the correction that one Python environment cannot represent the whole machine. |
-| 2026-08-06 | Incorporated the full local audit: verified GPU environment, previous ByT5 result, model inventory, readiness, blockers, and Stage 2 LoRA gate. |
+| 2026-08-06 | Incorporated the local audit, verified GPU environment, and Stage 2 gates. |
+| 2026-08-06 | Locked `google/gemma-3-270m-it`, completed preflight and micro-overfit, ran controlled LoRA v0.1, isolated a parser-only false negative, and recorded `PASS-AFTER-PARSER-FIX`. |
