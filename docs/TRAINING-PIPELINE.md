@@ -2,9 +2,10 @@
 
 > A reproducible operating system for moving from validated knowledge to a tested small-model release.
 
-[![Status](https://img.shields.io/badge/status-active%20design-2563eb)](./training/CURRENT-STATE.md)
-[![Target](https://img.shields.io/badge/target-Gemma%203%20270M%20IT-7c3aed)](./training/TRAINING-PLAYBOOK.md)
-[![Method](https://img.shields.io/badge/default-LoRA-0f766e)](./training/TRAINING-MIND-MAP.md)
+[![Status](https://img.shields.io/badge/status-stage%202%20preflight-f59e0b)](./training/CURRENT-STATE.md)
+[![Target](https://img.shields.io/badge/target-270M%20identity%20gate-7c3aed)](./training/CURRENT-STATE.md)
+[![Method](https://img.shields.io/badge/default-LoRA-0f766e)](./training/prompts/STAGE-2-LORA-EXECUTION-PROMPT.md)
+[![Environment](https://img.shields.io/badge/GPU%20environment-ready-15803d)](./training/audits/2026-08-06/INDEX.md)
 [![Policy](https://img.shields.io/badge/data-licensed%20%26%20traceable-92400e)](./DATA-AND-LEGAL-POLICY.md)
 
 ## Mission
@@ -19,6 +20,27 @@ The immediate goal is not to add every optimization technique. It is to achieve 
 - one repeatable command;
 - one measurable evaluation;
 - one preserved training record.
+
+## Current status
+
+The local audit is complete enough to prove that the machine is capable of small GPU training runs.
+
+```text
+Active environment: Q:\Colibri\training\venv-py311
+Python: 3.11.9
+PyTorch: 2.6.0+cu124
+CUDA available: true
+GPU: Quadro P2000 4GB
+PEFT / TRL: verified
+```
+
+The previous ByT5 run proved that the GPU training loop works, but its outputs remained semantically incorrect. Therefore the project is now at the **Stage 2 LoRA preflight**, not at a successful trained-model release.
+
+See:
+
+- [Current State](./training/CURRENT-STATE.md)
+- [Audit Snapshot Index — 2026-08-06](./training/audits/2026-08-06/INDEX.md)
+- [Stage 2 LoRA Execution Prompt](./training/prompts/STAGE-2-LORA-EXECUTION-PROMPT.md)
 
 ## Current operating model
 
@@ -54,7 +76,7 @@ mindmap
       Leakage and duplication checks
       Provenance
     Baseline
-      CPU smoke test
+      CPU or GPU smoke test
       Few training steps
       Loss and checkpoint validation
       Before and after inference
@@ -91,16 +113,16 @@ flowchart LR
     A[Validated graph claims] --> B[Dataset Factory]
     B --> C[Schema and provenance validation]
     C --> D[Train / Validation / Test]
-    D --> E[CPU smoke test]
-    E --> F{Smoke test passes?}
-    F -- No --> G[Repair environment, data, or script]
+    D --> E[Frozen baseline and preflight]
+    E --> F{Preflight passes?}
+    F -- No --> G[Repair environment, data, model identity, or script]
     G --> E
     F -- Yes --> H[GPU LoRA baseline]
-    H --> I[Independent evaluation]
-    I --> J{Release gates pass?}
-    J -- No --> K[Root-cause analysis]
+    H --> I[Independent held-out evaluation]
+    I --> J{Task metrics pass?}
+    J -- No --> K[Root-cause decision]
     K --> B
-    J -- Yes --> L[Versioned release]
+    J -- Yes --> L[Versioned adapter release]
 ```
 
 ## Knowledge-to-training flow
@@ -167,9 +189,11 @@ Evaluation failures must update the graph or dataset lineage rather than being p
 
 | Page | Purpose |
 |---|---|
+| [Current State](./training/CURRENT-STATE.md) | Live source of truth for environment, target, blockers, and next action |
+| [Audit Index](./training/audits/2026-08-06/INDEX.md) | Indexed snapshot of the completed local discovery audit |
+| [Stage 2 LoRA Prompt](./training/prompts/STAGE-2-LORA-EXECUTION-PROMPT.md) | Full preflight, execution, evaluation, and documentation contract |
 | [Training Mind Map](./training/TRAINING-MIND-MAP.md) | Complete conceptual map and decision gates |
 | [Training Playbook](./training/TRAINING-PLAYBOOK.md) | Repeatable route from an empty environment to a verified result |
-| [Current State](./training/CURRENT-STATE.md) | Single source of truth for the active model, environment, run, blocker, and next action |
 | [Environment Setup](./training/ENVIRONMENT-SETUP.md) | Runtime discovery and environment isolation rules |
 | [Dataset Pipeline](./training/DATASET-PIPELINE.md) | Dataset lifecycle, formats, validation, and provenance |
 | [Experiment Lifecycle](./training/EXPERIMENT-LIFECYCLE.md) | Run naming, logging, checkpoints, and comparison |
@@ -179,4 +203,6 @@ Evaluation failures must update the graph or dataset lineage rather than being p
 
 ## Immediate next action
 
-Complete the environment and previous-run audit, then update [CURRENT-STATE.md](./training/CURRENT-STATE.md). No installation or new training should begin until the active Python environment, exact model identity, dataset, and last run are confirmed.
+Run only the **contract, model audit, dataset validation, frozen baseline, and adapter save/reload preflight** from the [Stage 2 LoRA Execution Prompt](./training/prompts/STAGE-2-LORA-EXECUTION-PROMPT.md).
+
+The full LoRA run starts only after those gates pass. QLoRA is not part of the next step unless ordinary LoRA fails due to measured VRAM pressure.
