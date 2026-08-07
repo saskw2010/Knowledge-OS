@@ -28,10 +28,15 @@ This index is the navigation layer for the current Knowledge-OS foundation. It s
 - [Current State](training/CURRENT-STATE.md) — single source of truth for the active model, environment, run history, blocker, and next action.
 - [Environment Setup](training/ENVIRONMENT-SETUP.md) — multi-environment discovery, CUDA checks, and isolation rules.
 - [Dataset Pipeline](training/DATASET-PIPELINE.md) — formats, validation, legal provenance, splits, and versioning.
+- [Dataset Registry](training/DATASET-REGISTRY.md) — current local datasets, their task boundaries, and the one-adapter-per-task separation rule.
 - [Experiment Lifecycle](training/EXPERIMENT-LIFECYCLE.md) — run manifests, logging, checkpoints, comparison, and failure preservation.
 - [Evaluation Framework](training/EVALUATION-FRAMEWORK.md) — task, syntax, language, regression, and release evaluation.
 - [Troubleshooting](training/TROUBLESHOOTING.md) — evidence-first diagnosis and recurring failure classes.
 - [Lessons Learned](training/LESSONS-LEARNED.md) — durable corrections and reusable training knowledge.
+
+### Active training prompts
+
+- [Stage 3 — MK-7 Knowledge LoRA](training/prompts/STAGE-3-MK7-KNOWLEDGE-LORA-PROMPT.md) — train a new `sky365-gemma-mk7-knowledge-lora-v0.1` adapter on the Mustafian Knowledge dataset without mixing or modifying the ERP intent adapter.
 
 ## Brainstorm and source review
 
