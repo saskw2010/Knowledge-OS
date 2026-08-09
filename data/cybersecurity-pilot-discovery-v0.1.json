@@ -1,0 +1,316 @@
+{
+  "artifact_id": "cybersecurity_pilot_discovery_v0.1",
+  "artifact_type": "domain_map_discovery",
+  "project": "Knowledge-OS",
+  "version": "0.1",
+  "created_at": "2026-08-09",
+  "status": "draft",
+  "epistemic_status": "model_reconstructed_perspective",
+  "agent_role": "independent_cybersecurity_discovery_agent",
+  "purpose": "Initial candidate map for defensive cybersecurity knowledge only. This is a review package, not an approved taxonomy, curriculum, dataset, engine input, or operational security guide.",
+  "source_basis": [
+    {
+      "source_id": "knowledge_os_readme_v0.1",
+      "source_type": "other",
+      "locator": "README.md",
+      "license": "repository-local"
+    },
+    {
+      "source_id": "knowledge_os_architecture_v0.1",
+      "source_type": "other",
+      "locator": "docs/ARCHITECTURE.md",
+      "license": "repository-local"
+    },
+    {
+      "source_id": "knowledge_os_data_legal_policy_v0.1",
+      "source_type": "other",
+      "locator": "docs/DATA-AND-LEGAL-POLICY.md",
+      "license": "repository-local"
+    },
+    {
+      "source_id": "cybersecurity_domain_synthesis_v0.1",
+      "source_type": "model_run",
+      "locator": "This artifact; independently generated candidate synthesis",
+      "license": "review required"
+    }
+  ],
+  "scope_contract": {
+    "allowed_focus": "Defensive cybersecurity as the protection, assurance, monitoring, response, recovery, governance, and safe improvement of systems, information, people, and services.",
+    "in_scope": [
+      "security governance, risk, policy, and assurance",
+      "secure architecture and engineering principles",
+      "identity, access, trust, and authorization controls",
+      "network, cloud, endpoint, application, data, and supply-chain defense",
+      "security operations, detection, incident response, recovery, and resilience",
+      "privacy-aware handling of security data",
+      "human and socio-technical defensive practices",
+      "authorized control validation and evidence-based review"
+    ],
+    "out_of_scope": [
+      "unauthorized access, intrusion, persistence, evasion, or surveillance",
+      "malware creation, exploit weaponization, credential theft, or destructive actions",
+      "target-specific offensive playbooks or instructions against live systems",
+      "bypassing access controls or testing without explicit authorization",
+      "bulk collection of personal, confidential, or regulated data",
+      "claims that a control, system, or organization is secure without evidence"
+    ],
+    "operational_safety_rule": "Any future example, exercise, or validation activity must use synthetic or explicitly authorized environments, bounded data, reversible actions, and human review.",
+    "legal_note": "Legal and regulatory treatment is jurisdiction- and fact-dependent. The map flags review needs; it is not legal advice or a compliance determination."
+  },
+  "classification_strategy": {
+    "graph_behavior": "Candidates may have multiple parents after review; this artifact preserves proposed boundaries rather than forcing a single tree.",
+    "concept_boundary": "Discipline and subdiscipline candidates describe knowledge areas. Methods, tools, skills, professions, applications, and controls must not be silently promoted to disciplines.",
+    "confidence_meaning": "A bounded estimate of the candidate's conceptual fit for this pilot, not evidence strength and not approval.",
+    "review_state_vocabulary": [
+      "unreviewed",
+      "machine_validated",
+      "human_reviewed",
+      "approved",
+      "rejected"
+    ],
+    "current_review_policy": "All domain, subdiscipline, and atomicity candidates remain unreviewed. No candidate is canonical or eligible for training."
+  },
+  "domain": {
+    "candidate_id": "domain_cybersecurity_defensive",
+    "name_en": "Defensive Cybersecurity",
+    "name_ar": "الأمن السيبراني الدفاعي",
+    "concept_type": "domain",
+    "definition": "The body of knowledge concerned with reducing cyber risk and protecting information, systems, services, people, and institutions through governance, engineering, prevention, detection, response, recovery, and assurance.",
+    "scope_includes": [
+      "prevention and risk reduction",
+      "security monitoring and evidence handling",
+      "authorized response and recovery",
+      "privacy, safety, resilience, and accountability"
+    ],
+    "scope_excludes": [
+      "offensive operations as an end in themselves",
+      "weapon development",
+      "unauthorized testing or data access"
+    ],
+    "confidence": 0.91,
+    "review_state": "unreviewed",
+    "status": "proposed",
+    "scope_risk": "medium",
+    "legal_risk": "medium",
+    "review_reason": "The defensive boundary and relationship to broader information security, safety engineering, privacy, and national-security contexts need human confirmation.",
+    "provenance": [
+      {"source_type": "other", "source_id": "knowledge_os_readme_v0.1", "locator": "README.md", "claim_text": "Knowledge-OS preserves multiple perspectives and treats model structures as hypotheses."},
+      {"source_type": "model_run", "source_id": "cybersecurity_domain_synthesis_v0.1", "locator": "domain definition", "claim_text": "Independent defensive-domain synthesis."}
+    ]
+  },
+  "candidate_disciplines": [
+    {
+      "candidate_id": "discipline_cyber_governance_risk_compliance",
+      "name_en": "Cybersecurity Governance, Risk, and Compliance",
+      "name_ar": "حوكمة ومخاطر وامتثال الأمن السيبراني",
+      "concept_type": "discipline",
+      "definition": "Governance and decision practices that establish security objectives, accountability, risk treatment, policy, assurance, and lawful operation.",
+      "subdisciplines": [
+        {"candidate_id":"subfield_security_governance_policy","name_en":"Security governance and policy","name_ar":"حوكمة وسياسات الأمن","definition":"Security objectives, accountability, policy hierarchy, exceptions, and decision rights.","confidence":0.86,"review_state":"unreviewed","scope_risk":"low","legal_risk":"medium","review_reason":"Boundary with enterprise governance and regulatory compliance needs confirmation."},
+        {"candidate_id":"subfield_cyber_risk_management","name_en":"Cyber risk management","name_ar":"إدارة المخاطر السيبرانية","definition":"Identification, analysis, treatment, acceptance, and communication of cyber risk.","confidence":0.87,"review_state":"unreviewed","scope_risk":"low","legal_risk":"medium","review_reason":"Risk terminology and treatment categories may vary by jurisdiction and sector."},
+        {"candidate_id":"subfield_security_assurance_compliance","name_en":"Security assurance and compliance","name_ar":"ضمان الأمن والامتثال","definition":"Evidence-based evaluation of controls, obligations, and stated security claims.","confidence":0.84,"review_state":"unreviewed","scope_risk":"low","legal_risk":"high","review_reason":"Must not be interpreted as legal certification or a substitute for qualified compliance review."},
+        {"candidate_id":"subfield_security_metrics_reporting","name_en":"Security measurement and reporting","name_ar":"قياس الأمن والتقارير","definition":"Definitions, evidence quality, indicators, uncertainty, and reporting for security decisions.","confidence":0.79,"review_state":"unreviewed","scope_risk":"low","legal_risk":"medium","review_reason":"Metric validity and disclosure boundaries require review."}
+      ],
+      "confidence":0.86,"review_state":"unreviewed","scope_risk":"low","legal_risk":"medium","review_reason":"Likely core discipline; overlaps with privacy, resilience, safety, and organizational governance.","provenance":[{"source_type":"model_run","source_id":"cybersecurity_domain_synthesis_v0.1","locator":"candidate discipline 1","claim_text":"Independent candidate."}]
+    },
+    {
+      "candidate_id": "discipline_security_architecture_engineering",
+      "name_en": "Security Architecture and Engineering",
+      "name_ar": "هندسة ومعمارية الأمن",
+      "concept_type": "discipline",
+      "definition": "Design and engineering principles for embedding security properties, trust boundaries, failure handling, and assurance into systems and services.",
+      "subdisciplines": [
+        {"candidate_id":"subfield_secure_system_architecture","name_en":"Secure system architecture","name_ar":"معمارية الأنظمة الآمنة","definition":"Security objectives, trust boundaries, dependencies, segmentation, and failure modes in system design.","confidence":0.88,"review_state":"unreviewed","scope_risk":"low","legal_risk":"low","review_reason":"Needs separation from general systems architecture and safety engineering."},
+        {"candidate_id":"subfield_security_by_design","name_en":"Security engineering and secure-by-design","name_ar":"هندسة الأمن والأمن منذ التصميم","definition":"Security requirements, design constraints, misuse resistance, and lifecycle evidence.","confidence":0.89,"review_state":"unreviewed","scope_risk":"low","legal_risk":"low","review_reason":"Term may include product policy and secure development practices."},
+        {"candidate_id":"subfield_trust_boundary_analysis","name_en":"Trust-boundary and dependency analysis","name_ar":"تحليل حدود الثقة والتبعيات","definition":"Explicit analysis of trust transitions, dependencies, privileges, and assumptions.","confidence":0.83,"review_state":"unreviewed","scope_risk":"medium","legal_risk":"low","review_reason":"Examples must avoid turning analysis into attack guidance."},
+        {"candidate_id":"subfield_security_reference_patterns","name_en":"Security patterns and control design","name_ar":"أنماط الأمن وتصميم الضوابط","definition":"Reusable defensive design patterns for reducing exposure and improving verifiability.","confidence":0.80,"review_state":"unreviewed","scope_risk":"low","legal_risk":"low","review_reason":"Requires a controlled distinction between abstract patterns and product-specific instructions."}
+      ],
+      "confidence":0.88,"review_state":"unreviewed","scope_risk":"low","legal_risk":"low","review_reason":"Strong conceptual fit, but needs crosswalks to software, cloud, network, and safety engineering.","provenance":[{"source_type":"model_run","source_id":"cybersecurity_domain_synthesis_v0.1","locator":"candidate discipline 2","claim_text":"Independent candidate."}]
+    },
+    {
+      "candidate_id": "discipline_identity_access_trust",
+      "name_en": "Identity, Access, and Trust Management",
+      "name_ar": "إدارة الهوية والوصول والثقة",
+      "concept_type": "discipline",
+      "definition": "Defensive management of identities, authentication, authorization, privilege, federation, and trust relationships.",
+      "subdisciplines": [
+        {"candidate_id":"subfield_identity_lifecycle","name_en":"Identity lifecycle management","name_ar":"إدارة دورة حياة الهوية","definition":"Creation, proofing, change, suspension, and removal of human and service identities.","confidence":0.87,"review_state":"unreviewed","scope_risk":"low","legal_risk":"medium","review_reason":"Identity proofing and retention may involve personal data and regulated processes."},
+        {"candidate_id":"subfield_authentication_credential_assurance","name_en":"Authentication and credential assurance","name_ar":"المصادقة وضمان بيانات الاعتماد","definition":"Assurance of authenticators, sessions, recovery paths, and credential handling.","confidence":0.88,"review_state":"unreviewed","scope_risk":"low","legal_risk":"medium","review_reason":"Candidate content must stay defensive and avoid credential acquisition techniques."},
+        {"candidate_id":"subfield_authorization_least_privilege","name_en":"Authorization and least privilege","name_ar":"التفويض والحد الأدنى من الصلاحيات","definition":"Policy-based decisions about permitted actions, scope, separation of duties, and privilege reduction.","confidence":0.90,"review_state":"unreviewed","scope_risk":"low","legal_risk":"low","review_reason":"Needs a stable distinction between authorization policy, enforcement, and auditing."},
+        {"candidate_id":"subfield_federation_service_trust","name_en":"Federation and service trust","name_ar":"الاتحاد وثقة الخدمات","definition":"Trust relationships among identity providers, applications, services, and organizational domains.","confidence":0.82,"review_state":"unreviewed","scope_risk":"low","legal_risk":"medium","review_reason":"Cross-organization trust and data-sharing implications require review."}
+      ],
+      "confidence":0.89,"review_state":"unreviewed","scope_risk":"low","legal_risk":"medium","review_reason":"Clear defensive discipline; privacy and organizational authority boundaries must be explicit.","provenance":[{"source_type":"model_run","source_id":"cybersecurity_domain_synthesis_v0.1","locator":"candidate discipline 3","claim_text":"Independent candidate."}]
+    },
+    {
+      "candidate_id": "discipline_network_cloud_platform_defense",
+      "name_en": "Network, Cloud, and Platform Defense",
+      "name_ar": "دفاع الشبكات والسحابة والمنصات",
+      "concept_type": "discipline",
+      "definition": "Protection and assurance of networked infrastructure, cloud services, endpoints, operating platforms, and their administrative planes.",
+      "subdisciplines": [
+        {"candidate_id":"subfield_network_defensive_architecture","name_en":"Network defensive architecture","name_ar":"معمارية دفاع الشبكات","definition":"Segmentation, secure connectivity, boundary controls, and network availability from a defensive perspective.","confidence":0.85,"review_state":"unreviewed","scope_risk":"medium","legal_risk":"medium","review_reason":"Operational examples can become dual-use; authorized lab boundary is mandatory."},
+        {"candidate_id":"subfield_cloud_security_posture","name_en":"Cloud security posture","name_ar":"الوضع الأمني للسحابة","definition":"Configuration, identity, workload, service, and shared-responsibility assurance in cloud environments.","confidence":0.86,"review_state":"unreviewed","scope_risk":"medium","legal_risk":"medium","review_reason":"Provider terms, tenant boundaries, and evidence location need review."},
+        {"candidate_id":"subfield_endpoint_platform_hardening","name_en":"Endpoint and platform defense","name_ar":"دفاع الأجهزة والمنصات","definition":"Defensive configuration, update, isolation, and integrity practices for managed endpoints and platforms.","confidence":0.86,"review_state":"unreviewed","scope_risk":"low","legal_risk":"medium","review_reason":"Monitoring and isolation may affect employee privacy and service availability."},
+        {"candidate_id":"subfield_container_runtime_defense","name_en":"Container and runtime defense","name_ar":"دفاع الحاويات وبيئات التشغيل","definition":"Defensive controls for images, workloads, runtime boundaries, and orchestration configuration.","confidence":0.79,"review_state":"unreviewed","scope_risk":"medium","legal_risk":"low","review_reason":"Requires separation from application security and platform operations."}
+      ],
+      "confidence":0.86,"review_state":"unreviewed","scope_risk":"medium","legal_risk":"medium","review_reason":"Environment-specific and dual-use; use synthetic or authorized evidence only.","provenance":[{"source_type":"model_run","source_id":"cybersecurity_domain_synthesis_v0.1","locator":"candidate discipline 4","claim_text":"Independent candidate."}]
+    },
+    {
+      "candidate_id": "discipline_application_software_security",
+      "name_en": "Application and Software Security",
+      "name_ar": "أمن التطبيقات والبرمجيات",
+      "concept_type": "discipline",
+      "definition": "Defensive practices for making software, APIs, dependencies, and delivery processes resistant to misuse and verifiably secure.",
+      "subdisciplines": [
+        {"candidate_id":"subfield_secure_software_lifecycle","name_en":"Secure software lifecycle","name_ar":"دورة حياة البرمجيات الآمنة","definition":"Security requirements, design review, implementation controls, verification, release, and maintenance.","confidence":0.90,"review_state":"unreviewed","scope_risk":"low","legal_risk":"low","review_reason":"Needs boundary with general software quality and engineering management."},
+        {"candidate_id":"subfield_application_security_assurance","name_en":"Application security assurance","name_ar":"ضمان أمن التطبيقات","definition":"Evidence-based review of application security properties, controls, and residual risk.","confidence":0.87,"review_state":"unreviewed","scope_risk":"medium","legal_risk":"medium","review_reason":"Testing examples must be authorized, bounded, and non-weaponizing."},
+        {"candidate_id":"subfield_api_service_security","name_en":"API and service security","name_ar":"أمن واجهات البرمجة والخدمات","definition":"Defensive identity, authorization, input, data-flow, rate, and lifecycle controls for service interfaces.","confidence":0.84,"review_state":"unreviewed","scope_risk":"medium","legal_risk":"medium","review_reason":"Needs explicit prohibition on testing third-party or live targets without authorization."},
+        {"candidate_id":"subfield_dependency_build_integrity","name_en":"Dependency and build integrity","name_ar":"سلامة التبعيات والبناء","definition":"Assurance of dependencies, build inputs, artifacts, provenance, and release integrity.","confidence":0.85,"review_state":"unreviewed","scope_risk":"low","legal_risk":"medium","review_reason":"License, artifact provenance, and supplier obligations require review."}
+      ],
+      "confidence":0.88,"review_state":"unreviewed","scope_risk":"medium","legal_risk":"medium","review_reason":"Core defensive area; must not drift into exploit-development training.","provenance":[{"source_type":"model_run","source_id":"cybersecurity_domain_synthesis_v0.1","locator":"candidate discipline 5","claim_text":"Independent candidate."}]
+    },
+    {
+      "candidate_id": "discipline_data_security_privacy",
+      "name_en": "Data Security and Privacy Engineering",
+      "name_ar": "أمن البيانات وهندسة الخصوصية",
+      "concept_type": "discipline",
+      "definition": "Protection, controlled use, lifecycle governance, and privacy-aware engineering for data and security-relevant evidence.",
+      "subdisciplines": [
+        {"candidate_id":"subfield_data_classification_handling","name_en":"Data classification and handling","name_ar":"تصنيف البيانات والتعامل معها","definition":"Classification, access, storage, transfer, retention, and disposal decisions for information assets.","confidence":0.88,"review_state":"unreviewed","scope_risk":"low","legal_risk":"high","review_reason":"Personal, confidential, and regulated data obligations are fact- and jurisdiction-dependent."},
+        {"candidate_id":"subfield_data_protection_cryptographic_assurance","name_en":"Data protection and cryptographic assurance","name_ar":"حماية البيانات والضمان التشفيري","definition":"Defensive protection of data in use, transit, and storage, with key and assurance considerations.","confidence":0.85,"review_state":"unreviewed","scope_risk":"low","legal_risk":"medium","review_reason":"Needs careful separation between principles and implementation-sensitive advice."},
+        {"candidate_id":"subfield_privacy_security_intersection","name_en":"Privacy-security intersection","name_ar":"تقاطع الخصوصية والأمن","definition":"Balancing security telemetry, access, minimization, purpose limitation, and individual rights.","confidence":0.83,"review_state":"unreviewed","scope_risk":"low","legal_risk":"high","review_reason":"Requires privacy and legal review before any real-data use."},
+        {"candidate_id":"subfield_security_evidence_provenance","name_en":"Security evidence provenance","name_ar":"مصدرية الأدلة الأمنية","definition":"Integrity, provenance, access, retention, and reviewability of security records and evidence.","confidence":0.82,"review_state":"unreviewed","scope_risk":"low","legal_risk":"high","review_reason":"Evidence handling can trigger privacy, employment, litigation, and retention obligations."}
+      ],
+      "confidence":0.86,"review_state":"unreviewed","scope_risk":"low","legal_risk":"high","review_reason":"Essential to defensive security but carries the strongest privacy and retention risks.","provenance":[{"source_type":"model_run","source_id":"cybersecurity_domain_synthesis_v0.1","locator":"candidate discipline 6","claim_text":"Independent candidate."}]
+    },
+    {
+      "candidate_id": "discipline_security_operations_detection",
+      "name_en": "Security Operations, Detection, and Monitoring",
+      "name_ar": "العمليات الأمنية والكشف والمراقبة",
+      "concept_type": "discipline",
+      "definition": "Defensive observation, triage, detection engineering, alert handling, and operational decision support for security events.",
+      "subdisciplines": [
+        {"candidate_id":"subfield_security_monitoring_telemetry","name_en":"Security monitoring and telemetry","name_ar":"المراقبة الأمنية والقياس عن بعد","definition":"Collection, quality, context, minimization, and availability of security-relevant signals.","confidence":0.88,"review_state":"unreviewed","scope_risk":"medium","legal_risk":"high","review_reason":"Monitoring people and systems requires authorization, purpose, minimization, and retention review."},
+        {"candidate_id":"subfield_detection_engineering","name_en":"Defensive detection engineering","name_ar":"هندسة الكشف الدفاعي","definition":"Design, testing, tuning, and evaluation of detections for defensive signals and behaviors.","confidence":0.86,"review_state":"unreviewed","scope_risk":"medium","legal_risk":"medium","review_reason":"Examples must avoid publishing evasion or target-specific detection bypass details."},
+        {"candidate_id":"subfield_alert_triage_analysis","name_en":"Alert triage and analysis","name_ar":"فرز التنبيهات وتحليلها","definition":"Prioritization, evidence review, uncertainty handling, and escalation of defensive alerts.","confidence":0.87,"review_state":"unreviewed","scope_risk":"medium","legal_risk":"high","review_reason":"May involve personal data, employee monitoring, and consequential decisions."},
+        {"candidate_id":"subfield_security_operations_governance","name_en":"Security operations governance","name_ar":"حوكمة العمليات الأمنية","definition":"Runbooks, roles, service levels, escalation, quality controls, and auditability of security operations.","confidence":0.81,"review_state":"unreviewed","scope_risk":"low","legal_risk":"medium","review_reason":"Needs boundary with incident response and business continuity."}
+      ],
+      "confidence":0.87,"review_state":"unreviewed","scope_risk":"medium","legal_risk":"high","review_reason":"Operationally useful but high-risk when tied to real telemetry or people.","provenance":[{"source_type":"model_run","source_id":"cybersecurity_domain_synthesis_v0.1","locator":"candidate discipline 7","claim_text":"Independent candidate."}]
+    },
+    {
+      "candidate_id": "discipline_incident_response_recovery_forensics",
+      "name_en": "Incident Response, Recovery, and Digital Forensics",
+      "name_ar": "الاستجابة للحوادث والتعافي والتحقيق الرقمي",
+      "concept_type": "discipline",
+      "definition": "Authorized defensive preparation, containment, evidence-aware investigation, communication, recovery, and learning after security events.",
+      "subdisciplines": [
+        {"candidate_id":"subfield_incident_preparedness_response","name_en":"Incident preparedness and response","name_ar":"الاستعداد والاستجابة للحوادث","definition":"Roles, plans, decision points, communications, containment, and safe coordination for authorized incidents.","confidence":0.88,"review_state":"unreviewed","scope_risk":"high","legal_risk":"high","review_reason":"Must distinguish authorized response from offensive action, surveillance, or evidence destruction."},
+        {"candidate_id":"subfield_digital_forensics_evidence","name_en":"Digital forensics and evidence handling","name_ar":"التحقيق الرقمي والتعامل مع الأدلة","definition":"Integrity-preserving collection, examination, provenance, and reporting of authorized digital evidence.","confidence":0.84,"review_state":"unreviewed","scope_risk":"high","legal_risk":"high","review_reason":"Requires qualified human, chain-of-custody, privacy, employment, and jurisdictional review."},
+        {"candidate_id":"subfield_recovery_lessons_learned","name_en":"Recovery and lessons learned","name_ar":"التعافي والدروس المستفادة","definition":"Restoration, validation, residual-risk decisions, and learning without blame or unsupported attribution.","confidence":0.86,"review_state":"unreviewed","scope_risk":"medium","legal_risk":"high","review_reason":"Recovery actions affect availability and may create reporting or disclosure obligations."},
+        {"candidate_id":"subfield_incident_communications","name_en":"Incident communications and coordination","name_ar":"اتصالات الحوادث والتنسيق","definition":"Accurate, need-to-know, and accountable communication among technical, legal, leadership, and affected parties.","confidence":0.82,"review_state":"unreviewed","scope_risk":"low","legal_risk":"high","review_reason":"Notification, privilege, attribution, and disclosure rules require legal review."}
+      ],
+      "confidence":0.86,"review_state":"unreviewed","scope_risk":"high","legal_risk":"high","review_reason":"Defensive by intent but highly sensitive in real incidents and evidence contexts.","provenance":[{"source_type":"model_run","source_id":"cybersecurity_domain_synthesis_v0.1","locator":"candidate discipline 8","claim_text":"Independent candidate."}]
+    },
+    {
+      "candidate_id": "discipline_vulnerability_exposure_configuration",
+      "name_en": "Vulnerability, Exposure, and Configuration Management",
+      "name_ar": "إدارة الثغرات والتعرض والتهيئة",
+      "concept_type": "discipline",
+      "definition": "Defensive identification, prioritization, remediation, verification, and communication of weaknesses and unsafe configurations.",
+      "subdisciplines": [
+        {"candidate_id":"subfield_asset_exposure_inventory","name_en":"Asset and exposure inventory","name_ar":"جرد الأصول والتعرض","definition":"Authorized inventory and context for assets, services, dependencies, ownership, and exposure.","confidence":0.86,"review_state":"unreviewed","scope_risk":"medium","legal_risk":"medium","review_reason":"Inventory data can be sensitive and target-specific; use synthetic examples in the pilot."},
+        {"candidate_id":"subfield_vulnerability_prioritization_remediation","name_en":"Vulnerability prioritization and remediation","name_ar":"ترتيب الثغرات ومعالجتها","definition":"Evidence-based prioritization, remediation planning, exceptions, and validation of risk reduction.","confidence":0.88,"review_state":"unreviewed","scope_risk":"medium","legal_risk":"medium","review_reason":"Must avoid exploit instructions and unsupported severity claims."},
+        {"candidate_id":"subfield_secure_configuration_baselines","name_en":"Secure configuration baselines","name_ar":"خطوط أساس التهيئة الآمنة","definition":"Documented, reviewable, and testable defensive configuration expectations.","confidence":0.87,"review_state":"unreviewed","scope_risk":"low","legal_risk":"low","review_reason":"Baselines are environment-specific and need ownership and exception handling."},
+        {"candidate_id":"subfield_coordinated_vulnerability_disclosure","name_en":"Coordinated vulnerability disclosure","name_ar":"الإفصاح المنسق عن الثغرات","definition":"Responsible intake, validation, coordination, remediation communication, and disclosure governance.","confidence":0.80,"review_state":"unreviewed","scope_risk":"medium","legal_risk":"high","review_reason":"Requires authorization, disclosure policy, contractual review, and careful handling of unpublished details."}
+      ],
+      "confidence":0.86,"review_state":"unreviewed","scope_risk":"medium","legal_risk":"medium","review_reason":"Defensive risk-reduction discipline; target specificity and disclosure law require controls.","provenance":[{"source_type":"model_run","source_id":"cybersecurity_domain_synthesis_v0.1","locator":"candidate discipline 9","claim_text":"Independent candidate."}]
+    },
+    {
+      "candidate_id": "discipline_human_sociotechnical_defense",
+      "name_en": "Human Factors and Socio-technical Defense",
+      "name_ar": "العوامل البشرية والدفاع الاجتماعي التقني",
+      "concept_type": "discipline",
+      "definition": "Defensive understanding of human behavior, usability, organizational practice, awareness, and safety culture in security systems.",
+      "subdisciplines": [
+        {"candidate_id":"subfield_security_awareness_training","name_en":"Security awareness and learning","name_ar":"التوعية والتعلم الأمني","definition":"Role-appropriate learning, reporting behavior, safe decision support, and evaluation of awareness outcomes.","confidence":0.85,"review_state":"unreviewed","scope_risk":"low","legal_risk":"medium","review_reason":"Must avoid coercive surveillance and unsafe social-engineering simulations."},
+        {"candidate_id":"subfield_human_centered_security","name_en":"Human-centered security","name_ar":"الأمن المتمحور حول الإنسان","definition":"Usable, accessible, understandable, and error-tolerant security controls and workflows.","confidence":0.84,"review_state":"unreviewed","scope_risk":"low","legal_risk":"low","review_reason":"Needs crosswalk to accessibility, safety, and product design."},
+        {"candidate_id":"subfield_security_culture_accountability","name_en":"Security culture and accountability","name_ar":"ثقافة الأمن والمساءلة","definition":"Organizational norms, reporting, learning, responsibility, and fair accountability for security outcomes.","confidence":0.80,"review_state":"unreviewed","scope_risk":"low","legal_risk":"medium","review_reason":"Employment, fairness, and psychological-safety implications require review."},
+        {"candidate_id":"subfield_sociotechnical_risk","name_en":"Socio-technical risk analysis","name_ar":"تحليل المخاطر الاجتماعية التقنية","definition":"Analysis of interactions among people, processes, technology, incentives, and institutional context.","confidence":0.78,"review_state":"unreviewed","scope_risk":"low","legal_risk":"medium","review_reason":"Conceptual boundary is broad and should not become unsupported behavioral profiling."}
+      ],
+      "confidence":0.83,"review_state":"unreviewed","scope_risk":"low","legal_risk":"medium","review_reason":"Important cross-cutting discipline; boundaries with organizational psychology and safety need review.","provenance":[{"source_type":"model_run","source_id":"cybersecurity_domain_synthesis_v0.1","locator":"candidate discipline 10","claim_text":"Independent candidate."}]
+    },
+    {
+      "candidate_id": "discipline_supply_chain_assurance_resilience",
+      "name_en": "Supply-chain Security, Assurance, and Resilience",
+      "name_ar": "أمن سلسلة التوريد والضمان والمرونة",
+      "concept_type": "discipline",
+      "definition": "Defensive management of supplier, dependency, service, continuity, and systemic risks across the lifecycle of technology and operations.",
+      "subdisciplines": [
+        {"candidate_id":"subfield_supplier_security_assurance","name_en":"Supplier and third-party security assurance","name_ar":"ضمان أمن الموردين والأطراف الثالثة","definition":"Due diligence, contractual controls, evidence, shared responsibility, and exit considerations for suppliers.","confidence":0.84,"review_state":"unreviewed","scope_risk":"low","legal_risk":"high","review_reason":"Contracts, confidentiality, data transfers, and sector obligations require review."},
+        {"candidate_id":"subfield_software_supply_chain_security","name_en":"Software supply-chain security","name_ar":"أمن سلسلة توريد البرمجيات","definition":"Provenance, integrity, dependency, build, release, and update assurance across software supply chains.","confidence":0.86,"review_state":"unreviewed","scope_risk":"low","legal_risk":"medium","review_reason":"Needs boundary with application security and open-source licensing."},
+        {"candidate_id":"subfield_business_continuity_resilience","name_en":"Business continuity and cyber resilience","name_ar":"استمرارية الأعمال والمرونة السيبرانية","definition":"Preparation, continuity, restoration, adaptation, and learning under cyber disruption.","confidence":0.86,"review_state":"unreviewed","scope_risk":"low","legal_risk":"medium","review_reason":"Overlaps with resilience, safety, disaster recovery, and operational risk."},
+        {"candidate_id":"subfield_critical_service_dependency_risk","name_en":"Critical-service dependency risk","name_ar":"مخاطر تبعيات الخدمات الحرجة","definition":"Defensive analysis of concentration, cascading failure, substitutability, and recovery dependencies.","confidence":0.78,"review_state":"unreviewed","scope_risk":"medium","legal_risk":"high","review_reason":"May involve sensitive infrastructure and regulated disclosures."}
+      ],
+      "confidence":0.84,"review_state":"unreviewed","scope_risk":"low","legal_risk":"high","review_reason":"Cross-organizational and continuity concerns create material legal and disclosure boundaries.","provenance":[{"source_type":"model_run","source_id":"cybersecurity_domain_synthesis_v0.1","locator":"candidate discipline 11","claim_text":"Independent candidate."}]
+    }
+  ],
+  "atomicity_model": {
+    "definition": "An atomicity candidate is a bounded, independently reviewable knowledge or decision unit with one main intent, one observable output, and an explicit evidence boundary. It is not automatically a curriculum item or dataset example.",
+    "promotion_rule": "Promote only after a human reviewer confirms one concept or decision, bounded prerequisites, safe wording, provenance, and no hidden operational or legal dependency.",
+    "candidate_dimensions": ["single_intent", "single_observable_output", "bounded_evidence", "safe_context", "reviewable_provenance"]
+  },
+  "atomicity_candidates": [
+    {"atomicity_candidate_id":"atomic_cia_security_objectives","parent_candidate_id":"discipline_cyber_governance_risk_compliance","name_en":"Distinguish confidentiality, integrity, and availability objectives","name_ar":"تمييز أهداف السرية والسلامة والتوافر","unit_kind":"concept","observable_output":"Classifies a bounded scenario by the primary security objective(s).","boundary":"Does not prescribe an attack or a product control.","confidence":0.90,"review_state":"unreviewed","scope_risk":"low","legal_risk":"low","review_reason":"Review whether one triad item or the triad as a whole is the atomic unit."},
+    {"atomicity_candidate_id":"atomic_risk_asset_threat_control","parent_candidate_id":"discipline_cyber_governance_risk_compliance","name_en":"Separate asset, threat, vulnerability, control, and risk","name_ar":"الفصل بين الأصل والتهديد والثغرة والضابط والمخاطر","unit_kind":"concept","observable_output":"Labels each element in a synthetic scenario without inferring unsupported facts.","boundary":"No target-specific threat attribution or exploitation detail.","confidence":0.88,"review_state":"unreviewed","scope_risk":"low","legal_risk":"low","review_reason":"Terms have overlapping usage across frameworks and require glossary alignment."},
+    {"atomicity_candidate_id":"atomic_security_claim_evidence","parent_candidate_id":"discipline_cyber_governance_risk_compliance","name_en":"Match a security claim to the evidence needed to support it","name_ar":"مطابقة الادعاء الأمني مع الدليل اللازم لدعمه","unit_kind":"decision","observable_output":"Identifies evidence gaps and avoids an unsupported secure/not-secure verdict.","boundary":"No certification or legal conclusion.","confidence":0.83,"review_state":"unreviewed","scope_risk":"low","legal_risk":"medium","review_reason":"Needs explicit distinction between evidence sufficiency and compliance determination."},
+    {"atomicity_candidate_id":"atomic_trust_boundary_identification","parent_candidate_id":"discipline_security_architecture_engineering","name_en":"Identify a trust boundary in a system diagram","name_ar":"تحديد حد ثقة في مخطط نظام","unit_kind":"decision","observable_output":"Marks a transition where authority, identity, or data trust changes.","boundary":"Uses synthetic diagrams; no live discovery or bypass activity.","confidence":0.86,"review_state":"unreviewed","scope_risk":"low","legal_risk":"low","review_reason":"Review diagram notation and prevent dual-use expansion."},
+    {"atomicity_candidate_id":"atomic_security_requirement_trace","parent_candidate_id":"discipline_security_architecture_engineering","name_en":"Trace one security requirement to one design control and one test","name_ar":"تتبع متطلب أمني واحد إلى ضابط واختبار واحد","unit_kind":"evidence_check","observable_output":"Produces a bounded requirement-control-test trace.","boundary":"No claim beyond the tested requirement.","confidence":0.84,"review_state":"unreviewed","scope_risk":"low","legal_risk":"low","review_reason":"Needs a canonical trace format before integration."},
+    {"atomicity_candidate_id":"atomic_authentication_authorization","parent_candidate_id":"discipline_identity_access_trust","name_en":"Distinguish authentication from authorization","name_ar":"تمييز المصادقة عن التفويض","unit_kind":"concept","observable_output":"Correctly separates identity proof from permission decision in a scenario.","boundary":"No credential collection or access-control bypass.","confidence":0.92,"review_state":"unreviewed","scope_risk":"low","legal_risk":"low","review_reason":"High-confidence candidate; verify terminology across Arabic and English labels."},
+    {"atomicity_candidate_id":"atomic_least_privilege_decision","parent_candidate_id":"discipline_identity_access_trust","name_en":"Select the least privilege needed for one bounded task","name_ar":"اختيار أقل صلاحية لازمة لمهمة محددة","unit_kind":"decision","observable_output":"Chooses a minimal permission set and states the missing evidence.","boundary":"Synthetic role matrix only; no real account changes.","confidence":0.87,"review_state":"unreviewed","scope_risk":"low","legal_risk":"medium","review_reason":"Requires review of role, business-owner, and separation-of-duties assumptions."},
+    {"atomicity_candidate_id":"atomic_segment_trust_transition","parent_candidate_id":"discipline_network_cloud_platform_defense","name_en":"Explain the defensive purpose of one network or platform boundary","name_ar":"شرح الغرض الدفاعي لحد شبكي أو منصاتي واحد","unit_kind":"concept","observable_output":"States the protected asset, allowed trust transition, and evidence of enforcement.","boundary":"No reconnaissance, evasion, or live configuration changes.","confidence":0.80,"review_state":"unreviewed","scope_risk":"medium","legal_risk":"medium","review_reason":"Needs safe lab framing and separation from offensive network instruction."},
+    {"atomicity_candidate_id":"atomic_cloud_shared_responsibility","parent_candidate_id":"discipline_network_cloud_platform_defense","name_en":"Assign one cloud security responsibility to the correct party","name_ar":"إسناد مسؤولية أمن سحابية واحدة إلى الطرف الصحيح","unit_kind":"decision","observable_output":"Maps a synthetic control responsibility to provider, customer, or shared ownership.","boundary":"Does not assert current provider-specific terms.","confidence":0.82,"review_state":"unreviewed","scope_risk":"low","legal_risk":"medium","review_reason":"Provider contracts and service models change; source validation is required."},
+    {"atomicity_candidate_id":"atomic_secure_code_requirement","parent_candidate_id":"discipline_application_software_security","name_en":"Translate one misuse concern into one software security requirement","name_ar":"تحويل مصدر إساءة استخدام واحد إلى متطلب أمني للبرمجيات","unit_kind":"decision","observable_output":"Writes one testable defensive requirement without exploit detail.","boundary":"No payloads, exploit chains, or target-specific code.","confidence":0.82,"review_state":"unreviewed","scope_risk":"medium","legal_risk":"low","review_reason":"Review phrasing to prevent progression into offensive examples."},
+    {"atomicity_candidate_id":"atomic_dependency_provenance_check","parent_candidate_id":"discipline_application_software_security","name_en":"Verify provenance for one software dependency or build artifact","name_ar":"التحقق من مصدر تبعية برمجية أو أثر بناء واحد","unit_kind":"evidence_check","observable_output":"Records source, version, integrity evidence, and review status.","boundary":"No downloading of untrusted artifacts in the pilot.","confidence":0.84,"review_state":"unreviewed","scope_risk":"low","legal_risk":"medium","review_reason":"Needs licensing and artifact-handling policy alignment."},
+    {"atomicity_candidate_id":"atomic_data_classification_choice","parent_candidate_id":"discipline_data_security_privacy","name_en":"Assign a sensitivity class to one synthetic data item","name_ar":"إسناد فئة حساسية إلى عنصر بيانات اصطناعي واحد","unit_kind":"decision","observable_output":"Chooses a classification and states handling implications.","boundary":"Synthetic data only; no personal or confidential records.","confidence":0.86,"review_state":"unreviewed","scope_risk":"low","legal_risk":"high","review_reason":"Classification labels and legal implications vary by organization and jurisdiction."},
+    {"atomicity_candidate_id":"atomic_security_log_minimization","parent_candidate_id":"discipline_data_security_privacy","name_en":"Identify the minimum telemetry needed for one defensive question","name_ar":"تحديد الحد الأدنى من القياس اللازم لسؤال دفاعي واحد","unit_kind":"decision","observable_output":"States purpose, minimum fields, retention need, and privacy risk.","boundary":"No collection from real people or systems.","confidence":0.81,"review_state":"unreviewed","scope_risk":"low","legal_risk":"high","review_reason":"Requires privacy review and organizational purpose limitation."},
+    {"atomicity_candidate_id":"atomic_alert_triage_evidence","parent_candidate_id":"discipline_security_operations_detection","name_en":"Triage one synthetic alert using bounded evidence","name_ar":"فرز تنبيه اصطناعي واحد باستخدام دليل محدود","unit_kind":"decision","observable_output":"Assigns priority, confidence, next defensive action, and escalation need.","boundary":"Synthetic alert only; no attribution or response on live targets.","confidence":0.82,"review_state":"unreviewed","scope_risk":"medium","legal_risk":"high","review_reason":"Consequential decisions and personal-data exposure require review."},
+    {"atomicity_candidate_id":"atomic_detection_quality_check","parent_candidate_id":"discipline_security_operations_detection","name_en":"Evaluate one detection for signal quality and false-positive risk","name_ar":"تقييم جودة كشف واحد ومخاطر الإنذارات الكاذبة","unit_kind":"evidence_check","observable_output":"Reports coverage assumption, false-positive concern, and test evidence.","boundary":"No evasion guidance or attacker behavior recipes.","confidence":0.79,"review_state":"unreviewed","scope_risk":"medium","legal_risk":"medium","review_reason":"Review the safe abstraction level for detection examples."},
+    {"atomicity_candidate_id":"atomic_incident_decision_point","parent_candidate_id":"discipline_incident_response_recovery_forensics","name_en":"Record one authorized incident decision with rationale and owner","name_ar":"تسجيل قرار واحد في حادث مصرح به مع مبرره ومالكه","unit_kind":"evidence_check","observable_output":"Produces a timestamped, bounded decision record with uncertainty.","boundary":"Synthetic incident only; no operational containment instructions.","confidence":0.80,"review_state":"unreviewed","scope_risk":"high","legal_risk":"high","review_reason":"Requires incident authority, privacy, privilege, and record-retention review."},
+    {"atomicity_candidate_id":"atomic_evidence_integrity_provenance","parent_candidate_id":"discipline_incident_response_recovery_forensics","name_en":"State the provenance and integrity status of one evidence item","name_ar":"بيان مصدرية وسلامة عنصر دليل واحد","unit_kind":"evidence_check","observable_output":"Identifies origin, custody status, access boundary, and uncertainty.","boundary":"No real evidence, forensic acquisition, or personal data in the pilot.","confidence":0.79,"review_state":"unreviewed","scope_risk":"high","legal_risk":"high","review_reason":"Chain-of-custody and jurisdictional requirements require qualified review."},
+    {"atomicity_candidate_id":"atomic_vulnerability_risk_prioritization","parent_candidate_id":"discipline_vulnerability_exposure_configuration","name_en":"Prioritize one weakness using impact, exposure, and evidence quality","name_ar":"ترتيب أولوية ضعف واحد حسب الأثر والتعرض وجودة الدليل","unit_kind":"decision","observable_output":"Produces a rationale and remediation order without exploit detail.","boundary":"Synthetic asset and weakness descriptions only.","confidence":0.84,"review_state":"unreviewed","scope_risk":"medium","legal_risk":"medium","review_reason":"Severity and exposure scoring require a reviewed framework and uncertainty handling."},
+    {"atomicity_candidate_id":"atomic_configuration_exception","parent_candidate_id":"discipline_vulnerability_exposure_configuration","name_en":"Document one configuration exception with owner, expiry, and compensating control","name_ar":"توثيق استثناء تهيئة واحد مع المالك والانتهاء والضابط التعويضي","unit_kind":"evidence_check","observable_output":"Produces a bounded exception record and review date.","boundary":"No live system change.","confidence":0.83,"review_state":"unreviewed","scope_risk":"low","legal_risk":"medium","review_reason":"Needs governance ownership and risk-acceptance boundary."},
+    {"atomicity_candidate_id":"atomic_safe_reporting_behavior","parent_candidate_id":"discipline_human_sociotechnical_defense","name_en":"Choose a safe reporting path for one suspected security event","name_ar":"اختيار مسار إبلاغ آمن لحدث أمني مشتبه به","unit_kind":"decision","observable_output":"Selects a defined internal or authorized channel and states what not to disclose.","boundary":"No social-engineering simulation or personal targeting.","confidence":0.80,"review_state":"unreviewed","scope_risk":"low","legal_risk":"medium","review_reason":"Channels, confidentiality, and employee protections need organization-specific review."},
+    {"atomicity_candidate_id":"atomic_supplier_control_evidence","parent_candidate_id":"discipline_supply_chain_assurance_resilience","name_en":"Match one supplier security claim to one contract or evidence requirement","name_ar":"مطابقة ادعاء أمني واحد من مورد مع متطلب تعاقدي أو دليل","unit_kind":"evidence_check","observable_output":"Identifies evidence owner, scope, freshness, and gap.","boundary":"No supplier secrets or contract text in the pilot.","confidence":0.78,"review_state":"unreviewed","scope_risk":"low","legal_risk":"high","review_reason":"Confidentiality, procurement, and contractual interpretation require review."},
+    {"atomicity_candidate_id":"atomic_recovery_validation","parent_candidate_id":"discipline_supply_chain_assurance_resilience","name_en":"Validate one recovery objective against one synthetic test result","name_ar":"التحقق من هدف تعافٍ واحد مقابل نتيجة اختبار اصطناعية واحدة","unit_kind":"evidence_check","observable_output":"States objective, test result, limitation, and residual risk.","boundary":"No production failover or destructive recovery action.","confidence":0.81,"review_state":"unreviewed","scope_risk":"medium","legal_risk":"medium","review_reason":"Availability impact and business continuity assumptions need owner review."}
+  ],
+  "review_queue": [
+    {"review_id":"review_scope_boundary_offensive_overlap","review_state":"unreviewed","priority":"high","target_ids":["domain_cybersecurity_defensive","discipline_network_cloud_platform_defense","discipline_application_software_security","discipline_incident_response_recovery_forensics"],"question":"Is the defensive-only boundary sufficiently explicit to prevent offensive, evasive, or target-specific expansion?","required_reviewer":"security domain reviewer"},
+    {"review_id":"review_discipline_boundaries","review_state":"unreviewed","priority":"high","target_ids":["discipline_security_architecture_engineering","discipline_network_cloud_platform_defense","discipline_application_software_security","discipline_vulnerability_exposure_configuration"],"question":"Which candidates are disciplines, subdisciplines, methods, skills, or cross-domain concepts?","required_reviewer":"ontology reviewer"},
+    {"review_id":"review_incident_forensics_authority","review_state":"unreviewed","priority":"high","target_ids":["discipline_incident_response_recovery_forensics","subfield_digital_forensics_evidence","atomic_evidence_integrity_provenance"],"question":"What authorization, custody, privacy, and qualified-review gates are mandatory before any future examples?","required_reviewer":"security and legal/privacy reviewer"},
+    {"review_id":"review_monitoring_privacy","review_state":"unreviewed","priority":"high","target_ids":["discipline_security_operations_detection","subfield_security_monitoring_telemetry","atomic_security_log_minimization","atomic_alert_triage_evidence"],"question":"What minimization, purpose, retention, access, and human-impact constraints apply to telemetry and triage?","required_reviewer":"privacy and governance reviewer"},
+    {"review_id":"review_cloud_supplier_jurisdiction","review_state":"unreviewed","priority":"medium","target_ids":["subfield_cloud_security_posture","discipline_supply_chain_assurance_resilience","subfield_supplier_security_assurance"],"question":"Which claims require provider, contract, jurisdiction, or sector-specific sources before approval?","required_reviewer":"domain and legal reviewer"},
+    {"review_id":"review_multilingual_labels","review_state":"unreviewed","priority":"medium","target_ids":["domain_cybersecurity_defensive","candidate_disciplines","atomicity_candidates"],"question":"Do Arabic and English labels preserve the same concept boundaries without implying a broader or different scope?","required_reviewer":"Arabic-English ontology reviewer"},
+    {"review_id":"review_atomicity_granularity","review_state":"unreviewed","priority":"high","target_ids":["atomicity_candidates"],"question":"Does each atomicity candidate have one intent, one observable output, bounded prerequisites, and no hidden operational step?","required_reviewer":"learning-object and ontology reviewer"},
+    {"review_id":"review_provenance_source_policy","review_state":"unreviewed","priority":"high","target_ids":["source_basis","candidate_disciplines","atomicity_candidates"],"question":"What external authoritative sources, licenses, retrieval dates, and evidence are required before any candidate becomes approved?","required_reviewer":"provenance and legal reviewer"},
+    {"review_id":"review_schema_integration_gate","review_state":"unreviewed","priority":"medium","target_ids":["artifact_id","candidate_disciplines","atomicity_candidates"],"question":"Should a future adapter map this discovery envelope to existing Concept records, and under which reviewed contract?","required_reviewer":"Knowledge-OS architecture owner"},
+    {"review_id":"review_no_training_use","review_state":"unreviewed","priority":"high","target_ids":["artifact_id","atomicity_candidates"],"question":"Confirm that no item is used for curriculum, dataset generation, model training, or engine expansion before human approval and provenance review.","required_reviewer":"project owner"}
+  ],
+  "explicit_non_deliverables": [
+    "No complete curriculum",
+    "No large dataset or training examples",
+    "No offensive procedures, exploit code, malware, credential, evasion, or target-specific content",
+    "No engine, adapter, schema, Mathematics, training, model, or other production changes",
+    "No approval, compliance certification, legal conclusion, or operational security claim"
+  ],
+  "proposed_next_gate": {
+    "gate": "human_review_before_integration",
+    "required_actions": [
+      "Review scope and legal boundary items",
+      "Review discipline/subdiscipline and atomicity boundaries",
+      "Add authoritative sources and license metadata where needed",
+      "Resolve Arabic-English label equivalence",
+      "Only then decide whether any candidates should be mapped to existing Knowledge-OS concepts"
+    ],
+    "blocked_until_gate": ["schema integration", "curriculum generation", "dataset generation", "training", "engine expansion"]
+  }
+}

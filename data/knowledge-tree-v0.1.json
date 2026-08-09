@@ -1,0 +1,2640 @@
+﻿{
+    "$schema":  "https://knowledge-os.dev/schemas/knowledge-tree-pilot.schema.json",
+    "artifact_id":  "knowledge_tree_mathematics_v0.1",
+    "artifact_type":  "knowledge_tree",
+    "version":  "0.1.0",
+    "domain":  "mathematics",
+    "classification_system":  {
+                                  "system_id":  "knowledge_os_mathematics_pilot_v0.1",
+                                  "name":  {
+                                               "en":  "Knowledge-OS Mathematics Pilot Tree",
+                                               "ar":  "Ø´Ø¬Ø±Ø© Knowledge-OS Ø§Ù„ØªØ¬Ø±ÙŠØ¨ÙŠØ© Ù„Ù„Ø±ÙŠØ§Ø¶ÙŠØ§Øª"
+                                           },
+                                  "purpose":  "A small, auditable model-reconstructed view for testing domain-to-discipline-to-atomic-discipline classification in Mathematics.",
+                                  "scope":  "Mathematics only; disciplinary and subdisciplinary organization, not a complete subject classification and not a syllabus.",
+                                  "system_type":  "model_reconstructed",
+                                  "version":  "0.1.0",
+                                  "issued_at":  "2026-08-09",
+                                  "maintainer":  "Knowledge-OS project",
+                                  "license":  "Internal project artifact; external sources retain their own terms.",
+                                  "source":  {
+                                                 "source_id":  "msc2020",
+                                                 "source_type":  "classification",
+                                                 "url_or_locator":  "https://msc2020.org/",
+                                                 "retrieved_at":  "2026-08-09T00:00:00+03:00"
+                                             },
+                                  "root_node_ids":  [
+                                                        "math"
+                                                    ],
+                                  "limitations":  [
+                                                      "This is a pilot synthesis, not an immutable copy of MSC2020 or any other official hierarchy.",
+                                                      "The tree uses one practical parent per node; mathematical overlap is not denied and should be represented by graph crosswalks in a later phase.",
+                                                      "Atomic discipline means a useful leaf for classification and review, not an irreducible unit of mathematical knowledge.",
+                                                      "No human subject-matter review has been recorded for this artifact."
+                                                  ],
+                                  "status":  "draft"
+                              },
+    "design_contract":  {
+                            "level_definitions":  {
+                                                      "domain":  "The pilot\u0027s top-level knowledge area.",
+                                                      "discipline":  "A broad mathematical field with a stable research and teaching identity.",
+                                                      "subdiscipline":  "A named field that narrows a discipline without being a single topic or technique.",
+                                                      "atomic_discipline":  "A leaf field with a coherent boundary, recognizable literature, and a useful independent classification target."
+                                                  },
+                            "tree_rules":  [
+                                               "Every non-root node has exactly one tree parent in this pilot.",
+                                               "Every tree edge is represented once in relations and points from parent to child.",
+                                               "Leaves are intentionally limited to fields that can be reviewed as coherent units.",
+                                               "A confidence score expresses classification confidence; it does not replace provenance or review state."
+                                           ],
+                            "perspective_id":  "perspective.model_reconstructed.mathematics_pilot"
+                        },
+    "level_index":  {
+                        "domain":  [
+                                       "math"
+                                   ],
+                        "discipline":  [
+                                           "math.algebra",
+                                           "math.analysis",
+                                           "math.probability-statistics",
+                                           "math.discrete-mathematics",
+                                           "math.geometry"
+                                       ],
+                        "subdiscipline":  [
+                                              "math.algebra.linear-algebra",
+                                              "math.algebra.number-theory",
+                                              "math.analysis.calculus",
+                                              "math.probability-statistics.probability",
+                                              "math.probability-statistics.statistics",
+                                              "math.discrete-mathematics.combinatorics",
+                                              "math.discrete-mathematics.graph-theory",
+                                              "math.discrete-mathematics.mathematical-logic",
+                                              "math.geometry.euclidean-geometry",
+                                              "math.geometry.analytic-geometry",
+                                              "math.geometry.differential-geometry"
+                                          ],
+                        "atomic_discipline":  [
+                                                  "math.algebra.linear-algebra.vector-spaces-linear-maps",
+                                                  "math.algebra.linear-algebra.matrix-theory",
+                                                  "math.algebra.linear-algebra.linear-systems",
+                                                  "math.algebra.number-theory.elementary-number-theory",
+                                                  "math.algebra.number-theory.algebraic-number-theory",
+                                                  "math.algebra.number-theory.analytic-number-theory",
+                                                  "math.algebra.number-theory.diophantine-equations",
+                                                  "math.analysis.calculus.differential-calculus",
+                                                  "math.analysis.calculus.integral-calculus",
+                                                  "math.analysis.calculus.multivariable-calculus",
+                                                  "math.analysis.calculus.vector-calculus",
+                                                  "math.probability-statistics.probability.probability-foundations",
+                                                  "math.probability-statistics.probability.random-variables-distributions",
+                                                  "math.probability-statistics.probability.stochastic-processes",
+                                                  "math.probability-statistics.statistics.statistical-inference",
+                                                  "math.probability-statistics.statistics.regression-analysis",
+                                                  "math.probability-statistics.statistics.experimental-design",
+                                                  "math.probability-statistics.statistics.bayesian-statistics",
+                                                  "math.discrete-mathematics.combinatorics.enumerative-combinatorics",
+                                                  "math.discrete-mathematics.combinatorics.extremal-combinatorics",
+                                                  "math.discrete-mathematics.graph-theory.structural-graph-theory",
+                                                  "math.discrete-mathematics.graph-theory.graph-algorithms",
+                                                  "math.discrete-mathematics.mathematical-logic.set-theory",
+                                                  "math.discrete-mathematics.mathematical-logic.computability-theory",
+                                                  "math.discrete-mathematics.mathematical-logic.proof-theory",
+                                                  "math.geometry.euclidean-geometry.classical-euclidean-geometry",
+                                                  "math.geometry.analytic-geometry.coordinate-geometry",
+                                                  "math.geometry.differential-geometry.curves-and-surfaces"
+                                              ]
+                    },
+    "nodes":  [
+                  {
+                      "concept_id":  "math",
+                      "name_ar":  "Ø§Ù„Ø±ÙŠØ§Ø¶ÙŠØ§Øª",
+                      "name_en":  "Mathematics",
+                      "aliases":  [
+                                      {
+                                          "label":  "Mathematical sciences (narrow pilot use)",
+                                          "language":  "en",
+                                          "scope":  "Not equivalent to the full mathematical sciences."
+                                      }
+                                  ],
+                      "concept_type":  "domain",
+                      "definition":  "The formal study of quantity, structure, space, change, uncertainty, and patterns through abstraction, deduction, and proof.",
+                      "scope_includes":  [
+                                             "Pure mathematics",
+                                             "Mathematical foundations",
+                                             "Mathematical treatment of uncertainty"
+                                         ],
+                      "scope_excludes":  [
+                                             "Physics, computer science, and engineering as disciplines in their own right"
+                                         ],
+                      "parent_ids":  [
+
+                                     ],
+                      "perspective_ids":  [
+                                              "perspective.model_reconstructed.mathematics_pilot"
+                                          ],
+                      "status":  "proposed",
+                      "confidence":  0.98,
+                      "review_state":  "machine_validated",
+                      "provenance":  [
+                                         {
+                                             "source_type":  "classification",
+                                             "source_id":  "msc2020",
+                                             "locator":  "scope and 2-digit areas",
+                                             "license":  null
+                                         },
+                                         {
+                                             "source_type":  "other",
+                                             "source_id":  "knowledge_os_pilot_design_v0.1",
+                                             "locator":  "docs/DATASET-GENERATION-PLAYBOOK-v0.1.md#scope",
+                                             "license":  "internal-authored"
+                                         }
+                                     ]
+                  },
+                  {
+                      "concept_id":  "math.algebra",
+                      "name_ar":  "Ø§Ù„Ø¬Ø¨Ø±",
+                      "name_en":  "Algebra",
+                      "aliases":  [
+
+                                  ],
+                      "concept_type":  "discipline",
+                      "definition":  "The study of algebraic structures, operations, equations, and the relationships preserved by algebraic transformations.",
+                      "scope_includes":  [
+                                             "Algebraic structures",
+                                             "Linear algebra",
+                                             "Number theory as a pilot subdiscipline"
+                                         ],
+                      "scope_excludes":  [
+                                             "Numerical computation as an engineering practice"
+                                         ],
+                      "parent_ids":  [
+                                         "math"
+                                     ],
+                      "perspective_ids":  [
+                                              "perspective.model_reconstructed.mathematics_pilot"
+                                          ],
+                      "status":  "proposed",
+                      "confidence":  0.95,
+                      "review_state":  "machine_validated",
+                      "provenance":  [
+                                         {
+                                             "source_type":  "classification",
+                                             "source_id":  "msc2020",
+                                             "locator":  "08-XX, 12-XX, 13-XX, 15-XX",
+                                             "license":  null
+                                         }
+                                     ]
+                  },
+                  {
+                      "concept_id":  "math.analysis",
+                      "name_ar":  "Ø§Ù„ØªØ­Ù„ÙŠÙ„ Ø§Ù„Ø±ÙŠØ§Ø¶ÙŠ",
+                      "name_en":  "Analysis",
+                      "aliases":  [
+
+                                  ],
+                      "concept_type":  "discipline",
+                      "definition":  "The study of limits, continuity, approximation, infinite processes, and functions of real or complex variables.",
+                      "scope_includes":  [
+                                             "Calculus",
+                                             "Real and complex analysis in broader classifications"
+                                         ],
+                      "scope_excludes":  [
+                                             "Discrete algorithms as a primary subject"
+                                         ],
+                      "parent_ids":  [
+                                         "math"
+                                     ],
+                      "perspective_ids":  [
+                                              "perspective.model_reconstructed.mathematics_pilot"
+                                          ],
+                      "status":  "proposed",
+                      "confidence":  0.95,
+                      "review_state":  "machine_validated",
+                      "provenance":  [
+                                         {
+                                             "source_type":  "classification",
+                                             "source_id":  "msc2020",
+                                             "locator":  "26-XX, 30-XX, 40-XX",
+                                             "license":  null
+                                         }
+                                     ]
+                  },
+                  {
+                      "concept_id":  "math.probability-statistics",
+                      "name_ar":  "Ø§Ù„Ø§Ø­ØªÙ…Ø§Ù„Ø§Øª ÙˆØ§Ù„Ø¥Ø­ØµØ§Ø¡",
+                      "name_en":  "Probability and Statistics",
+                      "aliases":  [
+
+                                  ],
+                      "concept_type":  "discipline",
+                      "definition":  "The mathematical study of uncertainty, random phenomena, data variation, inference, and decision under uncertainty.",
+                      "scope_includes":  [
+                                             "Probability theory",
+                                             "Statistical inference",
+                                             "Mathematical statistics"
+                                         ],
+                      "scope_excludes":  [
+                                             "Business analytics and data engineering as professional practices"
+                                         ],
+                      "parent_ids":  [
+                                         "math"
+                                     ],
+                      "perspective_ids":  [
+                                              "perspective.model_reconstructed.mathematics_pilot"
+                                          ],
+                      "status":  "proposed",
+                      "confidence":  0.93,
+                      "review_state":  "machine_validated",
+                      "provenance":  [
+                                         {
+                                             "source_type":  "classification",
+                                             "source_id":  "msc2020",
+                                             "locator":  "60-XX, 62-XX",
+                                             "license":  null
+                                         }
+                                     ]
+                  },
+                  {
+                      "concept_id":  "math.discrete-mathematics",
+                      "name_ar":  "Ø§Ù„Ø±ÙŠØ§Ø¶ÙŠØ§Øª Ø§Ù„Ù…ØªÙ‚Ø·Ø¹Ø©",
+                      "name_en":  "Discrete Mathematics",
+                      "aliases":  [
+
+                                  ],
+                      "concept_type":  "discipline",
+                      "definition":  "The study of finite, countable, combinatorial, graph-based, and symbolic structures, including foundational discrete reasoning.",
+                      "scope_includes":  [
+                                             "Combinatorics",
+                                             "Graph theory",
+                                             "Mathematical logic"
+                                         ],
+                      "scope_excludes":  [
+                                             "Software engineering as a professional field"
+                                         ],
+                      "parent_ids":  [
+                                         "math"
+                                     ],
+                      "perspective_ids":  [
+                                              "perspective.model_reconstructed.mathematics_pilot"
+                                          ],
+                      "status":  "proposed",
+                      "confidence":  0.91,
+                      "review_state":  "machine_validated",
+                      "provenance":  [
+                                         {
+                                             "source_type":  "classification",
+                                             "source_id":  "msc2020",
+                                             "locator":  "03-XX, 05-XX, 68-XX",
+                                             "license":  null
+                                         }
+                                     ]
+                  },
+                  {
+                      "concept_id":  "math.geometry",
+                      "name_ar":  "Ø§Ù„Ù‡Ù†Ø¯Ø³Ø©",
+                      "name_en":  "Geometry",
+                      "aliases":  [
+
+                                  ],
+                      "concept_type":  "discipline",
+                      "definition":  "The study of spatial form, geometric relationships, invariants, and spaces described synthetically, analytically, or differentially.",
+                      "scope_includes":  [
+                                             "Euclidean geometry",
+                                             "Analytic geometry",
+                                             "Differential geometry"
+                                         ],
+                      "scope_excludes":  [
+                                             "Computer graphics implementation as an engineering practice"
+                                         ],
+                      "parent_ids":  [
+                                         "math"
+                                     ],
+                      "perspective_ids":  [
+                                              "perspective.model_reconstructed.mathematics_pilot"
+                                          ],
+                      "status":  "proposed",
+                      "confidence":  0.95,
+                      "review_state":  "machine_validated",
+                      "provenance":  [
+                                         {
+                                             "source_type":  "classification",
+                                             "source_id":  "msc2020",
+                                             "locator":  "51-XX, 52-XX, 53-XX",
+                                             "license":  null
+                                         }
+                                     ]
+                  },
+                  {
+                      "concept_id":  "math.algebra.linear-algebra",
+                      "name_ar":  "Ø§Ù„Ø¬Ø¨Ø± Ø§Ù„Ø®Ø·ÙŠ",
+                      "name_en":  "Linear Algebra",
+                      "aliases":  [
+
+                                  ],
+                      "concept_type":  "subfield",
+                      "definition":  "The study of vector spaces, linear maps, matrices, systems of linear equations, and their algebraic invariants.",
+                      "scope_includes":  [
+                                             "Vector spaces",
+                                             "Linear transformations",
+                                             "Matrix theory",
+                                             "Linear systems"
+                                         ],
+                      "scope_excludes":  [
+                                             "General nonlinear algebraic geometry"
+                                         ],
+                      "parent_ids":  [
+                                         "math.algebra"
+                                     ],
+                      "perspective_ids":  [
+                                              "perspective.model_reconstructed.mathematics_pilot"
+                                          ],
+                      "status":  "proposed",
+                      "confidence":  0.97,
+                      "review_state":  "machine_validated",
+                      "provenance":  [
+                                         {
+                                             "source_type":  "classification",
+                                             "source_id":  "msc2020",
+                                             "locator":  "15-XX",
+                                             "license":  null
+                                         }
+                                     ]
+                  },
+                  {
+                      "concept_id":  "math.algebra.number-theory",
+                      "name_ar":  "Ù†Ø¸Ø±ÙŠØ© Ø§Ù„Ø£Ø¹Ø¯Ø§Ø¯",
+                      "name_en":  "Number Theory",
+                      "aliases":  [
+
+                                  ],
+                      "concept_type":  "subfield",
+                      "definition":  "The study of integers, prime numbers, congruences, Diophantine problems, and arithmetic structures.",
+                      "scope_includes":  [
+                                             "Elementary, algebraic, and analytic number theory",
+                                             "Diophantine equations"
+                                         ],
+                      "scope_excludes":  [
+                                             "Numerical number formatting"
+                                         ],
+                      "parent_ids":  [
+                                         "math.algebra"
+                                     ],
+                      "perspective_ids":  [
+                                              "perspective.model_reconstructed.mathematics_pilot"
+                                          ],
+                      "status":  "proposed",
+                      "confidence":  0.96,
+                      "review_state":  "machine_validated",
+                      "provenance":  [
+                                         {
+                                             "source_type":  "classification",
+                                             "source_id":  "msc2020",
+                                             "locator":  "11-XX",
+                                             "license":  null
+                                         }
+                                     ]
+                  },
+                  {
+                      "concept_id":  "math.analysis.calculus",
+                      "name_ar":  "Ø­Ø³Ø§Ø¨ Ø§Ù„ØªÙØ§Ø¶Ù„ ÙˆØ§Ù„ØªÙƒØ§Ù…Ù„",
+                      "name_en":  "Calculus",
+                      "aliases":  [
+
+                                  ],
+                      "concept_type":  "subfield",
+                      "definition":  "The study of change, accumulation, limits, derivatives, integrals, and their extensions to several variables and vector fields.",
+                      "scope_includes":  [
+                                             "Differential calculus",
+                                             "Integral calculus",
+                                             "Multivariable calculus",
+                                             "Vector calculus"
+                                         ],
+                      "scope_excludes":  [
+                                             "Numerical analysis implementation details"
+                                         ],
+                      "parent_ids":  [
+                                         "math.analysis"
+                                     ],
+                      "perspective_ids":  [
+                                              "perspective.model_reconstructed.mathematics_pilot"
+                                          ],
+                      "status":  "proposed",
+                      "confidence":  0.97,
+                      "review_state":  "machine_validated",
+                      "provenance":  [
+                                         {
+                                             "source_type":  "classification",
+                                             "source_id":  "msc2020",
+                                             "locator":  "26-XX",
+                                             "license":  null
+                                         }
+                                     ]
+                  },
+                  {
+                      "concept_id":  "math.probability-statistics.probability",
+                      "name_ar":  "Ù†Ø¸Ø±ÙŠØ© Ø§Ù„Ø§Ø­ØªÙ…Ø§Ù„Ø§Øª",
+                      "name_en":  "Probability",
+                      "aliases":  [
+
+                                  ],
+                      "concept_type":  "subfield",
+                      "definition":  "The mathematical theory of random experiments, events, random variables, distributions, dependence, and stochastic evolution.",
+                      "scope_includes":  [
+                                             "Probability foundations",
+                                             "Random variables and distributions",
+                                             "Stochastic processes"
+                                         ],
+                      "scope_excludes":  [
+                                             "Descriptive reporting without a probabilistic model"
+                                         ],
+                      "parent_ids":  [
+                                         "math.probability-statistics"
+                                     ],
+                      "perspective_ids":  [
+                                              "perspective.model_reconstructed.mathematics_pilot"
+                                          ],
+                      "status":  "proposed",
+                      "confidence":  0.96,
+                      "review_state":  "machine_validated",
+                      "provenance":  [
+                                         {
+                                             "source_type":  "classification",
+                                             "source_id":  "msc2020",
+                                             "locator":  "60-XX",
+                                             "license":  null
+                                         }
+                                     ]
+                  },
+                  {
+                      "concept_id":  "math.probability-statistics.statistics",
+                      "name_ar":  "Ø§Ù„Ø¥Ø­ØµØ§Ø¡ Ø§Ù„Ø±ÙŠØ§Ø¶ÙŠ",
+                      "name_en":  "Statistics",
+                      "aliases":  [
+
+                                  ],
+                      "concept_type":  "subfield",
+                      "definition":  "The mathematical study of data-generating mechanisms, estimation, testing, prediction, experimental design, and uncertainty quantification.",
+                      "scope_includes":  [
+                                             "Statistical inference",
+                                             "Regression analysis",
+                                             "Experimental design",
+                                             "Bayesian statistics"
+                                         ],
+                      "scope_excludes":  [
+                                             "Data collection operations and business intelligence tooling"
+                                         ],
+                      "parent_ids":  [
+                                         "math.probability-statistics"
+                                     ],
+                      "perspective_ids":  [
+                                              "perspective.model_reconstructed.mathematics_pilot"
+                                          ],
+                      "status":  "proposed",
+                      "confidence":  0.94,
+                      "review_state":  "machine_validated",
+                      "provenance":  [
+                                         {
+                                             "source_type":  "classification",
+                                             "source_id":  "msc2020",
+                                             "locator":  "62-XX",
+                                             "license":  null
+                                         }
+                                     ]
+                  },
+                  {
+                      "concept_id":  "math.discrete-mathematics.combinatorics",
+                      "name_ar":  "Ø§Ù„ØªÙˆØ§ÙÙ‚ÙŠØ§Øª",
+                      "name_en":  "Combinatorics",
+                      "aliases":  [
+
+                                  ],
+                      "concept_type":  "subfield",
+                      "definition":  "The study of finite and countable arrangements, selections, configurations, enumeration, and extremal structure.",
+                      "scope_includes":  [
+                                             "Enumerative combinatorics",
+                                             "Extremal combinatorics"
+                                         ],
+                      "scope_excludes":  [
+                                             "General optimization software"
+                                         ],
+                      "parent_ids":  [
+                                         "math.discrete-mathematics"
+                                     ],
+                      "perspective_ids":  [
+                                              "perspective.model_reconstructed.mathematics_pilot"
+                                          ],
+                      "status":  "proposed",
+                      "confidence":  0.93,
+                      "review_state":  "machine_validated",
+                      "provenance":  [
+                                         {
+                                             "source_type":  "classification",
+                                             "source_id":  "msc2020",
+                                             "locator":  "05-XX",
+                                             "license":  null
+                                         }
+                                     ]
+                  },
+                  {
+                      "concept_id":  "math.discrete-mathematics.graph-theory",
+                      "name_ar":  "Ù†Ø¸Ø±ÙŠØ© Ø§Ù„Ø±Ø³ÙˆÙ… Ø§Ù„Ø¨ÙŠØ§Ù†ÙŠØ©",
+                      "name_en":  "Graph Theory",
+                      "aliases":  [
+
+                                  ],
+                      "concept_type":  "subfield",
+                      "definition":  "The study of graphs, networks, connectivity, paths, cycles, coloring, and structural properties of discrete relational systems.",
+                      "scope_includes":  [
+                                             "Structural graph theory",
+                                             "Graph algorithms"
+                                         ],
+                      "scope_excludes":  [
+                                             "Network administration as an IT practice"
+                                         ],
+                      "parent_ids":  [
+                                         "math.discrete-mathematics"
+                                     ],
+                      "perspective_ids":  [
+                                              "perspective.model_reconstructed.mathematics_pilot"
+                                          ],
+                      "status":  "proposed",
+                      "confidence":  0.94,
+                      "review_state":  "machine_validated",
+                      "provenance":  [
+                                         {
+                                             "source_type":  "classification",
+                                             "source_id":  "msc2020",
+                                             "locator":  "05C-XX",
+                                             "license":  null
+                                         }
+                                     ]
+                  },
+                  {
+                      "concept_id":  "math.discrete-mathematics.mathematical-logic",
+                      "name_ar":  "Ø§Ù„Ù…Ù†Ø·Ù‚ Ø§Ù„Ø±ÙŠØ§Ø¶ÙŠ",
+                      "name_en":  "Mathematical Logic",
+                      "aliases":  [
+
+                                  ],
+                      "concept_type":  "subfield",
+                      "definition":  "The study of formal languages, proof, definability, computability, models, and foundational mathematical structures.",
+                      "scope_includes":  [
+                                             "Set theory",
+                                             "Computability theory",
+                                             "Proof theory"
+                                         ],
+                      "scope_excludes":  [
+                                             "Informal reasoning pedagogy"
+                                         ],
+                      "parent_ids":  [
+                                         "math.discrete-mathematics"
+                                     ],
+                      "perspective_ids":  [
+                                              "perspective.model_reconstructed.mathematics_pilot"
+                                          ],
+                      "status":  "proposed",
+                      "confidence":  0.9,
+                      "review_state":  "machine_validated",
+                      "provenance":  [
+                                         {
+                                             "source_type":  "classification",
+                                             "source_id":  "msc2020",
+                                             "locator":  "03-XX",
+                                             "license":  null
+                                         }
+                                     ]
+                  },
+                  {
+                      "concept_id":  "math.geometry.euclidean-geometry",
+                      "name_ar":  "Ø§Ù„Ù‡Ù†Ø¯Ø³Ø© Ø§Ù„Ø¥Ù‚Ù„ÙŠØ¯ÙŠØ©",
+                      "name_en":  "Euclidean Geometry",
+                      "aliases":  [
+
+                                  ],
+                      "concept_type":  "subfield",
+                      "definition":  "The study of points, lines, angles, figures, congruence, similarity, and metric relationships in Euclidean space.",
+                      "scope_includes":  [
+                                             "Classical Euclidean geometry",
+                                             "Metric and incidence reasoning"
+                                         ],
+                      "scope_excludes":  [
+                                             "Differential geometry of manifolds"
+                                         ],
+                      "parent_ids":  [
+                                         "math.geometry"
+                                     ],
+                      "perspective_ids":  [
+                                              "perspective.model_reconstructed.mathematics_pilot"
+                                          ],
+                      "status":  "proposed",
+                      "confidence":  0.94,
+                      "review_state":  "machine_validated",
+                      "provenance":  [
+                                         {
+                                             "source_type":  "classification",
+                                             "source_id":  "msc2020",
+                                             "locator":  "51-XX",
+                                             "license":  null
+                                         }
+                                     ]
+                  },
+                  {
+                      "concept_id":  "math.geometry.analytic-geometry",
+                      "name_ar":  "Ø§Ù„Ù‡Ù†Ø¯Ø³Ø© Ø§Ù„ØªØ­Ù„ÙŠÙ„ÙŠØ©",
+                      "name_en":  "Analytic Geometry",
+                      "aliases":  [
+
+                                  ],
+                      "concept_type":  "subfield",
+                      "definition":  "The study of geometric objects and relationships through coordinates, equations, transformations, and algebraic representation.",
+                      "scope_includes":  [
+                                             "Coordinate geometry",
+                                             "Conic and quadric descriptions"
+                                         ],
+                      "scope_excludes":  [
+                                             "General algebraic geometry"
+                                         ],
+                      "parent_ids":  [
+                                         "math.geometry"
+                                     ],
+                      "perspective_ids":  [
+                                              "perspective.model_reconstructed.mathematics_pilot"
+                                          ],
+                      "status":  "proposed",
+                      "confidence":  0.91,
+                      "review_state":  "machine_validated",
+                      "provenance":  [
+                                         {
+                                             "source_type":  "classification",
+                                             "source_id":  "msc2020",
+                                             "locator":  "51-XX, 14-XX (crosswalk only)",
+                                             "license":  null
+                                         }
+                                     ]
+                  },
+                  {
+                      "concept_id":  "math.geometry.differential-geometry",
+                      "name_ar":  "Ø§Ù„Ù‡Ù†Ø¯Ø³Ø© Ø§Ù„ØªÙØ§Ø¶Ù„ÙŠØ©",
+                      "name_en":  "Differential Geometry",
+                      "aliases":  [
+
+                                  ],
+                      "concept_type":  "subfield",
+                      "definition":  "The study of smooth curves, surfaces, manifolds, metrics, and geometric properties using differential and analytic methods.",
+                      "scope_includes":  [
+                                             "Curves and surfaces",
+                                             "Smooth geometric structures"
+                                         ],
+                      "scope_excludes":  [
+                                             "Differential calculus as a general theory of functions"
+                                         ],
+                      "parent_ids":  [
+                                         "math.geometry"
+                                     ],
+                      "perspective_ids":  [
+                                              "perspective.model_reconstructed.mathematics_pilot"
+                                          ],
+                      "status":  "proposed",
+                      "confidence":  0.94,
+                      "review_state":  "machine_validated",
+                      "provenance":  [
+                                         {
+                                             "source_type":  "classification",
+                                             "source_id":  "msc2020",
+                                             "locator":  "53-XX",
+                                             "license":  null
+                                         }
+                                     ]
+                  },
+                  {
+                      "concept_id":  "math.algebra.linear-algebra.vector-spaces-linear-maps",
+                      "name_ar":  "Ø§Ù„ÙØ¶Ø§Ø¡Ø§Øª Ø§Ù„Ù…ØªØ¬Ù‡ÙŠØ© ÙˆØ§Ù„ØªØ­ÙˆÙŠÙ„Ø§Øª Ø§Ù„Ø®Ø·ÙŠØ©",
+                      "name_en":  "Vector Spaces and Linear Maps",
+                      "aliases":  [
+
+                                  ],
+                      "concept_type":  "subfield",
+                      "definition":  "The study of vector spaces, subspaces, bases, dimension, linear maps, kernels, images, and canonical linear constructions.",
+                      "scope_includes":  [
+                                             "Vector spaces",
+                                             "Linear transformations",
+                                             "Dimension and rank"
+                                         ],
+                      "scope_excludes":  [
+                                             "Nonlinear maps as the primary object"
+                                         ],
+                      "parent_ids":  [
+                                         "math.algebra.linear-algebra"
+                                     ],
+                      "perspective_ids":  [
+                                              "perspective.model_reconstructed.mathematics_pilot"
+                                          ],
+                      "status":  "proposed",
+                      "confidence":  0.92,
+                      "review_state":  "machine_validated",
+                      "provenance":  [
+                                         {
+                                             "source_type":  "classification",
+                                             "source_id":  "msc2020",
+                                             "locator":  "15Axx",
+                                             "license":  null
+                                         }
+                                     ]
+                  },
+                  {
+                      "concept_id":  "math.algebra.linear-algebra.matrix-theory",
+                      "name_ar":  "Ù†Ø¸Ø±ÙŠØ© Ø§Ù„Ù…ØµÙÙˆÙØ§Øª",
+                      "name_en":  "Matrix Theory",
+                      "aliases":  [
+
+                                  ],
+                      "concept_type":  "subfield",
+                      "definition":  "The study of matrices, determinants, canonical forms, eigenstructure, matrix decompositions, and matrix invariants.",
+                      "scope_includes":  [
+                                             "Matrix operations",
+                                             "Eigenvalues and eigenvectors",
+                                             "Canonical forms"
+                                         ],
+                      "scope_excludes":  [
+                                             "Numerical linear algebra software engineering"
+                                         ],
+                      "parent_ids":  [
+                                         "math.algebra.linear-algebra"
+                                     ],
+                      "perspective_ids":  [
+                                              "perspective.model_reconstructed.mathematics_pilot"
+                                          ],
+                      "status":  "proposed",
+                      "confidence":  0.91,
+                      "review_state":  "machine_validated",
+                      "provenance":  [
+                                         {
+                                             "source_type":  "classification",
+                                             "source_id":  "msc2020",
+                                             "locator":  "15Axx, 15Bxx",
+                                             "license":  null
+                                         }
+                                     ]
+                  },
+                  {
+                      "concept_id":  "math.algebra.linear-algebra.linear-systems",
+                      "name_ar":  "Ø§Ù„Ø£Ù†Ø¸Ù…Ø© Ø§Ù„Ø®Ø·ÙŠØ©",
+                      "name_en":  "Linear Systems",
+                      "aliases":  [
+
+                                  ],
+                      "concept_type":  "subfield",
+                      "definition":  "The study of existence, uniqueness, structure, and solution methods for systems of linear equations and related operator equations.",
+                      "scope_includes":  [
+                                             "Linear equations",
+                                             "Rank and solvability",
+                                             "Solution spaces"
+                                         ],
+                      "scope_excludes":  [
+                                             "Nonlinear differential equation solving"
+                                         ],
+                      "parent_ids":  [
+                                         "math.algebra.linear-algebra"
+                                     ],
+                      "perspective_ids":  [
+                                              "perspective.model_reconstructed.mathematics_pilot"
+                                          ],
+                      "status":  "proposed",
+                      "confidence":  0.9,
+                      "review_state":  "machine_validated",
+                      "provenance":  [
+                                         {
+                                             "source_type":  "classification",
+                                             "source_id":  "msc2020",
+                                             "locator":  "15A06, 15Axx",
+                                             "license":  null
+                                         }
+                                     ]
+                  },
+                  {
+                      "concept_id":  "math.algebra.number-theory.elementary-number-theory",
+                      "name_ar":  "Ù†Ø¸Ø±ÙŠØ© Ø§Ù„Ø£Ø¹Ø¯Ø§Ø¯ Ø§Ù„Ø£ÙˆÙ„ÙŠØ©/Ø§Ù„Ø§Ø¨ØªØ¯Ø§Ø¦ÙŠØ©",
+                      "name_en":  "Elementary Number Theory",
+                      "aliases":  [
+
+                                  ],
+                      "concept_type":  "subfield",
+                      "definition":  "The study of divisibility, congruences, primes, arithmetic functions, and integer properties using elementary or classical methods.",
+                      "scope_includes":  [
+                                             "Divisibility",
+                                             "Congruences",
+                                             "Prime numbers"
+                                         ],
+                      "scope_excludes":  [
+                                             "Algebraic number fields as the primary framework"
+                                         ],
+                      "parent_ids":  [
+                                         "math.algebra.number-theory"
+                                     ],
+                      "perspective_ids":  [
+                                              "perspective.model_reconstructed.mathematics_pilot"
+                                          ],
+                      "status":  "proposed",
+                      "confidence":  0.93,
+                      "review_state":  "machine_validated",
+                      "provenance":  [
+                                         {
+                                             "source_type":  "classification",
+                                             "source_id":  "msc2020",
+                                             "locator":  "11Axx",
+                                             "license":  null
+                                         }
+                                     ]
+                  },
+                  {
+                      "concept_id":  "math.algebra.number-theory.algebraic-number-theory",
+                      "name_ar":  "Ù†Ø¸Ø±ÙŠØ© Ø§Ù„Ø£Ø¹Ø¯Ø§Ø¯ Ø§Ù„Ø¬Ø¨Ø±ÙŠØ©",
+                      "name_en":  "Algebraic Number Theory",
+                      "aliases":  [
+
+                                  ],
+                      "concept_type":  "subfield",
+                      "definition":  "The study of algebraic numbers, number fields, ideals, valuations, and arithmetic properties of algebraic extensions.",
+                      "scope_includes":  [
+                                             "Number fields",
+                                             "Ideals",
+                                             "Algebraic integers"
+                                         ],
+                      "scope_excludes":  [
+                                             "General abstract algebra without arithmetic focus"
+                                         ],
+                      "parent_ids":  [
+                                         "math.algebra.number-theory"
+                                     ],
+                      "perspective_ids":  [
+                                              "perspective.model_reconstructed.mathematics_pilot"
+                                          ],
+                      "status":  "proposed",
+                      "confidence":  0.93,
+                      "review_state":  "machine_validated",
+                      "provenance":  [
+                                         {
+                                             "source_type":  "classification",
+                                             "source_id":  "msc2020",
+                                             "locator":  "11Rxx",
+                                             "license":  null
+                                         }
+                                     ]
+                  },
+                  {
+                      "concept_id":  "math.algebra.number-theory.analytic-number-theory",
+                      "name_ar":  "Ù†Ø¸Ø±ÙŠØ© Ø§Ù„Ø£Ø¹Ø¯Ø§Ø¯ Ø§Ù„ØªØ­Ù„ÙŠÙ„ÙŠØ©",
+                      "name_en":  "Analytic Number Theory",
+                      "aliases":  [
+
+                                  ],
+                      "concept_type":  "subfield",
+                      "definition":  "The study of arithmetic questions using analytic functions, complex analysis, asymptotic methods, and estimates.",
+                      "scope_includes":  [
+                                             "Prime distribution",
+                                             "Dirichlet series",
+                                             "Asymptotic number theory"
+                                         ],
+                      "scope_excludes":  [
+                                             "Real analysis without arithmetic questions"
+                                         ],
+                      "parent_ids":  [
+                                         "math.algebra.number-theory"
+                                     ],
+                      "perspective_ids":  [
+                                              "perspective.model_reconstructed.mathematics_pilot"
+                                          ],
+                      "status":  "proposed",
+                      "confidence":  0.92,
+                      "review_state":  "machine_validated",
+                      "provenance":  [
+                                         {
+                                             "source_type":  "classification",
+                                             "source_id":  "msc2020",
+                                             "locator":  "11Mxx",
+                                             "license":  null
+                                         }
+                                     ]
+                  },
+                  {
+                      "concept_id":  "math.algebra.number-theory.diophantine-equations",
+                      "name_ar":  "Ø§Ù„Ù…Ø¹Ø§Ø¯Ù„Ø§Øª Ø§Ù„Ø¯ÙŠÙˆÙØ§Ù†ØªÙŠØ©",
+                      "name_en":  "Diophantine Equations",
+                      "aliases":  [
+
+                                  ],
+                      "concept_type":  "subfield",
+                      "definition":  "The study of polynomial or related equations whose solutions are sought in integers, rational numbers, or other arithmetic domains.",
+                      "scope_includes":  [
+                                             "Integer solutions",
+                                             "Rational solutions",
+                                             "Arithmetic curves in elementary scope"
+                                         ],
+                      "scope_excludes":  [
+                                             "Numerical root finding over the reals"
+                                         ],
+                      "parent_ids":  [
+                                         "math.algebra.number-theory"
+                                     ],
+                      "perspective_ids":  [
+                                              "perspective.model_reconstructed.mathematics_pilot"
+                                          ],
+                      "status":  "proposed",
+                      "confidence":  0.9,
+                      "review_state":  "machine_validated",
+                      "provenance":  [
+                                         {
+                                             "source_type":  "classification",
+                                             "source_id":  "msc2020",
+                                             "locator":  "11Dxx",
+                                             "license":  null
+                                         }
+                                     ]
+                  },
+                  {
+                      "concept_id":  "math.analysis.calculus.differential-calculus",
+                      "name_ar":  "Ø§Ù„ØªÙØ§Ø¶Ù„",
+                      "name_en":  "Differential Calculus",
+                      "aliases":  [
+
+                                  ],
+                      "concept_type":  "subfield",
+                      "definition":  "The study of rates of change, derivatives, local approximation, extrema, and differential behavior of functions.",
+                      "scope_includes":  [
+                                             "Derivatives",
+                                             "Differentiability",
+                                             "Taylor approximation"
+                                         ],
+                      "scope_excludes":  [
+                                             "Integration as the primary operation"
+                                         ],
+                      "parent_ids":  [
+                                         "math.analysis.calculus"
+                                     ],
+                      "perspective_ids":  [
+                                              "perspective.model_reconstructed.mathematics_pilot"
+                                          ],
+                      "status":  "proposed",
+                      "confidence":  0.94,
+                      "review_state":  "machine_validated",
+                      "provenance":  [
+                                         {
+                                             "source_type":  "classification",
+                                             "source_id":  "msc2020",
+                                             "locator":  "26Axx",
+                                             "license":  null
+                                         }
+                                     ]
+                  },
+                  {
+                      "concept_id":  "math.analysis.calculus.integral-calculus",
+                      "name_ar":  "Ø§Ù„ØªÙƒØ§Ù…Ù„",
+                      "name_en":  "Integral Calculus",
+                      "aliases":  [
+
+                                  ],
+                      "concept_type":  "subfield",
+                      "definition":  "The study of accumulation, definite and indefinite integrals, integration theorems, and areas or quantities obtained by integration.",
+                      "scope_includes":  [
+                                             "Riemann integration",
+                                             "Fundamental theorem of calculus",
+                                             "Improper integrals"
+                                         ],
+                      "scope_excludes":  [
+                                             "Measure theory in its full generality"
+                                         ],
+                      "parent_ids":  [
+                                         "math.analysis.calculus"
+                                     ],
+                      "perspective_ids":  [
+                                              "perspective.model_reconstructed.mathematics_pilot"
+                                          ],
+                      "status":  "proposed",
+                      "confidence":  0.94,
+                      "review_state":  "machine_validated",
+                      "provenance":  [
+                                         {
+                                             "source_type":  "classification",
+                                             "source_id":  "msc2020",
+                                             "locator":  "26Axx",
+                                             "license":  null
+                                         }
+                                     ]
+                  },
+                  {
+                      "concept_id":  "math.analysis.calculus.multivariable-calculus",
+                      "name_ar":  "Ø­Ø³Ø§Ø¨ Ø§Ù„ØªÙØ§Ø¶Ù„ ÙˆØ§Ù„ØªÙƒØ§Ù…Ù„ Ù…ØªØ¹Ø¯Ø¯ Ø§Ù„Ù…ØªØºÙŠØ±Ø§Øª",
+                      "name_en":  "Multivariable Calculus",
+                      "aliases":  [
+
+                                  ],
+                      "concept_type":  "subfield",
+                      "definition":  "The study of limits, derivatives, integrals, and optimization for functions of several real variables.",
+                      "scope_includes":  [
+                                             "Partial derivatives",
+                                             "Multiple integrals",
+                                             "Constrained optimization"
+                                         ],
+                      "scope_excludes":  [
+                                             "Abstract manifold theory as the primary setting"
+                                         ],
+                      "parent_ids":  [
+                                         "math.analysis.calculus"
+                                     ],
+                      "perspective_ids":  [
+                                              "perspective.model_reconstructed.mathematics_pilot"
+                                          ],
+                      "status":  "proposed",
+                      "confidence":  0.92,
+                      "review_state":  "machine_validated",
+                      "provenance":  [
+                                         {
+                                             "source_type":  "classification",
+                                             "source_id":  "msc2020",
+                                             "locator":  "26Bxx",
+                                             "license":  null
+                                         }
+                                     ]
+                  },
+                  {
+                      "concept_id":  "math.analysis.calculus.vector-calculus",
+                      "name_ar":  "Ø­Ø³Ø§Ø¨ Ø§Ù„Ù…ØªØ¬Ù‡Ø§Øª",
+                      "name_en":  "Vector Calculus",
+                      "aliases":  [
+
+                                  ],
+                      "concept_type":  "subfield",
+                      "definition":  "The study of scalar and vector fields, line and surface integrals, and differential operators in Euclidean spaces.",
+                      "scope_includes":  [
+                                             "Gradient, divergence, curl",
+                                             "Line and surface integrals",
+                                             "Integral theorems"
+                                         ],
+                      "scope_excludes":  [
+                                             "General vector space theory without calculus"
+                                         ],
+                      "parent_ids":  [
+                                         "math.analysis.calculus"
+                                     ],
+                      "perspective_ids":  [
+                                              "perspective.model_reconstructed.mathematics_pilot"
+                                          ],
+                      "status":  "proposed",
+                      "confidence":  0.91,
+                      "review_state":  "machine_validated",
+                      "provenance":  [
+                                         {
+                                             "source_type":  "classification",
+                                             "source_id":  "msc2020",
+                                             "locator":  "26Bxx, 53Axx",
+                                             "license":  null
+                                         }
+                                     ]
+                  },
+                  {
+                      "concept_id":  "math.probability-statistics.probability.probability-foundations",
+                      "name_ar":  "Ø£Ø³Ø³ Ø§Ù„Ø§Ø­ØªÙ…Ø§Ù„Ø§Øª",
+                      "name_en":  "Probability Foundations",
+                      "aliases":  [
+
+                                  ],
+                      "concept_type":  "subfield",
+                      "definition":  "The axioms, events, sigma-algebras, probability measures, conditional probability, and independence underlying probability theory.",
+                      "scope_includes":  [
+                                             "Probability spaces",
+                                             "Conditional probability",
+                                             "Independence"
+                                         ],
+                      "scope_excludes":  [
+                                             "Statistical estimation from observed samples"
+                                         ],
+                      "parent_ids":  [
+                                         "math.probability-statistics.probability"
+                                     ],
+                      "perspective_ids":  [
+                                              "perspective.model_reconstructed.mathematics_pilot"
+                                          ],
+                      "status":  "proposed",
+                      "confidence":  0.92,
+                      "review_state":  "machine_validated",
+                      "provenance":  [
+                                         {
+                                             "source_type":  "classification",
+                                             "source_id":  "msc2020",
+                                             "locator":  "60Axx",
+                                             "license":  null
+                                         }
+                                     ]
+                  },
+                  {
+                      "concept_id":  "math.probability-statistics.probability.random-variables-distributions",
+                      "name_ar":  "Ø§Ù„Ù…ØªØºÙŠØ±Ø§Øª Ø§Ù„Ø¹Ø´ÙˆØ§Ø¦ÙŠØ© ÙˆØ§Ù„ØªÙˆØ²ÙŠØ¹Ø§Øª",
+                      "name_en":  "Random Variables and Distributions",
+                      "aliases":  [
+
+                                  ],
+                      "concept_type":  "subfield",
+                      "definition":  "The study of random variables, probability distributions, expectations, moments, dependence, and transformations.",
+                      "scope_includes":  [
+                                             "Discrete and continuous distributions",
+                                             "Expectation and variance",
+                                             "Joint distributions"
+                                         ],
+                      "scope_excludes":  [
+                                             "Time-indexed stochastic evolution as the primary object"
+                                         ],
+                      "parent_ids":  [
+                                         "math.probability-statistics.probability"
+                                     ],
+                      "perspective_ids":  [
+                                              "perspective.model_reconstructed.mathematics_pilot"
+                                          ],
+                      "status":  "proposed",
+                      "confidence":  0.93,
+                      "review_state":  "machine_validated",
+                      "provenance":  [
+                                         {
+                                             "source_type":  "classification",
+                                             "source_id":  "msc2020",
+                                             "locator":  "60Exx, 60Fxx",
+                                             "license":  null
+                                         }
+                                     ]
+                  },
+                  {
+                      "concept_id":  "math.probability-statistics.probability.stochastic-processes",
+                      "name_ar":  "Ø§Ù„Ø¹Ù…Ù„ÙŠØ§Øª Ø§Ù„Ø¹Ø´ÙˆØ§Ø¦ÙŠØ©",
+                      "name_en":  "Stochastic Processes",
+                      "aliases":  [
+
+                                  ],
+                      "concept_type":  "subfield",
+                      "definition":  "The study of random processes indexed by time or another parameter, including dependence, paths, and long-run behavior.",
+                      "scope_includes":  [
+                                             "Markov processes",
+                                             "Martingales",
+                                             "Stationary processes"
+                                         ],
+                      "scope_excludes":  [
+                                             "Static distributions without an indexing process"
+                                         ],
+                      "parent_ids":  [
+                                         "math.probability-statistics.probability"
+                                     ],
+                      "perspective_ids":  [
+                                              "perspective.model_reconstructed.mathematics_pilot"
+                                          ],
+                      "status":  "proposed",
+                      "confidence":  0.93,
+                      "review_state":  "machine_validated",
+                      "provenance":  [
+                                         {
+                                             "source_type":  "classification",
+                                             "source_id":  "msc2020",
+                                             "locator":  "60Jxx, 60Gxx",
+                                             "license":  null
+                                         }
+                                     ]
+                  },
+                  {
+                      "concept_id":  "math.probability-statistics.statistics.statistical-inference",
+                      "name_ar":  "Ø§Ù„Ø§Ø³ØªØ¯Ù„Ø§Ù„ Ø§Ù„Ø¥Ø­ØµØ§Ø¦ÙŠ",
+                      "name_en":  "Statistical Inference",
+                      "aliases":  [
+
+                                  ],
+                      "concept_type":  "subfield",
+                      "definition":  "The study of estimating unknown quantities, testing hypotheses, and quantifying uncertainty from data under statistical models.",
+                      "scope_includes":  [
+                                             "Estimation",
+                                             "Hypothesis testing",
+                                             "Confidence procedures"
+                                         ],
+                      "scope_excludes":  [
+                                             "Descriptive summaries without inference"
+                                         ],
+                      "parent_ids":  [
+                                         "math.probability-statistics.statistics"
+                                     ],
+                      "perspective_ids":  [
+                                              "perspective.model_reconstructed.mathematics_pilot"
+                                          ],
+                      "status":  "proposed",
+                      "confidence":  0.94,
+                      "review_state":  "machine_validated",
+                      "provenance":  [
+                                         {
+                                             "source_type":  "classification",
+                                             "source_id":  "msc2020",
+                                             "locator":  "62Fxx, 62Gxx",
+                                             "license":  null
+                                         }
+                                     ]
+                  },
+                  {
+                      "concept_id":  "math.probability-statistics.statistics.regression-analysis",
+                      "name_ar":  "ØªØ­Ù„ÙŠÙ„ Ø§Ù„Ø§Ù†Ø­Ø¯Ø§Ø±",
+                      "name_en":  "Regression Analysis",
+                      "aliases":  [
+
+                                  ],
+                      "concept_type":  "subfield",
+                      "definition":  "The study of conditional relationships and prediction using regression models, including linear and generalized models.",
+                      "scope_includes":  [
+                                             "Linear regression",
+                                             "Generalized regression",
+                                             "Model diagnostics"
+                                         ],
+                      "scope_excludes":  [
+                                             "Machine-learning engineering outside statistical modeling"
+                                         ],
+                      "parent_ids":  [
+                                         "math.probability-statistics.statistics"
+                                     ],
+                      "perspective_ids":  [
+                                              "perspective.model_reconstructed.mathematics_pilot"
+                                          ],
+                      "status":  "proposed",
+                      "confidence":  0.92,
+                      "review_state":  "machine_validated",
+                      "provenance":  [
+                                         {
+                                             "source_type":  "classification",
+                                             "source_id":  "msc2020",
+                                             "locator":  "62Jxx",
+                                             "license":  null
+                                         }
+                                     ]
+                  },
+                  {
+                      "concept_id":  "math.probability-statistics.statistics.experimental-design",
+                      "name_ar":  "ØªØµÙ…ÙŠÙ… Ø§Ù„ØªØ¬Ø§Ø±Ø¨",
+                      "name_en":  "Experimental Design",
+                      "aliases":  [
+
+                                  ],
+                      "concept_type":  "subfield",
+                      "definition":  "The study of principled assignment, control, randomization, and analysis plans for learning causal or comparative information from experiments.",
+                      "scope_includes":  [
+                                             "Randomized designs",
+                                             "Factorial designs",
+                                             "Blocking"
+                                         ],
+                      "scope_excludes":  [
+                                             "Laboratory operations without a statistical design question"
+                                         ],
+                      "parent_ids":  [
+                                         "math.probability-statistics.statistics"
+                                     ],
+                      "perspective_ids":  [
+                                              "perspective.model_reconstructed.mathematics_pilot"
+                                          ],
+                      "status":  "proposed",
+                      "confidence":  0.9,
+                      "review_state":  "machine_validated",
+                      "provenance":  [
+                                         {
+                                             "source_type":  "classification",
+                                             "source_id":  "msc2020",
+                                             "locator":  "62Kxx",
+                                             "license":  null
+                                         }
+                                     ]
+                  },
+                  {
+                      "concept_id":  "math.probability-statistics.statistics.bayesian-statistics",
+                      "name_ar":  "Ø§Ù„Ø¥Ø­ØµØ§Ø¡ Ø§Ù„Ø¨Ø§ÙŠØ²ÙŠ",
+                      "name_en":  "Bayesian Statistics",
+                      "aliases":  [
+
+                                  ],
+                      "concept_type":  "subfield",
+                      "definition":  "The study of statistical reasoning that combines prior distributions with likelihoods to obtain posterior uncertainty and decisions.",
+                      "scope_includes":  [
+                                             "Prior and posterior distributions",
+                                             "Bayesian estimation",
+                                             "Bayesian decision"
+                                         ],
+                      "scope_excludes":  [
+                                             "Philosophical debate about probability without statistical modeling"
+                                         ],
+                      "parent_ids":  [
+                                         "math.probability-statistics.statistics"
+                                     ],
+                      "perspective_ids":  [
+                                              "perspective.model_reconstructed.mathematics_pilot"
+                                          ],
+                      "status":  "proposed",
+                      "confidence":  0.9,
+                      "review_state":  "machine_validated",
+                      "provenance":  [
+                                         {
+                                             "source_type":  "classification",
+                                             "source_id":  "msc2020",
+                                             "locator":  "62F15, 62C10",
+                                             "license":  null
+                                         }
+                                     ]
+                  },
+                  {
+                      "concept_id":  "math.discrete-mathematics.combinatorics.enumerative-combinatorics",
+                      "name_ar":  "Ø§Ù„ØªÙˆØ§ÙÙ‚ÙŠØ§Øª Ø§Ù„Ø¹Ø¯Ù‘ÙŠØ©",
+                      "name_en":  "Enumerative Combinatorics",
+                      "aliases":  [
+
+                                  ],
+                      "concept_type":  "subfield",
+                      "definition":  "The study of counting finite structures, generating functions, recurrence relations, and exact enumeration methods.",
+                      "scope_includes":  [
+                                             "Counting formulas",
+                                             "Generating functions",
+                                             "Recurrences"
+                                         ],
+                      "scope_excludes":  [
+                                             "Continuous probability distributions"
+                                         ],
+                      "parent_ids":  [
+                                         "math.discrete-mathematics.combinatorics"
+                                     ],
+                      "perspective_ids":  [
+                                              "perspective.model_reconstructed.mathematics_pilot"
+                                          ],
+                      "status":  "proposed",
+                      "confidence":  0.91,
+                      "review_state":  "machine_validated",
+                      "provenance":  [
+                                         {
+                                             "source_type":  "classification",
+                                             "source_id":  "msc2020",
+                                             "locator":  "05Axx",
+                                             "license":  null
+                                         }
+                                     ]
+                  },
+                  {
+                      "concept_id":  "math.discrete-mathematics.combinatorics.extremal-combinatorics",
+                      "name_ar":  "Ø§Ù„ØªÙˆØ§ÙÙ‚ÙŠØ§Øª Ø§Ù„Ù‚ØµÙˆÙ‰",
+                      "name_en":  "Extremal Combinatorics",
+                      "aliases":  [
+
+                                  ],
+                      "concept_type":  "subfield",
+                      "definition":  "The study of maximum or minimum size and structure of finite configurations subject to combinatorial constraints.",
+                      "scope_includes":  [
+                                             "Extremal set systems",
+                                             "Forbidden configurations",
+                                             "Extremal graph questions"
+                                         ],
+                      "scope_excludes":  [
+                                             "Continuous optimization without a finite combinatorial structure"
+                                         ],
+                      "parent_ids":  [
+                                         "math.discrete-mathematics.combinatorics"
+                                     ],
+                      "perspective_ids":  [
+                                              "perspective.model_reconstructed.mathematics_pilot"
+                                          ],
+                      "status":  "proposed",
+                      "confidence":  0.89,
+                      "review_state":  "machine_validated",
+                      "provenance":  [
+                                         {
+                                             "source_type":  "classification",
+                                             "source_id":  "msc2020",
+                                             "locator":  "05Dxx",
+                                             "license":  null
+                                         }
+                                     ]
+                  },
+                  {
+                      "concept_id":  "math.discrete-mathematics.graph-theory.structural-graph-theory",
+                      "name_ar":  "Ù†Ø¸Ø±ÙŠØ© Ø§Ù„Ø±Ø³ÙˆÙ… Ø§Ù„Ø¨ÙŠØ§Ù†ÙŠØ© Ø§Ù„Ø¨Ù†ÙŠÙˆÙŠØ©",
+                      "name_en":  "Structural Graph Theory",
+                      "aliases":  [
+
+                                  ],
+                      "concept_type":  "subfield",
+                      "definition":  "The study of graph structure through connectivity, minors, decompositions, coloring, cycles, and structural invariants.",
+                      "scope_includes":  [
+                                             "Graph classes",
+                                             "Connectivity",
+                                             "Coloring and minors"
+                                         ],
+                      "scope_excludes":  [
+                                             "Operational network monitoring"
+                                         ],
+                      "parent_ids":  [
+                                         "math.discrete-mathematics.graph-theory"
+                                     ],
+                      "perspective_ids":  [
+                                              "perspective.model_reconstructed.mathematics_pilot"
+                                          ],
+                      "status":  "proposed",
+                      "confidence":  0.9,
+                      "review_state":  "machine_validated",
+                      "provenance":  [
+                                         {
+                                             "source_type":  "classification",
+                                             "source_id":  "msc2020",
+                                             "locator":  "05Cxx",
+                                             "license":  null
+                                         }
+                                     ]
+                  },
+                  {
+                      "concept_id":  "math.discrete-mathematics.graph-theory.graph-algorithms",
+                      "name_ar":  "Ø®ÙˆØ§Ø±Ø²Ù…ÙŠØ§Øª Ø§Ù„Ø±Ø³ÙˆÙ… Ø§Ù„Ø¨ÙŠØ§Ù†ÙŠØ©",
+                      "name_en":  "Graph Algorithms",
+                      "aliases":  [
+
+                                  ],
+                      "concept_type":  "subfield",
+                      "definition":  "The study of algorithms whose inputs, outputs, or correctness properties are expressed using graph structures.",
+                      "scope_includes":  [
+                                             "Paths and flows",
+                                             "Matching",
+                                             "Graph traversal and optimization"
+                                         ],
+                      "scope_excludes":  [
+                                             "General software engineering practices"
+                                         ],
+                      "parent_ids":  [
+                                         "math.discrete-mathematics.graph-theory"
+                                     ],
+                      "perspective_ids":  [
+                                              "perspective.model_reconstructed.mathematics_pilot"
+                                          ],
+                      "status":  "proposed",
+                      "confidence":  0.86,
+                      "review_state":  "machine_validated",
+                      "provenance":  [
+                                         {
+                                             "source_type":  "classification",
+                                             "source_id":  "msc2020",
+                                             "locator":  "05C85, 68R10; cross-domain boundary",
+                                             "license":  null
+                                         }
+                                     ]
+                  },
+                  {
+                      "concept_id":  "math.discrete-mathematics.mathematical-logic.set-theory",
+                      "name_ar":  "Ù†Ø¸Ø±ÙŠØ© Ø§Ù„Ù…Ø¬Ù…ÙˆØ¹Ø§Øª",
+                      "name_en":  "Set Theory",
+                      "aliases":  [
+
+                                  ],
+                      "concept_type":  "subfield",
+                      "definition":  "The study of sets, membership, cardinality, ordinal structure, axioms, and constructions used as mathematical foundations.",
+                      "scope_includes":  [
+                                             "Axiomatic set theory",
+                                             "Cardinal and ordinal theory",
+                                             "Set constructions"
+                                         ],
+                      "scope_excludes":  [
+                                             "Database set operations as an implementation topic"
+                                         ],
+                      "parent_ids":  [
+                                         "math.discrete-mathematics.mathematical-logic"
+                                     ],
+                      "perspective_ids":  [
+                                              "perspective.model_reconstructed.mathematics_pilot"
+                                          ],
+                      "status":  "proposed",
+                      "confidence":  0.91,
+                      "review_state":  "machine_validated",
+                      "provenance":  [
+                                         {
+                                             "source_type":  "classification",
+                                             "source_id":  "msc2020",
+                                             "locator":  "03E-XX",
+                                             "license":  null
+                                         }
+                                     ]
+                  },
+                  {
+                      "concept_id":  "math.discrete-mathematics.mathematical-logic.computability-theory",
+                      "name_ar":  "Ù†Ø¸Ø±ÙŠØ© Ø§Ù„Ù‚Ø§Ø¨Ù„ÙŠØ© Ù„Ù„Ø­ÙˆØ³Ø¨Ø©",
+                      "name_en":  "Computability Theory",
+                      "aliases":  [
+
+                                  ],
+                      "concept_type":  "subfield",
+                      "definition":  "The study of which functions and problems can be computed, with what resources, and by which formal models of computation.",
+                      "scope_includes":  [
+                                             "Recursive functions",
+                                             "Turing computability",
+                                             "Degrees of unsolvability"
+                                         ],
+                      "scope_excludes":  [
+                                             "Application programming and software delivery"
+                                         ],
+                      "parent_ids":  [
+                                         "math.discrete-mathematics.mathematical-logic"
+                                     ],
+                      "perspective_ids":  [
+                                              "perspective.model_reconstructed.mathematics_pilot"
+                                          ],
+                      "status":  "proposed",
+                      "confidence":  0.9,
+                      "review_state":  "machine_validated",
+                      "provenance":  [
+                                         {
+                                             "source_type":  "classification",
+                                             "source_id":  "msc2020",
+                                             "locator":  "03D-XX",
+                                             "license":  null
+                                         }
+                                     ]
+                  },
+                  {
+                      "concept_id":  "math.discrete-mathematics.mathematical-logic.proof-theory",
+                      "name_ar":  "Ù†Ø¸Ø±ÙŠØ© Ø§Ù„Ø¨Ø±Ù‡Ø§Ù†",
+                      "name_en":  "Proof Theory",
+                      "aliases":  [
+
+                                  ],
+                      "concept_type":  "subfield",
+                      "definition":  "The study of formal proofs as mathematical objects, including proof systems, consistency, normalization, and proof strength.",
+                      "scope_includes":  [
+                                             "Formal deduction",
+                                             "Proof transformations",
+                                             "Consistency and strength"
+                                         ],
+                      "scope_excludes":  [
+                                             "Informal proof-writing advice"
+                                         ],
+                      "parent_ids":  [
+                                         "math.discrete-mathematics.mathematical-logic"
+                                     ],
+                      "perspective_ids":  [
+                                              "perspective.model_reconstructed.mathematics_pilot"
+                                          ],
+                      "status":  "proposed",
+                      "confidence":  0.9,
+                      "review_state":  "machine_validated",
+                      "provenance":  [
+                                         {
+                                             "source_type":  "classification",
+                                             "source_id":  "msc2020",
+                                             "locator":  "03F-XX",
+                                             "license":  null
+                                         }
+                                     ]
+                  },
+                  {
+                      "concept_id":  "math.geometry.euclidean-geometry.classical-euclidean-geometry",
+                      "name_ar":  "Ø§Ù„Ù‡Ù†Ø¯Ø³Ø© Ø§Ù„Ø¥Ù‚Ù„ÙŠØ¯ÙŠØ© Ø§Ù„ÙƒÙ„Ø§Ø³ÙŠÙƒÙŠØ©",
+                      "name_en":  "Classical Euclidean Geometry",
+                      "aliases":  [
+
+                                  ],
+                      "concept_type":  "subfield",
+                      "definition":  "The study of classical Euclidean figures and theorems involving incidence, congruence, similarity, angles, circles, and metric relations.",
+                      "scope_includes":  [
+                                             "Triangles",
+                                             "Circles",
+                                             "Congruence and similarity"
+                                         ],
+                      "scope_excludes":  [
+                                             "Coordinate methods as the primary representation"
+                                         ],
+                      "parent_ids":  [
+                                         "math.geometry.euclidean-geometry"
+                                     ],
+                      "perspective_ids":  [
+                                              "perspective.model_reconstructed.mathematics_pilot"
+                                          ],
+                      "status":  "proposed",
+                      "confidence":  0.89,
+                      "review_state":  "machine_validated",
+                      "provenance":  [
+                                         {
+                                             "source_type":  "classification",
+                                             "source_id":  "msc2020",
+                                             "locator":  "51M04, 51-XX",
+                                             "license":  null
+                                         }
+                                     ]
+                  },
+                  {
+                      "concept_id":  "math.geometry.analytic-geometry.coordinate-geometry",
+                      "name_ar":  "Ø§Ù„Ù‡Ù†Ø¯Ø³Ø© Ø§Ù„Ø¥Ø­Ø¯Ø§Ø«ÙŠØ©",
+                      "name_en":  "Coordinate Geometry",
+                      "aliases":  [
+
+                                  ],
+                      "concept_type":  "subfield",
+                      "definition":  "The study of geometric figures and relations represented by coordinates, equations, vectors, and transformations in Euclidean spaces.",
+                      "scope_includes":  [
+                                             "Cartesian coordinates",
+                                             "Conics",
+                                             "Coordinate transformations"
+                                         ],
+                      "scope_excludes":  [
+                                             "Abstract algebraic varieties"
+                                         ],
+                      "parent_ids":  [
+                                         "math.geometry.analytic-geometry"
+                                     ],
+                      "perspective_ids":  [
+                                              "perspective.model_reconstructed.mathematics_pilot"
+                                          ],
+                      "status":  "proposed",
+                      "confidence":  0.9,
+                      "review_state":  "machine_validated",
+                      "provenance":  [
+                                         {
+                                             "source_type":  "classification",
+                                             "source_id":  "msc2020",
+                                             "locator":  "51Nxx",
+                                             "license":  null
+                                         }
+                                     ]
+                  },
+                  {
+                      "concept_id":  "math.geometry.differential-geometry.curves-and-surfaces",
+                      "name_ar":  "Ø§Ù„Ù…Ù†Ø­Ù†ÙŠØ§Øª ÙˆØ§Ù„Ø£Ø³Ø·Ø­",
+                      "name_en":  "Curves and Surfaces",
+                      "aliases":  [
+
+                                  ],
+                      "concept_type":  "subfield",
+                      "definition":  "The study of smooth curves and surfaces through parametrization, curvature, tangent spaces, metrics, and local or global geometric properties.",
+                      "scope_includes":  [
+                                             "Parametric curves",
+                                             "Regular surfaces",
+                                             "Curvature"
+                                         ],
+                      "scope_excludes":  [
+                                             "Elementary plane geometry without smooth structure"
+                                         ],
+                      "parent_ids":  [
+                                         "math.geometry.differential-geometry"
+                                     ],
+                      "perspective_ids":  [
+                                              "perspective.model_reconstructed.mathematics_pilot"
+                                          ],
+                      "status":  "proposed",
+                      "confidence":  0.91,
+                      "review_state":  "machine_validated",
+                      "provenance":  [
+                                         {
+                                             "source_type":  "classification",
+                                             "source_id":  "msc2020",
+                                             "locator":  "53Axx",
+                                             "license":  null
+                                         }
+                                     ]
+                  }
+              ],
+    "relations":  [
+                      {
+                          "relation_id":  "rel.math.algebra",
+                          "source_id":  "math",
+                          "relation_type":  "has_part",
+                          "target_id":  "math.algebra",
+                          "direction":  "directed",
+                          "perspective_id":  "perspective.model_reconstructed.mathematics_pilot",
+                          "classification_system_id":  "knowledge_os_mathematics_pilot_v0.1",
+                          "explanation":  "Algebra is a broad discipline within the Mathematics pilot.",
+                          "confidence":  0.95,
+                          "status":  "proposed",
+                          "review_state":  "machine_validated",
+                          "provenance":  [
+                                             {
+                                                 "source_type":  "classification",
+                                                 "source_id":  "msc2020",
+                                                 "locator":  "12-XX, 15-XX",
+                                                 "claim_text":  "Broad mathematical area used as a reference."
+                                             }
+                                         ]
+                      },
+                      {
+                          "relation_id":  "rel.math.analysis",
+                          "source_id":  "math",
+                          "relation_type":  "has_part",
+                          "target_id":  "math.analysis",
+                          "direction":  "directed",
+                          "perspective_id":  "perspective.model_reconstructed.mathematics_pilot",
+                          "classification_system_id":  "knowledge_os_mathematics_pilot_v0.1",
+                          "explanation":  "Analysis is a broad discipline within the Mathematics pilot.",
+                          "confidence":  0.95,
+                          "status":  "proposed",
+                          "review_state":  "machine_validated",
+                          "provenance":  [
+                                             {
+                                                 "source_type":  "classification",
+                                                 "source_id":  "msc2020",
+                                                 "locator":  "26-XX, 30-XX",
+                                                 "claim_text":  "Broad mathematical area used as a reference."
+                                             }
+                                         ]
+                      },
+                      {
+                          "relation_id":  "rel.math.probability-statistics",
+                          "source_id":  "math",
+                          "relation_type":  "has_part",
+                          "target_id":  "math.probability-statistics",
+                          "direction":  "directed",
+                          "perspective_id":  "perspective.model_reconstructed.mathematics_pilot",
+                          "classification_system_id":  "knowledge_os_mathematics_pilot_v0.1",
+                          "explanation":  "Probability and Statistics are grouped because both formalize uncertainty and variation, while remaining separate subdisciplines below.",
+                          "confidence":  0.9,
+                          "status":  "proposed",
+                          "review_state":  "machine_validated",
+                          "provenance":  [
+                                             {
+                                                 "source_type":  "classification",
+                                                 "source_id":  "msc2020",
+                                                 "locator":  "60-XX, 62-XX",
+                                                 "claim_text":  "Adjacent reference areas grouped for this pilot."
+                                             }
+                                         ]
+                      },
+                      {
+                          "relation_id":  "rel.math.discrete-mathematics",
+                          "source_id":  "math",
+                          "relation_type":  "has_part",
+                          "target_id":  "math.discrete-mathematics",
+                          "direction":  "directed",
+                          "perspective_id":  "perspective.model_reconstructed.mathematics_pilot",
+                          "classification_system_id":  "knowledge_os_mathematics_pilot_v0.1",
+                          "explanation":  "Discrete Mathematics is a natural pilot discipline for finite and countable structures.",
+                          "confidence":  0.9,
+                          "status":  "proposed",
+                          "review_state":  "machine_validated",
+                          "provenance":  [
+                                             {
+                                                 "source_type":  "classification",
+                                                 "source_id":  "msc2020",
+                                                 "locator":  "03-XX, 05-XX",
+                                                 "claim_text":  "Reference areas used for a practical grouping."
+                                             }
+                                         ]
+                      },
+                      {
+                          "relation_id":  "rel.math.geometry",
+                          "source_id":  "math",
+                          "relation_type":  "has_part",
+                          "target_id":  "math.geometry",
+                          "direction":  "directed",
+                          "perspective_id":  "perspective.model_reconstructed.mathematics_pilot",
+                          "classification_system_id":  "knowledge_os_mathematics_pilot_v0.1",
+                          "explanation":  "Geometry is a broad mathematical discipline with distinct synthetic, coordinate, and differential branches.",
+                          "confidence":  0.95,
+                          "status":  "proposed",
+                          "review_state":  "machine_validated",
+                          "provenance":  [
+                                             {
+                                                 "source_type":  "classification",
+                                                 "source_id":  "msc2020",
+                                                 "locator":  "51-XX, 53-XX",
+                                                 "claim_text":  "Broad mathematical area used as a reference."
+                                             }
+                                         ]
+                      },
+                      {
+                          "relation_id":  "rel.algebra.linear-algebra",
+                          "source_id":  "math.algebra",
+                          "relation_type":  "has_subfield",
+                          "target_id":  "math.algebra.linear-algebra",
+                          "direction":  "directed",
+                          "perspective_id":  "perspective.model_reconstructed.mathematics_pilot",
+                          "classification_system_id":  "knowledge_os_mathematics_pilot_v0.1",
+                          "explanation":  "Linear Algebra is placed under Algebra because its core objects and invariants are algebraic.",
+                          "confidence":  0.96,
+                          "status":  "proposed",
+                          "review_state":  "machine_validated",
+                          "provenance":  [
+                                             {
+                                                 "source_type":  "classification",
+                                                 "source_id":  "msc2020",
+                                                 "locator":  "15-XX",
+                                                 "claim_text":  "Linear algebra reference area."
+                                             }
+                                         ]
+                      },
+                      {
+                          "relation_id":  "rel.algebra.number-theory",
+                          "source_id":  "math.algebra",
+                          "relation_type":  "has_subfield",
+                          "target_id":  "math.algebra.number-theory",
+                          "direction":  "directed",
+                          "perspective_id":  "perspective.model_reconstructed.mathematics_pilot",
+                          "classification_system_id":  "knowledge_os_mathematics_pilot_v0.1",
+                          "explanation":  "Number Theory is placed under Algebra for this pilot because arithmetic structures and algebraic methods provide a coherent parent, while cross-links remain possible.",
+                          "confidence":  0.84,
+                          "status":  "proposed",
+                          "review_state":  "machine_validated",
+                          "provenance":  [
+                                             {
+                                                 "source_type":  "classification",
+                                                 "source_id":  "msc2020",
+                                                 "locator":  "11-XX",
+                                                 "claim_text":  "Number theory reference area."
+                                             }
+                                         ]
+                      },
+                      {
+                          "relation_id":  "rel.analysis.calculus",
+                          "source_id":  "math.analysis",
+                          "relation_type":  "has_subfield",
+                          "target_id":  "math.analysis.calculus",
+                          "direction":  "directed",
+                          "perspective_id":  "perspective.model_reconstructed.mathematics_pilot",
+                          "classification_system_id":  "knowledge_os_mathematics_pilot_v0.1",
+                          "explanation":  "Calculus is the introductory and applied subfield of analysis concerned with change and accumulation.",
+                          "confidence":  0.96,
+                          "status":  "proposed",
+                          "review_state":  "machine_validated",
+                          "provenance":  [
+                                             {
+                                                 "source_type":  "classification",
+                                                 "source_id":  "msc2020",
+                                                 "locator":  "26-XX",
+                                                 "claim_text":  "Calculus reference area."
+                                             }
+                                         ]
+                      },
+                      {
+                          "relation_id":  "rel.probability-statistics.probability",
+                          "source_id":  "math.probability-statistics",
+                          "relation_type":  "has_subfield",
+                          "target_id":  "math.probability-statistics.probability",
+                          "direction":  "directed",
+                          "perspective_id":  "perspective.model_reconstructed.mathematics_pilot",
+                          "classification_system_id":  "knowledge_os_mathematics_pilot_v0.1",
+                          "explanation":  "Probability is separated from Statistics because it studies random structure independently of inference from samples.",
+                          "confidence":  0.95,
+                          "status":  "proposed",
+                          "review_state":  "machine_validated",
+                          "provenance":  [
+                                             {
+                                                 "source_type":  "classification",
+                                                 "source_id":  "msc2020",
+                                                 "locator":  "60-XX",
+                                                 "claim_text":  "Probability reference area."
+                                             }
+                                         ]
+                      },
+                      {
+                          "relation_id":  "rel.probability-statistics.statistics",
+                          "source_id":  "math.probability-statistics",
+                          "relation_type":  "has_subfield",
+                          "target_id":  "math.probability-statistics.statistics",
+                          "direction":  "directed",
+                          "perspective_id":  "perspective.model_reconstructed.mathematics_pilot",
+                          "classification_system_id":  "knowledge_os_mathematics_pilot_v0.1",
+                          "explanation":  "Statistics is separated from Probability because it centers on data, models, inference, and design.",
+                          "confidence":  0.95,
+                          "status":  "proposed",
+                          "review_state":  "machine_validated",
+                          "provenance":  [
+                                             {
+                                                 "source_type":  "classification",
+                                                 "source_id":  "msc2020",
+                                                 "locator":  "62-XX",
+                                                 "claim_text":  "Statistics reference area."
+                                             }
+                                         ]
+                      },
+                      {
+                          "relation_id":  "rel.discrete.combinatorics",
+                          "source_id":  "math.discrete-mathematics",
+                          "relation_type":  "has_subfield",
+                          "target_id":  "math.discrete-mathematics.combinatorics",
+                          "direction":  "directed",
+                          "perspective_id":  "perspective.model_reconstructed.mathematics_pilot",
+                          "classification_system_id":  "knowledge_os_mathematics_pilot_v0.1",
+                          "explanation":  "Combinatorics is a natural branch of discrete mathematics focused on finite arrangements and counting.",
+                          "confidence":  0.95,
+                          "status":  "proposed",
+                          "review_state":  "machine_validated",
+                          "provenance":  [
+                                             {
+                                                 "source_type":  "classification",
+                                                 "source_id":  "msc2020",
+                                                 "locator":  "05-XX",
+                                                 "claim_text":  "Combinatorics reference area."
+                                             }
+                                         ]
+                      },
+                      {
+                          "relation_id":  "rel.discrete.graph-theory",
+                          "source_id":  "math.discrete-mathematics",
+                          "relation_type":  "has_subfield",
+                          "target_id":  "math.discrete-mathematics.graph-theory",
+                          "direction":  "directed",
+                          "perspective_id":  "perspective.model_reconstructed.mathematics_pilot",
+                          "classification_system_id":  "knowledge_os_mathematics_pilot_v0.1",
+                          "explanation":  "Graph Theory is a natural branch of discrete mathematics focused on relational structures.",
+                          "confidence":  0.95,
+                          "status":  "proposed",
+                          "review_state":  "machine_validated",
+                          "provenance":  [
+                                             {
+                                                 "source_type":  "classification",
+                                                 "source_id":  "msc2020",
+                                                 "locator":  "05C-XX",
+                                                 "claim_text":  "Graph theory reference area."
+                                             }
+                                         ]
+                      },
+                      {
+                          "relation_id":  "rel.discrete.mathematical-logic",
+                          "source_id":  "math.discrete-mathematics",
+                          "relation_type":  "has_subfield",
+                          "target_id":  "math.discrete-mathematics.mathematical-logic",
+                          "direction":  "directed",
+                          "perspective_id":  "perspective.model_reconstructed.mathematics_pilot",
+                          "classification_system_id":  "knowledge_os_mathematics_pilot_v0.1",
+                          "explanation":  "Mathematical Logic is included because formal symbolic structures and finite proof/computation systems are a natural discrete boundary for this pilot.",
+                          "confidence":  0.82,
+                          "status":  "proposed",
+                          "review_state":  "machine_validated",
+                          "provenance":  [
+                                             {
+                                                 "source_type":  "classification",
+                                                 "source_id":  "msc2020",
+                                                 "locator":  "03-XX",
+                                                 "claim_text":  "Logic reference area; placement is a pilot choice."
+                                             }
+                                         ]
+                      },
+                      {
+                          "relation_id":  "rel.geometry.euclidean",
+                          "source_id":  "math.geometry",
+                          "relation_type":  "has_subfield",
+                          "target_id":  "math.geometry.euclidean-geometry",
+                          "direction":  "directed",
+                          "perspective_id":  "perspective.model_reconstructed.mathematics_pilot",
+                          "classification_system_id":  "knowledge_os_mathematics_pilot_v0.1",
+                          "explanation":  "Euclidean Geometry is the synthetic and metric branch centered on Euclidean space.",
+                          "confidence":  0.94,
+                          "status":  "proposed",
+                          "review_state":  "machine_validated",
+                          "provenance":  [
+                                             {
+                                                 "source_type":  "classification",
+                                                 "source_id":  "msc2020",
+                                                 "locator":  "51-XX",
+                                                 "claim_text":  "Geometry reference area."
+                                             }
+                                         ]
+                      },
+                      {
+                          "relation_id":  "rel.geometry.analytic",
+                          "source_id":  "math.geometry",
+                          "relation_type":  "has_subfield",
+                          "target_id":  "math.geometry.analytic-geometry",
+                          "direction":  "directed",
+                          "perspective_id":  "perspective.model_reconstructed.mathematics_pilot",
+                          "classification_system_id":  "knowledge_os_mathematics_pilot_v0.1",
+                          "explanation":  "Analytic Geometry is separated because coordinates and equations are its defining representation.",
+                          "confidence":  0.9,
+                          "status":  "proposed",
+                          "review_state":  "machine_validated",
+                          "provenance":  [
+                                             {
+                                                 "source_type":  "classification",
+                                                 "source_id":  "msc2020",
+                                                 "locator":  "51-XX",
+                                                 "claim_text":  "Geometry reference area."
+                                             }
+                                         ]
+                      },
+                      {
+                          "relation_id":  "rel.geometry.differential",
+                          "source_id":  "math.geometry",
+                          "relation_type":  "has_subfield",
+                          "target_id":  "math.geometry.differential-geometry",
+                          "direction":  "directed",
+                          "perspective_id":  "perspective.model_reconstructed.mathematics_pilot",
+                          "classification_system_id":  "knowledge_os_mathematics_pilot_v0.1",
+                          "explanation":  "Differential Geometry is separated because smooth structure and differential methods define its boundary.",
+                          "confidence":  0.94,
+                          "status":  "proposed",
+                          "review_state":  "machine_validated",
+                          "provenance":  [
+                                             {
+                                                 "source_type":  "classification",
+                                                 "source_id":  "msc2020",
+                                                 "locator":  "53-XX",
+                                                 "claim_text":  "Differential geometry reference area."
+                                             }
+                                         ]
+                      },
+                      {
+                          "relation_id":  "rel.atomic.algebra.linear-algebra.vector-spaces-linear-maps",
+                          "source_id":  "math.algebra.linear-algebra",
+                          "relation_type":  "has_subfield",
+                          "target_id":  "math.algebra.linear-algebra.vector-spaces-linear-maps",
+                          "direction":  "directed",
+                          "perspective_id":  "perspective.model_reconstructed.mathematics_pilot",
+                          "classification_system_id":  "knowledge_os_mathematics_pilot_v0.1",
+                          "explanation":  "The leaf is attached to its declared subdiscipline; atomicity rationale is recorded in data/atomic-disciplines-v0.1.json.",
+                          "confidence":  0.92,
+                          "status":  "proposed",
+                          "review_state":  "machine_validated",
+                          "provenance":  [
+                                             {
+                                                 "source_type":  "other",
+                                                 "source_id":  "knowledge_os_pilot_design_v0.1",
+                                                 "locator":  "data/atomic-disciplines-v0.1.json",
+                                                 "claim_text":  "Derived tree edge from the atomic registry."
+                                             }
+                                         ]
+                      },
+                      {
+                          "relation_id":  "rel.atomic.algebra.linear-algebra.matrix-theory",
+                          "source_id":  "math.algebra.linear-algebra",
+                          "relation_type":  "has_subfield",
+                          "target_id":  "math.algebra.linear-algebra.matrix-theory",
+                          "direction":  "directed",
+                          "perspective_id":  "perspective.model_reconstructed.mathematics_pilot",
+                          "classification_system_id":  "knowledge_os_mathematics_pilot_v0.1",
+                          "explanation":  "The leaf is attached to its declared subdiscipline; atomicity rationale is recorded in data/atomic-disciplines-v0.1.json.",
+                          "confidence":  0.91,
+                          "status":  "proposed",
+                          "review_state":  "machine_validated",
+                          "provenance":  [
+                                             {
+                                                 "source_type":  "other",
+                                                 "source_id":  "knowledge_os_pilot_design_v0.1",
+                                                 "locator":  "data/atomic-disciplines-v0.1.json",
+                                                 "claim_text":  "Derived tree edge from the atomic registry."
+                                             }
+                                         ]
+                      },
+                      {
+                          "relation_id":  "rel.atomic.algebra.linear-algebra.linear-systems",
+                          "source_id":  "math.algebra.linear-algebra",
+                          "relation_type":  "has_subfield",
+                          "target_id":  "math.algebra.linear-algebra.linear-systems",
+                          "direction":  "directed",
+                          "perspective_id":  "perspective.model_reconstructed.mathematics_pilot",
+                          "classification_system_id":  "knowledge_os_mathematics_pilot_v0.1",
+                          "explanation":  "The leaf is attached to its declared subdiscipline; atomicity rationale is recorded in data/atomic-disciplines-v0.1.json.",
+                          "confidence":  0.9,
+                          "status":  "proposed",
+                          "review_state":  "machine_validated",
+                          "provenance":  [
+                                             {
+                                                 "source_type":  "other",
+                                                 "source_id":  "knowledge_os_pilot_design_v0.1",
+                                                 "locator":  "data/atomic-disciplines-v0.1.json",
+                                                 "claim_text":  "Derived tree edge from the atomic registry."
+                                             }
+                                         ]
+                      },
+                      {
+                          "relation_id":  "rel.atomic.algebra.number-theory.elementary-number-theory",
+                          "source_id":  "math.algebra.number-theory",
+                          "relation_type":  "has_subfield",
+                          "target_id":  "math.algebra.number-theory.elementary-number-theory",
+                          "direction":  "directed",
+                          "perspective_id":  "perspective.model_reconstructed.mathematics_pilot",
+                          "classification_system_id":  "knowledge_os_mathematics_pilot_v0.1",
+                          "explanation":  "The leaf is attached to its declared subdiscipline; atomicity rationale is recorded in data/atomic-disciplines-v0.1.json.",
+                          "confidence":  0.93,
+                          "status":  "proposed",
+                          "review_state":  "machine_validated",
+                          "provenance":  [
+                                             {
+                                                 "source_type":  "other",
+                                                 "source_id":  "knowledge_os_pilot_design_v0.1",
+                                                 "locator":  "data/atomic-disciplines-v0.1.json",
+                                                 "claim_text":  "Derived tree edge from the atomic registry."
+                                             }
+                                         ]
+                      },
+                      {
+                          "relation_id":  "rel.atomic.algebra.number-theory.algebraic-number-theory",
+                          "source_id":  "math.algebra.number-theory",
+                          "relation_type":  "has_subfield",
+                          "target_id":  "math.algebra.number-theory.algebraic-number-theory",
+                          "direction":  "directed",
+                          "perspective_id":  "perspective.model_reconstructed.mathematics_pilot",
+                          "classification_system_id":  "knowledge_os_mathematics_pilot_v0.1",
+                          "explanation":  "The leaf is attached to its declared subdiscipline; atomicity rationale is recorded in data/atomic-disciplines-v0.1.json.",
+                          "confidence":  0.93,
+                          "status":  "proposed",
+                          "review_state":  "machine_validated",
+                          "provenance":  [
+                                             {
+                                                 "source_type":  "other",
+                                                 "source_id":  "knowledge_os_pilot_design_v0.1",
+                                                 "locator":  "data/atomic-disciplines-v0.1.json",
+                                                 "claim_text":  "Derived tree edge from the atomic registry."
+                                             }
+                                         ]
+                      },
+                      {
+                          "relation_id":  "rel.atomic.algebra.number-theory.analytic-number-theory",
+                          "source_id":  "math.algebra.number-theory",
+                          "relation_type":  "has_subfield",
+                          "target_id":  "math.algebra.number-theory.analytic-number-theory",
+                          "direction":  "directed",
+                          "perspective_id":  "perspective.model_reconstructed.mathematics_pilot",
+                          "classification_system_id":  "knowledge_os_mathematics_pilot_v0.1",
+                          "explanation":  "The leaf is attached to its declared subdiscipline; atomicity rationale is recorded in data/atomic-disciplines-v0.1.json.",
+                          "confidence":  0.92,
+                          "status":  "proposed",
+                          "review_state":  "machine_validated",
+                          "provenance":  [
+                                             {
+                                                 "source_type":  "other",
+                                                 "source_id":  "knowledge_os_pilot_design_v0.1",
+                                                 "locator":  "data/atomic-disciplines-v0.1.json",
+                                                 "claim_text":  "Derived tree edge from the atomic registry."
+                                             }
+                                         ]
+                      },
+                      {
+                          "relation_id":  "rel.atomic.algebra.number-theory.diophantine-equations",
+                          "source_id":  "math.algebra.number-theory",
+                          "relation_type":  "has_subfield",
+                          "target_id":  "math.algebra.number-theory.diophantine-equations",
+                          "direction":  "directed",
+                          "perspective_id":  "perspective.model_reconstructed.mathematics_pilot",
+                          "classification_system_id":  "knowledge_os_mathematics_pilot_v0.1",
+                          "explanation":  "The leaf is attached to its declared subdiscipline; atomicity rationale is recorded in data/atomic-disciplines-v0.1.json.",
+                          "confidence":  0.9,
+                          "status":  "proposed",
+                          "review_state":  "machine_validated",
+                          "provenance":  [
+                                             {
+                                                 "source_type":  "other",
+                                                 "source_id":  "knowledge_os_pilot_design_v0.1",
+                                                 "locator":  "data/atomic-disciplines-v0.1.json",
+                                                 "claim_text":  "Derived tree edge from the atomic registry."
+                                             }
+                                         ]
+                      },
+                      {
+                          "relation_id":  "rel.atomic.analysis.calculus.differential-calculus",
+                          "source_id":  "math.analysis.calculus",
+                          "relation_type":  "has_subfield",
+                          "target_id":  "math.analysis.calculus.differential-calculus",
+                          "direction":  "directed",
+                          "perspective_id":  "perspective.model_reconstructed.mathematics_pilot",
+                          "classification_system_id":  "knowledge_os_mathematics_pilot_v0.1",
+                          "explanation":  "The leaf is attached to its declared subdiscipline; atomicity rationale is recorded in data/atomic-disciplines-v0.1.json.",
+                          "confidence":  0.94,
+                          "status":  "proposed",
+                          "review_state":  "machine_validated",
+                          "provenance":  [
+                                             {
+                                                 "source_type":  "other",
+                                                 "source_id":  "knowledge_os_pilot_design_v0.1",
+                                                 "locator":  "data/atomic-disciplines-v0.1.json",
+                                                 "claim_text":  "Derived tree edge from the atomic registry."
+                                             }
+                                         ]
+                      },
+                      {
+                          "relation_id":  "rel.atomic.analysis.calculus.integral-calculus",
+                          "source_id":  "math.analysis.calculus",
+                          "relation_type":  "has_subfield",
+                          "target_id":  "math.analysis.calculus.integral-calculus",
+                          "direction":  "directed",
+                          "perspective_id":  "perspective.model_reconstructed.mathematics_pilot",
+                          "classification_system_id":  "knowledge_os_mathematics_pilot_v0.1",
+                          "explanation":  "The leaf is attached to its declared subdiscipline; atomicity rationale is recorded in data/atomic-disciplines-v0.1.json.",
+                          "confidence":  0.94,
+                          "status":  "proposed",
+                          "review_state":  "machine_validated",
+                          "provenance":  [
+                                             {
+                                                 "source_type":  "other",
+                                                 "source_id":  "knowledge_os_pilot_design_v0.1",
+                                                 "locator":  "data/atomic-disciplines-v0.1.json",
+                                                 "claim_text":  "Derived tree edge from the atomic registry."
+                                             }
+                                         ]
+                      },
+                      {
+                          "relation_id":  "rel.atomic.analysis.calculus.multivariable-calculus",
+                          "source_id":  "math.analysis.calculus",
+                          "relation_type":  "has_subfield",
+                          "target_id":  "math.analysis.calculus.multivariable-calculus",
+                          "direction":  "directed",
+                          "perspective_id":  "perspective.model_reconstructed.mathematics_pilot",
+                          "classification_system_id":  "knowledge_os_mathematics_pilot_v0.1",
+                          "explanation":  "The leaf is attached to its declared subdiscipline; atomicity rationale is recorded in data/atomic-disciplines-v0.1.json.",
+                          "confidence":  0.92,
+                          "status":  "proposed",
+                          "review_state":  "machine_validated",
+                          "provenance":  [
+                                             {
+                                                 "source_type":  "other",
+                                                 "source_id":  "knowledge_os_pilot_design_v0.1",
+                                                 "locator":  "data/atomic-disciplines-v0.1.json",
+                                                 "claim_text":  "Derived tree edge from the atomic registry."
+                                             }
+                                         ]
+                      },
+                      {
+                          "relation_id":  "rel.atomic.analysis.calculus.vector-calculus",
+                          "source_id":  "math.analysis.calculus",
+                          "relation_type":  "has_subfield",
+                          "target_id":  "math.analysis.calculus.vector-calculus",
+                          "direction":  "directed",
+                          "perspective_id":  "perspective.model_reconstructed.mathematics_pilot",
+                          "classification_system_id":  "knowledge_os_mathematics_pilot_v0.1",
+                          "explanation":  "The leaf is attached to its declared subdiscipline; atomicity rationale is recorded in data/atomic-disciplines-v0.1.json.",
+                          "confidence":  0.91,
+                          "status":  "proposed",
+                          "review_state":  "machine_validated",
+                          "provenance":  [
+                                             {
+                                                 "source_type":  "other",
+                                                 "source_id":  "knowledge_os_pilot_design_v0.1",
+                                                 "locator":  "data/atomic-disciplines-v0.1.json",
+                                                 "claim_text":  "Derived tree edge from the atomic registry."
+                                             }
+                                         ]
+                      },
+                      {
+                          "relation_id":  "rel.atomic.probability-statistics.probability.probability-foundations",
+                          "source_id":  "math.probability-statistics.probability",
+                          "relation_type":  "has_subfield",
+                          "target_id":  "math.probability-statistics.probability.probability-foundations",
+                          "direction":  "directed",
+                          "perspective_id":  "perspective.model_reconstructed.mathematics_pilot",
+                          "classification_system_id":  "knowledge_os_mathematics_pilot_v0.1",
+                          "explanation":  "The leaf is attached to its declared subdiscipline; atomicity rationale is recorded in data/atomic-disciplines-v0.1.json.",
+                          "confidence":  0.92,
+                          "status":  "proposed",
+                          "review_state":  "machine_validated",
+                          "provenance":  [
+                                             {
+                                                 "source_type":  "other",
+                                                 "source_id":  "knowledge_os_pilot_design_v0.1",
+                                                 "locator":  "data/atomic-disciplines-v0.1.json",
+                                                 "claim_text":  "Derived tree edge from the atomic registry."
+                                             }
+                                         ]
+                      },
+                      {
+                          "relation_id":  "rel.atomic.probability-statistics.probability.random-variables-distributions",
+                          "source_id":  "math.probability-statistics.probability",
+                          "relation_type":  "has_subfield",
+                          "target_id":  "math.probability-statistics.probability.random-variables-distributions",
+                          "direction":  "directed",
+                          "perspective_id":  "perspective.model_reconstructed.mathematics_pilot",
+                          "classification_system_id":  "knowledge_os_mathematics_pilot_v0.1",
+                          "explanation":  "The leaf is attached to its declared subdiscipline; atomicity rationale is recorded in data/atomic-disciplines-v0.1.json.",
+                          "confidence":  0.93,
+                          "status":  "proposed",
+                          "review_state":  "machine_validated",
+                          "provenance":  [
+                                             {
+                                                 "source_type":  "other",
+                                                 "source_id":  "knowledge_os_pilot_design_v0.1",
+                                                 "locator":  "data/atomic-disciplines-v0.1.json",
+                                                 "claim_text":  "Derived tree edge from the atomic registry."
+                                             }
+                                         ]
+                      },
+                      {
+                          "relation_id":  "rel.atomic.probability-statistics.probability.stochastic-processes",
+                          "source_id":  "math.probability-statistics.probability",
+                          "relation_type":  "has_subfield",
+                          "target_id":  "math.probability-statistics.probability.stochastic-processes",
+                          "direction":  "directed",
+                          "perspective_id":  "perspective.model_reconstructed.mathematics_pilot",
+                          "classification_system_id":  "knowledge_os_mathematics_pilot_v0.1",
+                          "explanation":  "The leaf is attached to its declared subdiscipline; atomicity rationale is recorded in data/atomic-disciplines-v0.1.json.",
+                          "confidence":  0.93,
+                          "status":  "proposed",
+                          "review_state":  "machine_validated",
+                          "provenance":  [
+                                             {
+                                                 "source_type":  "other",
+                                                 "source_id":  "knowledge_os_pilot_design_v0.1",
+                                                 "locator":  "data/atomic-disciplines-v0.1.json",
+                                                 "claim_text":  "Derived tree edge from the atomic registry."
+                                             }
+                                         ]
+                      },
+                      {
+                          "relation_id":  "rel.atomic.probability-statistics.statistics.statistical-inference",
+                          "source_id":  "math.probability-statistics.statistics",
+                          "relation_type":  "has_subfield",
+                          "target_id":  "math.probability-statistics.statistics.statistical-inference",
+                          "direction":  "directed",
+                          "perspective_id":  "perspective.model_reconstructed.mathematics_pilot",
+                          "classification_system_id":  "knowledge_os_mathematics_pilot_v0.1",
+                          "explanation":  "The leaf is attached to its declared subdiscipline; atomicity rationale is recorded in data/atomic-disciplines-v0.1.json.",
+                          "confidence":  0.94,
+                          "status":  "proposed",
+                          "review_state":  "machine_validated",
+                          "provenance":  [
+                                             {
+                                                 "source_type":  "other",
+                                                 "source_id":  "knowledge_os_pilot_design_v0.1",
+                                                 "locator":  "data/atomic-disciplines-v0.1.json",
+                                                 "claim_text":  "Derived tree edge from the atomic registry."
+                                             }
+                                         ]
+                      },
+                      {
+                          "relation_id":  "rel.atomic.probability-statistics.statistics.regression-analysis",
+                          "source_id":  "math.probability-statistics.statistics",
+                          "relation_type":  "has_subfield",
+                          "target_id":  "math.probability-statistics.statistics.regression-analysis",
+                          "direction":  "directed",
+                          "perspective_id":  "perspective.model_reconstructed.mathematics_pilot",
+                          "classification_system_id":  "knowledge_os_mathematics_pilot_v0.1",
+                          "explanation":  "The leaf is attached to its declared subdiscipline; atomicity rationale is recorded in data/atomic-disciplines-v0.1.json.",
+                          "confidence":  0.92,
+                          "status":  "proposed",
+                          "review_state":  "machine_validated",
+                          "provenance":  [
+                                             {
+                                                 "source_type":  "other",
+                                                 "source_id":  "knowledge_os_pilot_design_v0.1",
+                                                 "locator":  "data/atomic-disciplines-v0.1.json",
+                                                 "claim_text":  "Derived tree edge from the atomic registry."
+                                             }
+                                         ]
+                      },
+                      {
+                          "relation_id":  "rel.atomic.probability-statistics.statistics.experimental-design",
+                          "source_id":  "math.probability-statistics.statistics",
+                          "relation_type":  "has_subfield",
+                          "target_id":  "math.probability-statistics.statistics.experimental-design",
+                          "direction":  "directed",
+                          "perspective_id":  "perspective.model_reconstructed.mathematics_pilot",
+                          "classification_system_id":  "knowledge_os_mathematics_pilot_v0.1",
+                          "explanation":  "The leaf is attached to its declared subdiscipline; atomicity rationale is recorded in data/atomic-disciplines-v0.1.json.",
+                          "confidence":  0.9,
+                          "status":  "proposed",
+                          "review_state":  "machine_validated",
+                          "provenance":  [
+                                             {
+                                                 "source_type":  "other",
+                                                 "source_id":  "knowledge_os_pilot_design_v0.1",
+                                                 "locator":  "data/atomic-disciplines-v0.1.json",
+                                                 "claim_text":  "Derived tree edge from the atomic registry."
+                                             }
+                                         ]
+                      },
+                      {
+                          "relation_id":  "rel.atomic.probability-statistics.statistics.bayesian-statistics",
+                          "source_id":  "math.probability-statistics.statistics",
+                          "relation_type":  "has_subfield",
+                          "target_id":  "math.probability-statistics.statistics.bayesian-statistics",
+                          "direction":  "directed",
+                          "perspective_id":  "perspective.model_reconstructed.mathematics_pilot",
+                          "classification_system_id":  "knowledge_os_mathematics_pilot_v0.1",
+                          "explanation":  "The leaf is attached to its declared subdiscipline; atomicity rationale is recorded in data/atomic-disciplines-v0.1.json.",
+                          "confidence":  0.9,
+                          "status":  "proposed",
+                          "review_state":  "machine_validated",
+                          "provenance":  [
+                                             {
+                                                 "source_type":  "other",
+                                                 "source_id":  "knowledge_os_pilot_design_v0.1",
+                                                 "locator":  "data/atomic-disciplines-v0.1.json",
+                                                 "claim_text":  "Derived tree edge from the atomic registry."
+                                             }
+                                         ]
+                      },
+                      {
+                          "relation_id":  "rel.atomic.discrete-mathematics.combinatorics.enumerative-combinatorics",
+                          "source_id":  "math.discrete-mathematics.combinatorics",
+                          "relation_type":  "has_subfield",
+                          "target_id":  "math.discrete-mathematics.combinatorics.enumerative-combinatorics",
+                          "direction":  "directed",
+                          "perspective_id":  "perspective.model_reconstructed.mathematics_pilot",
+                          "classification_system_id":  "knowledge_os_mathematics_pilot_v0.1",
+                          "explanation":  "The leaf is attached to its declared subdiscipline; atomicity rationale is recorded in data/atomic-disciplines-v0.1.json.",
+                          "confidence":  0.91,
+                          "status":  "proposed",
+                          "review_state":  "machine_validated",
+                          "provenance":  [
+                                             {
+                                                 "source_type":  "other",
+                                                 "source_id":  "knowledge_os_pilot_design_v0.1",
+                                                 "locator":  "data/atomic-disciplines-v0.1.json",
+                                                 "claim_text":  "Derived tree edge from the atomic registry."
+                                             }
+                                         ]
+                      },
+                      {
+                          "relation_id":  "rel.atomic.discrete-mathematics.combinatorics.extremal-combinatorics",
+                          "source_id":  "math.discrete-mathematics.combinatorics",
+                          "relation_type":  "has_subfield",
+                          "target_id":  "math.discrete-mathematics.combinatorics.extremal-combinatorics",
+                          "direction":  "directed",
+                          "perspective_id":  "perspective.model_reconstructed.mathematics_pilot",
+                          "classification_system_id":  "knowledge_os_mathematics_pilot_v0.1",
+                          "explanation":  "The leaf is attached to its declared subdiscipline; atomicity rationale is recorded in data/atomic-disciplines-v0.1.json.",
+                          "confidence":  0.89,
+                          "status":  "proposed",
+                          "review_state":  "machine_validated",
+                          "provenance":  [
+                                             {
+                                                 "source_type":  "other",
+                                                 "source_id":  "knowledge_os_pilot_design_v0.1",
+                                                 "locator":  "data/atomic-disciplines-v0.1.json",
+                                                 "claim_text":  "Derived tree edge from the atomic registry."
+                                             }
+                                         ]
+                      },
+                      {
+                          "relation_id":  "rel.atomic.discrete-mathematics.graph-theory.structural-graph-theory",
+                          "source_id":  "math.discrete-mathematics.graph-theory",
+                          "relation_type":  "has_subfield",
+                          "target_id":  "math.discrete-mathematics.graph-theory.structural-graph-theory",
+                          "direction":  "directed",
+                          "perspective_id":  "perspective.model_reconstructed.mathematics_pilot",
+                          "classification_system_id":  "knowledge_os_mathematics_pilot_v0.1",
+                          "explanation":  "The leaf is attached to its declared subdiscipline; atomicity rationale is recorded in data/atomic-disciplines-v0.1.json.",
+                          "confidence":  0.9,
+                          "status":  "proposed",
+                          "review_state":  "machine_validated",
+                          "provenance":  [
+                                             {
+                                                 "source_type":  "other",
+                                                 "source_id":  "knowledge_os_pilot_design_v0.1",
+                                                 "locator":  "data/atomic-disciplines-v0.1.json",
+                                                 "claim_text":  "Derived tree edge from the atomic registry."
+                                             }
+                                         ]
+                      },
+                      {
+                          "relation_id":  "rel.atomic.discrete-mathematics.graph-theory.graph-algorithms",
+                          "source_id":  "math.discrete-mathematics.graph-theory",
+                          "relation_type":  "has_subfield",
+                          "target_id":  "math.discrete-mathematics.graph-theory.graph-algorithms",
+                          "direction":  "directed",
+                          "perspective_id":  "perspective.model_reconstructed.mathematics_pilot",
+                          "classification_system_id":  "knowledge_os_mathematics_pilot_v0.1",
+                          "explanation":  "The leaf is attached to its declared subdiscipline; atomicity rationale is recorded in data/atomic-disciplines-v0.1.json.",
+                          "confidence":  0.86,
+                          "status":  "proposed",
+                          "review_state":  "machine_validated",
+                          "provenance":  [
+                                             {
+                                                 "source_type":  "other",
+                                                 "source_id":  "knowledge_os_pilot_design_v0.1",
+                                                 "locator":  "data/atomic-disciplines-v0.1.json",
+                                                 "claim_text":  "Derived tree edge from the atomic registry."
+                                             }
+                                         ]
+                      },
+                      {
+                          "relation_id":  "rel.atomic.discrete-mathematics.mathematical-logic.set-theory",
+                          "source_id":  "math.discrete-mathematics.mathematical-logic",
+                          "relation_type":  "has_subfield",
+                          "target_id":  "math.discrete-mathematics.mathematical-logic.set-theory",
+                          "direction":  "directed",
+                          "perspective_id":  "perspective.model_reconstructed.mathematics_pilot",
+                          "classification_system_id":  "knowledge_os_mathematics_pilot_v0.1",
+                          "explanation":  "The leaf is attached to its declared subdiscipline; atomicity rationale is recorded in data/atomic-disciplines-v0.1.json.",
+                          "confidence":  0.91,
+                          "status":  "proposed",
+                          "review_state":  "machine_validated",
+                          "provenance":  [
+                                             {
+                                                 "source_type":  "other",
+                                                 "source_id":  "knowledge_os_pilot_design_v0.1",
+                                                 "locator":  "data/atomic-disciplines-v0.1.json",
+                                                 "claim_text":  "Derived tree edge from the atomic registry."
+                                             }
+                                         ]
+                      },
+                      {
+                          "relation_id":  "rel.atomic.discrete-mathematics.mathematical-logic.computability-theory",
+                          "source_id":  "math.discrete-mathematics.mathematical-logic",
+                          "relation_type":  "has_subfield",
+                          "target_id":  "math.discrete-mathematics.mathematical-logic.computability-theory",
+                          "direction":  "directed",
+                          "perspective_id":  "perspective.model_reconstructed.mathematics_pilot",
+                          "classification_system_id":  "knowledge_os_mathematics_pilot_v0.1",
+                          "explanation":  "The leaf is attached to its declared subdiscipline; atomicity rationale is recorded in data/atomic-disciplines-v0.1.json.",
+                          "confidence":  0.9,
+                          "status":  "proposed",
+                          "review_state":  "machine_validated",
+                          "provenance":  [
+                                             {
+                                                 "source_type":  "other",
+                                                 "source_id":  "knowledge_os_pilot_design_v0.1",
+                                                 "locator":  "data/atomic-disciplines-v0.1.json",
+                                                 "claim_text":  "Derived tree edge from the atomic registry."
+                                             }
+                                         ]
+                      },
+                      {
+                          "relation_id":  "rel.atomic.discrete-mathematics.mathematical-logic.proof-theory",
+                          "source_id":  "math.discrete-mathematics.mathematical-logic",
+                          "relation_type":  "has_subfield",
+                          "target_id":  "math.discrete-mathematics.mathematical-logic.proof-theory",
+                          "direction":  "directed",
+                          "perspective_id":  "perspective.model_reconstructed.mathematics_pilot",
+                          "classification_system_id":  "knowledge_os_mathematics_pilot_v0.1",
+                          "explanation":  "The leaf is attached to its declared subdiscipline; atomicity rationale is recorded in data/atomic-disciplines-v0.1.json.",
+                          "confidence":  0.9,
+                          "status":  "proposed",
+                          "review_state":  "machine_validated",
+                          "provenance":  [
+                                             {
+                                                 "source_type":  "other",
+                                                 "source_id":  "knowledge_os_pilot_design_v0.1",
+                                                 "locator":  "data/atomic-disciplines-v0.1.json",
+                                                 "claim_text":  "Derived tree edge from the atomic registry."
+                                             }
+                                         ]
+                      },
+                      {
+                          "relation_id":  "rel.atomic.geometry.euclidean-geometry.classical-euclidean-geometry",
+                          "source_id":  "math.geometry.euclidean-geometry",
+                          "relation_type":  "has_subfield",
+                          "target_id":  "math.geometry.euclidean-geometry.classical-euclidean-geometry",
+                          "direction":  "directed",
+                          "perspective_id":  "perspective.model_reconstructed.mathematics_pilot",
+                          "classification_system_id":  "knowledge_os_mathematics_pilot_v0.1",
+                          "explanation":  "The leaf is attached to its declared subdiscipline; atomicity rationale is recorded in data/atomic-disciplines-v0.1.json.",
+                          "confidence":  0.89,
+                          "status":  "proposed",
+                          "review_state":  "machine_validated",
+                          "provenance":  [
+                                             {
+                                                 "source_type":  "other",
+                                                 "source_id":  "knowledge_os_pilot_design_v0.1",
+                                                 "locator":  "data/atomic-disciplines-v0.1.json",
+                                                 "claim_text":  "Derived tree edge from the atomic registry."
+                                             }
+                                         ]
+                      },
+                      {
+                          "relation_id":  "rel.atomic.geometry.analytic-geometry.coordinate-geometry",
+                          "source_id":  "math.geometry.analytic-geometry",
+                          "relation_type":  "has_subfield",
+                          "target_id":  "math.geometry.analytic-geometry.coordinate-geometry",
+                          "direction":  "directed",
+                          "perspective_id":  "perspective.model_reconstructed.mathematics_pilot",
+                          "classification_system_id":  "knowledge_os_mathematics_pilot_v0.1",
+                          "explanation":  "The leaf is attached to its declared subdiscipline; atomicity rationale is recorded in data/atomic-disciplines-v0.1.json.",
+                          "confidence":  0.9,
+                          "status":  "proposed",
+                          "review_state":  "machine_validated",
+                          "provenance":  [
+                                             {
+                                                 "source_type":  "other",
+                                                 "source_id":  "knowledge_os_pilot_design_v0.1",
+                                                 "locator":  "data/atomic-disciplines-v0.1.json",
+                                                 "claim_text":  "Derived tree edge from the atomic registry."
+                                             }
+                                         ]
+                      },
+                      {
+                          "relation_id":  "rel.atomic.geometry.differential-geometry.curves-and-surfaces",
+                          "source_id":  "math.geometry.differential-geometry",
+                          "relation_type":  "has_subfield",
+                          "target_id":  "math.geometry.differential-geometry.curves-and-surfaces",
+                          "direction":  "directed",
+                          "perspective_id":  "perspective.model_reconstructed.mathematics_pilot",
+                          "classification_system_id":  "knowledge_os_mathematics_pilot_v0.1",
+                          "explanation":  "The leaf is attached to its declared subdiscipline; atomicity rationale is recorded in data/atomic-disciplines-v0.1.json.",
+                          "confidence":  0.91,
+                          "status":  "proposed",
+                          "review_state":  "machine_validated",
+                          "provenance":  [
+                                             {
+                                                 "source_type":  "other",
+                                                 "source_id":  "knowledge_os_pilot_design_v0.1",
+                                                 "locator":  "data/atomic-disciplines-v0.1.json",
+                                                 "claim_text":  "Derived tree edge from the atomic registry."
+                                             }
+                                         ]
+                      }
+                  ],
+    "counts":  {
+                   "nodes":  45,
+                   "relations":  44,
+                   "tree_edges":  44,
+                   "by_level":  {
+                                    "domain":  1,
+                                    "discipline":  5,
+                                    "subdiscipline":  11,
+                                    "atomic_discipline":  28
+                                }
+               },
+    "review_summary":  {
+                           "machine_validated_records":  89,
+                           "human_reviewed_records":  0,
+                           "approved_records":  0,
+                           "pending_human_review":  89,
+                           "priority_review_items":  [
+                                                         "Confirm whether Number Theory should remain under Algebra or become a sibling discipline in the chosen perspective.",
+                                                         "Confirm whether Probability and Statistics should remain grouped at discipline level.",
+                                                         "Review the boundary of Mathematical Logic under Discrete Mathematics.",
+                                                         "Review cross-domain status of Graph Algorithms and Bayesian Statistics.",
+                                                         "Confirm that each proposed atomic leaf is independently useful for the intended dataset behavior."
+                                                     ]
+                       }
+}

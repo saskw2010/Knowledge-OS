@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://knowledge-os.dev/schemas/knowledge-node.schema.json",
+  "title": "Knowledge-OS Mathematics V0.1 Knowledge Node",
+  "description": "A provenance-aware node in the Mathematics V0.1 recursive knowledge graph.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "node_id",
+    "mathematics_version",
+    "node_type",
+    "canonical_name",
+    "definition",
+    "parent_ids",
+    "child_ids",
+    "atomicity",
+    "review_state",
+    "provenance"
+  ],
+  "properties": {
+    "schema_version": {"const": "0.1"},
+    "node_id": {"type": "string", "pattern": "^ko\\.math\\.v0\\.1\\.[a-z0-9][a-z0-9._-]*$"},
+    "mathematics_version": {"const": "Mathematics V0.1"},
+    "node_type": {
+      "type": "string",
+      "enum": ["domain", "discipline", "subdiscipline", "topic", "concept", "skill", "method", "application"]
+    },
+    "canonical_name": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["en"],
+      "properties": {
+        "en": {"type": "string", "minLength": 1},
+        "ar": {"type": ["string", "null"], "minLength": 1}
+      }
+    },
+    "aliases": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "definition": {"type": "string", "minLength": 1},
+    "scope_includes": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "scope_excludes": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "parent_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^ko\\.math\\.v0\\.1\\.[a-z0-9][a-z0-9._-]*$"}
+    },
+    "child_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^ko\\.math\\.v0\\.1\\.[a-z0-9][a-z0-9._-]*$"}
+    },
+    "depth": {"type": "integer", "minimum": 0},
+    "atomicity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status"],
+      "properties": {
+        "status": {"type": "string", "enum": ["non_atomic", "candidate_atomic", "atomic"]},
+        "reason": {"type": "string", "minLength": 1},
+        "evidence_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+      }
+    },
+    "prerequisite_node_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^ko\\.math\\.v0\\.1\\.[a-z0-9][a-z0-9._-]*$"}
+    },
+    "learning_outcomes": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1}
+    },
+    "review_state": {
+      "type": "string",
+      "enum": ["unreviewed", "machine_validated", "human_reviewed", "approved", "rejected"]
+    },
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "provenance": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["source_type", "source_id"],
+        "properties": {
+          "source_type": {"type": "string", "enum": ["official_classification", "publication", "model_run", "expert_review", "curriculum", "other"]},
+          "source_id": {"type": "string", "minLength": 1},
+          "locator": {"type": ["string", "null"]},
+          "version": {"type": ["string", "null"]},
+          "license": {"type": ["string", "null"]}
+        }
+      }
+    }
+  }
+}

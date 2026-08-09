@@ -1,0 +1,1109 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "dataset_targets_mathematics_v0.1",
+  "artifact_type": "dataset_target_registry",
+  "mathematics_version": "Mathematics V0.1",
+  "source_curriculum_id": "ko.curriculum.mathematics-v0.1",
+  "source_mk7_view_id": "ko.view.mk7.mathematics-v0.1-golden-reference",
+  "contract_note": "No dedicated dataset-target schema exists in schemas/; this small registry is intentionally kept separate from curriculum, MK7, and content-index contracts.",
+  "target_policy": {
+    "max_target_records_per_type": 28,
+    "no_large_generation": true,
+    "no_training_consumption": true,
+    "no_engine_consumption": true,
+    "target_status": "planning_only"
+  },
+  "dataset_types": [
+    {
+      "target_type_id": "ko.dataset-type.mathematics-v0.1.classification-boundary",
+      "dataset_type": "classification_boundary",
+      "purpose": "One auditable boundary/classification target per atomic discipline.",
+      "target_record_count": 28,
+      "source_node_ids": [
+        "ko.math.v0.1.algebra.linear-algebra.vector-spaces-linear-maps",
+        "ko.math.v0.1.algebra.linear-algebra.matrix-theory",
+        "ko.math.v0.1.algebra.linear-algebra.linear-systems",
+        "ko.math.v0.1.algebra.number-theory.elementary-number-theory",
+        "ko.math.v0.1.algebra.number-theory.algebraic-number-theory",
+        "ko.math.v0.1.algebra.number-theory.analytic-number-theory",
+        "ko.math.v0.1.algebra.number-theory.diophantine-equations",
+        "ko.math.v0.1.analysis.calculus.differential-calculus",
+        "ko.math.v0.1.analysis.calculus.integral-calculus",
+        "ko.math.v0.1.analysis.calculus.multivariable-calculus",
+        "ko.math.v0.1.analysis.calculus.vector-calculus",
+        "ko.math.v0.1.probability-statistics.probability.probability-foundations",
+        "ko.math.v0.1.probability-statistics.probability.random-variables-distributions",
+        "ko.math.v0.1.probability-statistics.probability.stochastic-processes",
+        "ko.math.v0.1.probability-statistics.statistics.statistical-inference",
+        "ko.math.v0.1.probability-statistics.statistics.regression-analysis",
+        "ko.math.v0.1.probability-statistics.statistics.experimental-design",
+        "ko.math.v0.1.probability-statistics.statistics.bayesian-statistics",
+        "ko.math.v0.1.discrete-mathematics.combinatorics.enumerative-combinatorics",
+        "ko.math.v0.1.discrete-mathematics.combinatorics.extremal-combinatorics",
+        "ko.math.v0.1.discrete-mathematics.graph-theory.structural-graph-theory",
+        "ko.math.v0.1.discrete-mathematics.graph-theory.graph-algorithms",
+        "ko.math.v0.1.discrete-mathematics.mathematical-logic.set-theory",
+        "ko.math.v0.1.discrete-mathematics.mathematical-logic.computability-theory",
+        "ko.math.v0.1.discrete-mathematics.mathematical-logic.proof-theory",
+        "ko.math.v0.1.geometry.euclidean-geometry.classical-euclidean-geometry",
+        "ko.math.v0.1.geometry.analytic-geometry.coordinate-geometry",
+        "ko.math.v0.1.geometry.differential-geometry.curves-and-surfaces"
+      ],
+      "atomic_discipline_ids": [
+        "ko.math.v0.1.ad.algebra.linear-algebra.vector-spaces-linear-maps",
+        "ko.math.v0.1.ad.algebra.linear-algebra.matrix-theory",
+        "ko.math.v0.1.ad.algebra.linear-algebra.linear-systems",
+        "ko.math.v0.1.ad.algebra.number-theory.elementary-number-theory",
+        "ko.math.v0.1.ad.algebra.number-theory.algebraic-number-theory",
+        "ko.math.v0.1.ad.algebra.number-theory.analytic-number-theory",
+        "ko.math.v0.1.ad.algebra.number-theory.diophantine-equations",
+        "ko.math.v0.1.ad.analysis.calculus.differential-calculus",
+        "ko.math.v0.1.ad.analysis.calculus.integral-calculus",
+        "ko.math.v0.1.ad.analysis.calculus.multivariable-calculus",
+        "ko.math.v0.1.ad.analysis.calculus.vector-calculus",
+        "ko.math.v0.1.ad.probability-statistics.probability.probability-foundations",
+        "ko.math.v0.1.ad.probability-statistics.probability.random-variables-distributions",
+        "ko.math.v0.1.ad.probability-statistics.probability.stochastic-processes",
+        "ko.math.v0.1.ad.probability-statistics.statistics.statistical-inference",
+        "ko.math.v0.1.ad.probability-statistics.statistics.regression-analysis",
+        "ko.math.v0.1.ad.probability-statistics.statistics.experimental-design",
+        "ko.math.v0.1.ad.probability-statistics.statistics.bayesian-statistics",
+        "ko.math.v0.1.ad.discrete-mathematics.combinatorics.enumerative-combinatorics",
+        "ko.math.v0.1.ad.discrete-mathematics.combinatorics.extremal-combinatorics",
+        "ko.math.v0.1.ad.discrete-mathematics.graph-theory.structural-graph-theory",
+        "ko.math.v0.1.ad.discrete-mathematics.graph-theory.graph-algorithms",
+        "ko.math.v0.1.ad.discrete-mathematics.mathematical-logic.set-theory",
+        "ko.math.v0.1.ad.discrete-mathematics.mathematical-logic.computability-theory",
+        "ko.math.v0.1.ad.discrete-mathematics.mathematical-logic.proof-theory",
+        "ko.math.v0.1.ad.geometry.euclidean-geometry.classical-euclidean-geometry",
+        "ko.math.v0.1.ad.geometry.analytic-geometry.coordinate-geometry",
+        "ko.math.v0.1.ad.geometry.differential-geometry.curves-and-surfaces"
+      ],
+      "split_policy": "development=20, validation=4, test=4",
+      "review_state": "machine_validated"
+    },
+    {
+      "target_type_id": "ko.dataset-type.mathematics-v0.1.curriculum-outline",
+      "dataset_type": "curriculum_outline",
+      "purpose": "One structured outline target per atomic discipline with chapter/topic/concept/skill/prerequisite/assessment links.",
+      "target_record_count": 28,
+      "source_node_ids": [
+        "ko.math.v0.1.algebra.linear-algebra.vector-spaces-linear-maps",
+        "ko.math.v0.1.algebra.linear-algebra.matrix-theory",
+        "ko.math.v0.1.algebra.linear-algebra.linear-systems",
+        "ko.math.v0.1.algebra.number-theory.elementary-number-theory",
+        "ko.math.v0.1.algebra.number-theory.algebraic-number-theory",
+        "ko.math.v0.1.algebra.number-theory.analytic-number-theory",
+        "ko.math.v0.1.algebra.number-theory.diophantine-equations",
+        "ko.math.v0.1.analysis.calculus.differential-calculus",
+        "ko.math.v0.1.analysis.calculus.integral-calculus",
+        "ko.math.v0.1.analysis.calculus.multivariable-calculus",
+        "ko.math.v0.1.analysis.calculus.vector-calculus",
+        "ko.math.v0.1.probability-statistics.probability.probability-foundations",
+        "ko.math.v0.1.probability-statistics.probability.random-variables-distributions",
+        "ko.math.v0.1.probability-statistics.probability.stochastic-processes",
+        "ko.math.v0.1.probability-statistics.statistics.statistical-inference",
+        "ko.math.v0.1.probability-statistics.statistics.regression-analysis",
+        "ko.math.v0.1.probability-statistics.statistics.experimental-design",
+        "ko.math.v0.1.probability-statistics.statistics.bayesian-statistics",
+        "ko.math.v0.1.discrete-mathematics.combinatorics.enumerative-combinatorics",
+        "ko.math.v0.1.discrete-mathematics.combinatorics.extremal-combinatorics",
+        "ko.math.v0.1.discrete-mathematics.graph-theory.structural-graph-theory",
+        "ko.math.v0.1.discrete-mathematics.graph-theory.graph-algorithms",
+        "ko.math.v0.1.discrete-mathematics.mathematical-logic.set-theory",
+        "ko.math.v0.1.discrete-mathematics.mathematical-logic.computability-theory",
+        "ko.math.v0.1.discrete-mathematics.mathematical-logic.proof-theory",
+        "ko.math.v0.1.geometry.euclidean-geometry.classical-euclidean-geometry",
+        "ko.math.v0.1.geometry.analytic-geometry.coordinate-geometry",
+        "ko.math.v0.1.geometry.differential-geometry.curves-and-surfaces"
+      ],
+      "atomic_discipline_ids": [
+        "ko.math.v0.1.ad.algebra.linear-algebra.vector-spaces-linear-maps",
+        "ko.math.v0.1.ad.algebra.linear-algebra.matrix-theory",
+        "ko.math.v0.1.ad.algebra.linear-algebra.linear-systems",
+        "ko.math.v0.1.ad.algebra.number-theory.elementary-number-theory",
+        "ko.math.v0.1.ad.algebra.number-theory.algebraic-number-theory",
+        "ko.math.v0.1.ad.algebra.number-theory.analytic-number-theory",
+        "ko.math.v0.1.ad.algebra.number-theory.diophantine-equations",
+        "ko.math.v0.1.ad.analysis.calculus.differential-calculus",
+        "ko.math.v0.1.ad.analysis.calculus.integral-calculus",
+        "ko.math.v0.1.ad.analysis.calculus.multivariable-calculus",
+        "ko.math.v0.1.ad.analysis.calculus.vector-calculus",
+        "ko.math.v0.1.ad.probability-statistics.probability.probability-foundations",
+        "ko.math.v0.1.ad.probability-statistics.probability.random-variables-distributions",
+        "ko.math.v0.1.ad.probability-statistics.probability.stochastic-processes",
+        "ko.math.v0.1.ad.probability-statistics.statistics.statistical-inference",
+        "ko.math.v0.1.ad.probability-statistics.statistics.regression-analysis",
+        "ko.math.v0.1.ad.probability-statistics.statistics.experimental-design",
+        "ko.math.v0.1.ad.probability-statistics.statistics.bayesian-statistics",
+        "ko.math.v0.1.ad.discrete-mathematics.combinatorics.enumerative-combinatorics",
+        "ko.math.v0.1.ad.discrete-mathematics.combinatorics.extremal-combinatorics",
+        "ko.math.v0.1.ad.discrete-mathematics.graph-theory.structural-graph-theory",
+        "ko.math.v0.1.ad.discrete-mathematics.graph-theory.graph-algorithms",
+        "ko.math.v0.1.ad.discrete-mathematics.mathematical-logic.set-theory",
+        "ko.math.v0.1.ad.discrete-mathematics.mathematical-logic.computability-theory",
+        "ko.math.v0.1.ad.discrete-mathematics.mathematical-logic.proof-theory",
+        "ko.math.v0.1.ad.geometry.euclidean-geometry.classical-euclidean-geometry",
+        "ko.math.v0.1.ad.geometry.analytic-geometry.coordinate-geometry",
+        "ko.math.v0.1.ad.geometry.differential-geometry.curves-and-surfaces"
+      ],
+      "split_policy": "development-only until human review",
+      "review_state": "machine_validated"
+    },
+    {
+      "target_type_id": "ko.dataset-type.mathematics-v0.1.prerequisite-check",
+      "dataset_type": "prerequisite_check",
+      "purpose": "Check that declared stage prerequisites are resolved, ordered, and non-cyclic.",
+      "target_record_count": 28,
+      "source_node_ids": [
+        "ko.math.v0.1.algebra.linear-algebra.vector-spaces-linear-maps",
+        "ko.math.v0.1.algebra.linear-algebra.matrix-theory",
+        "ko.math.v0.1.algebra.linear-algebra.linear-systems",
+        "ko.math.v0.1.algebra.number-theory.elementary-number-theory",
+        "ko.math.v0.1.algebra.number-theory.algebraic-number-theory",
+        "ko.math.v0.1.algebra.number-theory.analytic-number-theory",
+        "ko.math.v0.1.algebra.number-theory.diophantine-equations",
+        "ko.math.v0.1.analysis.calculus.differential-calculus",
+        "ko.math.v0.1.analysis.calculus.integral-calculus",
+        "ko.math.v0.1.analysis.calculus.multivariable-calculus",
+        "ko.math.v0.1.analysis.calculus.vector-calculus",
+        "ko.math.v0.1.probability-statistics.probability.probability-foundations",
+        "ko.math.v0.1.probability-statistics.probability.random-variables-distributions",
+        "ko.math.v0.1.probability-statistics.probability.stochastic-processes",
+        "ko.math.v0.1.probability-statistics.statistics.statistical-inference",
+        "ko.math.v0.1.probability-statistics.statistics.regression-analysis",
+        "ko.math.v0.1.probability-statistics.statistics.experimental-design",
+        "ko.math.v0.1.probability-statistics.statistics.bayesian-statistics",
+        "ko.math.v0.1.discrete-mathematics.combinatorics.enumerative-combinatorics",
+        "ko.math.v0.1.discrete-mathematics.combinatorics.extremal-combinatorics",
+        "ko.math.v0.1.discrete-mathematics.graph-theory.structural-graph-theory",
+        "ko.math.v0.1.discrete-mathematics.graph-theory.graph-algorithms",
+        "ko.math.v0.1.discrete-mathematics.mathematical-logic.set-theory",
+        "ko.math.v0.1.discrete-mathematics.mathematical-logic.computability-theory",
+        "ko.math.v0.1.discrete-mathematics.mathematical-logic.proof-theory",
+        "ko.math.v0.1.geometry.euclidean-geometry.classical-euclidean-geometry",
+        "ko.math.v0.1.geometry.analytic-geometry.coordinate-geometry",
+        "ko.math.v0.1.geometry.differential-geometry.curves-and-surfaces"
+      ],
+      "atomic_discipline_ids": [
+        "ko.math.v0.1.ad.algebra.linear-algebra.vector-spaces-linear-maps",
+        "ko.math.v0.1.ad.algebra.linear-algebra.matrix-theory",
+        "ko.math.v0.1.ad.algebra.linear-algebra.linear-systems",
+        "ko.math.v0.1.ad.algebra.number-theory.elementary-number-theory",
+        "ko.math.v0.1.ad.algebra.number-theory.algebraic-number-theory",
+        "ko.math.v0.1.ad.algebra.number-theory.analytic-number-theory",
+        "ko.math.v0.1.ad.algebra.number-theory.diophantine-equations",
+        "ko.math.v0.1.ad.analysis.calculus.differential-calculus",
+        "ko.math.v0.1.ad.analysis.calculus.integral-calculus",
+        "ko.math.v0.1.ad.analysis.calculus.multivariable-calculus",
+        "ko.math.v0.1.ad.analysis.calculus.vector-calculus",
+        "ko.math.v0.1.ad.probability-statistics.probability.probability-foundations",
+        "ko.math.v0.1.ad.probability-statistics.probability.random-variables-distributions",
+        "ko.math.v0.1.ad.probability-statistics.probability.stochastic-processes",
+        "ko.math.v0.1.ad.probability-statistics.statistics.statistical-inference",
+        "ko.math.v0.1.ad.probability-statistics.statistics.regression-analysis",
+        "ko.math.v0.1.ad.probability-statistics.statistics.experimental-design",
+        "ko.math.v0.1.ad.probability-statistics.statistics.bayesian-statistics",
+        "ko.math.v0.1.ad.discrete-mathematics.combinatorics.enumerative-combinatorics",
+        "ko.math.v0.1.ad.discrete-mathematics.combinatorics.extremal-combinatorics",
+        "ko.math.v0.1.ad.discrete-mathematics.graph-theory.structural-graph-theory",
+        "ko.math.v0.1.ad.discrete-mathematics.graph-theory.graph-algorithms",
+        "ko.math.v0.1.ad.discrete-mathematics.mathematical-logic.set-theory",
+        "ko.math.v0.1.ad.discrete-mathematics.mathematical-logic.computability-theory",
+        "ko.math.v0.1.ad.discrete-mathematics.mathematical-logic.proof-theory",
+        "ko.math.v0.1.ad.geometry.euclidean-geometry.classical-euclidean-geometry",
+        "ko.math.v0.1.ad.geometry.analytic-geometry.coordinate-geometry",
+        "ko.math.v0.1.ad.geometry.differential-geometry.curves-and-surfaces"
+      ],
+      "split_policy": "validation-only candidate",
+      "review_state": "machine_validated"
+    },
+    {
+      "target_type_id": "ko.dataset-type.mathematics-v0.1.assessment",
+      "dataset_type": "assessment",
+      "purpose": "One independent boundary-and-explanation assessment target per atomic discipline.",
+      "target_record_count": 28,
+      "source_node_ids": [
+        "ko.math.v0.1.algebra.linear-algebra.vector-spaces-linear-maps",
+        "ko.math.v0.1.algebra.linear-algebra.matrix-theory",
+        "ko.math.v0.1.algebra.linear-algebra.linear-systems",
+        "ko.math.v0.1.algebra.number-theory.elementary-number-theory",
+        "ko.math.v0.1.algebra.number-theory.algebraic-number-theory",
+        "ko.math.v0.1.algebra.number-theory.analytic-number-theory",
+        "ko.math.v0.1.algebra.number-theory.diophantine-equations",
+        "ko.math.v0.1.analysis.calculus.differential-calculus",
+        "ko.math.v0.1.analysis.calculus.integral-calculus",
+        "ko.math.v0.1.analysis.calculus.multivariable-calculus",
+        "ko.math.v0.1.analysis.calculus.vector-calculus",
+        "ko.math.v0.1.probability-statistics.probability.probability-foundations",
+        "ko.math.v0.1.probability-statistics.probability.random-variables-distributions",
+        "ko.math.v0.1.probability-statistics.probability.stochastic-processes",
+        "ko.math.v0.1.probability-statistics.statistics.statistical-inference",
+        "ko.math.v0.1.probability-statistics.statistics.regression-analysis",
+        "ko.math.v0.1.probability-statistics.statistics.experimental-design",
+        "ko.math.v0.1.probability-statistics.statistics.bayesian-statistics",
+        "ko.math.v0.1.discrete-mathematics.combinatorics.enumerative-combinatorics",
+        "ko.math.v0.1.discrete-mathematics.combinatorics.extremal-combinatorics",
+        "ko.math.v0.1.discrete-mathematics.graph-theory.structural-graph-theory",
+        "ko.math.v0.1.discrete-mathematics.graph-theory.graph-algorithms",
+        "ko.math.v0.1.discrete-mathematics.mathematical-logic.set-theory",
+        "ko.math.v0.1.discrete-mathematics.mathematical-logic.computability-theory",
+        "ko.math.v0.1.discrete-mathematics.mathematical-logic.proof-theory",
+        "ko.math.v0.1.geometry.euclidean-geometry.classical-euclidean-geometry",
+        "ko.math.v0.1.geometry.analytic-geometry.coordinate-geometry",
+        "ko.math.v0.1.geometry.differential-geometry.curves-and-surfaces"
+      ],
+      "atomic_discipline_ids": [
+        "ko.math.v0.1.ad.algebra.linear-algebra.vector-spaces-linear-maps",
+        "ko.math.v0.1.ad.algebra.linear-algebra.matrix-theory",
+        "ko.math.v0.1.ad.algebra.linear-algebra.linear-systems",
+        "ko.math.v0.1.ad.algebra.number-theory.elementary-number-theory",
+        "ko.math.v0.1.ad.algebra.number-theory.algebraic-number-theory",
+        "ko.math.v0.1.ad.algebra.number-theory.analytic-number-theory",
+        "ko.math.v0.1.ad.algebra.number-theory.diophantine-equations",
+        "ko.math.v0.1.ad.analysis.calculus.differential-calculus",
+        "ko.math.v0.1.ad.analysis.calculus.integral-calculus",
+        "ko.math.v0.1.ad.analysis.calculus.multivariable-calculus",
+        "ko.math.v0.1.ad.analysis.calculus.vector-calculus",
+        "ko.math.v0.1.ad.probability-statistics.probability.probability-foundations",
+        "ko.math.v0.1.ad.probability-statistics.probability.random-variables-distributions",
+        "ko.math.v0.1.ad.probability-statistics.probability.stochastic-processes",
+        "ko.math.v0.1.ad.probability-statistics.statistics.statistical-inference",
+        "ko.math.v0.1.ad.probability-statistics.statistics.regression-analysis",
+        "ko.math.v0.1.ad.probability-statistics.statistics.experimental-design",
+        "ko.math.v0.1.ad.probability-statistics.statistics.bayesian-statistics",
+        "ko.math.v0.1.ad.discrete-mathematics.combinatorics.enumerative-combinatorics",
+        "ko.math.v0.1.ad.discrete-mathematics.combinatorics.extremal-combinatorics",
+        "ko.math.v0.1.ad.discrete-mathematics.graph-theory.structural-graph-theory",
+        "ko.math.v0.1.ad.discrete-mathematics.graph-theory.graph-algorithms",
+        "ko.math.v0.1.ad.discrete-mathematics.mathematical-logic.set-theory",
+        "ko.math.v0.1.ad.discrete-mathematics.mathematical-logic.computability-theory",
+        "ko.math.v0.1.ad.discrete-mathematics.mathematical-logic.proof-theory",
+        "ko.math.v0.1.ad.geometry.euclidean-geometry.classical-euclidean-geometry",
+        "ko.math.v0.1.ad.geometry.analytic-geometry.coordinate-geometry",
+        "ko.math.v0.1.ad.geometry.differential-geometry.curves-and-surfaces"
+      ],
+      "split_policy": "test-only after independent review",
+      "review_state": "machine_validated"
+    },
+    {
+      "target_type_id": "ko.dataset-type.mathematics-v0.1.mk7-definition",
+      "dataset_type": "mk7_definition",
+      "purpose": "The 28 short source-linked definition records in the MK7 view.",
+      "target_record_count": 28,
+      "source_node_ids": [
+        "ko.math.v0.1.algebra.linear-algebra.vector-spaces-linear-maps",
+        "ko.math.v0.1.algebra.linear-algebra.matrix-theory",
+        "ko.math.v0.1.algebra.linear-algebra.linear-systems",
+        "ko.math.v0.1.algebra.number-theory.elementary-number-theory",
+        "ko.math.v0.1.algebra.number-theory.algebraic-number-theory",
+        "ko.math.v0.1.algebra.number-theory.analytic-number-theory",
+        "ko.math.v0.1.algebra.number-theory.diophantine-equations",
+        "ko.math.v0.1.analysis.calculus.differential-calculus",
+        "ko.math.v0.1.analysis.calculus.integral-calculus",
+        "ko.math.v0.1.analysis.calculus.multivariable-calculus",
+        "ko.math.v0.1.analysis.calculus.vector-calculus",
+        "ko.math.v0.1.probability-statistics.probability.probability-foundations",
+        "ko.math.v0.1.probability-statistics.probability.random-variables-distributions",
+        "ko.math.v0.1.probability-statistics.probability.stochastic-processes",
+        "ko.math.v0.1.probability-statistics.statistics.statistical-inference",
+        "ko.math.v0.1.probability-statistics.statistics.regression-analysis",
+        "ko.math.v0.1.probability-statistics.statistics.experimental-design",
+        "ko.math.v0.1.probability-statistics.statistics.bayesian-statistics",
+        "ko.math.v0.1.discrete-mathematics.combinatorics.enumerative-combinatorics",
+        "ko.math.v0.1.discrete-mathematics.combinatorics.extremal-combinatorics",
+        "ko.math.v0.1.discrete-mathematics.graph-theory.structural-graph-theory",
+        "ko.math.v0.1.discrete-mathematics.graph-theory.graph-algorithms",
+        "ko.math.v0.1.discrete-mathematics.mathematical-logic.set-theory",
+        "ko.math.v0.1.discrete-mathematics.mathematical-logic.computability-theory",
+        "ko.math.v0.1.discrete-mathematics.mathematical-logic.proof-theory",
+        "ko.math.v0.1.geometry.euclidean-geometry.classical-euclidean-geometry",
+        "ko.math.v0.1.geometry.analytic-geometry.coordinate-geometry",
+        "ko.math.v0.1.geometry.differential-geometry.curves-and-surfaces"
+      ],
+      "atomic_discipline_ids": [
+        "ko.math.v0.1.ad.algebra.linear-algebra.vector-spaces-linear-maps",
+        "ko.math.v0.1.ad.algebra.linear-algebra.matrix-theory",
+        "ko.math.v0.1.ad.algebra.linear-algebra.linear-systems",
+        "ko.math.v0.1.ad.algebra.number-theory.elementary-number-theory",
+        "ko.math.v0.1.ad.algebra.number-theory.algebraic-number-theory",
+        "ko.math.v0.1.ad.algebra.number-theory.analytic-number-theory",
+        "ko.math.v0.1.ad.algebra.number-theory.diophantine-equations",
+        "ko.math.v0.1.ad.analysis.calculus.differential-calculus",
+        "ko.math.v0.1.ad.analysis.calculus.integral-calculus",
+        "ko.math.v0.1.ad.analysis.calculus.multivariable-calculus",
+        "ko.math.v0.1.ad.analysis.calculus.vector-calculus",
+        "ko.math.v0.1.ad.probability-statistics.probability.probability-foundations",
+        "ko.math.v0.1.ad.probability-statistics.probability.random-variables-distributions",
+        "ko.math.v0.1.ad.probability-statistics.probability.stochastic-processes",
+        "ko.math.v0.1.ad.probability-statistics.statistics.statistical-inference",
+        "ko.math.v0.1.ad.probability-statistics.statistics.regression-analysis",
+        "ko.math.v0.1.ad.probability-statistics.statistics.experimental-design",
+        "ko.math.v0.1.ad.probability-statistics.statistics.bayesian-statistics",
+        "ko.math.v0.1.ad.discrete-mathematics.combinatorics.enumerative-combinatorics",
+        "ko.math.v0.1.ad.discrete-mathematics.combinatorics.extremal-combinatorics",
+        "ko.math.v0.1.ad.discrete-mathematics.graph-theory.structural-graph-theory",
+        "ko.math.v0.1.ad.discrete-mathematics.graph-theory.graph-algorithms",
+        "ko.math.v0.1.ad.discrete-mathematics.mathematical-logic.set-theory",
+        "ko.math.v0.1.ad.discrete-mathematics.mathematical-logic.computability-theory",
+        "ko.math.v0.1.ad.discrete-mathematics.mathematical-logic.proof-theory",
+        "ko.math.v0.1.ad.geometry.euclidean-geometry.classical-euclidean-geometry",
+        "ko.math.v0.1.ad.geometry.analytic-geometry.coordinate-geometry",
+        "ko.math.v0.1.ad.geometry.differential-geometry.curves-and-surfaces"
+      ],
+      "split_policy": "development=20, validation=4, test=4",
+      "review_state": "machine_validated"
+    }
+  ],
+  "curriculum_blueprint": [
+    {
+      "target_id": "ko.dataset-target.mathematics-v0.1.algebra.linear-algebra.vector-spaces-linear-maps",
+      "atomic_discipline_id": "ko.math.v0.1.ad.algebra.linear-algebra.vector-spaces-linear-maps",
+      "chapter": "Algebra",
+      "topic": "Vector Spaces and Linear Maps",
+      "concepts": [
+        "Vector spaces",
+        "Linear transformations",
+        "Dimension and rank"
+      ],
+      "skills": [
+        "identify the atomic boundary",
+        "explain the central objects",
+        "classify a representative problem"
+      ],
+      "prerequisites": [],
+      "assessments": [
+        "one independent boundary-and-explanation item"
+      ],
+      "source_node_ids": [
+        "ko.math.v0.1.algebra.linear-algebra.vector-spaces-linear-maps"
+      ],
+      "review_state": "machine_validated"
+    },
+    {
+      "target_id": "ko.dataset-target.mathematics-v0.1.algebra.linear-algebra.matrix-theory",
+      "atomic_discipline_id": "ko.math.v0.1.ad.algebra.linear-algebra.matrix-theory",
+      "chapter": "Algebra",
+      "topic": "Matrix Theory",
+      "concepts": [
+        "Matrix operations",
+        "Eigenvalues and eigenvectors",
+        "Canonical forms"
+      ],
+      "skills": [
+        "identify the atomic boundary",
+        "explain the central objects",
+        "classify a representative problem"
+      ],
+      "prerequisites": [
+        "ko.curriculum.mathematics-v0.1.stage.algebra.linear-algebra.vector-spaces-linear-maps"
+      ],
+      "assessments": [
+        "one independent boundary-and-explanation item"
+      ],
+      "source_node_ids": [
+        "ko.math.v0.1.algebra.linear-algebra.matrix-theory"
+      ],
+      "review_state": "machine_validated"
+    },
+    {
+      "target_id": "ko.dataset-target.mathematics-v0.1.algebra.linear-algebra.linear-systems",
+      "atomic_discipline_id": "ko.math.v0.1.ad.algebra.linear-algebra.linear-systems",
+      "chapter": "Algebra",
+      "topic": "Linear Systems",
+      "concepts": [
+        "Linear equations",
+        "Rank and solvability",
+        "Solution spaces"
+      ],
+      "skills": [
+        "identify the atomic boundary",
+        "explain the central objects",
+        "classify a representative problem"
+      ],
+      "prerequisites": [
+        "ko.curriculum.mathematics-v0.1.stage.algebra.linear-algebra.vector-spaces-linear-maps",
+        "ko.curriculum.mathematics-v0.1.stage.algebra.linear-algebra.matrix-theory"
+      ],
+      "assessments": [
+        "one independent boundary-and-explanation item"
+      ],
+      "source_node_ids": [
+        "ko.math.v0.1.algebra.linear-algebra.linear-systems"
+      ],
+      "review_state": "machine_validated"
+    },
+    {
+      "target_id": "ko.dataset-target.mathematics-v0.1.algebra.number-theory.elementary-number-theory",
+      "atomic_discipline_id": "ko.math.v0.1.ad.algebra.number-theory.elementary-number-theory",
+      "chapter": "Algebra",
+      "topic": "Elementary Number Theory",
+      "concepts": [
+        "Divisibility",
+        "Congruences",
+        "Prime numbers"
+      ],
+      "skills": [
+        "identify the atomic boundary",
+        "explain the central objects",
+        "classify a representative problem"
+      ],
+      "prerequisites": [],
+      "assessments": [
+        "one independent boundary-and-explanation item"
+      ],
+      "source_node_ids": [
+        "ko.math.v0.1.algebra.number-theory.elementary-number-theory"
+      ],
+      "review_state": "machine_validated"
+    },
+    {
+      "target_id": "ko.dataset-target.mathematics-v0.1.algebra.number-theory.algebraic-number-theory",
+      "atomic_discipline_id": "ko.math.v0.1.ad.algebra.number-theory.algebraic-number-theory",
+      "chapter": "Algebra",
+      "topic": "Algebraic Number Theory",
+      "concepts": [
+        "Number fields",
+        "Ideals",
+        "Algebraic integers"
+      ],
+      "skills": [
+        "identify the atomic boundary",
+        "explain the central objects",
+        "classify a representative problem"
+      ],
+      "prerequisites": [
+        "ko.curriculum.mathematics-v0.1.stage.algebra.number-theory.elementary-number-theory"
+      ],
+      "assessments": [
+        "one independent boundary-and-explanation item"
+      ],
+      "source_node_ids": [
+        "ko.math.v0.1.algebra.number-theory.algebraic-number-theory"
+      ],
+      "review_state": "machine_validated"
+    },
+    {
+      "target_id": "ko.dataset-target.mathematics-v0.1.algebra.number-theory.analytic-number-theory",
+      "atomic_discipline_id": "ko.math.v0.1.ad.algebra.number-theory.analytic-number-theory",
+      "chapter": "Algebra",
+      "topic": "Analytic Number Theory",
+      "concepts": [
+        "Prime distribution",
+        "Dirichlet series",
+        "Asymptotic number theory"
+      ],
+      "skills": [
+        "identify the atomic boundary",
+        "explain the central objects",
+        "classify a representative problem"
+      ],
+      "prerequisites": [
+        "ko.curriculum.mathematics-v0.1.stage.algebra.number-theory.elementary-number-theory"
+      ],
+      "assessments": [
+        "one independent boundary-and-explanation item"
+      ],
+      "source_node_ids": [
+        "ko.math.v0.1.algebra.number-theory.analytic-number-theory"
+      ],
+      "review_state": "machine_validated"
+    },
+    {
+      "target_id": "ko.dataset-target.mathematics-v0.1.algebra.number-theory.diophantine-equations",
+      "atomic_discipline_id": "ko.math.v0.1.ad.algebra.number-theory.diophantine-equations",
+      "chapter": "Algebra",
+      "topic": "Diophantine Equations",
+      "concepts": [
+        "Integer solutions",
+        "Rational solutions",
+        "Arithmetic curves in elementary scope"
+      ],
+      "skills": [
+        "identify the atomic boundary",
+        "explain the central objects",
+        "classify a representative problem"
+      ],
+      "prerequisites": [
+        "ko.curriculum.mathematics-v0.1.stage.algebra.number-theory.elementary-number-theory"
+      ],
+      "assessments": [
+        "one independent boundary-and-explanation item"
+      ],
+      "source_node_ids": [
+        "ko.math.v0.1.algebra.number-theory.diophantine-equations"
+      ],
+      "review_state": "machine_validated"
+    },
+    {
+      "target_id": "ko.dataset-target.mathematics-v0.1.analysis.calculus.differential-calculus",
+      "atomic_discipline_id": "ko.math.v0.1.ad.analysis.calculus.differential-calculus",
+      "chapter": "Analysis",
+      "topic": "Differential Calculus",
+      "concepts": [
+        "Derivatives",
+        "Differentiability",
+        "Taylor approximation"
+      ],
+      "skills": [
+        "identify the atomic boundary",
+        "explain the central objects",
+        "classify a representative problem"
+      ],
+      "prerequisites": [],
+      "assessments": [
+        "one independent boundary-and-explanation item"
+      ],
+      "source_node_ids": [
+        "ko.math.v0.1.analysis.calculus.differential-calculus"
+      ],
+      "review_state": "machine_validated"
+    },
+    {
+      "target_id": "ko.dataset-target.mathematics-v0.1.analysis.calculus.integral-calculus",
+      "atomic_discipline_id": "ko.math.v0.1.ad.analysis.calculus.integral-calculus",
+      "chapter": "Analysis",
+      "topic": "Integral Calculus",
+      "concepts": [
+        "Riemann integration",
+        "Fundamental theorem of calculus",
+        "Improper integrals"
+      ],
+      "skills": [
+        "identify the atomic boundary",
+        "explain the central objects",
+        "classify a representative problem"
+      ],
+      "prerequisites": [
+        "ko.curriculum.mathematics-v0.1.stage.analysis.calculus.differential-calculus"
+      ],
+      "assessments": [
+        "one independent boundary-and-explanation item"
+      ],
+      "source_node_ids": [
+        "ko.math.v0.1.analysis.calculus.integral-calculus"
+      ],
+      "review_state": "machine_validated"
+    },
+    {
+      "target_id": "ko.dataset-target.mathematics-v0.1.analysis.calculus.multivariable-calculus",
+      "atomic_discipline_id": "ko.math.v0.1.ad.analysis.calculus.multivariable-calculus",
+      "chapter": "Analysis",
+      "topic": "Multivariable Calculus",
+      "concepts": [
+        "Partial derivatives",
+        "Multiple integrals",
+        "Constrained optimization"
+      ],
+      "skills": [
+        "identify the atomic boundary",
+        "explain the central objects",
+        "classify a representative problem"
+      ],
+      "prerequisites": [
+        "ko.curriculum.mathematics-v0.1.stage.analysis.calculus.differential-calculus"
+      ],
+      "assessments": [
+        "one independent boundary-and-explanation item"
+      ],
+      "source_node_ids": [
+        "ko.math.v0.1.analysis.calculus.multivariable-calculus"
+      ],
+      "review_state": "machine_validated"
+    },
+    {
+      "target_id": "ko.dataset-target.mathematics-v0.1.analysis.calculus.vector-calculus",
+      "atomic_discipline_id": "ko.math.v0.1.ad.analysis.calculus.vector-calculus",
+      "chapter": "Analysis",
+      "topic": "Vector Calculus",
+      "concepts": [
+        "Gradient, divergence, curl",
+        "Line and surface integrals",
+        "Integral theorems"
+      ],
+      "skills": [
+        "identify the atomic boundary",
+        "explain the central objects",
+        "classify a representative problem"
+      ],
+      "prerequisites": [
+        "ko.curriculum.mathematics-v0.1.stage.analysis.calculus.multivariable-calculus"
+      ],
+      "assessments": [
+        "one independent boundary-and-explanation item"
+      ],
+      "source_node_ids": [
+        "ko.math.v0.1.analysis.calculus.vector-calculus"
+      ],
+      "review_state": "machine_validated"
+    },
+    {
+      "target_id": "ko.dataset-target.mathematics-v0.1.probability-statistics.probability.probability-foundations",
+      "atomic_discipline_id": "ko.math.v0.1.ad.probability-statistics.probability.probability-foundations",
+      "chapter": "Probability and Statistics",
+      "topic": "Probability Foundations",
+      "concepts": [
+        "Probability spaces",
+        "Conditional probability",
+        "Independence"
+      ],
+      "skills": [
+        "identify the atomic boundary",
+        "explain the central objects",
+        "classify a representative problem"
+      ],
+      "prerequisites": [],
+      "assessments": [
+        "one independent boundary-and-explanation item"
+      ],
+      "source_node_ids": [
+        "ko.math.v0.1.probability-statistics.probability.probability-foundations"
+      ],
+      "review_state": "machine_validated"
+    },
+    {
+      "target_id": "ko.dataset-target.mathematics-v0.1.probability-statistics.probability.random-variables-distributions",
+      "atomic_discipline_id": "ko.math.v0.1.ad.probability-statistics.probability.random-variables-distributions",
+      "chapter": "Probability and Statistics",
+      "topic": "Random Variables and Distributions",
+      "concepts": [
+        "Discrete and continuous distributions",
+        "Expectation and variance",
+        "Joint distributions"
+      ],
+      "skills": [
+        "identify the atomic boundary",
+        "explain the central objects",
+        "classify a representative problem"
+      ],
+      "prerequisites": [
+        "ko.curriculum.mathematics-v0.1.stage.probability-statistics.probability.probability-foundations"
+      ],
+      "assessments": [
+        "one independent boundary-and-explanation item"
+      ],
+      "source_node_ids": [
+        "ko.math.v0.1.probability-statistics.probability.random-variables-distributions"
+      ],
+      "review_state": "machine_validated"
+    },
+    {
+      "target_id": "ko.dataset-target.mathematics-v0.1.probability-statistics.probability.stochastic-processes",
+      "atomic_discipline_id": "ko.math.v0.1.ad.probability-statistics.probability.stochastic-processes",
+      "chapter": "Probability and Statistics",
+      "topic": "Stochastic Processes",
+      "concepts": [
+        "Markov processes",
+        "Martingales",
+        "Stationary processes"
+      ],
+      "skills": [
+        "identify the atomic boundary",
+        "explain the central objects",
+        "classify a representative problem"
+      ],
+      "prerequisites": [
+        "ko.curriculum.mathematics-v0.1.stage.probability-statistics.probability.random-variables-distributions"
+      ],
+      "assessments": [
+        "one independent boundary-and-explanation item"
+      ],
+      "source_node_ids": [
+        "ko.math.v0.1.probability-statistics.probability.stochastic-processes"
+      ],
+      "review_state": "machine_validated"
+    },
+    {
+      "target_id": "ko.dataset-target.mathematics-v0.1.probability-statistics.statistics.statistical-inference",
+      "atomic_discipline_id": "ko.math.v0.1.ad.probability-statistics.statistics.statistical-inference",
+      "chapter": "Probability and Statistics",
+      "topic": "Statistical Inference",
+      "concepts": [
+        "Estimation",
+        "Hypothesis testing",
+        "Confidence procedures"
+      ],
+      "skills": [
+        "identify the atomic boundary",
+        "explain the central objects",
+        "classify a representative problem"
+      ],
+      "prerequisites": [
+        "ko.curriculum.mathematics-v0.1.stage.probability-statistics.probability.probability-foundations"
+      ],
+      "assessments": [
+        "one independent boundary-and-explanation item"
+      ],
+      "source_node_ids": [
+        "ko.math.v0.1.probability-statistics.statistics.statistical-inference"
+      ],
+      "review_state": "machine_validated"
+    },
+    {
+      "target_id": "ko.dataset-target.mathematics-v0.1.probability-statistics.statistics.regression-analysis",
+      "atomic_discipline_id": "ko.math.v0.1.ad.probability-statistics.statistics.regression-analysis",
+      "chapter": "Probability and Statistics",
+      "topic": "Regression Analysis",
+      "concepts": [
+        "Linear regression",
+        "Generalized regression",
+        "Model diagnostics"
+      ],
+      "skills": [
+        "identify the atomic boundary",
+        "explain the central objects",
+        "classify a representative problem"
+      ],
+      "prerequisites": [
+        "ko.curriculum.mathematics-v0.1.stage.probability-statistics.statistics.statistical-inference"
+      ],
+      "assessments": [
+        "one independent boundary-and-explanation item"
+      ],
+      "source_node_ids": [
+        "ko.math.v0.1.probability-statistics.statistics.regression-analysis"
+      ],
+      "review_state": "machine_validated"
+    },
+    {
+      "target_id": "ko.dataset-target.mathematics-v0.1.probability-statistics.statistics.experimental-design",
+      "atomic_discipline_id": "ko.math.v0.1.ad.probability-statistics.statistics.experimental-design",
+      "chapter": "Probability and Statistics",
+      "topic": "Experimental Design",
+      "concepts": [
+        "Randomized designs",
+        "Factorial designs",
+        "Blocking"
+      ],
+      "skills": [
+        "identify the atomic boundary",
+        "explain the central objects",
+        "classify a representative problem"
+      ],
+      "prerequisites": [
+        "ko.curriculum.mathematics-v0.1.stage.probability-statistics.statistics.statistical-inference"
+      ],
+      "assessments": [
+        "one independent boundary-and-explanation item"
+      ],
+      "source_node_ids": [
+        "ko.math.v0.1.probability-statistics.statistics.experimental-design"
+      ],
+      "review_state": "machine_validated"
+    },
+    {
+      "target_id": "ko.dataset-target.mathematics-v0.1.probability-statistics.statistics.bayesian-statistics",
+      "atomic_discipline_id": "ko.math.v0.1.ad.probability-statistics.statistics.bayesian-statistics",
+      "chapter": "Probability and Statistics",
+      "topic": "Bayesian Statistics",
+      "concepts": [
+        "Prior and posterior distributions",
+        "Bayesian estimation",
+        "Bayesian decision"
+      ],
+      "skills": [
+        "identify the atomic boundary",
+        "explain the central objects",
+        "classify a representative problem"
+      ],
+      "prerequisites": [
+        "ko.curriculum.mathematics-v0.1.stage.probability-statistics.statistics.statistical-inference"
+      ],
+      "assessments": [
+        "one independent boundary-and-explanation item"
+      ],
+      "source_node_ids": [
+        "ko.math.v0.1.probability-statistics.statistics.bayesian-statistics"
+      ],
+      "review_state": "machine_validated"
+    },
+    {
+      "target_id": "ko.dataset-target.mathematics-v0.1.discrete-mathematics.combinatorics.enumerative-combinatorics",
+      "atomic_discipline_id": "ko.math.v0.1.ad.discrete-mathematics.combinatorics.enumerative-combinatorics",
+      "chapter": "Discrete Mathematics",
+      "topic": "Enumerative Combinatorics",
+      "concepts": [
+        "Counting formulas",
+        "Generating functions",
+        "Recurrences"
+      ],
+      "skills": [
+        "identify the atomic boundary",
+        "explain the central objects",
+        "classify a representative problem"
+      ],
+      "prerequisites": [],
+      "assessments": [
+        "one independent boundary-and-explanation item"
+      ],
+      "source_node_ids": [
+        "ko.math.v0.1.discrete-mathematics.combinatorics.enumerative-combinatorics"
+      ],
+      "review_state": "machine_validated"
+    },
+    {
+      "target_id": "ko.dataset-target.mathematics-v0.1.discrete-mathematics.combinatorics.extremal-combinatorics",
+      "atomic_discipline_id": "ko.math.v0.1.ad.discrete-mathematics.combinatorics.extremal-combinatorics",
+      "chapter": "Discrete Mathematics",
+      "topic": "Extremal Combinatorics",
+      "concepts": [
+        "Extremal set systems",
+        "Forbidden configurations",
+        "Extremal graph questions"
+      ],
+      "skills": [
+        "identify the atomic boundary",
+        "explain the central objects",
+        "classify a representative problem"
+      ],
+      "prerequisites": [
+        "ko.curriculum.mathematics-v0.1.stage.discrete-mathematics.combinatorics.enumerative-combinatorics"
+      ],
+      "assessments": [
+        "one independent boundary-and-explanation item"
+      ],
+      "source_node_ids": [
+        "ko.math.v0.1.discrete-mathematics.combinatorics.extremal-combinatorics"
+      ],
+      "review_state": "machine_validated"
+    },
+    {
+      "target_id": "ko.dataset-target.mathematics-v0.1.discrete-mathematics.graph-theory.structural-graph-theory",
+      "atomic_discipline_id": "ko.math.v0.1.ad.discrete-mathematics.graph-theory.structural-graph-theory",
+      "chapter": "Discrete Mathematics",
+      "topic": "Structural Graph Theory",
+      "concepts": [
+        "Graph classes",
+        "Connectivity",
+        "Coloring and minors"
+      ],
+      "skills": [
+        "identify the atomic boundary",
+        "explain the central objects",
+        "classify a representative problem"
+      ],
+      "prerequisites": [],
+      "assessments": [
+        "one independent boundary-and-explanation item"
+      ],
+      "source_node_ids": [
+        "ko.math.v0.1.discrete-mathematics.graph-theory.structural-graph-theory"
+      ],
+      "review_state": "machine_validated"
+    },
+    {
+      "target_id": "ko.dataset-target.mathematics-v0.1.discrete-mathematics.graph-theory.graph-algorithms",
+      "atomic_discipline_id": "ko.math.v0.1.ad.discrete-mathematics.graph-theory.graph-algorithms",
+      "chapter": "Discrete Mathematics",
+      "topic": "Graph Algorithms",
+      "concepts": [
+        "Paths and flows",
+        "Matching",
+        "Graph traversal and optimization"
+      ],
+      "skills": [
+        "identify the atomic boundary",
+        "explain the central objects",
+        "classify a representative problem"
+      ],
+      "prerequisites": [
+        "ko.curriculum.mathematics-v0.1.stage.discrete-mathematics.graph-theory.structural-graph-theory"
+      ],
+      "assessments": [
+        "one independent boundary-and-explanation item"
+      ],
+      "source_node_ids": [
+        "ko.math.v0.1.discrete-mathematics.graph-theory.graph-algorithms"
+      ],
+      "review_state": "machine_validated"
+    },
+    {
+      "target_id": "ko.dataset-target.mathematics-v0.1.discrete-mathematics.mathematical-logic.set-theory",
+      "atomic_discipline_id": "ko.math.v0.1.ad.discrete-mathematics.mathematical-logic.set-theory",
+      "chapter": "Discrete Mathematics",
+      "topic": "Set Theory",
+      "concepts": [
+        "Axiomatic set theory",
+        "Cardinal and ordinal theory",
+        "Set constructions"
+      ],
+      "skills": [
+        "identify the atomic boundary",
+        "explain the central objects",
+        "classify a representative problem"
+      ],
+      "prerequisites": [],
+      "assessments": [
+        "one independent boundary-and-explanation item"
+      ],
+      "source_node_ids": [
+        "ko.math.v0.1.discrete-mathematics.mathematical-logic.set-theory"
+      ],
+      "review_state": "machine_validated"
+    },
+    {
+      "target_id": "ko.dataset-target.mathematics-v0.1.discrete-mathematics.mathematical-logic.computability-theory",
+      "atomic_discipline_id": "ko.math.v0.1.ad.discrete-mathematics.mathematical-logic.computability-theory",
+      "chapter": "Discrete Mathematics",
+      "topic": "Computability Theory",
+      "concepts": [
+        "Recursive functions",
+        "Turing computability",
+        "Degrees of unsolvability"
+      ],
+      "skills": [
+        "identify the atomic boundary",
+        "explain the central objects",
+        "classify a representative problem"
+      ],
+      "prerequisites": [
+        "ko.curriculum.mathematics-v0.1.stage.discrete-mathematics.mathematical-logic.set-theory"
+      ],
+      "assessments": [
+        "one independent boundary-and-explanation item"
+      ],
+      "source_node_ids": [
+        "ko.math.v0.1.discrete-mathematics.mathematical-logic.computability-theory"
+      ],
+      "review_state": "machine_validated"
+    },
+    {
+      "target_id": "ko.dataset-target.mathematics-v0.1.discrete-mathematics.mathematical-logic.proof-theory",
+      "atomic_discipline_id": "ko.math.v0.1.ad.discrete-mathematics.mathematical-logic.proof-theory",
+      "chapter": "Discrete Mathematics",
+      "topic": "Proof Theory",
+      "concepts": [
+        "Formal deduction",
+        "Proof transformations",
+        "Consistency and strength"
+      ],
+      "skills": [
+        "identify the atomic boundary",
+        "explain the central objects",
+        "classify a representative problem"
+      ],
+      "prerequisites": [
+        "ko.curriculum.mathematics-v0.1.stage.discrete-mathematics.mathematical-logic.set-theory"
+      ],
+      "assessments": [
+        "one independent boundary-and-explanation item"
+      ],
+      "source_node_ids": [
+        "ko.math.v0.1.discrete-mathematics.mathematical-logic.proof-theory"
+      ],
+      "review_state": "machine_validated"
+    },
+    {
+      "target_id": "ko.dataset-target.mathematics-v0.1.geometry.euclidean-geometry.classical-euclidean-geometry",
+      "atomic_discipline_id": "ko.math.v0.1.ad.geometry.euclidean-geometry.classical-euclidean-geometry",
+      "chapter": "Geometry",
+      "topic": "Classical Euclidean Geometry",
+      "concepts": [
+        "Triangles",
+        "Circles",
+        "Congruence and similarity"
+      ],
+      "skills": [
+        "identify the atomic boundary",
+        "explain the central objects",
+        "classify a representative problem"
+      ],
+      "prerequisites": [],
+      "assessments": [
+        "one independent boundary-and-explanation item"
+      ],
+      "source_node_ids": [
+        "ko.math.v0.1.geometry.euclidean-geometry.classical-euclidean-geometry"
+      ],
+      "review_state": "machine_validated"
+    },
+    {
+      "target_id": "ko.dataset-target.mathematics-v0.1.geometry.analytic-geometry.coordinate-geometry",
+      "atomic_discipline_id": "ko.math.v0.1.ad.geometry.analytic-geometry.coordinate-geometry",
+      "chapter": "Geometry",
+      "topic": "Coordinate Geometry",
+      "concepts": [
+        "Cartesian coordinates",
+        "Conics",
+        "Coordinate transformations"
+      ],
+      "skills": [
+        "identify the atomic boundary",
+        "explain the central objects",
+        "classify a representative problem"
+      ],
+      "prerequisites": [
+        "ko.curriculum.mathematics-v0.1.stage.geometry.euclidean-geometry.classical-euclidean-geometry"
+      ],
+      "assessments": [
+        "one independent boundary-and-explanation item"
+      ],
+      "source_node_ids": [
+        "ko.math.v0.1.geometry.analytic-geometry.coordinate-geometry"
+      ],
+      "review_state": "machine_validated"
+    },
+    {
+      "target_id": "ko.dataset-target.mathematics-v0.1.geometry.differential-geometry.curves-and-surfaces",
+      "atomic_discipline_id": "ko.math.v0.1.ad.geometry.differential-geometry.curves-and-surfaces",
+      "chapter": "Geometry",
+      "topic": "Curves and Surfaces",
+      "concepts": [
+        "Parametric curves",
+        "Regular surfaces",
+        "Curvature"
+      ],
+      "skills": [
+        "identify the atomic boundary",
+        "explain the central objects",
+        "classify a representative problem"
+      ],
+      "prerequisites": [
+        "ko.curriculum.mathematics-v0.1.stage.geometry.euclidean-geometry.classical-euclidean-geometry",
+        "ko.curriculum.mathematics-v0.1.stage.geometry.analytic-geometry.coordinate-geometry"
+      ],
+      "assessments": [
+        "one independent boundary-and-explanation item"
+      ],
+      "source_node_ids": [
+        "ko.math.v0.1.geometry.differential-geometry.curves-and-surfaces"
+      ],
+      "review_state": "machine_validated"
+    }
+  ],
+  "quality_gates": {
+    "source_foreign_keys_resolve": true,
+    "stage_prerequisites_resolve": true,
+    "distinct_dataset_types": true,
+    "large_generation": false,
+    "training_or_engine_built": false,
+    "human_review_complete": false,
+    "status": "ready_for_review",
+    "notes": [
+      "All targets are small planning envelopes, not generated training datasets.",
+      "Every target links to a distinct dataset type and to explicit atomic/node IDs.",
+      "NOT_APPLICABLE: Cybersecurity, Radiology, Base Models, Adapters, training, and engine are outside scope."
+    ]
+  },
+  "review_state": "machine_validated",
+  "provenance": [
+    {
+      "source_type": "curriculum",
+      "source_id": "ko.curriculum.mathematics-v0.1",
+      "locator": "stages and prerequisites",
+      "version": "0.1"
+    },
+    {
+      "source_type": "atomic_discipline",
+      "source_id": "data/atomic-disciplines-v0.1.json",
+      "locator": "atomic_disciplines",
+      "version": "0.1.0"
+    },
+    {
+      "source_type": "other",
+      "source_id": "schemas/curriculum.schema.json",
+      "locator": "existing schema contract",
+      "version": "0.1"
+    }
+  ]
+}

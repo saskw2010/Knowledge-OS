@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://knowledge-os.dev/schemas/mk7-view.schema.json",
+  "title": "Knowledge-OS MK7 View",
+  "description": "A review-gated content view derived from approved Mathematics V0.1 curriculum claims; it is not a model, adapter, or training run contract.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "view_id",
+    "view_version",
+    "view_type",
+    "mathematics_version",
+    "source_curriculum_id",
+    "records",
+    "quality_gates",
+    "review_state",
+    "provenance"
+  ],
+  "properties": {
+    "schema_version": {"const": "0.1"},
+    "view_id": {"type": "string", "pattern": "^ko\\.view\\.mk7\\.[a-z0-9][a-z0-9._-]*$"},
+    "view_version": {"const": "0.1"},
+    "view_type": {"const": "mk7"},
+    "mathematics_version": {"const": "Mathematics V0.1"},
+    "source_curriculum_id": {"type": "string", "pattern": "^ko\\.curriculum\\.[a-z0-9][a-z0-9._-]*$"},
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["record_id", "record_type", "prompt", "response", "source_node_ids", "atomic_discipline_ids", "parent_path_ids", "split", "review_state"],
+        "properties": {
+          "record_id": {"type": "string", "pattern": "^ko\\.mk7\\.v0\\.1\\.[a-z0-9][a-z0-9._-]*$"},
+          "record_type": {"type": "string", "enum": ["definition", "explanation", "worked_example", "question_answer", "misconception_check", "prerequisite_check", "assessment"]},
+          "prompt": {"type": "string", "minLength": 1},
+          "response": {"type": "string", "minLength": 1},
+          "language": {"type": "string", "pattern": "^[a-z]{2,3}(-[A-Z]{2})?$"},
+          "source_node_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^ko\\.math\\.v0\\.1\\.[a-z0-9][a-z0-9._-]*$"}},
+          "atomic_discipline_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^ko\\.math\\.v0\\.1\\.ad\\.[a-z0-9][a-z0-9._-]*$"}},
+          "parent_path_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^ko\\.math\\.v0\\.1\\.[a-z0-9][a-z0-9._-]*$"}},
+          "split": {"type": "string", "enum": ["development", "validation", "test", "challenge", "release"]},
+          "review_state": {"type": "string", "enum": ["unreviewed", "machine_validated", "human_reviewed", "approved", "rejected"]},
+          "claim_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+          "review_notes": {"type": "array", "items": {"type": "string", "minLength": 1}}
+        }
+      }
+    },
+    "quality_gates": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schema_valid", "source_approved", "parent_child_valid", "atomicity_valid", "duplicate_checked", "leakage_checked", "independent_review", "status"],
+      "properties": {
+        "schema_valid": {"type": "boolean"},
+        "source_approved": {"type": "boolean"},
+        "parent_child_valid": {"type": "boolean"},
+        "atomicity_valid": {"type": "boolean"},
+        "duplicate_checked": {"type": "boolean"},
+        "leakage_checked": {"type": "boolean"},
+        "independent_review": {"type": "boolean"},
+        "status": {"type": "string", "enum": ["not_ready", "ready_for_review", "approved", "rejected"]},
+        "notes": {"type": "array", "items": {"type": "string", "minLength": 1}}
+      }
+    },
+    "review_state": {
+      "type": "string",
+      "enum": ["unreviewed", "machine_validated", "human_reviewed", "approved", "rejected"]
+    },
+    "provenance": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["source_type", "source_id"],
+        "properties": {
+          "source_type": {"type": "string", "enum": ["curriculum", "knowledge_node", "atomic_discipline", "expert_review", "other"]},
+          "source_id": {"type": "string", "minLength": 1},
+          "locator": {"type": ["string", "null"]},
+          "version": {"type": ["string", "null"]}
+        }
+      }
+    }
+  }
+}

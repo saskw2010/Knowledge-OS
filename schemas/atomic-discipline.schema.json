@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://knowledge-os.dev/schemas/atomic-discipline.schema.json",
+  "title": "Knowledge-OS Mathematics V0.1 Atomic Discipline",
+  "description": "A reusable, bounded instructional unit with no independently expandable child discipline.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "discipline_id",
+    "node_id",
+    "mathematics_version",
+    "name",
+    "parent_node_ids",
+    "child_node_ids",
+    "atomicity",
+    "entry_requirements",
+    "learning_outcomes",
+    "core_concepts",
+    "review_state",
+    "provenance"
+  ],
+  "properties": {
+    "schema_version": {"const": "0.1"},
+    "discipline_id": {"type": "string", "pattern": "^ko\\.math\\.v0\\.1\\.ad\\.[a-z0-9][a-z0-9._-]*$"},
+    "node_id": {"type": "string", "pattern": "^ko\\.math\\.v0\\.1\\.[a-z0-9][a-z0-9._-]*$"},
+    "mathematics_version": {"const": "Mathematics V0.1"},
+    "name": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["en"],
+      "properties": {
+        "en": {"type": "string", "minLength": 1},
+        "ar": {"type": ["string", "null"], "minLength": 1}
+      }
+    },
+    "definition": {"type": "string", "minLength": 1},
+    "parent_node_ids": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^ko\\.math\\.v0\\.1\\.[a-z0-9][a-z0-9._-]*$"}
+    },
+    "child_node_ids": {
+      "type": "array",
+      "maxItems": 0,
+      "items": {"type": "string"}
+    },
+    "atomicity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "independent_assessment", "reusable_unit"],
+      "properties": {
+        "status": {"const": "atomic"},
+        "independent_assessment": {"type": "boolean"},
+        "reusable_unit": {"type": "boolean"},
+        "reason": {"type": "string", "minLength": 1},
+        "evidence_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+      }
+    },
+    "entry_requirements": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1}
+    },
+    "learning_outcomes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "core_concepts": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "non_goals": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "review_state": {
+      "type": "string",
+      "enum": ["unreviewed", "machine_validated", "human_reviewed", "approved", "rejected"]
+    },
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "provenance": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["source_type", "source_id"],
+        "properties": {
+          "source_type": {"type": "string", "enum": ["official_classification", "publication", "expert_review", "curriculum", "other"]},
+          "source_id": {"type": "string", "minLength": 1},
+          "locator": {"type": ["string", "null"]},
+          "version": {"type": ["string", "null"]},
+          "license": {"type": ["string", "null"]}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "schema_version": "0.1",
+  "index_id": "ko.content-index.mathematics-v0.1",
+  "index_version": "0.1",
+  "mathematics_version": "Mathematics V0.1",
+  "generated_at": "2026-08-09T19:27:00+03:00",
+  "entries": [
+    {
+      "content_id": "ko.math.v0.1.knowledge-tree",
+      "content_type": "source_snapshot",
+      "relative_path": "data/knowledge-tree-v0.1.json",
+      "mathematics_version": "Mathematics V0.1",
+      "review_state": "machine_validated",
+      "content_sha256": "BECF49DA4E4073768017DABE2B6F9C62BC879FFD592CC9751EDD4E3CF84B5EE9",
+      "source_ids": [
+        "knowledge_tree_mathematics_v0.1"
+      ]
+    },
+    {
+      "content_id": "ko.math.v0.1.atomic-disciplines",
+      "content_type": "atomic_discipline",
+      "relative_path": "data/atomic-disciplines-v0.1.json",
+      "mathematics_version": "Mathematics V0.1",
+      "review_state": "machine_validated",
+      "content_sha256": "FAD6D230CB524DFB4E93C733404C701A7C9D3DB672BA6EED0715A6D94C8A00E8",
+      "source_ids": [
+        "atomic_disciplines_mathematics_v0.1"
+      ]
+    },
+    {
+      "content_id": "ko.curriculum.mathematics-v0.1",
+      "content_type": "curriculum",
+      "relative_path": "data/curricula-v0.1.json",
+      "mathematics_version": "Mathematics V0.1",
+      "review_state": "machine_validated",
+      "content_sha256": "4EF78DDB84690217B3C021A11760B3C56BC24176D171936317DBA29D0E1A9CF1",
+      "source_ids": [
+        "knowledge_tree_mathematics_v0.1",
+        "atomic_disciplines_mathematics_v0.1"
+      ]
+    },
+    {
+      "content_id": "ko.view.mk7.mathematics-v0.1-golden-reference",
+      "content_type": "mk7_view",
+      "relative_path": "data/mk7-views-v0.1.json",
+      "mathematics_version": "Mathematics V0.1",
+      "review_state": "machine_validated",
+      "content_sha256": "AF6A64A1FF32391F1C9B5A23C1F936770F061828AC8DE3539762DE3BEFEFDD53",
+      "source_ids": [
+        "ko.curriculum.mathematics-v0.1"
+      ]
+    },
+    {
+      "content_id": "ko.dataset-targets.mathematics-v0.1",
+      "content_type": "source_snapshot",
+      "relative_path": "data/dataset-targets-v0.1.json",
+      "mathematics_version": "Mathematics V0.1",
+      "review_state": "machine_validated",
+      "content_sha256": "80D8AC62FA567DFD63007E4DD8291B9331C24C8B651BD6B47E5B7FE62373A482",
+      "source_ids": [
+        "ko.curriculum.mathematics-v0.1",
+        "ko.view.mk7.mathematics-v0.1-golden-reference"
+      ]
+    }
+  ],
+  "review_state": "machine_validated",
+  "integrity": {
+    "hash_algorithm": "sha256",
+    "unique_content_ids": true,
+    "paths_are_relative": true
+  }
+}

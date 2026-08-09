@@ -1,0 +1,796 @@
+{
+  "schema_version": "0.1",
+  "view_id": "ko.view.mk7.mathematics-v0.1-golden-reference",
+  "view_version": "0.1",
+  "view_type": "mk7",
+  "mathematics_version": "Mathematics V0.1",
+  "source_curriculum_id": "ko.curriculum.mathematics-v0.1",
+  "records": [
+    {
+      "record_id": "ko.mk7.v0.1.definition.algebra.linear-algebra.vector-spaces-linear-maps",
+      "record_type": "definition",
+      "prompt": "What is Vector Spaces and Linear Maps, and how is its boundary distinguished from neighboring mathematical areas?",
+      "response": "The study of vector spaces, subspaces, bases, dimension, linear maps, kernels, images, and canonical linear constructions. Includes: Vector spaces; Linear transformations; Dimension and rank. Excludes: Nonlinear maps as the primary object. Boundary: Include statements about vector spaces, subspaces, bases, dimension, and linear maps; route matrix-specific canonical-form work to Matrix Theory.",
+      "language": "en",
+      "source_node_ids": [
+        "ko.math.v0.1.algebra.linear-algebra.vector-spaces-linear-maps"
+      ],
+      "atomic_discipline_ids": [
+        "ko.math.v0.1.ad.algebra.linear-algebra.vector-spaces-linear-maps"
+      ],
+      "parent_path_ids": [
+        "ko.math.v0.1.math",
+        "ko.math.v0.1.algebra",
+        "ko.math.v0.1.algebra.linear-algebra",
+        "ko.math.v0.1.algebra.linear-algebra.vector-spaces-linear-maps"
+      ],
+      "split": "development",
+      "review_state": "machine_validated",
+      "claim_ids": [
+        "claim.math.v0.1.algebra.linear-algebra.vector-spaces-linear-maps.definition"
+      ],
+      "review_notes": [
+        "Derived from the machine-validated atomic discipline boundary; human semantic review remains required."
+      ]
+    },
+    {
+      "record_id": "ko.mk7.v0.1.definition.algebra.linear-algebra.matrix-theory",
+      "record_type": "definition",
+      "prompt": "What is Matrix Theory, and how is its boundary distinguished from neighboring mathematical areas?",
+      "response": "The study of matrices, determinants, canonical forms, eigenstructure, matrix decompositions, and matrix invariants. Includes: Matrix operations; Eigenvalues and eigenvectors; Canonical forms. Excludes: Numerical linear algebra software engineering. Boundary: Include matrix invariants and canonical forms; route abstract linear-map statements without matrix representation to Vector Spaces and Linear Maps.",
+      "language": "en",
+      "source_node_ids": [
+        "ko.math.v0.1.algebra.linear-algebra.matrix-theory"
+      ],
+      "atomic_discipline_ids": [
+        "ko.math.v0.1.ad.algebra.linear-algebra.matrix-theory"
+      ],
+      "parent_path_ids": [
+        "ko.math.v0.1.math",
+        "ko.math.v0.1.algebra",
+        "ko.math.v0.1.algebra.linear-algebra",
+        "ko.math.v0.1.algebra.linear-algebra.matrix-theory"
+      ],
+      "split": "development",
+      "review_state": "machine_validated",
+      "claim_ids": [
+        "claim.math.v0.1.algebra.linear-algebra.matrix-theory.definition"
+      ],
+      "review_notes": [
+        "Derived from the machine-validated atomic discipline boundary; human semantic review remains required."
+      ]
+    },
+    {
+      "record_id": "ko.mk7.v0.1.definition.algebra.linear-algebra.linear-systems",
+      "record_type": "definition",
+      "prompt": "What is Linear Systems, and how is its boundary distinguished from neighboring mathematical areas?",
+      "response": "The study of existence, uniqueness, structure, and solution methods for systems of linear equations and related operator equations. Includes: Linear equations; Rank and solvability; Solution spaces. Excludes: Nonlinear differential equation solving. Boundary: Include linear equation systems and their solution spaces; exclude nonlinear systems and numerical implementation details.",
+      "language": "en",
+      "source_node_ids": [
+        "ko.math.v0.1.algebra.linear-algebra.linear-systems"
+      ],
+      "atomic_discipline_ids": [
+        "ko.math.v0.1.ad.algebra.linear-algebra.linear-systems"
+      ],
+      "parent_path_ids": [
+        "ko.math.v0.1.math",
+        "ko.math.v0.1.algebra",
+        "ko.math.v0.1.algebra.linear-algebra",
+        "ko.math.v0.1.algebra.linear-algebra.linear-systems"
+      ],
+      "split": "development",
+      "review_state": "machine_validated",
+      "claim_ids": [
+        "claim.math.v0.1.algebra.linear-algebra.linear-systems.definition"
+      ],
+      "review_notes": [
+        "Derived from the machine-validated atomic discipline boundary; human semantic review remains required."
+      ]
+    },
+    {
+      "record_id": "ko.mk7.v0.1.definition.algebra.number-theory.elementary-number-theory",
+      "record_type": "definition",
+      "prompt": "What is Elementary Number Theory, and how is its boundary distinguished from neighboring mathematical areas?",
+      "response": "The study of divisibility, congruences, primes, arithmetic functions, and integer properties using elementary or classical methods. Includes: Divisibility; Congruences; Prime numbers. Excludes: Number fields as the primary framework. Boundary: Include integer divisibility, congruence, and primes; route number fields and ideals to Algebraic Number Theory.",
+      "language": "en",
+      "source_node_ids": [
+        "ko.math.v0.1.algebra.number-theory.elementary-number-theory"
+      ],
+      "atomic_discipline_ids": [
+        "ko.math.v0.1.ad.algebra.number-theory.elementary-number-theory"
+      ],
+      "parent_path_ids": [
+        "ko.math.v0.1.math",
+        "ko.math.v0.1.algebra",
+        "ko.math.v0.1.algebra.number-theory",
+        "ko.math.v0.1.algebra.number-theory.elementary-number-theory"
+      ],
+      "split": "development",
+      "review_state": "machine_validated",
+      "claim_ids": [
+        "claim.math.v0.1.algebra.number-theory.elementary-number-theory.definition"
+      ],
+      "review_notes": [
+        "Derived from the machine-validated atomic discipline boundary; human semantic review remains required."
+      ]
+    },
+    {
+      "record_id": "ko.mk7.v0.1.definition.algebra.number-theory.algebraic-number-theory",
+      "record_type": "definition",
+      "prompt": "What is Algebraic Number Theory, and how is its boundary distinguished from neighboring mathematical areas?",
+      "response": "The study of algebraic numbers, number fields, ideals, valuations, and arithmetic properties of algebraic extensions. Includes: Number fields; Ideals; Algebraic integers. Excludes: General abstract algebra without arithmetic focus. Boundary: Include arithmetic of number fields and ideals; exclude abstract algebra without a number-theoretic question.",
+      "language": "en",
+      "source_node_ids": [
+        "ko.math.v0.1.algebra.number-theory.algebraic-number-theory"
+      ],
+      "atomic_discipline_ids": [
+        "ko.math.v0.1.ad.algebra.number-theory.algebraic-number-theory"
+      ],
+      "parent_path_ids": [
+        "ko.math.v0.1.math",
+        "ko.math.v0.1.algebra",
+        "ko.math.v0.1.algebra.number-theory",
+        "ko.math.v0.1.algebra.number-theory.algebraic-number-theory"
+      ],
+      "split": "development",
+      "review_state": "machine_validated",
+      "claim_ids": [
+        "claim.math.v0.1.algebra.number-theory.algebraic-number-theory.definition"
+      ],
+      "review_notes": [
+        "Derived from the machine-validated atomic discipline boundary; human semantic review remains required."
+      ]
+    },
+    {
+      "record_id": "ko.mk7.v0.1.definition.algebra.number-theory.analytic-number-theory",
+      "record_type": "definition",
+      "prompt": "What is Analytic Number Theory, and how is its boundary distinguished from neighboring mathematical areas?",
+      "response": "The study of arithmetic questions using analytic functions, complex analysis, asymptotic methods, and estimates. Includes: Prime distribution; Dirichlet series; Asymptotic number theory. Excludes: Real analysis without arithmetic questions. Boundary: Require an arithmetic target such as primes or L-functions; otherwise route to the relevant Analysis leaf.",
+      "language": "en",
+      "source_node_ids": [
+        "ko.math.v0.1.algebra.number-theory.analytic-number-theory"
+      ],
+      "atomic_discipline_ids": [
+        "ko.math.v0.1.ad.algebra.number-theory.analytic-number-theory"
+      ],
+      "parent_path_ids": [
+        "ko.math.v0.1.math",
+        "ko.math.v0.1.algebra",
+        "ko.math.v0.1.algebra.number-theory",
+        "ko.math.v0.1.algebra.number-theory.analytic-number-theory"
+      ],
+      "split": "development",
+      "review_state": "machine_validated",
+      "claim_ids": [
+        "claim.math.v0.1.algebra.number-theory.analytic-number-theory.definition"
+      ],
+      "review_notes": [
+        "Derived from the machine-validated atomic discipline boundary; human semantic review remains required."
+      ]
+    },
+    {
+      "record_id": "ko.mk7.v0.1.definition.algebra.number-theory.diophantine-equations",
+      "record_type": "definition",
+      "prompt": "What is Diophantine Equations, and how is its boundary distinguished from neighboring mathematical areas?",
+      "response": "The study of polynomial or related equations whose solutions are sought in integers, rational numbers, or other arithmetic domains. Includes: Integer solutions; Rational solutions; Arithmetic curves in elementary scope. Excludes: Numerical root finding over the reals. Boundary: Require an arithmetic domain for solutions; exclude ordinary real or complex root finding.",
+      "language": "en",
+      "source_node_ids": [
+        "ko.math.v0.1.algebra.number-theory.diophantine-equations"
+      ],
+      "atomic_discipline_ids": [
+        "ko.math.v0.1.ad.algebra.number-theory.diophantine-equations"
+      ],
+      "parent_path_ids": [
+        "ko.math.v0.1.math",
+        "ko.math.v0.1.algebra",
+        "ko.math.v0.1.algebra.number-theory",
+        "ko.math.v0.1.algebra.number-theory.diophantine-equations"
+      ],
+      "split": "development",
+      "review_state": "machine_validated",
+      "claim_ids": [
+        "claim.math.v0.1.algebra.number-theory.diophantine-equations.definition"
+      ],
+      "review_notes": [
+        "Derived from the machine-validated atomic discipline boundary; human semantic review remains required."
+      ]
+    },
+    {
+      "record_id": "ko.mk7.v0.1.definition.analysis.calculus.differential-calculus",
+      "record_type": "definition",
+      "prompt": "What is Differential Calculus, and how is its boundary distinguished from neighboring mathematical areas?",
+      "response": "The study of rates of change, derivatives, local approximation, extrema, and differential behavior of functions. Includes: Derivatives; Differentiability; Taylor approximation. Excludes: Integration as the primary operation. Boundary: Route accumulation-first questions to Integral Calculus and manifold-first questions to Differential Geometry.",
+      "language": "en",
+      "source_node_ids": [
+        "ko.math.v0.1.analysis.calculus.differential-calculus"
+      ],
+      "atomic_discipline_ids": [
+        "ko.math.v0.1.ad.analysis.calculus.differential-calculus"
+      ],
+      "parent_path_ids": [
+        "ko.math.v0.1.math",
+        "ko.math.v0.1.analysis",
+        "ko.math.v0.1.analysis.calculus",
+        "ko.math.v0.1.analysis.calculus.differential-calculus"
+      ],
+      "split": "development",
+      "review_state": "machine_validated",
+      "claim_ids": [
+        "claim.math.v0.1.analysis.calculus.differential-calculus.definition"
+      ],
+      "review_notes": [
+        "Derived from the machine-validated atomic discipline boundary; human semantic review remains required."
+      ]
+    },
+    {
+      "record_id": "ko.mk7.v0.1.definition.analysis.calculus.integral-calculus",
+      "record_type": "definition",
+      "prompt": "What is Integral Calculus, and how is its boundary distinguished from neighboring mathematical areas?",
+      "response": "The study of accumulation, definite and indefinite integrals, integration theorems, and quantities obtained by integration. Includes: Riemann integration; Fundamental theorem of calculus; Improper integrals. Excludes: Measure theory in its full generality. Boundary: Route derivative-first questions to Differential Calculus and measure-theoretic questions beyond elementary integration to Analysis.",
+      "language": "en",
+      "source_node_ids": [
+        "ko.math.v0.1.analysis.calculus.integral-calculus"
+      ],
+      "atomic_discipline_ids": [
+        "ko.math.v0.1.ad.analysis.calculus.integral-calculus"
+      ],
+      "parent_path_ids": [
+        "ko.math.v0.1.math",
+        "ko.math.v0.1.analysis",
+        "ko.math.v0.1.analysis.calculus",
+        "ko.math.v0.1.analysis.calculus.integral-calculus"
+      ],
+      "split": "development",
+      "review_state": "machine_validated",
+      "claim_ids": [
+        "claim.math.v0.1.analysis.calculus.integral-calculus.definition"
+      ],
+      "review_notes": [
+        "Derived from the machine-validated atomic discipline boundary; human semantic review remains required."
+      ]
+    },
+    {
+      "record_id": "ko.mk7.v0.1.definition.analysis.calculus.multivariable-calculus",
+      "record_type": "definition",
+      "prompt": "What is Multivariable Calculus, and how is its boundary distinguished from neighboring mathematical areas?",
+      "response": "The study of limits, derivatives, integrals, and optimization for functions of several real variables. Includes: Partial derivatives; Multiple integrals; Constrained optimization. Excludes: Abstract manifold theory as the primary setting. Boundary: Route smooth-manifold structure to Differential Geometry and one-variable fundamentals to Differential or Integral Calculus.",
+      "language": "en",
+      "source_node_ids": [
+        "ko.math.v0.1.analysis.calculus.multivariable-calculus"
+      ],
+      "atomic_discipline_ids": [
+        "ko.math.v0.1.ad.analysis.calculus.multivariable-calculus"
+      ],
+      "parent_path_ids": [
+        "ko.math.v0.1.math",
+        "ko.math.v0.1.analysis",
+        "ko.math.v0.1.analysis.calculus",
+        "ko.math.v0.1.analysis.calculus.multivariable-calculus"
+      ],
+      "split": "development",
+      "review_state": "machine_validated",
+      "claim_ids": [
+        "claim.math.v0.1.analysis.calculus.multivariable-calculus.definition"
+      ],
+      "review_notes": [
+        "Derived from the machine-validated atomic discipline boundary; human semantic review remains required."
+      ]
+    },
+    {
+      "record_id": "ko.mk7.v0.1.definition.analysis.calculus.vector-calculus",
+      "record_type": "definition",
+      "prompt": "What is Vector Calculus, and how is its boundary distinguished from neighboring mathematical areas?",
+      "response": "The study of scalar and vector fields, line and surface integrals, and differential operators in Euclidean spaces. Includes: Gradient, divergence, curl; Line and surface integrals; Integral theorems. Excludes: General vector space theory without calculus. Boundary: Require a vector/scalar field or line/surface operation; route abstract vector spaces to Linear Algebra.",
+      "language": "en",
+      "source_node_ids": [
+        "ko.math.v0.1.analysis.calculus.vector-calculus"
+      ],
+      "atomic_discipline_ids": [
+        "ko.math.v0.1.ad.analysis.calculus.vector-calculus"
+      ],
+      "parent_path_ids": [
+        "ko.math.v0.1.math",
+        "ko.math.v0.1.analysis",
+        "ko.math.v0.1.analysis.calculus",
+        "ko.math.v0.1.analysis.calculus.vector-calculus"
+      ],
+      "split": "development",
+      "review_state": "machine_validated",
+      "claim_ids": [
+        "claim.math.v0.1.analysis.calculus.vector-calculus.definition"
+      ],
+      "review_notes": [
+        "Derived from the machine-validated atomic discipline boundary; human semantic review remains required."
+      ]
+    },
+    {
+      "record_id": "ko.mk7.v0.1.definition.probability-statistics.probability.probability-foundations",
+      "record_type": "definition",
+      "prompt": "What is Probability Foundations, and how is its boundary distinguished from neighboring mathematical areas?",
+      "response": "The axioms, events, sigma-algebras, probability measures, conditional probability, and independence underlying probability theory. Includes: Probability spaces; Conditional probability; Independence. Excludes: Statistical estimation from observed samples. Boundary: Include probability spaces and measure-level definitions; route sample-based estimation to Statistical Inference.",
+      "language": "en",
+      "source_node_ids": [
+        "ko.math.v0.1.probability-statistics.probability.probability-foundations"
+      ],
+      "atomic_discipline_ids": [
+        "ko.math.v0.1.ad.probability-statistics.probability.probability-foundations"
+      ],
+      "parent_path_ids": [
+        "ko.math.v0.1.math",
+        "ko.math.v0.1.probability-statistics",
+        "ko.math.v0.1.probability-statistics.probability",
+        "ko.math.v0.1.probability-statistics.probability.probability-foundations"
+      ],
+      "split": "development",
+      "review_state": "machine_validated",
+      "claim_ids": [
+        "claim.math.v0.1.probability-statistics.probability.probability-foundations.definition"
+      ],
+      "review_notes": [
+        "Derived from the machine-validated atomic discipline boundary; human semantic review remains required."
+      ]
+    },
+    {
+      "record_id": "ko.mk7.v0.1.definition.probability-statistics.probability.random-variables-distributions",
+      "record_type": "definition",
+      "prompt": "What is Random Variables and Distributions, and how is its boundary distinguished from neighboring mathematical areas?",
+      "response": "The study of random variables, probability distributions, expectations, moments, dependence, and transformations. Includes: Discrete and continuous distributions; Expectation and variance; Joint distributions. Excludes: Time-indexed stochastic evolution as the primary object. Boundary: Route time-indexed dependence to Stochastic Processes and data-based estimation to Statistics.",
+      "language": "en",
+      "source_node_ids": [
+        "ko.math.v0.1.probability-statistics.probability.random-variables-distributions"
+      ],
+      "atomic_discipline_ids": [
+        "ko.math.v0.1.ad.probability-statistics.probability.random-variables-distributions"
+      ],
+      "parent_path_ids": [
+        "ko.math.v0.1.math",
+        "ko.math.v0.1.probability-statistics",
+        "ko.math.v0.1.probability-statistics.probability",
+        "ko.math.v0.1.probability-statistics.probability.random-variables-distributions"
+      ],
+      "split": "development",
+      "review_state": "machine_validated",
+      "claim_ids": [
+        "claim.math.v0.1.probability-statistics.probability.random-variables-distributions.definition"
+      ],
+      "review_notes": [
+        "Derived from the machine-validated atomic discipline boundary; human semantic review remains required."
+      ]
+    },
+    {
+      "record_id": "ko.mk7.v0.1.definition.probability-statistics.probability.stochastic-processes",
+      "record_type": "definition",
+      "prompt": "What is Stochastic Processes, and how is its boundary distinguished from neighboring mathematical areas?",
+      "response": "The study of random processes indexed by time or another parameter, including dependence, paths, and long-run behavior. Includes: Markov processes; Martingales; Stationary processes. Excludes: Static distributions without an indexing process. Boundary: Require a random process indexed by time or another parameter; exclude single random variables.",
+      "language": "en",
+      "source_node_ids": [
+        "ko.math.v0.1.probability-statistics.probability.stochastic-processes"
+      ],
+      "atomic_discipline_ids": [
+        "ko.math.v0.1.ad.probability-statistics.probability.stochastic-processes"
+      ],
+      "parent_path_ids": [
+        "ko.math.v0.1.math",
+        "ko.math.v0.1.probability-statistics",
+        "ko.math.v0.1.probability-statistics.probability",
+        "ko.math.v0.1.probability-statistics.probability.stochastic-processes"
+      ],
+      "split": "development",
+      "review_state": "machine_validated",
+      "claim_ids": [
+        "claim.math.v0.1.probability-statistics.probability.stochastic-processes.definition"
+      ],
+      "review_notes": [
+        "Derived from the machine-validated atomic discipline boundary; human semantic review remains required."
+      ]
+    },
+    {
+      "record_id": "ko.mk7.v0.1.definition.probability-statistics.statistics.statistical-inference",
+      "record_type": "definition",
+      "prompt": "What is Statistical Inference, and how is its boundary distinguished from neighboring mathematical areas?",
+      "response": "The study of estimating unknown quantities, testing hypotheses, and quantifying uncertainty from data under statistical models. Includes: Estimation; Hypothesis testing; Confidence procedures. Excludes: Descriptive summaries without inference. Boundary: Require a model-based claim about unknown quantities or hypotheses; route prediction-specific models to Regression Analysis when appropriate.",
+      "language": "en",
+      "source_node_ids": [
+        "ko.math.v0.1.probability-statistics.statistics.statistical-inference"
+      ],
+      "atomic_discipline_ids": [
+        "ko.math.v0.1.ad.probability-statistics.statistics.statistical-inference"
+      ],
+      "parent_path_ids": [
+        "ko.math.v0.1.math",
+        "ko.math.v0.1.probability-statistics",
+        "ko.math.v0.1.probability-statistics.statistics",
+        "ko.math.v0.1.probability-statistics.statistics.statistical-inference"
+      ],
+      "split": "development",
+      "review_state": "machine_validated",
+      "claim_ids": [
+        "claim.math.v0.1.probability-statistics.statistics.statistical-inference.definition"
+      ],
+      "review_notes": [
+        "Derived from the machine-validated atomic discipline boundary; human semantic review remains required."
+      ]
+    },
+    {
+      "record_id": "ko.mk7.v0.1.definition.probability-statistics.statistics.regression-analysis",
+      "record_type": "definition",
+      "prompt": "What is Regression Analysis, and how is its boundary distinguished from neighboring mathematical areas?",
+      "response": "The study of conditional relationships and prediction using regression models, including linear and generalized models. Includes: Linear regression; Generalized regression; Model diagnostics. Excludes: Machine-learning engineering outside statistical modeling. Boundary: Require a regression relationship; route general estimation without a regression structure to Statistical Inference.",
+      "language": "en",
+      "source_node_ids": [
+        "ko.math.v0.1.probability-statistics.statistics.regression-analysis"
+      ],
+      "atomic_discipline_ids": [
+        "ko.math.v0.1.ad.probability-statistics.statistics.regression-analysis"
+      ],
+      "parent_path_ids": [
+        "ko.math.v0.1.math",
+        "ko.math.v0.1.probability-statistics",
+        "ko.math.v0.1.probability-statistics.statistics",
+        "ko.math.v0.1.probability-statistics.statistics.regression-analysis"
+      ],
+      "split": "development",
+      "review_state": "machine_validated",
+      "claim_ids": [
+        "claim.math.v0.1.probability-statistics.statistics.regression-analysis.definition"
+      ],
+      "review_notes": [
+        "Derived from the machine-validated atomic discipline boundary; human semantic review remains required."
+      ]
+    },
+    {
+      "record_id": "ko.mk7.v0.1.definition.probability-statistics.statistics.experimental-design",
+      "record_type": "definition",
+      "prompt": "What is Experimental Design, and how is its boundary distinguished from neighboring mathematical areas?",
+      "response": "The study of principled assignment, control, randomization, and analysis plans for learning causal or comparative information from experiments. Includes: Randomized designs; Factorial designs; Blocking. Excludes: Laboratory operations without a statistical design question. Boundary: Require a statistical design or assignment question; exclude operational experiment execution.",
+      "language": "en",
+      "source_node_ids": [
+        "ko.math.v0.1.probability-statistics.statistics.experimental-design"
+      ],
+      "atomic_discipline_ids": [
+        "ko.math.v0.1.ad.probability-statistics.statistics.experimental-design"
+      ],
+      "parent_path_ids": [
+        "ko.math.v0.1.math",
+        "ko.math.v0.1.probability-statistics",
+        "ko.math.v0.1.probability-statistics.statistics",
+        "ko.math.v0.1.probability-statistics.statistics.experimental-design"
+      ],
+      "split": "development",
+      "review_state": "machine_validated",
+      "claim_ids": [
+        "claim.math.v0.1.probability-statistics.statistics.experimental-design.definition"
+      ],
+      "review_notes": [
+        "Derived from the machine-validated atomic discipline boundary; human semantic review remains required."
+      ]
+    },
+    {
+      "record_id": "ko.mk7.v0.1.definition.probability-statistics.statistics.bayesian-statistics",
+      "record_type": "definition",
+      "prompt": "What is Bayesian Statistics, and how is its boundary distinguished from neighboring mathematical areas?",
+      "response": "The study of statistical reasoning that combines prior distributions with likelihoods to obtain posterior uncertainty and decisions. Includes: Prior and posterior distributions; Bayesian estimation; Bayesian decision. Excludes: Philosophical debate about probability without statistical modeling. Boundary: Require Bayesian updating or decision structure; route non-Bayesian inference to Statistical Inference.",
+      "language": "en",
+      "source_node_ids": [
+        "ko.math.v0.1.probability-statistics.statistics.bayesian-statistics"
+      ],
+      "atomic_discipline_ids": [
+        "ko.math.v0.1.ad.probability-statistics.statistics.bayesian-statistics"
+      ],
+      "parent_path_ids": [
+        "ko.math.v0.1.math",
+        "ko.math.v0.1.probability-statistics",
+        "ko.math.v0.1.probability-statistics.statistics",
+        "ko.math.v0.1.probability-statistics.statistics.bayesian-statistics"
+      ],
+      "split": "development",
+      "review_state": "machine_validated",
+      "claim_ids": [
+        "claim.math.v0.1.probability-statistics.statistics.bayesian-statistics.definition"
+      ],
+      "review_notes": [
+        "Derived from the machine-validated atomic discipline boundary; human semantic review remains required."
+      ]
+    },
+    {
+      "record_id": "ko.mk7.v0.1.definition.discrete-mathematics.combinatorics.enumerative-combinatorics",
+      "record_type": "definition",
+      "prompt": "What is Enumerative Combinatorics, and how is its boundary distinguished from neighboring mathematical areas?",
+      "response": "The study of counting finite structures, generating functions, recurrence relations, and exact enumeration methods. Includes: Counting formulas; Generating functions; Recurrences. Excludes: Continuous probability distributions. Boundary: Require counting or enumeration of finite structures; route extremal objectives to Extremal Combinatorics.",
+      "language": "en",
+      "source_node_ids": [
+        "ko.math.v0.1.discrete-mathematics.combinatorics.enumerative-combinatorics"
+      ],
+      "atomic_discipline_ids": [
+        "ko.math.v0.1.ad.discrete-mathematics.combinatorics.enumerative-combinatorics"
+      ],
+      "parent_path_ids": [
+        "ko.math.v0.1.math",
+        "ko.math.v0.1.discrete-mathematics",
+        "ko.math.v0.1.discrete-mathematics.combinatorics",
+        "ko.math.v0.1.discrete-mathematics.combinatorics.enumerative-combinatorics"
+      ],
+      "split": "development",
+      "review_state": "machine_validated",
+      "claim_ids": [
+        "claim.math.v0.1.discrete-mathematics.combinatorics.enumerative-combinatorics.definition"
+      ],
+      "review_notes": [
+        "Derived from the machine-validated atomic discipline boundary; human semantic review remains required."
+      ]
+    },
+    {
+      "record_id": "ko.mk7.v0.1.definition.discrete-mathematics.combinatorics.extremal-combinatorics",
+      "record_type": "definition",
+      "prompt": "What is Extremal Combinatorics, and how is its boundary distinguished from neighboring mathematical areas?",
+      "response": "The study of maximum or minimum size and structure of finite configurations subject to combinatorial constraints. Includes: Extremal set systems; Forbidden configurations; Extremal graph questions. Excludes: Continuous optimization without a finite combinatorial structure. Boundary: Require a finite combinatorial object and an extremal size or forbidden-structure question.",
+      "language": "en",
+      "source_node_ids": [
+        "ko.math.v0.1.discrete-mathematics.combinatorics.extremal-combinatorics"
+      ],
+      "atomic_discipline_ids": [
+        "ko.math.v0.1.ad.discrete-mathematics.combinatorics.extremal-combinatorics"
+      ],
+      "parent_path_ids": [
+        "ko.math.v0.1.math",
+        "ko.math.v0.1.discrete-mathematics",
+        "ko.math.v0.1.discrete-mathematics.combinatorics",
+        "ko.math.v0.1.discrete-mathematics.combinatorics.extremal-combinatorics"
+      ],
+      "split": "development",
+      "review_state": "machine_validated",
+      "claim_ids": [
+        "claim.math.v0.1.discrete-mathematics.combinatorics.extremal-combinatorics.definition"
+      ],
+      "review_notes": [
+        "Derived from the machine-validated atomic discipline boundary; human semantic review remains required."
+      ]
+    },
+    {
+      "record_id": "ko.mk7.v0.1.definition.discrete-mathematics.graph-theory.structural-graph-theory",
+      "record_type": "definition",
+      "prompt": "What is Structural Graph Theory, and how is its boundary distinguished from neighboring mathematical areas?",
+      "response": "The study of graph structure through connectivity, minors, decompositions, coloring, cycles, and structural invariants. Includes: Graph classes; Connectivity; Coloring and minors. Excludes: Operational network monitoring. Boundary: Require a structural property or graph class; route algorithmic procedure emphasis to Graph Algorithms.",
+      "language": "en",
+      "source_node_ids": [
+        "ko.math.v0.1.discrete-mathematics.graph-theory.structural-graph-theory"
+      ],
+      "atomic_discipline_ids": [
+        "ko.math.v0.1.ad.discrete-mathematics.graph-theory.structural-graph-theory"
+      ],
+      "parent_path_ids": [
+        "ko.math.v0.1.math",
+        "ko.math.v0.1.discrete-mathematics",
+        "ko.math.v0.1.discrete-mathematics.graph-theory",
+        "ko.math.v0.1.discrete-mathematics.graph-theory.structural-graph-theory"
+      ],
+      "split": "validation",
+      "review_state": "machine_validated",
+      "claim_ids": [
+        "claim.math.v0.1.discrete-mathematics.graph-theory.structural-graph-theory.definition"
+      ],
+      "review_notes": [
+        "Derived from the machine-validated atomic discipline boundary; human semantic review remains required."
+      ]
+    },
+    {
+      "record_id": "ko.mk7.v0.1.definition.discrete-mathematics.graph-theory.graph-algorithms",
+      "record_type": "definition",
+      "prompt": "What is Graph Algorithms, and how is its boundary distinguished from neighboring mathematical areas?",
+      "response": "The study of algorithms whose inputs, outputs, or correctness properties are expressed using graph structures. Includes: Paths and flows; Matching; Graph traversal and optimization. Excludes: General software engineering practices. Boundary: Require graph structure in the formal problem; route general algorithms without graph structure outside this Mathematics pilot.",
+      "language": "en",
+      "source_node_ids": [
+        "ko.math.v0.1.discrete-mathematics.graph-theory.graph-algorithms"
+      ],
+      "atomic_discipline_ids": [
+        "ko.math.v0.1.ad.discrete-mathematics.graph-theory.graph-algorithms"
+      ],
+      "parent_path_ids": [
+        "ko.math.v0.1.math",
+        "ko.math.v0.1.discrete-mathematics",
+        "ko.math.v0.1.discrete-mathematics.graph-theory",
+        "ko.math.v0.1.discrete-mathematics.graph-theory.graph-algorithms"
+      ],
+      "split": "validation",
+      "review_state": "machine_validated",
+      "claim_ids": [
+        "claim.math.v0.1.discrete-mathematics.graph-theory.graph-algorithms.definition"
+      ],
+      "review_notes": [
+        "Derived from the machine-validated atomic discipline boundary; human semantic review remains required."
+      ]
+    },
+    {
+      "record_id": "ko.mk7.v0.1.definition.discrete-mathematics.mathematical-logic.set-theory",
+      "record_type": "definition",
+      "prompt": "What is Set Theory, and how is its boundary distinguished from neighboring mathematical areas?",
+      "response": "The study of sets, membership, cardinality, ordinal structure, axioms, and constructions used as mathematical foundations. Includes: Axiomatic set theory; Cardinal and ordinal theory; Set constructions. Excludes: Database set operations as an implementation topic. Boundary: Require mathematical set-theoretic objects, axioms, or cardinal/ordinal reasoning.",
+      "language": "en",
+      "source_node_ids": [
+        "ko.math.v0.1.discrete-mathematics.mathematical-logic.set-theory"
+      ],
+      "atomic_discipline_ids": [
+        "ko.math.v0.1.ad.discrete-mathematics.mathematical-logic.set-theory"
+      ],
+      "parent_path_ids": [
+        "ko.math.v0.1.math",
+        "ko.math.v0.1.discrete-mathematics",
+        "ko.math.v0.1.discrete-mathematics.mathematical-logic",
+        "ko.math.v0.1.discrete-mathematics.mathematical-logic.set-theory"
+      ],
+      "split": "validation",
+      "review_state": "machine_validated",
+      "claim_ids": [
+        "claim.math.v0.1.discrete-mathematics.mathematical-logic.set-theory.definition"
+      ],
+      "review_notes": [
+        "Derived from the machine-validated atomic discipline boundary; human semantic review remains required."
+      ]
+    },
+    {
+      "record_id": "ko.mk7.v0.1.definition.discrete-mathematics.mathematical-logic.computability-theory",
+      "record_type": "definition",
+      "prompt": "What is Computability Theory, and how is its boundary distinguished from neighboring mathematical areas?",
+      "response": "The study of which functions and problems can be computed, with what resources, and by which formal models of computation. Includes: Recursive functions; Turing computability; Degrees of unsolvability. Excludes: Application programming and software delivery. Boundary: Require a formal computability or decidability question; exclude implementation performance alone.",
+      "language": "en",
+      "source_node_ids": [
+        "ko.math.v0.1.discrete-mathematics.mathematical-logic.computability-theory"
+      ],
+      "atomic_discipline_ids": [
+        "ko.math.v0.1.ad.discrete-mathematics.mathematical-logic.computability-theory"
+      ],
+      "parent_path_ids": [
+        "ko.math.v0.1.math",
+        "ko.math.v0.1.discrete-mathematics",
+        "ko.math.v0.1.discrete-mathematics.mathematical-logic",
+        "ko.math.v0.1.discrete-mathematics.mathematical-logic.computability-theory"
+      ],
+      "split": "validation",
+      "review_state": "machine_validated",
+      "claim_ids": [
+        "claim.math.v0.1.discrete-mathematics.mathematical-logic.computability-theory.definition"
+      ],
+      "review_notes": [
+        "Derived from the machine-validated atomic discipline boundary; human semantic review remains required."
+      ]
+    },
+    {
+      "record_id": "ko.mk7.v0.1.definition.discrete-mathematics.mathematical-logic.proof-theory",
+      "record_type": "definition",
+      "prompt": "What is Proof Theory, and how is its boundary distinguished from neighboring mathematical areas?",
+      "response": "The study of formal proofs as mathematical objects, including proof systems, consistency, normalization, and proof strength. Includes: Formal deduction; Proof transformations; Consistency and strength. Excludes: Informal proof-writing advice. Boundary: Require formal proof objects or proof-system properties; exclude general advice on writing proofs.",
+      "language": "en",
+      "source_node_ids": [
+        "ko.math.v0.1.discrete-mathematics.mathematical-logic.proof-theory"
+      ],
+      "atomic_discipline_ids": [
+        "ko.math.v0.1.ad.discrete-mathematics.mathematical-logic.proof-theory"
+      ],
+      "parent_path_ids": [
+        "ko.math.v0.1.math",
+        "ko.math.v0.1.discrete-mathematics",
+        "ko.math.v0.1.discrete-mathematics.mathematical-logic",
+        "ko.math.v0.1.discrete-mathematics.mathematical-logic.proof-theory"
+      ],
+      "split": "test",
+      "review_state": "machine_validated",
+      "claim_ids": [
+        "claim.math.v0.1.discrete-mathematics.mathematical-logic.proof-theory.definition"
+      ],
+      "review_notes": [
+        "Derived from the machine-validated atomic discipline boundary; human semantic review remains required."
+      ]
+    },
+    {
+      "record_id": "ko.mk7.v0.1.definition.geometry.euclidean-geometry.classical-euclidean-geometry",
+      "record_type": "definition",
+      "prompt": "What is Classical Euclidean Geometry, and how is its boundary distinguished from neighboring mathematical areas?",
+      "response": "The study of classical Euclidean figures and theorems involving incidence, congruence, similarity, angles, circles, and metric relations. Includes: Triangles; Circles; Congruence and similarity. Excludes: Coordinate methods as the primary representation. Boundary: Prefer synthetic or metric Euclidean reasoning; route coordinate-first problems to Coordinate Geometry.",
+      "language": "en",
+      "source_node_ids": [
+        "ko.math.v0.1.geometry.euclidean-geometry.classical-euclidean-geometry"
+      ],
+      "atomic_discipline_ids": [
+        "ko.math.v0.1.ad.geometry.euclidean-geometry.classical-euclidean-geometry"
+      ],
+      "parent_path_ids": [
+        "ko.math.v0.1.math",
+        "ko.math.v0.1.geometry",
+        "ko.math.v0.1.geometry.euclidean-geometry",
+        "ko.math.v0.1.geometry.euclidean-geometry.classical-euclidean-geometry"
+      ],
+      "split": "test",
+      "review_state": "machine_validated",
+      "claim_ids": [
+        "claim.math.v0.1.geometry.euclidean-geometry.classical-euclidean-geometry.definition"
+      ],
+      "review_notes": [
+        "Derived from the machine-validated atomic discipline boundary; human semantic review remains required."
+      ]
+    },
+    {
+      "record_id": "ko.mk7.v0.1.definition.geometry.analytic-geometry.coordinate-geometry",
+      "record_type": "definition",
+      "prompt": "What is Coordinate Geometry, and how is its boundary distinguished from neighboring mathematical areas?",
+      "response": "The study of geometric figures and relations represented by coordinates, equations, vectors, and transformations in Euclidean spaces. Includes: Cartesian coordinates; Conics; Coordinate transformations. Excludes: Abstract algebraic varieties. Boundary: Require coordinates, equations, or coordinate transformations as the primary method.",
+      "language": "en",
+      "source_node_ids": [
+        "ko.math.v0.1.geometry.analytic-geometry.coordinate-geometry"
+      ],
+      "atomic_discipline_ids": [
+        "ko.math.v0.1.ad.geometry.analytic-geometry.coordinate-geometry"
+      ],
+      "parent_path_ids": [
+        "ko.math.v0.1.math",
+        "ko.math.v0.1.geometry",
+        "ko.math.v0.1.geometry.analytic-geometry",
+        "ko.math.v0.1.geometry.analytic-geometry.coordinate-geometry"
+      ],
+      "split": "test",
+      "review_state": "machine_validated",
+      "claim_ids": [
+        "claim.math.v0.1.geometry.analytic-geometry.coordinate-geometry.definition"
+      ],
+      "review_notes": [
+        "Derived from the machine-validated atomic discipline boundary; human semantic review remains required."
+      ]
+    },
+    {
+      "record_id": "ko.mk7.v0.1.definition.geometry.differential-geometry.curves-and-surfaces",
+      "record_type": "definition",
+      "prompt": "What is Curves and Surfaces, and how is its boundary distinguished from neighboring mathematical areas?",
+      "response": "The study of smooth curves and surfaces through parametrization, curvature, tangent spaces, metrics, and local or global geometric properties. Includes: Parametric curves; Regular surfaces; Curvature. Excludes: Elementary plane geometry without smooth structure. Boundary: Require a smooth curve or surface and a differential-geometric property; exclude purely elementary figures.",
+      "language": "en",
+      "source_node_ids": [
+        "ko.math.v0.1.geometry.differential-geometry.curves-and-surfaces"
+      ],
+      "atomic_discipline_ids": [
+        "ko.math.v0.1.ad.geometry.differential-geometry.curves-and-surfaces"
+      ],
+      "parent_path_ids": [
+        "ko.math.v0.1.math",
+        "ko.math.v0.1.geometry",
+        "ko.math.v0.1.geometry.differential-geometry",
+        "ko.math.v0.1.geometry.differential-geometry.curves-and-surfaces"
+      ],
+      "split": "test",
+      "review_state": "machine_validated",
+      "claim_ids": [
+        "claim.math.v0.1.geometry.differential-geometry.curves-and-surfaces.definition"
+      ],
+      "review_notes": [
+        "Derived from the machine-validated atomic discipline boundary; human semantic review remains required."
+      ]
+    }
+  ],
+  "quality_gates": {
+    "schema_valid": true,
+    "source_approved": false,
+    "parent_child_valid": true,
+    "atomicity_valid": true,
+    "duplicate_checked": true,
+    "leakage_checked": true,
+    "independent_review": false,
+    "status": "ready_for_review",
+    "notes": [
+      "One definition record per atomic discipline; records are small and source-linked.",
+      "Splits are development=20, validation=4, test=4; no near-duplicate paraphrase matrix was generated.",
+      "NOT_APPLICABLE: 280 matrix expansion, model training, adapter creation, and engine execution."
+    ]
+  },
+  "review_state": "machine_validated",
+  "provenance": [
+    {
+      "source_type": "curriculum",
+      "source_id": "ko.curriculum.mathematics-v0.1",
+      "locator": "stages",
+      "version": "0.1"
+    },
+    {
+      "source_type": "atomic_discipline",
+      "source_id": "data/atomic-disciplines-v0.1.json",
+      "locator": "atomic_disciplines",
+      "version": "0.1.0"
+    }
+  ]
+}

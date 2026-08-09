@@ -1,0 +1,353 @@
+{
+  "artifact_id": "ko.radiology-pilot-discovery.v0.1",
+  "artifact_type": "domain_map_discovery",
+  "version": "0.1",
+  "status": "discovery_only",
+  "generated_at": "2026-08-09",
+  "owner": "Radiology Discovery Agent",
+  "purpose": "Initial, bounded domain map for educational knowledge discovery in radiology. It is a hypothesis for review, not an official taxonomy, clinical protocol, diagnostic system, or treatment guide.",
+  "scope_boundary": {
+    "included": [
+      "General educational concepts about medical imaging, radiology workflow, terminology, safety principles, quality, research, and informatics.",
+      "Discipline and subdiscipline candidates with explicit confidence, review state, and atomicity hypotheses.",
+      "Pointers to authoritative terminology, standards, and safety sources without copying restricted clinical guidance."
+    ],
+    "excluded": [
+      "Patient-specific cases, images, reports, identifiable health information, or medical records.",
+      "Clinical diagnosis, image interpretation, triage, prognosis, or differential diagnosis for a person.",
+      "Patient-specific exam selection, protocoling, contrast or radiopharmaceutical instructions, dose advice, or treatment recommendations.",
+      "Large datasets, recursive expansion, engine implementation, training data, model weights, adapters, and production integrations."
+    ],
+    "classification_posture": "Model-generated discovery hypotheses remain separate from official source structures and require independent review before promotion."
+  },
+  "safety_boundary": {
+    "educational_general": {
+      "label_en": "General educational knowledge",
+      "label_ar": "Ã™â€¦Ã˜Â¹Ã˜Â±Ã™ÂÃ˜Â© Ã˜ÂªÃ˜Â¹Ã™â€žÃ™Å Ã™â€¦Ã™Å Ã˜Â© Ã˜Â¹Ã˜Â§Ã™â€¦Ã˜Â©",
+      "allowed_examples": [
+        "Definitions of modalities, anatomy terms, image formation concepts, and non-patient-specific workflow.",
+        "High-level radiation, MRI, contrast, quality, interoperability, and data-governance principles.",
+        "How to read a terminology definition or understand the role of a reporting standard.",
+        "Research-method and AI-evaluation concepts that do not produce a clinical conclusion."
+      ],
+      "response_rule": "Use neutral educational language, state uncertainty, cite the source, and encourage qualified professional review where safety is involved."
+    },
+    "clinical_guidance_or_diagnostic": {
+      "label_en": "Clinical guidance or diagnostic content",
+      "label_ar": "Ã˜Â¥Ã˜Â±Ã˜Â´Ã˜Â§Ã˜Â¯ Ã˜Â³Ã˜Â±Ã™Å Ã˜Â±Ã™Å  Ã˜Â£Ã™Ë† Ã™â€¦Ã˜Â­Ã˜ÂªÃ™Ë†Ã™â€° Ã˜ÂªÃ˜Â´Ã˜Â®Ã™Å Ã˜ÂµÃ™Å ",
+      "pilot_handling": "Reference-only and review-gated. Do not reproduce restricted guidance or turn it into patient-specific advice.",
+      "examples": [
+        "Appropriateness of an examination for a named clinical presentation.",
+        "Interpretation of findings, differential diagnosis, staging, or response assessment for a patient.",
+        "Procedure selection, medication or contrast administration, dose, sedation, or treatment planning."
+      ]
+    },
+    "hard_prohibitions": [
+      "No diagnosis.",
+      "No treatment or management recommendation.",
+      "No patient-specific medical advice.",
+      "No claim that this map replaces a radiologist, referring clinician, medical physicist, institutional policy, or current professional guidance."
+    ]
+  },
+  "atomicity_model": {
+    "definition": "An atomicity candidate is a bounded reusable educational unit that may support an independent learning objective, but is not yet approved as indivisible.",
+    "candidate_status": "candidate_atomic",
+    "promotion_requirements": [
+      "A domain expert confirms that the unit has a coherent scope and no necessary child concept of equal instructional status.",
+      "Prerequisites, learning outcome, non-goals, and source boundaries are explicit.",
+      "The unit passes terminology, safety, duplicate, and cross-discipline overlap review."
+    ],
+    "non_atomic_signals": [
+      "The label mixes modality, anatomy, indication, and management in one unit.",
+      "The unit contains multiple independently assessable mechanisms or workflows.",
+      "The unit depends on a current clinical guideline whose wording or license has not been reviewed."
+    ]
+  },
+  "confidence_model": {
+    "scale": "0.0-1.0",
+    "interpretation": {
+      "0.80-1.00": "Strongly supported as a broad label by an authoritative terminology or standards source; still requires domain review for this map.",
+      "0.60-0.79": "Plausible and well-scoped discovery hypothesis with meaningful source support.",
+      "0.40-0.59": "Useful candidate but boundary, overlap, or safety classification needs expert review.",
+      "0.00-0.39": "Weak or unresolved hypothesis; do not expand or publish as knowledge."
+    },
+    "precision_note": "Numbers are prioritization signals, not measured probabilities and not clinical certainty."
+  },
+  "review_states": {
+    "unreviewed": "Discovery hypothesis not yet reviewed by a qualified radiology or domain specialist.",
+    "machine_validated": "Only structural and deterministic checks passed; this does not mean clinically validated.",
+    "human_reviewed": "A named reviewer examined the scope and evidence; approval is not implied.",
+    "approved": "Accepted for the declared educational scope and version with provenance and safety review recorded.",
+    "rejected": "Not accepted for the declared scope; preserve the reason and do not silently reuse it."
+  },
+  "source_registry": [
+    {
+      "source_id": "src.rsna.radlex",
+      "source_type": "official_terminology",
+      "owner": "Radiological Society of North America (RSNA)",
+      "locator": "https://www.rsna.org/practice-tools/data-tools-and-standards/radlex-radiology-lexicon",
+      "retrieval_date": "2026-08-09",
+      "use_in_pilot": "Terminology and interoperability pointer for radiology concepts and procedure naming.",
+      "license_status": "RSNA states that RadLex is freely licensed for commercial and non-commercial use; confirm the exact release and license before ingestion.",
+      "restrictions_or_caveats": "Do not treat RadLex labels as a complete educational hierarchy; preserve source version and preferred identifiers."
+    },
+    {
+      "source_id": "src.acr.appropriateness",
+      "source_type": "clinical_guideline",
+      "owner": "American College of Radiology (ACR)",
+      "locator": "https://www.acr.org/clinical-resources/clinical-tools-and-reference/appropriateness-criteria",
+      "retrieval_date": "2026-08-09",
+      "use_in_pilot": "Reference-only boundary marker for clinical imaging-selection guidance; not copied into this pilot.",
+      "license_status": "rights_review_required",
+      "restrictions_or_caveats": "Clinical guidance changes over time and must not be transformed into patient-specific recommendations by this artifact."
+    },
+    {
+      "source_id": "src.acr.practice-parameters",
+      "source_type": "professional_standard",
+      "owner": "American College of Radiology (ACR)",
+      "locator": "https://www.acr.org/Clinical-Resources/Clinical-Tools-and-Reference/Practice-Parameters-and-Technical-Standards",
+      "retrieval_date": "2026-08-09",
+      "use_in_pilot": "Reference-only marker for professional practice, training, skills, and safety boundaries.",
+      "license_status": "rights_review_required",
+      "restrictions_or_caveats": "Do not reproduce or modify ACR practice parameters in the pilot; professional review is required for any clinical use."
+    },
+    {
+      "source_id": "src.who-iaea.radiation-safety",
+      "source_type": "safety_reference",
+      "owner": "WHO, IAEA, ILO, and PAHO",
+      "locator": "https://www.who.int/publications/m/item/radiation-protection-and-safety-in-medical-uses-ionizing-radiation",
+      "retrieval_date": "2026-08-09",
+      "use_in_pilot": "High-level radiation-protection concepts and safety vocabulary.",
+      "license_status": "rights_review_required",
+      "restrictions_or_caveats": "Educational summary only; no dose calculation or patient-specific exposure advice."
+    },
+    {
+      "source_id": "src.dicom.standard",
+      "source_type": "technical_standard",
+      "owner": "DICOM Standards Committee / NEMA MITA",
+      "locator": "https://www.dicomstandard.org/",
+      "retrieval_date": "2026-08-09",
+      "use_in_pilot": "High-level imaging-information interoperability and workflow concepts.",
+      "license_status": "DICOM states that the standard is free to download and use; preserve edition and copyright notices before redistribution.",
+      "restrictions_or_caveats": "A DICOM concept is not itself a clinical interpretation or a data-quality guarantee."
+    }
+  ],
+  "domain_map": {
+    "node_id": "ko.radiology.v0.1",
+    "node_type": "domain",
+    "name": {
+      "en": "Radiology and Medical Imaging",
+      "ar": "Ã˜Â·Ã˜Â¨ Ã˜Â§Ã™â€žÃ˜Â£Ã˜Â´Ã˜Â¹Ã˜Â© Ã™Ë†Ã˜Â§Ã™â€žÃ˜ÂªÃ˜ÂµÃ™Ë†Ã™Å Ã˜Â± Ã˜Â§Ã™â€žÃ˜Â·Ã˜Â¨Ã™Å "
+    },
+    "definition": "The interdisciplinary domain concerned with medical imaging technologies, image-based knowledge, radiology practice contexts, safety, quality, informatics, research, and education.",
+    "scope_includes": [
+      "Diagnostic imaging and image-guided practice as educational subject areas.",
+      "Imaging physics, anatomy, modality science, quality, safety, informatics, and research methods.",
+      "Cross-cutting concepts that may have more than one valid parent discipline."
+    ],
+    "scope_excludes": [
+      "A clinical service that makes decisions for a patient.",
+      "A replacement for professional licensure, local policy, or current clinical guidance.",
+      "A final or official taxonomy of radiology."
+    ],
+    "confidence": 0.68,
+    "review_state": "unreviewed",
+    "source_ids": ["src.rsna.radlex", "src.acr.practice-parameters", "src.dicom.standard"],
+    "disciplines": [
+      {
+        "discipline_id": "rad.d01.foundations",
+        "name": {"en": "Foundations of Imaging", "ar": "Ã˜Â£Ã˜Â³Ã˜Â³ Ã˜Â§Ã™â€žÃ˜ÂªÃ˜ÂµÃ™Ë†Ã™Å Ã˜Â± Ã˜Â§Ã™â€žÃ˜Â·Ã˜Â¨Ã™Å "},
+        "definition": "Foundational anatomy, image-formation, instrumentation, and agent concepts needed to understand imaging without interpreting a patient study.",
+        "confidence": 0.76,
+        "review_state": "unreviewed",
+        "source_ids": ["src.rsna.radlex", "src.who-iaea.radiation-safety"],
+        "subdisciplines": [
+          {
+            "subdiscipline_id": "rad.sd01.imaging-anatomy",
+            "name": {"en": "Imaging Anatomy and Physiology", "ar": "Ã˜Â§Ã™â€žÃ˜ÂªÃ˜Â´Ã˜Â±Ã™Å Ã˜Â­ Ã™Ë†Ã˜Â§Ã™â€žÃ™ÂÃ™Å Ã˜Â²Ã™Å Ã™Ë†Ã™â€žÃ™Ë†Ã˜Â¬Ã™Å Ã˜Â§ Ã™â€žÃ™â€žÃ˜ÂªÃ˜ÂµÃ™Ë†Ã™Å Ã˜Â±"},
+            "definition": "Normal anatomical structures and physiological context as represented in educational imaging materials.",
+            "intended_mode": "educational_general",
+            "confidence": 0.78,
+            "review_state": "unreviewed",
+            "atomicity_candidates": [
+              {"candidate_id": "rad.ac01.normal-imaging-anatomy", "name": {"en": "Normal imaging anatomy of one body region", "ar": "Ã˜Â§Ã™â€žÃ˜ÂªÃ˜Â´Ã˜Â±Ã™Å Ã˜Â­ Ã˜Â§Ã™â€žÃ˜ÂªÃ˜ÂµÃ™Ë†Ã™Å Ã˜Â±Ã™Å  Ã˜Â§Ã™â€žÃ˜Â·Ã˜Â¨Ã™Å Ã˜Â¹Ã™Å  Ã™â€žÃ™â€¦Ã™â€ Ã˜Â·Ã™â€šÃ˜Â© Ã˜Â¬Ã˜Â³Ã™â€¦ Ã™Ë†Ã˜Â§Ã˜Â­Ã˜Â¯Ã˜Â©"}, "boundary": "One region, normal structures, terminology, and orientation; excludes lesion interpretation and patient conclusions.", "atomicity_status": "candidate_atomic", "confidence": 0.61, "review_state": "unreviewed", "independent_assessment": true, "evidence_ids": ["src.rsna.radlex"]}
+            ]
+          },
+          {
+            "subdiscipline_id": "rad.sd02.physics-instrumentation",
+            "name": {"en": "Imaging Physics and Instrumentation", "ar": "Ã™ÂÃ™Å Ã˜Â²Ã™Å Ã˜Â§Ã˜Â¡ Ã˜Â§Ã™â€žÃ˜ÂªÃ˜ÂµÃ™Ë†Ã™Å Ã˜Â± Ã™Ë†Ã˜Â§Ã™â€žÃ˜Â£Ã˜Â¬Ã™â€¡Ã˜Â²Ã˜Â©"},
+            "definition": "High-level principles of signal, image formation, resolution, noise, artifacts, and modality equipment.",
+            "intended_mode": "educational_general",
+            "confidence": 0.76,
+            "review_state": "unreviewed",
+            "atomicity_candidates": [
+              {"candidate_id": "rad.ac02.image-quality-tradeoffs", "name": {"en": "Image-quality trade-offs", "ar": "Ã™â€¦Ã™ÂÃ˜Â§Ã˜Â¶Ã™â€žÃ˜Â§Ã˜Âª Ã˜Â¬Ã™Ë†Ã˜Â¯Ã˜Â© Ã˜Â§Ã™â€žÃ˜ÂµÃ™Ë†Ã˜Â±Ã˜Â©"}, "boundary": "One learning unit on resolution, noise, contrast, and acquisition trade-offs; no protocol prescription or patient-specific optimization.", "atomicity_status": "candidate_atomic", "confidence": 0.59, "review_state": "unreviewed", "independent_assessment": true, "evidence_ids": ["src.rsna.radlex", "src.who-iaea.radiation-safety"]}
+            ]
+          },
+          {
+            "subdiscipline_id": "rad.sd03.agents-and-radiopharmaceuticals",
+            "name": {"en": "Contrast Media and Radiopharmaceutical Principles", "ar": "Ã™â€¦Ã˜Â¨Ã˜Â§Ã˜Â¯Ã˜Â¦ Ã™â€¦Ã™Ë†Ã˜Â§Ã˜Â¯ Ã˜Â§Ã™â€žÃ˜ÂªÃ˜Â¨Ã˜Â§Ã™Å Ã™â€  Ã™Ë†Ã˜Â§Ã™â€žÃ™â€¦Ã˜Â³Ã˜ÂªÃ˜Â­Ã˜Â¶Ã˜Â±Ã˜Â§Ã˜Âª Ã˜Â§Ã™â€žÃ˜ÂµÃ™Å Ã˜Â¯Ã™â€žÃ˜Â§Ã™â€ Ã™Å Ã˜Â© Ã˜Â§Ã™â€žÃ˜Â¥Ã˜Â´Ã˜Â¹Ã˜Â§Ã˜Â¹Ã™Å Ã˜Â©"},
+            "definition": "General properties, terminology, risk concepts, and safety vocabulary for contrast media and radiopharmaceuticals.",
+            "intended_mode": "clinical_guidance_sensitive",
+            "confidence": 0.55,
+            "review_state": "unreviewed",
+            "atomicity_candidates": [
+              {"candidate_id": "rad.ac03.agent-safety-vocabulary", "name": {"en": "Contrast and radiopharmaceutical safety vocabulary", "ar": "Ã™â€¦Ã˜ÂµÃ˜Â·Ã™â€žÃ˜Â­Ã˜Â§Ã˜Âª Ã˜Â³Ã™â€žÃ˜Â§Ã™â€¦Ã˜Â© Ã™â€¦Ã™Ë†Ã˜Â§Ã˜Â¯ Ã˜Â§Ã™â€žÃ˜ÂªÃ˜Â¨Ã˜Â§Ã™Å Ã™â€  Ã™Ë†Ã˜Â§Ã™â€žÃ™â€¦Ã˜Â³Ã˜ÂªÃ˜Â­Ã˜Â¶Ã˜Â±Ã˜Â§Ã˜Âª Ã˜Â§Ã™â€žÃ˜Â¥Ã˜Â´Ã˜Â¹Ã˜Â§Ã˜Â¹Ã™Å Ã˜Â©"}, "boundary": "Definitions and escalation vocabulary only; excludes agent choice, dose, administration, contraindication decisions, and treatment.", "atomicity_status": "candidate_atomic", "confidence": 0.45, "review_state": "unreviewed", "independent_assessment": true, "evidence_ids": ["src.acr.practice-parameters", "src.who-iaea.radiation-safety"]}
+            ]
+          }
+        ]
+      },
+      {
+        "discipline_id": "rad.d02.modalities",
+        "name": {"en": "Imaging Modalities", "ar": "Ã˜Â·Ã˜Â±Ã˜Â§Ã˜Â¦Ã™â€š Ã˜Â§Ã™â€žÃ˜ÂªÃ˜ÂµÃ™Ë†Ã™Å Ã˜Â±"},
+        "definition": "Modality-specific principles, capabilities, limitations, artifacts, and workflow concepts.",
+        "confidence": 0.81,
+        "review_state": "unreviewed",
+        "source_ids": ["src.rsna.radlex", "src.who-iaea.radiation-safety"],
+        "subdisciplines": [
+          {"subdiscipline_id": "rad.sd04.radiography", "name": {"en": "Projection Radiography", "ar": "Ã˜Â§Ã™â€žÃ˜ÂªÃ˜ÂµÃ™Ë†Ã™Å Ã˜Â± Ã˜Â§Ã™â€žÃ˜Â´Ã˜Â¹Ã˜Â§Ã˜Â¹Ã™Å  Ã˜Â§Ã™â€žÃ˜Â¥Ã˜Â³Ã™â€šÃ˜Â§Ã˜Â·Ã™Å "}, "definition": "X-ray projection image formation, common equipment, terminology, and educational quality concepts.", "intended_mode": "educational_general", "confidence": 0.78, "review_state": "unreviewed", "atomicity_candidates": [{"candidate_id": "rad.ac04.radiography-image-formation", "name": {"en": "Projection radiography image formation", "ar": "Ã˜ÂªÃ™Æ’Ã™Ë†Ã™Å Ã™â€  Ã˜ÂµÃ™Ë†Ã˜Â±Ã˜Â© Ã˜Â§Ã™â€žÃ˜ÂªÃ˜ÂµÃ™Ë†Ã™Å Ã˜Â± Ã˜Â§Ã™â€žÃ˜Â´Ã˜Â¹Ã˜Â§Ã˜Â¹Ã™Å  Ã˜Â§Ã™â€žÃ˜Â¥Ã˜Â³Ã™â€šÃ˜Â§Ã˜Â·Ã™Å "}, "boundary": "One unit covering attenuation, projection, detector, and basic quality terms; excludes patient interpretation and exposure prescription.", "atomicity_status": "candidate_atomic", "confidence": 0.63, "review_state": "unreviewed", "independent_assessment": true, "evidence_ids": ["src.rsna.radlex", "src.who-iaea.radiation-safety"]}]},
+          {"subdiscipline_id": "rad.sd05.fluoroscopy", "name": {"en": "Fluoroscopy", "ar": "Ã˜Â§Ã™â€žÃ˜ÂªÃ™â€ Ã˜Â¸Ã™Å Ã˜Â± Ã˜Â§Ã™â€žÃ˜ÂªÃ˜Â£Ã™â€žÃ™â€šÃ™Å "}, "definition": "Real-time X-ray imaging concepts, workflow, dose-awareness, and image-guided context at a non-procedural educational level.", "intended_mode": "clinical_guidance_sensitive", "confidence": 0.60, "review_state": "unreviewed", "atomicity_candidates": [{"candidate_id": "rad.ac05.fluoroscopy-dose-concepts", "name": {"en": "Fluoroscopy dose and workflow concepts", "ar": "Ã™â€¦Ã™ÂÃ˜Â§Ã™â€¡Ã™Å Ã™â€¦ Ã˜Â§Ã™â€žÃ˜Â¬Ã˜Â±Ã˜Â¹Ã˜Â© Ã™Ë†Ã˜Â³Ã™Å Ã˜Â± Ã˜Â§Ã™â€žÃ˜Â¹Ã™â€¦Ã™â€ž Ã™ÂÃ™Å  Ã˜Â§Ã™â€žÃ˜ÂªÃ™â€ Ã˜Â¸Ã™Å Ã˜Â± Ã˜Â§Ã™â€žÃ˜ÂªÃ˜Â£Ã™â€žÃ™â€šÃ™Å "}, "boundary": "High-level dose and workflow concepts; excludes dose targets, procedure instructions, and patient-specific advice.", "atomicity_status": "candidate_atomic", "confidence": 0.48, "review_state": "unreviewed", "independent_assessment": true, "evidence_ids": ["src.who-iaea.radiation-safety", "src.acr.practice-parameters"]}]},
+          {"subdiscipline_id": "rad.sd06.ct", "name": {"en": "Computed Tomography", "ar": "Ã˜Â§Ã™â€žÃ˜ÂªÃ˜ÂµÃ™Ë†Ã™Å Ã˜Â± Ã˜Â§Ã™â€žÃ™â€¦Ã™â€šÃ˜Â·Ã˜Â¹Ã™Å  Ã˜Â§Ã™â€žÃ™â€¦Ã˜Â­Ã™Ë†Ã˜Â³Ã˜Â¨"}, "definition": "CT acquisition, reconstruction, artifacts, dose vocabulary, and educational interpretation of technical parameters.", "intended_mode": "educational_general", "confidence": 0.80, "review_state": "unreviewed", "atomicity_candidates": [{"candidate_id": "rad.ac06.ct-reconstruction", "name": {"en": "CT acquisition and reconstruction basics", "ar": "Ã˜Â£Ã˜Â³Ã˜Â§Ã˜Â³Ã™Å Ã˜Â§Ã˜Âª Ã˜Â§Ã™â€šÃ˜ÂªÃ™â€ Ã˜Â§Ã˜Â¡ Ã™Ë†Ã˜Â¥Ã˜Â¹Ã˜Â§Ã˜Â¯Ã˜Â© Ã˜Â¨Ã™â€ Ã˜Â§Ã˜Â¡ Ã˜ÂµÃ™Ë†Ã˜Â± Ã˜Â§Ã™â€žÃ˜ÂªÃ˜ÂµÃ™Ë†Ã™Å Ã˜Â± Ã˜Â§Ã™â€žÃ™â€¦Ã™â€šÃ˜Â·Ã˜Â¹Ã™Å "}, "boundary": "One unit on projection data, reconstruction, voxels, and artifacts; excludes protocol selection, dose prescription, and diagnosis.", "atomicity_status": "candidate_atomic", "confidence": 0.62, "review_state": "unreviewed", "independent_assessment": true, "evidence_ids": ["src.rsna.radlex", "src.who-iaea.radiation-safety"]}]},
+          {"subdiscipline_id": "rad.sd07.mri", "name": {"en": "Magnetic Resonance Imaging", "ar": "Ã˜Â§Ã™â€žÃ˜ÂªÃ˜ÂµÃ™Ë†Ã™Å Ã˜Â± Ã˜Â¨Ã˜Â§Ã™â€žÃ˜Â±Ã™â€ Ã™Å Ã™â€  Ã˜Â§Ã™â€žÃ™â€¦Ã˜ÂºÃ™â€ Ã˜Â§Ã˜Â·Ã™Å Ã˜Â³Ã™Å "}, "definition": "MRI signal, sequences, artifacts, hardware, safety vocabulary, and non-patient-specific workflow.", "intended_mode": "clinical_guidance_sensitive", "confidence": 0.76, "review_state": "unreviewed", "atomicity_candidates": [{"candidate_id": "rad.ac07.mri-signal-sequences", "name": {"en": "MRI signal and sequence concepts", "ar": "Ã™â€¦Ã™ÂÃ˜Â§Ã™â€¡Ã™Å Ã™â€¦ Ã˜Â¥Ã˜Â´Ã˜Â§Ã˜Â±Ã˜Â© Ã™Ë†Ã˜ÂªÃ˜Â³Ã™â€žÃ˜Â³Ã™â€žÃ˜Â§Ã˜Âª Ã˜Â§Ã™â€žÃ˜Â±Ã™â€ Ã™Å Ã™â€  Ã˜Â§Ã™â€žÃ™â€¦Ã˜ÂºÃ™â€ Ã˜Â§Ã˜Â·Ã™Å Ã˜Â³Ã™Å "}, "boundary": "One educational unit on magnetization, relaxation, weighting, and sequence families; excludes implant clearance, contrast decisions, and diagnosis.", "atomicity_status": "candidate_atomic", "confidence": 0.57, "review_state": "unreviewed", "independent_assessment": true, "evidence_ids": ["src.rsna.radlex", "src.acr.practice-parameters"]}]},
+          {"subdiscipline_id": "rad.sd08.ultrasound", "name": {"en": "Ultrasound", "ar": "Ã˜Â§Ã™â€žÃ™â€¦Ã™Ë†Ã˜Â¬Ã˜Â§Ã˜Âª Ã™ÂÃ™Ë†Ã™â€š Ã˜Â§Ã™â€žÃ˜ÂµÃ™Ë†Ã˜ÂªÃ™Å Ã˜Â©"}, "definition": "Ultrasound wave propagation, transducers, Doppler concepts, artifacts, and safe-use vocabulary.", "intended_mode": "educational_general", "confidence": 0.77, "review_state": "unreviewed", "atomicity_candidates": [{"candidate_id": "rad.ac08.ultrasound-doppler", "name": {"en": "Ultrasound and Doppler fundamentals", "ar": "Ã˜Â£Ã˜Â³Ã˜Â§Ã˜Â³Ã™Å Ã˜Â§Ã˜Âª Ã˜Â§Ã™â€žÃ™â€¦Ã™Ë†Ã˜Â¬Ã˜Â§Ã˜Âª Ã™ÂÃ™Ë†Ã™â€š Ã˜Â§Ã™â€žÃ˜ÂµÃ™Ë†Ã˜ÂªÃ™Å Ã˜Â© Ã™Ë†Ã˜Â§Ã™â€žÃ˜Â¯Ã™Ë†Ã˜Â¨Ã™â€žÃ˜Â±"}, "boundary": "One unit on wave behavior, transducers, Doppler, and artifacts; excludes scanning instructions and patient findings.", "atomicity_status": "candidate_atomic", "confidence": 0.60, "review_state": "unreviewed", "independent_assessment": true, "evidence_ids": ["src.rsna.radlex"]}]},
+          {"subdiscipline_id": "rad.sd09.nuclear-medicine", "name": {"en": "Nuclear Medicine and Molecular Imaging", "ar": "Ã˜Â§Ã™â€žÃ˜Â·Ã˜Â¨ Ã˜Â§Ã™â€žÃ™â€ Ã™Ë†Ã™Ë†Ã™Å  Ã™Ë†Ã˜Â§Ã™â€žÃ˜ÂªÃ˜ÂµÃ™Ë†Ã™Å Ã˜Â± Ã˜Â§Ã™â€žÃ˜Â¬Ã˜Â²Ã™Å Ã˜Â¦Ã™Å "}, "definition": "Radiotracer, detector, planar, SPECT, PET, and hybrid-imaging concepts at an educational level.", "intended_mode": "clinical_guidance_sensitive", "confidence": 0.68, "review_state": "unreviewed", "atomicity_candidates": [{"candidate_id": "rad.ac09.pet-spect-principles", "name": {"en": "PET and SPECT principles", "ar": "Ã™â€¦Ã˜Â¨Ã˜Â§Ã˜Â¯Ã˜Â¦ PET Ã™Ë†SPECT"}, "boundary": "One unit on tracer signal, detection, reconstruction, and common artifacts; excludes radiopharmaceutical selection, dosing, and diagnosis.", "atomicity_status": "candidate_atomic", "confidence": 0.54, "review_state": "unreviewed", "independent_assessment": true, "evidence_ids": ["src.rsna.radlex", "src.who-iaea.radiation-safety"]}]} 
+        ]
+      },
+      {
+        "discipline_id": "rad.d03.anatomic-imaging",
+        "name": {"en": "Anatomic and Organ-System Imaging", "ar": "Ã˜Â§Ã™â€žÃ˜ÂªÃ˜ÂµÃ™Ë†Ã™Å Ã˜Â± Ã˜Â§Ã™â€žÃ˜ÂªÃ˜Â´Ã˜Â±Ã™Å Ã˜Â­Ã™Å  Ã™Ë†Ã˜ÂªÃ˜ÂµÃ™Ë†Ã™Å Ã˜Â± Ã˜Â£Ã˜Â¬Ã™â€¡Ã˜Â²Ã˜Â© Ã˜Â§Ã™â€žÃ˜Â¬Ã˜Â³Ã™â€¦"},
+        "definition": "Regional and organ-system lenses used to organize educational imaging knowledge; they may overlap with modality and clinical pathways.",
+        "confidence": 0.71,
+        "review_state": "unreviewed",
+        "source_ids": ["src.rsna.radlex", "src.acr.appropriateness"],
+        "subdisciplines": [
+          {"subdiscipline_id": "rad.sd10.neuroradiology", "name": {"en": "Neuroradiology", "ar": "Ã˜Â£Ã˜Â´Ã˜Â¹Ã˜Â© Ã˜Â§Ã™â€žÃ˜Â¬Ã™â€¡Ã˜Â§Ã˜Â² Ã˜Â§Ã™â€žÃ˜Â¹Ã˜ÂµÃ˜Â¨Ã™Å "}, "definition": "Imaging anatomy, modalities, terminology, and research/education concepts for brain, spine, and peripheral nervous system imaging.", "intended_mode": "clinical_guidance_sensitive", "confidence": 0.73, "review_state": "unreviewed", "atomicity_candidates": [{"candidate_id": "rad.ac10.neuro-imaging-anatomy", "name": {"en": "Neuroimaging anatomy and modality map", "ar": "Ã˜Â®Ã˜Â±Ã™Å Ã˜Â·Ã˜Â© Ã˜ÂªÃ˜Â´Ã˜Â±Ã™Å Ã˜Â­ Ã™Ë†Ã˜ÂªÃ˜ÂµÃ™Ë†Ã™Å Ã˜Â± Ã˜Â§Ã™â€žÃ˜Â¬Ã™â€¡Ã˜Â§Ã˜Â² Ã˜Â§Ã™â€žÃ˜Â¹Ã˜ÂµÃ˜Â¨Ã™Å "}, "boundary": "Anatomy and modality relationships only; excludes interpretation, emergency triage, and treatment.", "atomicity_status": "candidate_atomic", "confidence": 0.52, "review_state": "unreviewed", "independent_assessment": true, "evidence_ids": ["src.rsna.radlex", "src.acr.appropriateness"]}]},
+          {"subdiscipline_id": "rad.sd11.head-neck", "name": {"en": "Head and Neck Imaging", "ar": "Ã˜ÂªÃ˜ÂµÃ™Ë†Ã™Å Ã˜Â± Ã˜Â§Ã™â€žÃ˜Â±Ã˜Â£Ã˜Â³ Ã™Ë†Ã˜Â§Ã™â€žÃ˜Â¹Ã™â€ Ã™â€š"}, "definition": "Educational organization of head and neck anatomy, imaging modalities, and terminology.", "intended_mode": "clinical_guidance_sensitive", "confidence": 0.69, "review_state": "unreviewed", "atomicity_candidates": [{"candidate_id": "rad.ac11.head-neck-imaging-anatomy", "name": {"en": "Head and neck imaging anatomy", "ar": "Ã˜Â§Ã™â€žÃ˜ÂªÃ˜Â´Ã˜Â±Ã™Å Ã˜Â­ Ã˜Â§Ã™â€žÃ˜ÂªÃ˜ÂµÃ™Ë†Ã™Å Ã˜Â±Ã™Å  Ã™â€žÃ™â€žÃ˜Â±Ã˜Â£Ã˜Â³ Ã™Ë†Ã˜Â§Ã™â€žÃ˜Â¹Ã™â€ Ã™â€š"}, "boundary": "Normal structures and modality vocabulary; excludes lesion interpretation and clinical recommendations.", "atomicity_status": "candidate_atomic", "confidence": 0.50, "review_state": "unreviewed", "independent_assessment": true, "evidence_ids": ["src.rsna.radlex"]}]},
+          {"subdiscipline_id": "rad.sd12.chest-cardiac", "name": {"en": "Chest and Cardiovascular Imaging", "ar": "Ã˜ÂªÃ˜ÂµÃ™Ë†Ã™Å Ã˜Â± Ã˜Â§Ã™â€žÃ˜ÂµÃ˜Â¯Ã˜Â± Ã™Ë†Ã˜Â§Ã™â€žÃ™â€šÃ™â€žÃ˜Â¨ Ã™Ë†Ã˜Â§Ã™â€žÃ˜Â£Ã™Ë†Ã˜Â¹Ã™Å Ã˜Â©"}, "definition": "Educational concepts for thoracic, cardiac, and vascular imaging across modalities.", "intended_mode": "clinical_guidance_sensitive", "confidence": 0.73, "review_state": "unreviewed", "atomicity_candidates": [{"candidate_id": "rad.ac12.chest-cardiac-modality-map", "name": {"en": "Chest and cardiac modality map", "ar": "Ã˜Â®Ã˜Â±Ã™Å Ã˜Â·Ã˜Â© Ã˜Â·Ã˜Â±Ã˜Â§Ã˜Â¦Ã™â€š Ã˜ÂªÃ˜ÂµÃ™Ë†Ã™Å Ã˜Â± Ã˜Â§Ã™â€žÃ˜ÂµÃ˜Â¯Ã˜Â± Ã™Ë†Ã˜Â§Ã™â€žÃ™â€šÃ™â€žÃ˜Â¨"}, "boundary": "Anatomic regions, modality families, and terminology; excludes disease diagnosis, screening advice, and exam selection.", "atomicity_status": "candidate_atomic", "confidence": 0.49, "review_state": "unreviewed", "independent_assessment": true, "evidence_ids": ["src.rsna.radlex", "src.acr.appropriateness"]}]},
+          {"subdiscipline_id": "rad.sd13.abdominal-pelvic", "name": {"en": "Abdominal and Pelvic Imaging", "ar": "Ã˜ÂªÃ˜ÂµÃ™Ë†Ã™Å Ã˜Â± Ã˜Â§Ã™â€žÃ˜Â¨Ã˜Â·Ã™â€  Ã™Ë†Ã˜Â§Ã™â€žÃ˜Â­Ã™Ë†Ã˜Â¶"}, "definition": "Educational concepts for abdominal and pelvic anatomy, imaging modalities, and terminology.", "intended_mode": "clinical_guidance_sensitive", "confidence": 0.73, "review_state": "unreviewed", "atomicity_candidates": [{"candidate_id": "rad.ac13.abdominal-pelvic-imaging-anatomy", "name": {"en": "Abdominal and pelvic imaging anatomy", "ar": "Ã˜Â§Ã™â€žÃ˜ÂªÃ˜Â´Ã˜Â±Ã™Å Ã˜Â­ Ã˜Â§Ã™â€žÃ˜ÂªÃ˜ÂµÃ™Ë†Ã™Å Ã˜Â±Ã™Å  Ã™â€žÃ™â€žÃ˜Â¨Ã˜Â·Ã™â€  Ã™Ë†Ã˜Â§Ã™â€žÃ˜Â­Ã™Ë†Ã˜Â¶"}, "boundary": "Normal anatomy and modality vocabulary; excludes findings, staging, exam choice, and treatment.", "atomicity_status": "candidate_atomic", "confidence": 0.50, "review_state": "unreviewed", "independent_assessment": true, "evidence_ids": ["src.rsna.radlex"]}]},
+          {"subdiscipline_id": "rad.sd14.msk", "name": {"en": "Musculoskeletal Imaging", "ar": "Ã˜Â§Ã™â€žÃ˜ÂªÃ˜ÂµÃ™Ë†Ã™Å Ã˜Â± Ã˜Â§Ã™â€žÃ˜Â¹Ã˜Â¶Ã™â€žÃ™Å  Ã˜Â§Ã™â€žÃ™â€¡Ã™Å Ã™Æ’Ã™â€žÃ™Å "}, "definition": "Educational concepts for bones, joints, soft tissues, imaging modalities, and terminology.", "intended_mode": "clinical_guidance_sensitive", "confidence": 0.74, "review_state": "unreviewed", "atomicity_candidates": [{"candidate_id": "rad.ac14.msk-imaging-anatomy", "name": {"en": "Musculoskeletal imaging anatomy", "ar": "Ã˜Â§Ã™â€žÃ˜ÂªÃ˜Â´Ã˜Â±Ã™Å Ã˜Â­ Ã˜Â§Ã™â€žÃ˜ÂªÃ˜ÂµÃ™Ë†Ã™Å Ã˜Â±Ã™Å  Ã˜Â§Ã™â€žÃ˜Â¹Ã˜Â¶Ã™â€žÃ™Å  Ã˜Â§Ã™â€žÃ™â€¡Ã™Å Ã™Æ’Ã™â€žÃ™Å "}, "boundary": "Normal structures, planes, and modality vocabulary; excludes injury diagnosis and management.", "atomicity_status": "candidate_atomic", "confidence": 0.51, "review_state": "unreviewed", "independent_assessment": true, "evidence_ids": ["src.rsna.radlex"]}]},
+          {"subdiscipline_id": "rad.sd15.breast", "name": {"en": "Breast Imaging", "ar": "Ã˜ÂªÃ˜ÂµÃ™Ë†Ã™Å Ã˜Â± Ã˜Â§Ã™â€žÃ˜Â«Ã˜Â¯Ã™Å "}, "definition": "Educational organization of breast imaging modalities, terminology, quality, and reporting-system concepts.", "intended_mode": "clinical_guidance_sensitive", "confidence": 0.69, "review_state": "unreviewed", "atomicity_candidates": [{"candidate_id": "rad.ac15.breast-reporting-vocabulary", "name": {"en": "Breast imaging reporting vocabulary", "ar": "Ã™â€¦Ã˜ÂµÃ˜Â·Ã™â€žÃ˜Â­Ã˜Â§Ã˜Âª Ã˜ÂªÃ™â€šÃ˜Â§Ã˜Â±Ã™Å Ã˜Â± Ã˜ÂªÃ˜ÂµÃ™Ë†Ã™Å Ã˜Â± Ã˜Â§Ã™â€žÃ˜Â«Ã˜Â¯Ã™Å "}, "boundary": "Terminology and report-structure concepts only; excludes assessment categories for a patient and screening recommendations.", "atomicity_status": "candidate_atomic", "confidence": 0.43, "review_state": "unreviewed", "independent_assessment": true, "evidence_ids": ["src.rsna.radlex", "src.acr.appropriateness"]}]},
+          {"subdiscipline_id": "rad.sd16.pediatric", "name": {"en": "Pediatric Imaging", "ar": "Ã˜ÂªÃ˜ÂµÃ™Ë†Ã™Å Ã˜Â± Ã˜Â§Ã™â€žÃ˜Â£Ã˜Â·Ã™ÂÃ˜Â§Ã™â€ž"}, "definition": "Educational concepts for age-aware anatomy, modality characteristics, communication, and safety in pediatric imaging.", "intended_mode": "clinical_guidance_sensitive", "confidence": 0.64, "review_state": "unreviewed", "atomicity_candidates": [{"candidate_id": "rad.ac16.pediatric-safety-principles", "name": {"en": "Pediatric imaging safety principles", "ar": "Ã™â€¦Ã˜Â¨Ã˜Â§Ã˜Â¯Ã˜Â¦ Ã˜Â³Ã™â€žÃ˜Â§Ã™â€¦Ã˜Â© Ã˜ÂªÃ˜ÂµÃ™Ë†Ã™Å Ã˜Â± Ã˜Â§Ã™â€žÃ˜Â£Ã˜Â·Ã™ÂÃ˜Â§Ã™â€ž"}, "boundary": "High-level age-aware safety principles; excludes individualized dose, sedation, exam selection, and treatment.", "atomicity_status": "candidate_atomic", "confidence": 0.45, "review_state": "unreviewed", "independent_assessment": true, "evidence_ids": ["src.who-iaea.radiation-safety", "src.acr.practice-parameters"]}]},
+          {"subdiscipline_id": "rad.sd17.emergency-trauma", "name": {"en": "Emergency and Trauma Imaging", "ar": "Ã˜ÂªÃ˜ÂµÃ™Ë†Ã™Å Ã˜Â± Ã˜Â§Ã™â€žÃ˜Â·Ã™Ë†Ã˜Â§Ã˜Â±Ã˜Â¦ Ã™Ë†Ã˜Â§Ã™â€žÃ˜Â¥Ã˜ÂµÃ˜Â§Ã˜Â¨Ã˜Â§Ã˜Âª"}, "definition": "Educational organization of rapid imaging workflows, terminology, and communication in emergency contexts.", "intended_mode": "clinical_guidance_sensitive", "confidence": 0.58, "review_state": "unreviewed", "atomicity_candidates": [{"candidate_id": "rad.ac17.emergency-imaging-workflow", "name": {"en": "Emergency imaging workflow vocabulary", "ar": "Ã™â€¦Ã˜ÂµÃ˜Â·Ã™â€žÃ˜Â­Ã˜Â§Ã˜Âª Ã˜Â³Ã™Å Ã˜Â± Ã˜Â¹Ã™â€¦Ã™â€ž Ã˜Â§Ã™â€žÃ˜ÂªÃ˜ÂµÃ™Ë†Ã™Å Ã˜Â± Ã™ÂÃ™Å  Ã˜Â§Ã™â€žÃ˜Â·Ã™Ë†Ã˜Â§Ã˜Â±Ã˜Â¦"}, "boundary": "Workflow and communication vocabulary only; excludes triage, interpretation, and urgent management.", "atomicity_status": "candidate_atomic", "confidence": 0.40, "review_state": "unreviewed", "independent_assessment": true, "evidence_ids": ["src.acr.appropriateness", "src.rsna.radlex"]}]}
+        ]
+      },
+      {
+        "discipline_id": "rad.d04.interventional",
+        "name": {"en": "Interventional and Image-Guided Radiology", "ar": "Ã˜Â§Ã™â€žÃ˜Â£Ã˜Â´Ã˜Â¹Ã˜Â© Ã˜Â§Ã™â€žÃ˜ÂªÃ˜Â¯Ã˜Â§Ã˜Â®Ã™â€žÃ™Å Ã˜Â© Ã™Ë†Ã˜Â§Ã™â€žÃ™â€¦Ã™Ë†Ã˜Â¬Ã™â€¡Ã˜Â© Ã˜Â¨Ã˜Â§Ã™â€žÃ˜ÂªÃ˜ÂµÃ™Ë†Ã™Å Ã˜Â±"},
+        "definition": "Educational map of image-guided procedures, devices, workflow, and safety concepts without procedural instruction or treatment choice.",
+        "confidence": 0.62,
+        "review_state": "unreviewed",
+        "source_ids": ["src.acr.practice-parameters", "src.acr.appropriateness"],
+        "subdisciplines": [
+          {"subdiscipline_id": "rad.sd18.image-guided-procedures", "name": {"en": "Image-Guided Procedure Concepts", "ar": "Ã™â€¦Ã™ÂÃ˜Â§Ã™â€¡Ã™Å Ã™â€¦ Ã˜Â§Ã™â€žÃ˜Â¥Ã˜Â¬Ã˜Â±Ã˜Â§Ã˜Â¡Ã˜Â§Ã˜Âª Ã˜Â§Ã™â€žÃ™â€¦Ã™Ë†Ã˜Â¬Ã™â€¡Ã˜Â© Ã˜Â¨Ã˜Â§Ã™â€žÃ˜ÂªÃ˜ÂµÃ™Ë†Ã™Å Ã˜Â±"}, "definition": "Terminology, roles, equipment, consent concepts, and workflow stages for image-guided procedures.", "intended_mode": "clinical_guidance_sensitive", "confidence": 0.61, "review_state": "unreviewed", "atomicity_candidates": [{"candidate_id": "rad.ac18.procedure-workflow", "name": {"en": "Image-guided procedure workflow", "ar": "Ã˜Â³Ã™Å Ã˜Â± Ã˜Â¹Ã™â€¦Ã™â€ž Ã˜Â§Ã™â€žÃ˜Â¥Ã˜Â¬Ã˜Â±Ã˜Â§Ã˜Â¡ Ã˜Â§Ã™â€žÃ™â€¦Ã™Ë†Ã˜Â¬Ã™â€¡ Ã˜Â¨Ã˜Â§Ã™â€žÃ˜ÂªÃ˜ÂµÃ™Ë†Ã™Å Ã˜Â±"}, "boundary": "Non-operational workflow stages and role vocabulary; excludes step-by-step instructions, device choice, and treatment recommendations.", "atomicity_status": "candidate_atomic", "confidence": 0.42, "review_state": "unreviewed", "independent_assessment": true, "evidence_ids": ["src.acr.practice-parameters"]}]},
+          {"subdiscipline_id": "rad.sd19.vascular-intervention", "name": {"en": "Vascular Intervention Concepts", "ar": "Ã™â€¦Ã™ÂÃ˜Â§Ã™â€¡Ã™Å Ã™â€¦ Ã˜Â§Ã™â€žÃ˜ÂªÃ˜Â¯Ã˜Â®Ã™â€žÃ˜Â§Ã˜Âª Ã˜Â§Ã™â€žÃ™Ë†Ã˜Â¹Ã˜Â§Ã˜Â¦Ã™Å Ã˜Â©"}, "definition": "Educational concepts for vascular anatomy, access, devices, and image guidance, bounded away from clinical decisions.", "intended_mode": "clinical_guidance_sensitive", "confidence": 0.54, "review_state": "unreviewed", "atomicity_candidates": [{"candidate_id": "rad.ac19.vascular-device-vocabulary", "name": {"en": "Vascular intervention device vocabulary", "ar": "Ã™â€¦Ã˜ÂµÃ˜Â·Ã™â€žÃ˜Â­Ã˜Â§Ã˜Âª Ã˜Â£Ã˜Â¬Ã™â€¡Ã˜Â²Ã˜Â© Ã˜Â§Ã™â€žÃ˜ÂªÃ˜Â¯Ã˜Â®Ã™â€ž Ã˜Â§Ã™â€žÃ™Ë†Ã˜Â¹Ã˜Â§Ã˜Â¦Ã™Å "}, "boundary": "Device classes and terminology only; excludes selecting or deploying a device for a patient.", "atomicity_status": "candidate_atomic", "confidence": 0.38, "review_state": "unreviewed", "independent_assessment": true, "evidence_ids": ["src.acr.practice-parameters"]}]},
+          {"subdiscipline_id": "rad.sd20.nonvascular-intervention", "name": {"en": "Nonvascular Intervention Concepts", "ar": "Ã™â€¦Ã™ÂÃ˜Â§Ã™â€¡Ã™Å Ã™â€¦ Ã˜Â§Ã™â€žÃ˜ÂªÃ˜Â¯Ã˜Â®Ã™â€žÃ˜Â§Ã˜Âª Ã˜ÂºÃ™Å Ã˜Â± Ã˜Â§Ã™â€žÃ™Ë†Ã˜Â¹Ã˜Â§Ã˜Â¦Ã™Å Ã˜Â©"}, "definition": "Educational concepts for nonvascular image-guided intervention terminology and workflow.", "intended_mode": "clinical_guidance_sensitive", "confidence": 0.54, "review_state": "unreviewed", "atomicity_candidates": [{"candidate_id": "rad.ac20.nonvascular-workflow", "name": {"en": "Nonvascular intervention workflow vocabulary", "ar": "Ã™â€¦Ã˜ÂµÃ˜Â·Ã™â€žÃ˜Â­Ã˜Â§Ã˜Âª Ã˜Â³Ã™Å Ã˜Â± Ã˜Â¹Ã™â€¦Ã™â€ž Ã˜Â§Ã™â€žÃ˜ÂªÃ˜Â¯Ã˜Â®Ã™â€ž Ã˜ÂºÃ™Å Ã˜Â± Ã˜Â§Ã™â€žÃ™Ë†Ã˜Â¹Ã˜Â§Ã˜Â¦Ã™Å "}, "boundary": "High-level workflow and terminology; excludes procedural technique, patient selection, and treatment.", "atomicity_status": "candidate_atomic", "confidence": 0.38, "review_state": "unreviewed", "independent_assessment": true, "evidence_ids": ["src.acr.practice-parameters"]}]}
+        ]
+      },
+      {
+        "discipline_id": "rad.d05.oncology",
+        "name": {"en": "Oncologic and Hybrid Imaging", "ar": "Ã˜Â§Ã™â€žÃ˜ÂªÃ˜ÂµÃ™Ë†Ã™Å Ã˜Â± Ã˜Â§Ã™â€žÃ˜Â£Ã™Ë†Ã˜Â±Ã˜Â§Ã™â€¦Ã™Å  Ã™Ë†Ã˜Â§Ã™â€žÃ™â€¡Ã˜Â¬Ã™Å Ã™â€ "},
+        "definition": "Educational concepts for imaging in oncology, hybrid imaging, longitudinal comparison, and standardized terminology; clinical decisions remain out of scope.",
+        "confidence": 0.61,
+        "review_state": "unreviewed",
+        "source_ids": ["src.rsna.radlex", "src.acr.appropriateness"],
+        "subdisciplines": [
+          {"subdiscipline_id": "rad.sd21.oncologic-imaging", "name": {"en": "Oncologic Imaging Concepts", "ar": "Ã™â€¦Ã™ÂÃ˜Â§Ã™â€¡Ã™Å Ã™â€¦ Ã˜Â§Ã™â€žÃ˜ÂªÃ˜ÂµÃ™Ë†Ã™Å Ã˜Â± Ã˜Â§Ã™â€žÃ˜Â£Ã™Ë†Ã˜Â±Ã˜Â§Ã™â€¦Ã™Å "}, "definition": "Educational concepts for lesion description, staging vocabulary, and longitudinal imaging language without patient assessment.", "intended_mode": "clinical_guidance_sensitive", "confidence": 0.56, "review_state": "unreviewed", "atomicity_candidates": [{"candidate_id": "rad.ac21.longitudinal-imaging-language", "name": {"en": "Longitudinal imaging comparison language", "ar": "Ã™â€žÃ˜ÂºÃ˜Â© Ã˜Â§Ã™â€žÃ™â€¦Ã™â€šÃ˜Â§Ã˜Â±Ã™â€ Ã˜Â© Ã˜Â§Ã™â€žÃ˜ÂªÃ˜ÂµÃ™Ë†Ã™Å Ã˜Â±Ã™Å Ã˜Â© Ã˜Â§Ã™â€žÃ˜Â·Ã™Ë†Ã™â€žÃ™Å Ã˜Â©"}, "boundary": "Definitions of comparison, interval change, and measurement vocabulary; excludes response classification or treatment decisions for a patient.", "atomicity_status": "candidate_atomic", "confidence": 0.38, "review_state": "unreviewed", "independent_assessment": true, "evidence_ids": ["src.rsna.radlex"]}]},
+          {"subdiscipline_id": "rad.sd22.hybrid-imaging", "name": {"en": "Hybrid Imaging and Molecular Pathways", "ar": "Ã˜Â§Ã™â€žÃ˜ÂªÃ˜ÂµÃ™Ë†Ã™Å Ã˜Â± Ã˜Â§Ã™â€žÃ™â€¡Ã˜Â¬Ã™Å Ã™â€  Ã™Ë†Ã˜Â§Ã™â€žÃ™â€¦Ã˜Â³Ã˜Â§Ã˜Â±Ã˜Â§Ã˜Âª Ã˜Â§Ã™â€žÃ˜Â¬Ã˜Â²Ã™Å Ã˜Â¦Ã™Å Ã˜Â©"}, "definition": "Educational relationship between anatomical and functional imaging signals and their data representations.", "intended_mode": "clinical_guidance_sensitive", "confidence": 0.57, "review_state": "unreviewed", "atomicity_candidates": [{"candidate_id": "rad.ac22.hybrid-signal-integration", "name": {"en": "Hybrid imaging signal integration", "ar": "Ã˜ÂªÃ™Æ’Ã˜Â§Ã™â€¦Ã™â€ž Ã˜Â§Ã™â€žÃ˜Â¥Ã˜Â´Ã˜Â§Ã˜Â±Ã˜Â§Ã˜Âª Ã™ÂÃ™Å  Ã˜Â§Ã™â€žÃ˜ÂªÃ˜ÂµÃ™Ë†Ã™Å Ã˜Â± Ã˜Â§Ã™â€žÃ™â€¡Ã˜Â¬Ã™Å Ã™â€ "}, "boundary": "Signal and registration concepts only; excludes tracer choice, staging conclusion, and treatment planning.", "atomicity_status": "candidate_atomic", "confidence": 0.40, "review_state": "unreviewed", "independent_assessment": true, "evidence_ids": ["src.rsna.radlex", "src.who-iaea.radiation-safety"]}]},
+          {"subdiscipline_id": "rad.sd23.response-frameworks", "name": {"en": "Response and Follow-Up Frameworks", "ar": "Ã˜Â£Ã˜Â·Ã˜Â± Ã˜Â§Ã™â€žÃ˜Â§Ã˜Â³Ã˜ÂªÃ˜Â¬Ã˜Â§Ã˜Â¨Ã˜Â© Ã™Ë†Ã˜Â§Ã™â€žÃ™â€¦Ã˜ÂªÃ˜Â§Ã˜Â¨Ã˜Â¹Ã˜Â©"}, "definition": "Educational vocabulary for comparing imaging over time and documenting uncertainty, with clinical guidance gated out.", "intended_mode": "clinical_guidance_sensitive", "confidence": 0.47, "review_state": "unreviewed", "atomicity_candidates": [{"candidate_id": "rad.ac23.follow-up-terminology", "name": {"en": "Follow-up terminology and uncertainty", "ar": "Ã™â€¦Ã˜ÂµÃ˜Â·Ã™â€žÃ˜Â­Ã˜Â§Ã˜Âª Ã˜Â§Ã™â€žÃ™â€¦Ã˜ÂªÃ˜Â§Ã˜Â¨Ã˜Â¹Ã˜Â© Ã™Ë†Ã˜Â¹Ã˜Â¯Ã™â€¦ Ã˜Â§Ã™â€žÃ™Å Ã™â€šÃ™Å Ã™â€ "}, "boundary": "Language and uncertainty concepts only; excludes follow-up scheduling, response adjudication, and treatment recommendations.", "atomicity_status": "candidate_atomic", "confidence": 0.32, "review_state": "unreviewed", "independent_assessment": true, "evidence_ids": ["src.acr.appropriateness", "src.rsna.radlex"]}]}
+        ]
+      },
+      {
+        "discipline_id": "rad.d06.safety-quality",
+        "name": {"en": "Radiation Safety and Quality", "ar": "Ã˜Â§Ã™â€žÃ˜Â³Ã™â€žÃ˜Â§Ã™â€¦Ã˜Â© Ã˜Â§Ã™â€žÃ˜Â¥Ã˜Â´Ã˜Â¹Ã˜Â§Ã˜Â¹Ã™Å Ã˜Â© Ã™Ë†Ã˜Â§Ã™â€žÃ˜Â¬Ã™Ë†Ã˜Â¯Ã˜Â©"},
+        "definition": "Safety culture, radiation protection, quality assurance, communication, and system-level risk concepts.",
+        "confidence": 0.74,
+        "review_state": "unreviewed",
+        "source_ids": ["src.who-iaea.radiation-safety", "src.acr.practice-parameters"],
+        "subdisciplines": [
+          {"subdiscipline_id": "rad.sd24.radiation-protection", "name": {"en": "Radiation Protection", "ar": "Ã˜Â§Ã™â€žÃ™Ë†Ã™â€šÃ˜Â§Ã™Å Ã˜Â© Ã™â€¦Ã™â€  Ã˜Â§Ã™â€žÃ˜Â¥Ã˜Â´Ã˜Â¹Ã˜Â§Ã˜Â¹"}, "definition": "General principles for balancing benefit, exposure, optimization, occupational protection, and public safety.", "intended_mode": "educational_general", "confidence": 0.79, "review_state": "unreviewed", "atomicity_candidates": [{"candidate_id": "rad.ac24.radiation-protection-principles", "name": {"en": "Radiation protection principles", "ar": "Ã™â€¦Ã˜Â¨Ã˜Â§Ã˜Â¯Ã˜Â¦ Ã˜Â§Ã™â€žÃ™Ë†Ã™â€šÃ˜Â§Ã™Å Ã˜Â© Ã™â€¦Ã™â€  Ã˜Â§Ã™â€žÃ˜Â¥Ã˜Â´Ã˜Â¹Ã˜Â§Ã˜Â¹"}, "boundary": "One educational unit on protection principles and terminology; excludes individual dose calculations and clinical decisions.", "atomicity_status": "candidate_atomic", "confidence": 0.64, "review_state": "unreviewed", "independent_assessment": true, "evidence_ids": ["src.who-iaea.radiation-safety", "src.acr.practice-parameters"]}]},
+          {"subdiscipline_id": "rad.sd25.mri-and-contrast-safety", "name": {"en": "MRI and Contrast Safety Concepts", "ar": "Ã™â€¦Ã™ÂÃ˜Â§Ã™â€¡Ã™Å Ã™â€¦ Ã˜Â³Ã™â€žÃ˜Â§Ã™â€¦Ã˜Â© Ã˜Â§Ã™â€žÃ˜Â±Ã™â€ Ã™Å Ã™â€  Ã™Ë†Ã™â€¦Ã™Ë†Ã˜Â§Ã˜Â¯ Ã˜Â§Ã™â€žÃ˜ÂªÃ˜Â¨Ã˜Â§Ã™Å Ã™â€ "}, "definition": "High-level hazard, screening, incident, and communication vocabulary for MRI and contrast-related safety.", "intended_mode": "clinical_guidance_sensitive", "confidence": 0.61, "review_state": "unreviewed", "atomicity_candidates": [{"candidate_id": "rad.ac25.safety-screening-vocabulary", "name": {"en": "Safety screening vocabulary", "ar": "Ã™â€¦Ã˜ÂµÃ˜Â·Ã™â€žÃ˜Â­Ã˜Â§Ã˜Âª Ã˜Â§Ã™â€žÃ˜ÂªÃ˜Â­Ã˜Â±Ã™Å  Ã˜Â¹Ã™â€  Ã˜Â§Ã™â€žÃ˜Â³Ã™â€žÃ˜Â§Ã™â€¦Ã˜Â©"}, "boundary": "Vocabulary and escalation concepts only; excludes clearance, contraindication, agent, dose, or emergency-management decisions.", "atomicity_status": "candidate_atomic", "confidence": 0.42, "review_state": "unreviewed", "independent_assessment": true, "evidence_ids": ["src.acr.practice-parameters", "src.who-iaea.radiation-safety"]}]},
+          {"subdiscipline_id": "rad.sd26.quality-assurance", "name": {"en": "Quality Assurance and Improvement", "ar": "Ã˜Â¶Ã™â€¦Ã˜Â§Ã™â€  Ã˜Â§Ã™â€žÃ˜Â¬Ã™Ë†Ã˜Â¯Ã˜Â© Ã™Ë†Ã˜ÂªÃ˜Â­Ã˜Â³Ã™Å Ã™â€ Ã™â€¡Ã˜Â§"}, "definition": "System-level quality indicators, audit concepts, equipment performance, error learning, and improvement methods.", "intended_mode": "educational_general", "confidence": 0.68, "review_state": "unreviewed", "atomicity_candidates": [{"candidate_id": "rad.ac26.imaging-quality-audit", "name": {"en": "Imaging quality audit concepts", "ar": "Ã™â€¦Ã™ÂÃ˜Â§Ã™â€¡Ã™Å Ã™â€¦ Ã˜ÂªÃ˜Â¯Ã™â€šÃ™Å Ã™â€š Ã˜Â¬Ã™Ë†Ã˜Â¯Ã˜Â© Ã˜Â§Ã™â€žÃ˜ÂªÃ˜ÂµÃ™Ë†Ã™Å Ã˜Â±"}, "boundary": "Definitions of audit, metric, variance, and improvement cycle; excludes regulatory certification claims or patient-care decisions.", "atomicity_status": "candidate_atomic", "confidence": 0.50, "review_state": "unreviewed", "independent_assessment": true, "evidence_ids": ["src.acr.practice-parameters"]}]},
+          {"subdiscipline_id": "rad.sd27.patient-communication", "name": {"en": "Patient Communication and Safety Culture", "ar": "Ã˜Â§Ã™â€žÃ˜ÂªÃ™Ë†Ã˜Â§Ã˜ÂµÃ™â€ž Ã™â€¦Ã˜Â¹ Ã˜Â§Ã™â€žÃ™â€¦Ã˜Â±Ã™Å Ã˜Â¶ Ã™Ë†Ã˜Â«Ã™â€šÃ˜Â§Ã™ÂÃ˜Â© Ã˜Â§Ã™â€žÃ˜Â³Ã™â€žÃ˜Â§Ã™â€¦Ã˜Â©"}, "definition": "Plain-language communication, consent concepts, uncertainty, accessibility, and safety reporting at a general educational level.", "intended_mode": "clinical_guidance_sensitive", "confidence": 0.57, "review_state": "unreviewed", "atomicity_candidates": [{"candidate_id": "rad.ac27.uncertainty-communication", "name": {"en": "Communicating imaging uncertainty", "ar": "Ã˜Â§Ã™â€žÃ˜ÂªÃ™Ë†Ã˜Â§Ã˜ÂµÃ™â€ž Ã˜Â¨Ã˜Â´Ã˜Â£Ã™â€  Ã˜Â¹Ã˜Â¯Ã™â€¦ Ã˜Â§Ã™â€žÃ™Å Ã™â€šÃ™Å Ã™â€  Ã™ÂÃ™Å  Ã˜Â§Ã™â€žÃ˜ÂªÃ˜ÂµÃ™Ë†Ã™Å Ã˜Â±"}, "boundary": "Communication patterns and uncertainty literacy only; excludes delivering a diagnosis or treatment plan.", "atomicity_status": "candidate_atomic", "confidence": 0.40, "review_state": "unreviewed", "independent_assessment": true, "evidence_ids": ["src.acr.practice-parameters"]}]}
+        ]
+      },
+      {
+        "discipline_id": "rad.d07.informatics",
+        "name": {"en": "Radiology Informatics and Operations", "ar": "Ã™â€¦Ã˜Â¹Ã™â€žÃ™Ë†Ã™â€¦Ã˜Â§Ã˜ÂªÃ™Å Ã˜Â© Ã˜Â§Ã™â€žÃ˜Â£Ã˜Â´Ã˜Â¹Ã˜Â© Ã™Ë†Ã˜Â§Ã™â€žÃ˜Â¹Ã™â€¦Ã™â€žÃ™Å Ã˜Â§Ã˜Âª"},
+        "definition": "Information models, standards, systems, reporting, workflow, and responsible computational methods in imaging.",
+        "confidence": 0.75,
+        "review_state": "unreviewed",
+        "source_ids": ["src.rsna.radlex", "src.dicom.standard"],
+        "subdisciplines": [
+          {"subdiscipline_id": "rad.sd28.dicom-interoperability", "name": {"en": "DICOM and Imaging Interoperability", "ar": "DICOM Ã™Ë†Ã™â€šÃ˜Â§Ã˜Â¨Ã™â€žÃ™Å Ã˜Â© Ã˜Â§Ã™â€žÃ˜ÂªÃ˜Â´Ã˜ÂºÃ™Å Ã™â€ž Ã˜Â§Ã™â€žÃ˜Â¨Ã™Å Ã™â€ Ã™Å  Ã™â€žÃ™â€žÃ˜ÂªÃ˜ÂµÃ™Ë†Ã™Å Ã˜Â±"}, "definition": "Educational concepts for encoding, transmitting, storing, retrieving, and exchanging imaging information.", "intended_mode": "educational_general", "confidence": 0.82, "review_state": "unreviewed", "atomicity_candidates": [{"candidate_id": "rad.ac28.dicom-object-basics", "name": {"en": "DICOM object and metadata basics", "ar": "Ã˜Â£Ã˜Â³Ã˜Â§Ã˜Â³Ã™Å Ã˜Â§Ã˜Âª Ã™Æ’Ã˜Â§Ã˜Â¦Ã™â€ Ã˜Â§Ã˜Âª Ã™Ë†Ã˜Â¨Ã™Å Ã˜Â§Ã™â€ Ã˜Â§Ã˜Âª DICOM Ã˜Â§Ã™â€žÃ™Ë†Ã˜ÂµÃ™ÂÃ™Å Ã˜Â©"}, "boundary": "One unit on object, metadata, identifiers, and interoperability vocabulary; excludes production integration and privacy claims.", "atomicity_status": "candidate_atomic", "confidence": 0.67, "review_state": "unreviewed", "independent_assessment": true, "evidence_ids": ["src.dicom.standard"]}]},
+          {"subdiscipline_id": "rad.sd29.pacs-ris-workflow", "name": {"en": "PACS, RIS, and Imaging Workflow", "ar": "Ã˜Â£Ã™â€ Ã˜Â¸Ã™â€¦Ã˜Â© PACS Ã™Ë†RIS Ã™Ë†Ã˜Â³Ã™Å Ã˜Â± Ã˜Â¹Ã™â€¦Ã™â€ž Ã˜Â§Ã™â€žÃ˜ÂªÃ˜ÂµÃ™Ë†Ã™Å Ã˜Â±"}, "definition": "Educational map of radiology information systems, worklists, image lifecycle, and operational handoffs.", "intended_mode": "educational_general", "confidence": 0.71, "review_state": "unreviewed", "atomicity_candidates": [{"candidate_id": "rad.ac29.imaging-worklist", "name": {"en": "Imaging worklist lifecycle", "ar": "Ã˜Â¯Ã™Ë†Ã˜Â±Ã˜Â© Ã˜Â­Ã™Å Ã˜Â§Ã˜Â© Ã™â€šÃ˜Â§Ã˜Â¦Ã™â€¦Ã˜Â© Ã˜Â¹Ã™â€¦Ã™â€ž Ã˜Â§Ã™â€žÃ˜ÂªÃ˜ÂµÃ™Ë†Ã™Å Ã˜Â±"}, "boundary": "System roles and lifecycle states only; excludes deployment changes, access grants, and patient-specific operations.", "atomicity_status": "candidate_atomic", "confidence": 0.55, "review_state": "unreviewed", "independent_assessment": true, "evidence_ids": ["src.dicom.standard", "src.rsna.radlex"]}]},
+          {"subdiscipline_id": "rad.sd30.reporting-terminology", "name": {"en": "Structured Reporting and Terminology", "ar": "Ã˜Â§Ã™â€žÃ˜ÂªÃ™â€šÃ˜Â§Ã˜Â±Ã™Å Ã˜Â± Ã˜Â§Ã™â€žÃ™â€¦Ã™â€¡Ã™Å Ã™Æ’Ã™â€žÃ˜Â© Ã™Ë†Ã˜Â§Ã™â€žÃ™â€¦Ã˜ÂµÃ˜Â·Ã™â€žÃ˜Â­Ã˜Â§Ã˜Âª"}, "definition": "Report structure, controlled terminology, templates, data elements, and semantic consistency without generating a clinical report.", "intended_mode": "clinical_guidance_sensitive", "confidence": 0.72, "review_state": "unreviewed", "atomicity_candidates": [{"candidate_id": "rad.ac30.report-structure", "name": {"en": "Radiology report structure", "ar": "Ã˜Â¨Ã™â€ Ã™Å Ã˜Â© Ã˜ÂªÃ™â€šÃ˜Â±Ã™Å Ã˜Â± Ã˜Â§Ã™â€žÃ˜Â£Ã˜Â´Ã˜Â¹Ã˜Â©"}, "boundary": "Sections, labels, uncertainty markers, and terminology concepts; excludes filling a report or assigning a finding to a patient.", "atomicity_status": "candidate_atomic", "confidence": 0.56, "review_state": "unreviewed", "independent_assessment": true, "evidence_ids": ["src.rsna.radlex", "src.dicom.standard"]}]},
+          {"subdiscipline_id": "rad.sd31.ai-evaluation", "name": {"en": "AI and Machine Learning in Imaging", "ar": "Ã˜Â§Ã™â€žÃ˜Â°Ã™Æ’Ã˜Â§Ã˜Â¡ Ã˜Â§Ã™â€žÃ˜Â§Ã˜ÂµÃ˜Â·Ã™â€ Ã˜Â§Ã˜Â¹Ã™Å  Ã™Ë†Ã˜Â§Ã™â€žÃ˜ÂªÃ˜Â¹Ã™â€žÃ™â€¦ Ã˜Â§Ã™â€žÃ˜Â¢Ã™â€žÃ™Å  Ã™ÂÃ™Å  Ã˜Â§Ã™â€žÃ˜ÂªÃ˜ÂµÃ™Ë†Ã™Å Ã˜Â±"}, "definition": "Educational concepts for datasets, labels, bias, validation, uncertainty, human oversight, and deployment boundaries in imaging AI.", "intended_mode": "clinical_guidance_sensitive", "confidence": 0.64, "review_state": "unreviewed", "atomicity_candidates": [{"candidate_id": "rad.ac31.imaging-ai-evaluation", "name": {"en": "Imaging AI evaluation basics", "ar": "Ã˜Â£Ã˜Â³Ã˜Â§Ã˜Â³Ã™Å Ã˜Â§Ã˜Âª Ã˜ÂªÃ™â€šÃ™Å Ã™Å Ã™â€¦ Ã˜Â°Ã™Æ’Ã˜Â§Ã˜Â¡ Ã˜Â§Ã™â€žÃ˜ÂªÃ˜ÂµÃ™Ë†Ã™Å Ã˜Â± Ã˜Â§Ã™â€žÃ˜Â§Ã˜ÂµÃ˜Â·Ã™â€ Ã˜Â§Ã˜Â¹Ã™Å "}, "boundary": "Study design, metrics, leakage, calibration, and oversight concepts; excludes clinical claims, deployment approval, and automated diagnosis.", "atomicity_status": "candidate_atomic", "confidence": 0.47, "review_state": "unreviewed", "independent_assessment": true, "evidence_ids": ["src.rsna.radlex", "src.acr.practice-parameters"]}]}
+        ]
+      },
+      {
+        "discipline_id": "rad.d08.research-education",
+        "name": {"en": "Radiology Research and Education", "ar": "Ã˜Â§Ã™â€žÃ˜Â¨Ã˜Â­Ã˜Â« Ã™Ë†Ã˜Â§Ã™â€žÃ˜ÂªÃ˜Â¹Ã™â€žÃ™Å Ã™â€¦ Ã™ÂÃ™Å  Ã˜Â§Ã™â€žÃ˜Â£Ã˜Â´Ã˜Â¹Ã˜Â©"},
+        "definition": "Research literacy, educational design, communication, and evidence practices used to develop radiology knowledge responsibly.",
+        "confidence": 0.70,
+        "review_state": "unreviewed",
+        "source_ids": ["src.rsna.radlex", "src.acr.practice-parameters"],
+        "subdisciplines": [
+          {"subdiscipline_id": "rad.sd32.evidence-appraisal", "name": {"en": "Evidence Appraisal", "ar": "Ã˜ÂªÃ™â€šÃ™Å Ã™Å Ã™â€¦ Ã˜Â§Ã™â€žÃ˜Â£Ã˜Â¯Ã™â€žÃ˜Â©"}, "definition": "General methods for searching, appraising, citing, and communicating evidence about imaging.", "intended_mode": "educational_general", "confidence": 0.66, "review_state": "unreviewed", "atomicity_candidates": [{"candidate_id": "rad.ac32.imaging-evidence-appraisal", "name": {"en": "Imaging evidence appraisal", "ar": "Ã˜ÂªÃ™â€šÃ™Å Ã™Å Ã™â€¦ Ã˜Â§Ã™â€žÃ˜Â£Ã˜Â¯Ã™â€žÃ˜Â© Ã™ÂÃ™Å  Ã˜Â§Ã™â€žÃ˜ÂªÃ˜ÂµÃ™Ë†Ã™Å Ã˜Â±"}, "boundary": "One unit on evidence quality, bias, and citation; excludes converting evidence into patient-specific advice.", "atomicity_status": "candidate_atomic", "confidence": 0.52, "review_state": "unreviewed", "independent_assessment": true, "evidence_ids": ["src.acr.appropriateness", "src.rsna.radlex"]}]},
+          {"subdiscipline_id": "rad.sd33.study-design", "name": {"en": "Imaging Study Design and Statistics", "ar": "Ã˜ÂªÃ˜ÂµÃ™â€¦Ã™Å Ã™â€¦ Ã˜Â¯Ã˜Â±Ã˜Â§Ã˜Â³Ã˜Â§Ã˜Âª Ã˜Â§Ã™â€žÃ˜ÂªÃ˜ÂµÃ™Ë†Ã™Å Ã˜Â± Ã™Ë†Ã˜Â§Ã™â€žÃ˜Â¥Ã˜Â­Ã˜ÂµÃ˜Â§Ã˜Â¡"}, "definition": "General study-design, measurement, reproducibility, and statistical concepts for imaging research.", "intended_mode": "educational_general", "confidence": 0.67, "review_state": "unreviewed", "atomicity_candidates": [{"candidate_id": "rad.ac33.imaging-study-validity", "name": {"en": "Imaging study validity", "ar": "Ã˜ÂµÃ™â€žÃ˜Â§Ã˜Â­Ã™Å Ã˜Â© Ã˜Â¯Ã˜Â±Ã˜Â§Ã˜Â³Ã˜Â© Ã˜Â§Ã™â€žÃ˜ÂªÃ˜ÂµÃ™Ë†Ã™Å Ã˜Â±"}, "boundary": "One unit on sampling, reference standards, error, and reproducibility; excludes clinical effectiveness claims without source review.", "atomicity_status": "candidate_atomic", "confidence": 0.51, "review_state": "unreviewed", "independent_assessment": true, "evidence_ids": ["src.acr.appropriateness"]}]},
+          {"subdiscipline_id": "rad.sd34.teaching-files", "name": {"en": "Teaching Files and Curriculum Design", "ar": "Ã™â€¦Ã™â€žÃ™ÂÃ˜Â§Ã˜Âª Ã˜Â§Ã™â€žÃ˜ÂªÃ˜Â¹Ã™â€žÃ™Å Ã™â€¦ Ã™Ë†Ã˜ÂªÃ˜ÂµÃ™â€¦Ã™Å Ã™â€¦ Ã˜Â§Ã™â€žÃ™â€¦Ã™â€ Ã˜Â§Ã™â€¡Ã˜Â¬"}, "definition": "Educational organization of de-identified teaching cases, learning objectives, assessment, and provenance.", "intended_mode": "educational_general", "confidence": 0.65, "review_state": "unreviewed", "atomicity_candidates": [{"candidate_id": "rad.ac34.teaching-case-provenance", "name": {"en": "Teaching-case provenance", "ar": "Ã˜Â¥Ã˜Â³Ã™â€ Ã˜Â§Ã˜Â¯ Ã™â€¦Ã˜ÂµÃ˜Â¯Ã˜Â± Ã˜Â§Ã™â€žÃ˜Â­Ã˜Â§Ã™â€žÃ˜Â© Ã˜Â§Ã™â€žÃ˜ÂªÃ˜Â¹Ã™â€žÃ™Å Ã™â€¦Ã™Å Ã˜Â©"}, "boundary": "Case metadata, learning objective, de-identification, and source trace only; excludes diagnosis generation and patient data.", "atomicity_status": "candidate_atomic", "confidence": 0.49, "review_state": "unreviewed", "independent_assessment": true, "evidence_ids": ["src.rsna.radlex"]}]},
+          {"subdiscipline_id": "rad.sd35.scientific-communication", "name": {"en": "Scientific and Patient-Facing Communication", "ar": "Ã˜Â§Ã™â€žÃ˜ÂªÃ™Ë†Ã˜Â§Ã˜ÂµÃ™â€ž Ã˜Â§Ã™â€žÃ˜Â¹Ã™â€žÃ™â€¦Ã™Å  Ã™Ë†Ã˜Â§Ã™â€žÃ™â€¦Ã™Ë†Ã˜Â¬Ã™â€¡ Ã™â€žÃ™â€žÃ™â€¦Ã˜Â±Ã˜Â¶Ã™â€°"}, "definition": "Plain-language and professional communication about imaging concepts, uncertainty, limitations, and safety boundaries.", "intended_mode": "clinical_guidance_sensitive", "confidence": 0.59, "review_state": "unreviewed", "atomicity_candidates": [{"candidate_id": "rad.ac35.imaging-literacy", "name": {"en": "Imaging literacy and limitations", "ar": "Ã˜Â§Ã™â€žÃ˜Â«Ã™â€šÃ˜Â§Ã™ÂÃ˜Â© Ã˜Â§Ã™â€žÃ˜ÂªÃ˜ÂµÃ™Ë†Ã™Å Ã˜Â±Ã™Å Ã˜Â© Ã™Ë†Ã˜Â­Ã˜Â¯Ã™Ë†Ã˜Â¯Ã™â€¡Ã˜Â§"}, "boundary": "Explain what imaging can and cannot establish in general terms; never interpret an individual's scan or recommend care.", "atomicity_status": "candidate_atomic", "confidence": 0.42, "review_state": "unreviewed", "independent_assessment": true, "evidence_ids": ["src.acr.practice-parameters", "src.who-iaea.radiation-safety"]}]}
+        ]
+      }
+    ]
+  },
+  "review_register": [
+    {"review_id": "rad.review.01", "priority": "blocking", "question": "Should nuclear medicine remain a modality subdiscipline, an oncology cross-cutting discipline, or both?", "affected_ids": ["rad.sd09.nuclear-medicine", "rad.sd22.hybrid-imaging"], "required_reviewer": "radiologist or nuclear-medicine physician", "status": "open"},
+    {"review_id": "rad.review.02", "priority": "blocking", "question": "Which regional imaging boundaries are educationally useful without duplicating modality nodes or disease taxonomies?", "affected_ids": ["rad.d02.modalities", "rad.d03.anatomic-imaging"], "required_reviewer": "radiology educator", "status": "open"},
+    {"review_id": "rad.review.03", "priority": "blocking", "question": "Does each atomicity candidate support one independent learning objective, and should any candidate be split or merged?", "affected_ids": ["rad.ac01.normal-imaging-anatomy", "rad.ac28.dicom-object-basics", "rad.ac35.imaging-literacy"], "required_reviewer": "radiology educator plus ontology reviewer", "status": "open"},
+    {"review_id": "rad.review.04", "priority": "blocking", "question": "Are MRI, contrast, radiopharmaceutical, pediatric, and radiation-safety units correctly classified as clinical-guidance-sensitive?", "affected_ids": ["rad.sd03.agents-and-radiopharmaceuticals", "rad.sd07.mri", "rad.sd16.pediatric", "rad.d06.safety-quality"], "required_reviewer": "radiologist and medical physicist", "status": "open"},
+    {"review_id": "rad.review.05", "priority": "high", "question": "Which exact versions, licenses, and permitted-use terms may be recorded or ingested from each source?", "affected_ids": ["src.rsna.radlex", "src.acr.appropriateness", "src.acr.practice-parameters", "src.who-iaea.radiation-safety", "src.dicom.standard"], "required_reviewer": "provenance and legal reviewer", "status": "open"},
+    {"review_id": "rad.review.06", "priority": "high", "question": "What Arabic preferred terms, transliterations, and translation disagreements should be preserved rather than normalized away?", "affected_ids": ["ko.radiology.v0.1"], "required_reviewer": "Arabic-speaking radiology terminology reviewer", "status": "open"},
+    {"review_id": "rad.review.07", "priority": "high", "question": "Which patient-facing explanations can remain general education without becoming diagnosis, triage, or treatment advice?", "affected_ids": ["rad.sd27.patient-communication", "rad.sd35.scientific-communication"], "required_reviewer": "clinical safety reviewer", "status": "open"},
+    {"review_id": "rad.review.08", "priority": "high", "question": "How should references to ACR Appropriateness Criteria be represented without reproducing restricted content or making recommendations?", "affected_ids": ["src.acr.appropriateness", "rad.d03.anatomic-imaging", "rad.d05.oncology"], "required_reviewer": "clinical governance and legal reviewer", "status": "open"},
+    {"review_id": "rad.review.09", "priority": "medium", "question": "Which DICOM edition and identifiers are needed for a future terminology crosswalk, and what must remain outside this pilot?", "affected_ids": ["rad.sd28.dicom-interoperability", "rad.sd30.reporting-terminology"], "required_reviewer": "radiology informatics specialist", "status": "open"},
+    {"review_id": "rad.review.10", "priority": "medium", "question": "What independent evaluation and bias controls are required before any imaging-AI claim is promoted?", "affected_ids": ["rad.sd31.ai-evaluation", "rad.ac31.imaging-ai-evaluation"], "required_reviewer": "imaging-AI researcher and clinical safety reviewer", "status": "open"}
+  ],
+  "summary": {
+    "discipline_count": 8,
+    "subdiscipline_count": 35,
+    "atomicity_candidate_count": 35,
+    "review_item_count": 10,
+    "content_review_state_counts": {
+      "unreviewed": 79,
+      "machine_validated": 0,
+      "human_reviewed": 0,
+      "approved": 0,
+      "rejected": 0
+    },
+    "atomicity_status_counts": {
+      "candidate_atomic": 35,
+      "atomic": 0,
+      "non_atomic": 0
+    },
+    "intended_mode_counts": {
+      "educational_general": 12,
+      "clinical_guidance_sensitive": 23
+    },
+    "confidence_band_counts": {
+      "0.80-1.00": 3,
+      "0.60-0.79": 38,
+      "0.40-0.59": 34,
+      "0.00-0.39": 4
+    },
+    "sanity_check_expectations": {
+      "valid_json": true,
+      "unique_discipline_ids": true,
+      "unique_subdiscipline_ids": true,
+      "unique_atomicity_candidate_ids": true,
+      "all_review_state_values_allowed": true,
+      "all_atomicity_candidates_are_unapproved": true
+    },
+    "interpretation": "Counts describe a small discovery artifact only. They are not dataset volume, coverage claims, or evidence of clinical readiness."
+  }
+}
