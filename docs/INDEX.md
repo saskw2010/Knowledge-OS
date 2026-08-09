@@ -38,6 +38,13 @@ This index is the navigation layer for the current Knowledge-OS foundation. It s
 
 - [Stage 3 — MK-7 Knowledge LoRA](training/prompts/STAGE-3-MK7-KNOWLEDGE-LORA-PROMPT.md) — train a new `sky365-gemma-mk7-knowledge-lora-v0.1` adapter on the Mustafian Knowledge dataset without mixing or modifying the ERP intent adapter.
 
+## Visual / infographic documentation
+
+- [Infographics Hub](infographics/index.html) — HTML hub for the current visual engineering summaries.
+- [Agent Swarm Orchestration](infographics/agent-swarm-orchestration.html) — delegation, isolation, monitoring, reports, governance, and decision gates for multi-agent execution.
+- [Frontier Models Classification](infographics/frontier-models-classification.html) — research snapshot comparing GPT/Codex, Claude, Kimi, and GLM by task class rather than a single absolute ranking.
+- [Training & Inference Roadmap](infographics/training-inference-roadmap.html) — local-vs-cloud map for LoRA, QLoRA, offloading, quantization, GGUF, hybrid inference, MoE-aware methods, and larger infrastructure.
+
 ## Brainstorm and source review
 
 - [Other-Agent Foundation Review v0.1](brainstorm/OTHER-AGENT-FOUNDATION-REVIEW-v0.1.md) — comparison of the uploaded foundation package with the current repository; additions only, no replacement of existing decisions.
