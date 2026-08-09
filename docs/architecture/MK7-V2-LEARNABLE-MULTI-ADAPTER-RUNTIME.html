@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MK7 v2 — Learnable Multi-Adapter Runtime</title>
+  <style>
+    :root{--bg:#07111f;--panel:#0d1b2e;--panel2:#10243c;--text:#edf4ff;--muted:#9db1c9;--cyan:#6dd3ff;--gold:#f5c15f;--green:#7ee2a8;--purple:#c69cff;--red:#ff8a8a;--border:#1d3d60}
+    *{box-sizing:border-box} body{margin:0;background:linear-gradient(180deg,#06101d,#0a1627 40%,#07111f);color:var(--text);font:15px/1.65 Inter,Segoe UI,Arial,sans-serif}
+    .wrap{max-width:1200px;margin:auto;padding:34px 24px 64px}.hero{padding:26px 28px;border:1px solid var(--border);border-radius:22px;background:linear-gradient(135deg,#0d1d31,#0a1525);box-shadow:0 18px 50px #0006}
+    h1{font-size:46px;line-height:1.05;margin:0 0 8px}.gold{color:var(--gold)} .cyan{color:var(--cyan)} .muted{color:var(--muted)}
+    h2{margin:34px 0 14px;font-size:27px} h3{margin:0 0 10px;font-size:19px}.ar{direction:rtl;text-align:right}.tag{display:inline-block;border:1px solid #2f5679;border-radius:999px;padding:4px 10px;margin:4px 5px 0 0;color:#cceaff;background:#0b1a2b}
+    .grid{display:grid;gap:16px}.g2{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+    .card{border:1px solid var(--border);border-radius:18px;background:linear-gradient(180deg,var(--panel),#0a1728);padding:18px}.card strong{color:#fff}.callout{border-left:4px solid var(--gold);background:#1b1b18;padding:15px 17px;border-radius:12px}.callout.c{border-left-color:var(--cyan);background:#0b1b2b}.callout.g{border-left-color:var(--green);background:#0c1d19}
+    .flow{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center;margin:16px 0}.node{padding:12px 15px;border-radius:13px;border:1px solid #2b587c;background:#0d2035;text-align:center;min-width:150px}.arrow{font-size:24px;color:var(--gold)}
+    table{width:100%;border-collapse:collapse;border-radius:14px;overflow:hidden;background:#0b1829} th,td{border:1px solid #1b3856;padding:11px 12px;text-align:left;vertical-align:top} th{background:#102640;color:#dff5ff}.ok{color:var(--green)}.warn{color:var(--gold)}
+    pre{overflow:auto;background:#050b13;border:1px solid #18334f;border-radius:14px;padding:16px;color:#d8edff}.roadmap{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.roadmap .card:nth-child(3){border-color:var(--gold);box-shadow:0 0 0 1px #f5c15f55 inset}
+    footer{margin-top:36px;border-top:1px solid #18334f;padding-top:18px;color:var(--muted)}
+    @media(max-width:800px){.g2,.g3,.g4,.roadmap{grid-template-columns:1fr}h1{font-size:35px}.flow{flex-direction:column}.arrow{transform:rotate(90deg)}}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <section class="hero">
+    <div class="muted">Sky365 Model Factory → MK7 Runtime</div>
+    <h1>MK7 <span class="gold">v2</span> — <span class="cyan">Learnable Multi-Adapter Runtime</span></h1>
+    <p class="ar">التصور الهندسي النهائي للجيل الثاني من MK7: نموذج أساسي مجمّد، محولات LoRA متخصصة مجمّدة، وراوتر صغير قابل للتعلم يختار أو يركّب المسار الأنسب لكل طلب.</p>
+    <span class="tag">Frozen Base</span><span class="tag">Frozen LoRAs</span><span class="tag">Trainable Router</span><span class="tag">Prompt-level Routing</span><span class="tag">Top-1 / Top-2 Inference</span>
+  </section>
+
+  <h2>1. Architectural Doctrine</h2>
+  <div class="callout">
+    <strong>Enterprise-first intelligence: controlled at the top, adaptive at the bottom.</strong>
+    <div class="ar">ذكاء مؤسسي أولًا: تحكم في الأعلى، وتكيّف في الأسفل.</div>
+  </div>
+  <p>The MK7 design deliberately separates explicit business routing from latent learned specialization. Business domains remain auditable and controllable, while adapter selection becomes learnable where it adds measurable value.</p>
+
+  <h2>2. What MK7 v2 Is</h2>
+  <div class="grid g2">
+    <div class="card"><h3>Frozen Base Model</h3><p>Gemma-family model selected according to the hardware envelope. The base weights are not updated during RouterLab training.</p><div class="ar">يتم اختيار حجم Gemma وفق قيود الهاردوير، وتظل أوزان النموذج الأساسي مجمّدة أثناء تدريب الراوتر.</div></div>
+    <div class="card"><h3>Frozen LoRA Experts</h3><p>Examples: ERP, Arabic, Tool, Format, Customer/tenant adapters. Each adapter is independently versioned and evaluated.</p><div class="ar">محولات متخصصة وقابلة للتدقيق والإصدار المستقل.</div></div>
+    <div class="card"><h3>Trainable Router</h3><p>A tiny neural network consumes a prompt representation and produces routing scores over Base/No-Adapter and available LoRA experts.</p><div class="ar">شبكة صغيرة جدًا هي الجزء الأساسي القابل للتدريب في v2.</div></div>
+    <div class="card"><h3>Production Sparsity</h3><p>Soft routing may be used for training and analysis; serving should evaluate Top-1/Top-2 execution to avoid unnecessary adapter compute.</p><div class="ar">في الإنتاج نهدف لتشغيل أقل عدد ممكن من المحولات اللازمة.</div></div>
+  </div>
+
+  <h2>3. Canonical Runtime Flow</h2>
+  <div class="flow">
+    <div class="node">Request / Prompt<br><span class="muted">طلب المستخدم</span></div><div class="arrow">→</div>
+    <div class="node">Frozen Base<br><span class="muted">Gemma-family</span></div><div class="arrow">→</div>
+    <div class="node">Prompt Representation<br><span class="muted">Hidden State / pooled vector</span></div><div class="arrow">→</div>
+    <div class="node">Learnable Router<br><span class="muted">Tiny MLP / Linear</span></div><div class="arrow">→</div>
+    <div class="node">Base / ERP / Arabic / Tool / Format</div><div class="arrow">→</div>
+    <div class="node">Selected LoRA Deltas<br><span class="muted">Soft or Top-K</span></div><div class="arrow">→</div>
+    <div class="node">Generated Output</div>
+  </div>
+
+  <h2>4. Routing Contract for v2.0</h2>
+  <table>
+    <tr><th>Decision</th><th>MK7 v2.0 Contract</th><th>Reason</th></tr>
+    <tr><td>Routing granularity</td><td><strong>Prompt-level</strong></td><td>Lowest-risk POC; same routing vector can be reused across targeted LoRA injection points.</td></tr>
+    <tr><td>Base route</td><td><strong>Explicit Base / No-Adapter option</strong></td><td>General requests should not be forced through an irrelevant specialist.</td></tr>
+    <tr><td>Training</td><td>Soft routing over candidate adapters</td><td>Differentiable exploration and analysis of mixed-domain tasks.</td></tr>
+    <tr><td>Inference</td><td><strong>Top-1 or Top-2</strong></td><td>Reduce unnecessary adapter FLOPs; measure quality/latency trade-off.</td></tr>
+    <tr><td>LoRA placement</td><td>Blend at LoRA injection points, not only at final model output</td><td>LoRA is an additive weight delta on targeted linear modules.</td></tr>
+    <tr><td>Router precision</td><td>Keep router outside base NF4 quantization; FP32 initially</td><td>Conservative stability choice for RouterLab.</td></tr>
+  </table>
+
+  <h2>5. Simplified Forward Model</h2>
+  <pre>routing_weights = softmax(router(prompt_representation))
+
+y = W_base(x)
+for adapter_i in selected_adapters:
+    y += routing_weights[i] * LoRA_i(x)
+
+# Training: soft candidate routing
+# Inference: prune to Top-1 / Top-2 before adapter delta compute</pre>
+  <div class="callout c"><strong>Important:</strong> routing coefficients are learned numerical weights. They are <em>not</em> literal percentages of knowledge or intelligence.</div>
+
+  <h2>6. Training Strategy</h2>
+  <div class="grid g3">
+    <div class="card"><h3>Frozen</h3><p>Base model weights</p><p>All candidate LoRA experts</p></div>
+    <div class="card"><h3>Trainable</h3><p>Router parameters only in RouterLab-001</p></div>
+    <div class="card"><h3>Objective</h3><p>Task loss + routing/balance regularization only when justified by observed collapse or imbalance.</p></div>
+  </div>
+  <p>Entropy regularization must not blindly force uniform routing per request. Batch-level utilization and task quality are more important than making every prompt distribute evenly.</p>
+
+  <h2>7. Dataset Factory</h2>
+  <table>
+    <tr><th>Split type</th><th>Purpose</th><th>Examples</th></tr>
+    <tr><td>Pure domain</td><td>Learn obvious specialist boundaries</td><td>ERP-only, Tool/JSON-only, Arabic-language-specific</td></tr>
+    <tr><td>General/Base</td><td>Teach No-Adapter route</td><td>General questions where specialization does not help</td></tr>
+    <tr><td>Cross-domain</td><td>Test mixture value</td><td>Arabic + ERP + Tool; ERP + JSON formatting</td></tr>
+    <tr><td>Negative / trap</td><td>Prevent collapse and over-routing</td><td>Non-ERP prompts containing ERP-like words; irrelevant language cues</td></tr>
+    <tr><td>Adversarial routing</td><td>Measure robustness</td><td>Ambiguous, mixed-intent, long prompts</td></tr>
+  </table>
+  <p>The dataset should not hard-code arbitrary values such as “ERP = 0.7, Tool = 0.3” unless they are used for a dedicated supervised-routing experiment. Primary supervision should remain task quality, with route labels used as a weak or auxiliary signal where appropriate.</p>
+
+  <h2>8. RouterLab-001 Benchmark</h2>
+  <div class="callout g"><strong>Primary KPI: Oracle Gap</strong><br>Oracle Gap = Oracle adapter performance − Learned Router performance.</div>
+  <table>
+    <tr><th>Baseline</th><th>Why it exists</th></tr>
+    <tr><td>Base only</td><td>General capability floor</td></tr>
+    <tr><td>Oracle adapter</td><td>Upper bound when the correct adapter is known manually</td></tr>
+    <tr><td>Wrong adapter</td><td>Measures routing sensitivity and specialist interference</td></tr>
+    <tr><td>Static weighted PEFT composition</td><td>Tests whether a dynamic router is justified at all</td></tr>
+    <tr><td>MK7 learned soft router</td><td>Measures dynamic mixture quality</td></tr>
+    <tr><td>MK7 Top-1 / Top-2</td><td>Measures production-quality sparsity trade-off</td></tr>
+  </table>
+  <p><strong>Release criterion:</strong> v2 is not justified if the learned router does not close most of the Oracle Gap or cannot outperform simpler static routing/composition on mixed-domain tasks.</p>
+
+  <h2>9. Production Serving Design</h2>
+  <div class="flow">
+    <div class="node">Adapter Registry</div><div class="arrow">→</div>
+    <div class="node">CPU RAM / Disk Store</div><div class="arrow">→</div>
+    <div class="node">Adapter Cache</div><div class="arrow">→</div>
+    <div class="node">GPU Resident Set</div><div class="arrow">→</div>
+    <div class="node">Router Top-K</div>
+  </div>
+  <p>Top-K saves adapter compute only if pruning happens before unselected adapter deltas are evaluated. Top-K alone does not automatically save VRAM when all adapters are already resident on the GPU; memory savings require registry/cache/load policy.</p>
+
+  <h2>10. Version Roadmap</h2>
+  <div class="roadmap">
+    <div class="card"><h3>MK7 v1</h3><p>Explicit/Semantic multi-adapter routing. Auditable and controllable.</p></div>
+    <div class="card"><h3>MK7 v1.5</h3><p>Adapter registry, hot-swap/cache, Top-K hard routing, production benchmarks.</p></div>
+    <div class="card"><h3>MK7 v2</h3><p><strong>Learnable Mixture-of-Adapters.</strong> Frozen experts, learned prompt router.</p></div>
+    <div class="card"><h3>MK7 v3</h3><p>Native small MoE underneath explicit MK7 business routing.</p></div>
+  </div>
+
+  <h2>11. Non-Goals for v2.0</h2>
+  <ul>
+    <li>No pretraining of a new foundation model from scratch.</li>
+    <li>No token-wise or layer-wise router in the first production prototype.</li>
+    <li>No assumption that weighted LoRA coefficients equal semantic percentages.</li>
+    <li>No forced adapter merging when dynamic routing is the source of specialization.</li>
+    <li>No claim of production readiness until latency, VRAM, Oracle Gap, collapse, and regression tests pass.</li>
+  </ul>
+
+  <h2>12. Final Principle</h2>
+  <div class="callout">
+    <strong>Do not make all knowledge, all computation, and all tools run for every request. Route aggressively at every layer where routing produces measurable value.</strong>
+    <div class="ar">لا تشغّل كل المعرفة وكل الحساب وكل الأدوات لكل طلب؛ وجّه الذكاء بقوة في كل طبقة عندما يثبت القياس أن التوجيه يضيف قيمة.</div>
+  </div>
+
+  <footer>
+    <strong>Sky365 / MK7 Architecture</strong><br>
+    Canonical document: Knowledge-OS · MK7 v2 Learnable Multi-Adapter Runtime · Status: Architecture Baseline / Pre-Implementation Spec
+  </footer>
+</div>
+</body>
+</html>
