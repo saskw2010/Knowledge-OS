@@ -1,4 +1,4 @@
-﻿{
+{
     "$schema":  "https://knowledge-os.dev/schemas/knowledge-tree-pilot.schema.json",
     "artifact_id":  "knowledge_tree_mathematics_v0.1",
     "artifact_type":  "knowledge_tree",
@@ -8,7 +8,7 @@
                                   "system_id":  "knowledge_os_mathematics_pilot_v0.1",
                                   "name":  {
                                                "en":  "Knowledge-OS Mathematics Pilot Tree",
-                                               "ar":  "Ø´Ø¬Ø±Ø© Knowledge-OS Ø§Ù„ØªØ¬Ø±ÙŠØ¨ÙŠØ© Ù„Ù„Ø±ÙŠØ§Ø¶ÙŠØ§Øª"
+                                               "ar":  "شجرة Knowledge-OS التجريبية للرياضيات"
                                            },
                                   "purpose":  "A small, auditable model-reconstructed view for testing domain-to-discipline-to-atomic-discipline classification in Mathematics.",
                                   "scope":  "Mathematics only; disciplinary and subdisciplinary organization, not a complete subject classification and not a syllabus.",
@@ -107,7 +107,7 @@
     "nodes":  [
                   {
                       "concept_id":  "math",
-                      "name_ar":  "Ø§Ù„Ø±ÙŠØ§Ø¶ÙŠØ§Øª",
+                      "name_ar":  "الرياضيات",
                       "name_en":  "Mathematics",
                       "aliases":  [
                                       {
@@ -152,7 +152,7 @@
                   },
                   {
                       "concept_id":  "math.algebra",
-                      "name_ar":  "Ø§Ù„Ø¬Ø¨Ø±",
+                      "name_ar":  "الجبر",
                       "name_en":  "Algebra",
                       "aliases":  [
 
@@ -187,7 +187,7 @@
                   },
                   {
                       "concept_id":  "math.analysis",
-                      "name_ar":  "Ø§Ù„ØªØ­Ù„ÙŠÙ„ Ø§Ù„Ø±ÙŠØ§Ø¶ÙŠ",
+                      "name_ar":  "التحليل الرياضي",
                       "name_en":  "Analysis",
                       "aliases":  [
 
@@ -221,7 +221,7 @@
                   },
                   {
                       "concept_id":  "math.probability-statistics",
-                      "name_ar":  "Ø§Ù„Ø§Ø­ØªÙ…Ø§Ù„Ø§Øª ÙˆØ§Ù„Ø¥Ø­ØµØ§Ø¡",
+                      "name_ar":  "الاحتمالات والإحصاء",
                       "name_en":  "Probability and Statistics",
                       "aliases":  [
 
@@ -256,7 +256,7 @@
                   },
                   {
                       "concept_id":  "math.discrete-mathematics",
-                      "name_ar":  "Ø§Ù„Ø±ÙŠØ§Ø¶ÙŠØ§Øª Ø§Ù„Ù…ØªÙ‚Ø·Ø¹Ø©",
+                      "name_ar":  "الرياضيات المتقطعة",
                       "name_en":  "Discrete Mathematics",
                       "aliases":  [
 
@@ -291,7 +291,7 @@
                   },
                   {
                       "concept_id":  "math.geometry",
-                      "name_ar":  "Ø§Ù„Ù‡Ù†Ø¯Ø³Ø©",
+                      "name_ar":  "الهندسة",
                       "name_en":  "Geometry",
                       "aliases":  [
 
@@ -326,7 +326,7 @@
                   },
                   {
                       "concept_id":  "math.algebra.linear-algebra",
-                      "name_ar":  "Ø§Ù„Ø¬Ø¨Ø± Ø§Ù„Ø®Ø·ÙŠ",
+                      "name_ar":  "الجبر الخطي",
                       "name_en":  "Linear Algebra",
                       "aliases":  [
 
@@ -362,7 +362,7 @@
                   },
                   {
                       "concept_id":  "math.algebra.number-theory",
-                      "name_ar":  "Ù†Ø¸Ø±ÙŠØ© Ø§Ù„Ø£Ø¹Ø¯Ø§Ø¯",
+                      "name_ar":  "نظرية الأعداد",
                       "name_en":  "Number Theory",
                       "aliases":  [
 
@@ -396,7 +396,7 @@
                   },
                   {
                       "concept_id":  "math.analysis.calculus",
-                      "name_ar":  "Ø­Ø³Ø§Ø¨ Ø§Ù„ØªÙØ§Ø¶Ù„ ÙˆØ§Ù„ØªÙƒØ§Ù…Ù„",
+                      "name_ar":  "حساب التفاضل والتكامل",
                       "name_en":  "Calculus",
                       "aliases":  [
 
@@ -432,7 +432,7 @@
                   },
                   {
                       "concept_id":  "math.probability-statistics.probability",
-                      "name_ar":  "Ù†Ø¸Ø±ÙŠØ© Ø§Ù„Ø§Ø­ØªÙ…Ø§Ù„Ø§Øª",
+                      "name_ar":  "نظرية الاحتمالات",
                       "name_en":  "Probability",
                       "aliases":  [
 
@@ -467,7 +467,7 @@
                   },
                   {
                       "concept_id":  "math.probability-statistics.statistics",
-                      "name_ar":  "Ø§Ù„Ø¥Ø­ØµØ§Ø¡ Ø§Ù„Ø±ÙŠØ§Ø¶ÙŠ",
+                      "name_ar":  "الإحصاء الرياضي",
                       "name_en":  "Statistics",
                       "aliases":  [
 
@@ -503,7 +503,7 @@
                   },
                   {
                       "concept_id":  "math.discrete-mathematics.combinatorics",
-                      "name_ar":  "Ø§Ù„ØªÙˆØ§ÙÙ‚ÙŠØ§Øª",
+                      "name_ar":  "التوافقيات",
                       "name_en":  "Combinatorics",
                       "aliases":  [
 
@@ -537,7 +537,7 @@
                   },
                   {
                       "concept_id":  "math.discrete-mathematics.graph-theory",
-                      "name_ar":  "Ù†Ø¸Ø±ÙŠØ© Ø§Ù„Ø±Ø³ÙˆÙ… Ø§Ù„Ø¨ÙŠØ§Ù†ÙŠØ©",
+                      "name_ar":  "نظرية الرسوم البيانية",
                       "name_en":  "Graph Theory",
                       "aliases":  [
 
@@ -571,7 +571,7 @@
                   },
                   {
                       "concept_id":  "math.discrete-mathematics.mathematical-logic",
-                      "name_ar":  "Ø§Ù„Ù…Ù†Ø·Ù‚ Ø§Ù„Ø±ÙŠØ§Ø¶ÙŠ",
+                      "name_ar":  "المنطق الرياضي",
                       "name_en":  "Mathematical Logic",
                       "aliases":  [
 
@@ -606,7 +606,7 @@
                   },
                   {
                       "concept_id":  "math.geometry.euclidean-geometry",
-                      "name_ar":  "Ø§Ù„Ù‡Ù†Ø¯Ø³Ø© Ø§Ù„Ø¥Ù‚Ù„ÙŠØ¯ÙŠØ©",
+                      "name_ar":  "الهندسة الإقليدية",
                       "name_en":  "Euclidean Geometry",
                       "aliases":  [
 
@@ -640,7 +640,7 @@
                   },
                   {
                       "concept_id":  "math.geometry.analytic-geometry",
-                      "name_ar":  "Ø§Ù„Ù‡Ù†Ø¯Ø³Ø© Ø§Ù„ØªØ­Ù„ÙŠÙ„ÙŠØ©",
+                      "name_ar":  "الهندسة التحليلية",
                       "name_en":  "Analytic Geometry",
                       "aliases":  [
 
@@ -674,7 +674,7 @@
                   },
                   {
                       "concept_id":  "math.geometry.differential-geometry",
-                      "name_ar":  "Ø§Ù„Ù‡Ù†Ø¯Ø³Ø© Ø§Ù„ØªÙØ§Ø¶Ù„ÙŠØ©",
+                      "name_ar":  "الهندسة التفاضلية",
                       "name_en":  "Differential Geometry",
                       "aliases":  [
 
@@ -708,7 +708,7 @@
                   },
                   {
                       "concept_id":  "math.algebra.linear-algebra.vector-spaces-linear-maps",
-                      "name_ar":  "Ø§Ù„ÙØ¶Ø§Ø¡Ø§Øª Ø§Ù„Ù…ØªØ¬Ù‡ÙŠØ© ÙˆØ§Ù„ØªØ­ÙˆÙŠÙ„Ø§Øª Ø§Ù„Ø®Ø·ÙŠØ©",
+                      "name_ar":  "الفضاءات المتجهية والتحويلات الخطية",
                       "name_en":  "Vector Spaces and Linear Maps",
                       "aliases":  [
 
@@ -743,7 +743,7 @@
                   },
                   {
                       "concept_id":  "math.algebra.linear-algebra.matrix-theory",
-                      "name_ar":  "Ù†Ø¸Ø±ÙŠØ© Ø§Ù„Ù…ØµÙÙˆÙØ§Øª",
+                      "name_ar":  "نظرية المصفوفات",
                       "name_en":  "Matrix Theory",
                       "aliases":  [
 
@@ -778,7 +778,7 @@
                   },
                   {
                       "concept_id":  "math.algebra.linear-algebra.linear-systems",
-                      "name_ar":  "Ø§Ù„Ø£Ù†Ø¸Ù…Ø© Ø§Ù„Ø®Ø·ÙŠØ©",
+                      "name_ar":  "الأنظمة الخطية",
                       "name_en":  "Linear Systems",
                       "aliases":  [
 
@@ -813,7 +813,7 @@
                   },
                   {
                       "concept_id":  "math.algebra.number-theory.elementary-number-theory",
-                      "name_ar":  "Ù†Ø¸Ø±ÙŠØ© Ø§Ù„Ø£Ø¹Ø¯Ø§Ø¯ Ø§Ù„Ø£ÙˆÙ„ÙŠØ©/Ø§Ù„Ø§Ø¨ØªØ¯Ø§Ø¦ÙŠØ©",
+                      "name_ar":  "نظرية الأعداد الأولية/الابتدائية",
                       "name_en":  "Elementary Number Theory",
                       "aliases":  [
 
@@ -848,7 +848,7 @@
                   },
                   {
                       "concept_id":  "math.algebra.number-theory.algebraic-number-theory",
-                      "name_ar":  "Ù†Ø¸Ø±ÙŠØ© Ø§Ù„Ø£Ø¹Ø¯Ø§Ø¯ Ø§Ù„Ø¬Ø¨Ø±ÙŠØ©",
+                      "name_ar":  "نظرية الأعداد الجبرية",
                       "name_en":  "Algebraic Number Theory",
                       "aliases":  [
 
@@ -883,7 +883,7 @@
                   },
                   {
                       "concept_id":  "math.algebra.number-theory.analytic-number-theory",
-                      "name_ar":  "Ù†Ø¸Ø±ÙŠØ© Ø§Ù„Ø£Ø¹Ø¯Ø§Ø¯ Ø§Ù„ØªØ­Ù„ÙŠÙ„ÙŠØ©",
+                      "name_ar":  "نظرية الأعداد التحليلية",
                       "name_en":  "Analytic Number Theory",
                       "aliases":  [
 
@@ -918,7 +918,7 @@
                   },
                   {
                       "concept_id":  "math.algebra.number-theory.diophantine-equations",
-                      "name_ar":  "Ø§Ù„Ù…Ø¹Ø§Ø¯Ù„Ø§Øª Ø§Ù„Ø¯ÙŠÙˆÙØ§Ù†ØªÙŠØ©",
+                      "name_ar":  "المعادلات الديوفانتية",
                       "name_en":  "Diophantine Equations",
                       "aliases":  [
 
@@ -953,7 +953,7 @@
                   },
                   {
                       "concept_id":  "math.analysis.calculus.differential-calculus",
-                      "name_ar":  "Ø§Ù„ØªÙØ§Ø¶Ù„",
+                      "name_ar":  "التفاضل",
                       "name_en":  "Differential Calculus",
                       "aliases":  [
 
@@ -988,7 +988,7 @@
                   },
                   {
                       "concept_id":  "math.analysis.calculus.integral-calculus",
-                      "name_ar":  "Ø§Ù„ØªÙƒØ§Ù…Ù„",
+                      "name_ar":  "التكامل",
                       "name_en":  "Integral Calculus",
                       "aliases":  [
 
@@ -1023,7 +1023,7 @@
                   },
                   {
                       "concept_id":  "math.analysis.calculus.multivariable-calculus",
-                      "name_ar":  "Ø­Ø³Ø§Ø¨ Ø§Ù„ØªÙØ§Ø¶Ù„ ÙˆØ§Ù„ØªÙƒØ§Ù…Ù„ Ù…ØªØ¹Ø¯Ø¯ Ø§Ù„Ù…ØªØºÙŠØ±Ø§Øª",
+                      "name_ar":  "حساب التفاضل والتكامل متعدد المتغيرات",
                       "name_en":  "Multivariable Calculus",
                       "aliases":  [
 
@@ -1058,7 +1058,7 @@
                   },
                   {
                       "concept_id":  "math.analysis.calculus.vector-calculus",
-                      "name_ar":  "Ø­Ø³Ø§Ø¨ Ø§Ù„Ù…ØªØ¬Ù‡Ø§Øª",
+                      "name_ar":  "حساب المتجهات",
                       "name_en":  "Vector Calculus",
                       "aliases":  [
 
@@ -1093,7 +1093,7 @@
                   },
                   {
                       "concept_id":  "math.probability-statistics.probability.probability-foundations",
-                      "name_ar":  "Ø£Ø³Ø³ Ø§Ù„Ø§Ø­ØªÙ…Ø§Ù„Ø§Øª",
+                      "name_ar":  "أسس الاحتمالات",
                       "name_en":  "Probability Foundations",
                       "aliases":  [
 
@@ -1128,7 +1128,7 @@
                   },
                   {
                       "concept_id":  "math.probability-statistics.probability.random-variables-distributions",
-                      "name_ar":  "Ø§Ù„Ù…ØªØºÙŠØ±Ø§Øª Ø§Ù„Ø¹Ø´ÙˆØ§Ø¦ÙŠØ© ÙˆØ§Ù„ØªÙˆØ²ÙŠØ¹Ø§Øª",
+                      "name_ar":  "المتغيرات العشوائية والتوزيعات",
                       "name_en":  "Random Variables and Distributions",
                       "aliases":  [
 
@@ -1163,7 +1163,7 @@
                   },
                   {
                       "concept_id":  "math.probability-statistics.probability.stochastic-processes",
-                      "name_ar":  "Ø§Ù„Ø¹Ù…Ù„ÙŠØ§Øª Ø§Ù„Ø¹Ø´ÙˆØ§Ø¦ÙŠØ©",
+                      "name_ar":  "العمليات العشوائية",
                       "name_en":  "Stochastic Processes",
                       "aliases":  [
 
@@ -1198,7 +1198,7 @@
                   },
                   {
                       "concept_id":  "math.probability-statistics.statistics.statistical-inference",
-                      "name_ar":  "Ø§Ù„Ø§Ø³ØªØ¯Ù„Ø§Ù„ Ø§Ù„Ø¥Ø­ØµØ§Ø¦ÙŠ",
+                      "name_ar":  "الاستدلال الإحصائي",
                       "name_en":  "Statistical Inference",
                       "aliases":  [
 
@@ -1233,7 +1233,7 @@
                   },
                   {
                       "concept_id":  "math.probability-statistics.statistics.regression-analysis",
-                      "name_ar":  "ØªØ­Ù„ÙŠÙ„ Ø§Ù„Ø§Ù†Ø­Ø¯Ø§Ø±",
+                      "name_ar":  "تحليل الانحدار",
                       "name_en":  "Regression Analysis",
                       "aliases":  [
 
@@ -1268,7 +1268,7 @@
                   },
                   {
                       "concept_id":  "math.probability-statistics.statistics.experimental-design",
-                      "name_ar":  "ØªØµÙ…ÙŠÙ… Ø§Ù„ØªØ¬Ø§Ø±Ø¨",
+                      "name_ar":  "تصميم التجارب",
                       "name_en":  "Experimental Design",
                       "aliases":  [
 
@@ -1303,7 +1303,7 @@
                   },
                   {
                       "concept_id":  "math.probability-statistics.statistics.bayesian-statistics",
-                      "name_ar":  "Ø§Ù„Ø¥Ø­ØµØ§Ø¡ Ø§Ù„Ø¨Ø§ÙŠØ²ÙŠ",
+                      "name_ar":  "الإحصاء البايزي",
                       "name_en":  "Bayesian Statistics",
                       "aliases":  [
 
@@ -1338,7 +1338,7 @@
                   },
                   {
                       "concept_id":  "math.discrete-mathematics.combinatorics.enumerative-combinatorics",
-                      "name_ar":  "Ø§Ù„ØªÙˆØ§ÙÙ‚ÙŠØ§Øª Ø§Ù„Ø¹Ø¯Ù‘ÙŠØ©",
+                      "name_ar":  "التوافقيات العدّية",
                       "name_en":  "Enumerative Combinatorics",
                       "aliases":  [
 
@@ -1373,7 +1373,7 @@
                   },
                   {
                       "concept_id":  "math.discrete-mathematics.combinatorics.extremal-combinatorics",
-                      "name_ar":  "Ø§Ù„ØªÙˆØ§ÙÙ‚ÙŠØ§Øª Ø§Ù„Ù‚ØµÙˆÙ‰",
+                      "name_ar":  "التوافقيات القصوى",
                       "name_en":  "Extremal Combinatorics",
                       "aliases":  [
 
@@ -1408,7 +1408,7 @@
                   },
                   {
                       "concept_id":  "math.discrete-mathematics.graph-theory.structural-graph-theory",
-                      "name_ar":  "Ù†Ø¸Ø±ÙŠØ© Ø§Ù„Ø±Ø³ÙˆÙ… Ø§Ù„Ø¨ÙŠØ§Ù†ÙŠØ© Ø§Ù„Ø¨Ù†ÙŠÙˆÙŠØ©",
+                      "name_ar":  "نظرية الرسوم البيانية البنيوية",
                       "name_en":  "Structural Graph Theory",
                       "aliases":  [
 
@@ -1443,7 +1443,7 @@
                   },
                   {
                       "concept_id":  "math.discrete-mathematics.graph-theory.graph-algorithms",
-                      "name_ar":  "Ø®ÙˆØ§Ø±Ø²Ù…ÙŠØ§Øª Ø§Ù„Ø±Ø³ÙˆÙ… Ø§Ù„Ø¨ÙŠØ§Ù†ÙŠØ©",
+                      "name_ar":  "خوارزميات الرسوم البيانية",
                       "name_en":  "Graph Algorithms",
                       "aliases":  [
 
@@ -1478,7 +1478,7 @@
                   },
                   {
                       "concept_id":  "math.discrete-mathematics.mathematical-logic.set-theory",
-                      "name_ar":  "Ù†Ø¸Ø±ÙŠØ© Ø§Ù„Ù…Ø¬Ù…ÙˆØ¹Ø§Øª",
+                      "name_ar":  "نظرية المجموعات",
                       "name_en":  "Set Theory",
                       "aliases":  [
 
@@ -1513,7 +1513,7 @@
                   },
                   {
                       "concept_id":  "math.discrete-mathematics.mathematical-logic.computability-theory",
-                      "name_ar":  "Ù†Ø¸Ø±ÙŠØ© Ø§Ù„Ù‚Ø§Ø¨Ù„ÙŠØ© Ù„Ù„Ø­ÙˆØ³Ø¨Ø©",
+                      "name_ar":  "نظرية القابلية للحوسبة",
                       "name_en":  "Computability Theory",
                       "aliases":  [
 
@@ -1548,7 +1548,7 @@
                   },
                   {
                       "concept_id":  "math.discrete-mathematics.mathematical-logic.proof-theory",
-                      "name_ar":  "Ù†Ø¸Ø±ÙŠØ© Ø§Ù„Ø¨Ø±Ù‡Ø§Ù†",
+                      "name_ar":  "نظرية البرهان",
                       "name_en":  "Proof Theory",
                       "aliases":  [
 
@@ -1583,7 +1583,7 @@
                   },
                   {
                       "concept_id":  "math.geometry.euclidean-geometry.classical-euclidean-geometry",
-                      "name_ar":  "Ø§Ù„Ù‡Ù†Ø¯Ø³Ø© Ø§Ù„Ø¥Ù‚Ù„ÙŠØ¯ÙŠØ© Ø§Ù„ÙƒÙ„Ø§Ø³ÙŠÙƒÙŠØ©",
+                      "name_ar":  "الهندسة الإقليدية الكلاسيكية",
                       "name_en":  "Classical Euclidean Geometry",
                       "aliases":  [
 
@@ -1618,7 +1618,7 @@
                   },
                   {
                       "concept_id":  "math.geometry.analytic-geometry.coordinate-geometry",
-                      "name_ar":  "Ø§Ù„Ù‡Ù†Ø¯Ø³Ø© Ø§Ù„Ø¥Ø­Ø¯Ø§Ø«ÙŠØ©",
+                      "name_ar":  "الهندسة الإحداثية",
                       "name_en":  "Coordinate Geometry",
                       "aliases":  [
 
@@ -1653,7 +1653,7 @@
                   },
                   {
                       "concept_id":  "math.geometry.differential-geometry.curves-and-surfaces",
-                      "name_ar":  "Ø§Ù„Ù…Ù†Ø­Ù†ÙŠØ§Øª ÙˆØ§Ù„Ø£Ø³Ø·Ø­",
+                      "name_ar":  "المنحنيات والأسطح",
                       "name_en":  "Curves and Surfaces",
                       "aliases":  [
 
