@@ -31,6 +31,28 @@
     "scope_excludes": {"type": "array", "items": {"type": "string"}},
     "parent_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
     "perspective_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "classification_mappings": {
+      "type": "array",
+      "description": "Many-to-many mappings from this canonical concept to nodes in registered external or reconstructed classification systems. These mappings do not replace canonical parent_ids.",
+      "items": {
+        "type": "object",
+        "required": ["system_id", "node_id"],
+        "properties": {
+          "system_id": {"type": "string", "minLength": 1},
+          "node_id": {"type": "string", "minLength": 1},
+          "node_label": {"type": ["string", "null"]},
+          "path": {"type": "array", "items": {"type": "string"}},
+          "system_version": {"type": ["string", "null"]},
+          "mapping_type": {
+            "type": "string",
+            "enum": ["exact", "broad", "narrow", "related", "proposed"]
+          },
+          "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+          "provenance_id": {"type": ["string", "null"]}
+        },
+        "additionalProperties": false
+      }
+    },
     "status": {"type": "string", "enum": ["proposed", "common", "stable", "disputed", "deprecated"]},
     "confidence": {"type": "number", "minimum": 0, "maximum": 1},
     "review_state": {"type": "string", "enum": ["unreviewed", "machine_validated", "human_reviewed", "approved", "rejected"]},
