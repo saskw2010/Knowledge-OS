@@ -3,20 +3,64 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Knowledge-OS · Markdown Viewer</title>
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/highlight.js/lib/common.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js/styles/github-dark.min.css">
+<script src="https://cdn.jsdelivr.net/npm/marked@16.2.1/lib/marked.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.6/dist/purify.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github-dark.min.css">
 <style>
 :root{--bg:#07111f;--panel:#0d1f34;--line:#284963;--text:#edf6ff;--muted:#9eb4c8;--cyan:#49d8ff;--gold:#ffd166}*{box-sizing:border-box}body{margin:0;background:linear-gradient(135deg,#06111e,#0a1930 60%,#050b13);color:var(--text);font:16px/1.8 Segoe UI,Tahoma,Arial,sans-serif}.wrap{max-width:1080px;margin:auto;padding:24px 18px 70px}.top{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:18px}.top a{text-decoration:none;color:var(--muted)}.panel{background:linear-gradient(145deg,#0d2138,#081727);border:1px solid var(--line);border-radius:20px;box-shadow:0 20px 60px #0005}.meta{padding:18px 22px;margin-bottom:16px}.meta b{color:var(--cyan)}.meta code{direction:ltr;display:inline-block;color:#d4ecff}.doc{padding:34px 40px;direction:ltr;text-align:left}.doc h1,.doc h2,.doc h3,.doc h4{color:#fff;line-height:1.25}.doc h1{font-size:38px;border-bottom:1px solid var(--line);padding-bottom:12px}.doc h2{margin-top:34px;color:#bfeeff}.doc a{color:var(--cyan)}.doc blockquote{border-left:4px solid var(--gold);margin:18px 0;padding:8px 16px;background:#181914;color:#dce8f2}.doc code{background:#07121f;padding:2px 6px;border-radius:6px}.doc pre{background:#040b12;border:1px solid #1f3c55;border-radius:13px;padding:16px;overflow:auto}.doc table{width:100%;border-collapse:collapse}.doc th,.doc td{border:1px solid #28455c;padding:9px}.doc th{background:#102840}.doc img{max-width:100%}.error{padding:28px;color:#ffb2b2}.ar{direction:rtl;text-align:right}footer{color:var(--muted);margin-top:18px;text-align:center}@media(max-width:700px){.doc{padding:24px 18px}.top{display:block}.top div{margin-top:8px}}
 </style></head>
 <body><main class="wrap"><div class="top"><a href="repository-map.html">← Repository Explorer</a><div><a id="github" href="#">GitHub source</a> · <a href="../index.html">Home</a></div></div><section class="panel meta"><div><b>Knowledge-OS Markdown Viewer</b></div><div class="ar">Markdown هو مصدر التوثيق؛ هذه الصفحة تعرضه بتنسيق HTML موحّد بدون إنشاء نسخة HTML يدوية لكل ملف.</div><code id="path"></code></section><article id="doc" class="panel doc"><div class="ar">Loading…</div></article><footer>Rendered with marked.js + DOMPurify + highlight.js</footer></main>
 <script>
-const params=new URLSearchParams(location.search);let path=params.get('path')||'../README.md';
-function safe(p){try{p=decodeURIComponent(p)}catch{};if(!p.endsWith('.md')||p.includes('://')||p.includes('\\')||p.split('/').some((s,i)=>s==='..'&&i>0))return false;return true}
-if(!safe(path)){document.getElementById('doc').innerHTML='<div class="error ar">المسار غير مسموح. افتح ملفات Markdown محلية فقط.</div>';throw new Error('unsafe path')}
-document.getElementById('path').textContent=path;
-const repoPath=path.replace(/^\.\.\//,'');document.getElementById('github').href='https://github.com/saskw2010/Knowledge-OS/blob/main/'+repoPath;
-marked.setOptions({gfm:true,breaks:false,highlight:(code,lang)=>{try{return hljs.highlight(code,{language:lang}).value}catch{return hljs.highlightAuto(code).value}}});
-fetch(path).then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return r.text()}).then(md=>{const html=DOMPurify.sanitize(marked.parse(md),{ADD_ATTR:['target']});const el=document.getElementById('doc');el.innerHTML=html;el.querySelectorAll('pre code').forEach(x=>hljs.highlightElement(x));el.querySelectorAll('a').forEach(a=>{const h=a.getAttribute('href')||'';if(h.endsWith('.md')&&!h.startsWith('http')){let base=repoPath.includes('/')?repoPath.substring(0,repoPath.lastIndexOf('/')+1):'';let target=h.startsWith('../')?h:base+h;a.href='viewer.html?path='+encodeURIComponent('../'+target.replace(/^\.\//,''))}})}).catch(e=>{document.getElementById('doc').innerHTML='<div class="error ar">تعذر فتح الملف: '+e.message+'</div>'});
+const params=new URLSearchParams(location.search);
+let path=params.get('path')||'../README.md';
+
+function safe(p){
+  try{p=decodeURIComponent(p)}catch{}
+  if(!p.endsWith('.md')||p.includes('://')||p.includes('\\')) return false;
+  const parts=p.split('/');
+  const parentIndexes=parts.map((x,i)=>x==='..'?i:-1).filter(i=>i>=0);
+  return parentIndexes.every(i=>i===0);
+}
+
+function showError(message){
+  document.getElementById('doc').innerHTML='<div class="error ar">تعذر فتح الملف: '+message+'</div>';
+}
+
+if(!safe(path)){
+  showError('المسار غير مسموح. افتح ملفات Markdown محلية فقط.');
+}else{
+  document.getElementById('path').textContent=path;
+  const repoPath=path.replace(/^\.\.\//,'');
+  document.getElementById('github').href='https://github.com/saskw2010/Knowledge-OS/blob/main/'+repoPath;
+
+  fetch(path)
+    .then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return r.text()})
+    .then(md=>{
+      if(typeof marked==='undefined') throw new Error('marked.js لم يتم تحميله');
+      if(typeof DOMPurify==='undefined') throw new Error('DOMPurify لم يتم تحميله');
+
+      const rendered=marked.parse(md,{gfm:true,breaks:false});
+      const html=DOMPurify.sanitize(rendered,{ADD_ATTR:['target']});
+      const el=document.getElementById('doc');
+      el.innerHTML=html;
+
+      if(typeof hljs!=='undefined' && typeof hljs.highlightElement==='function'){
+        el.querySelectorAll('pre code').forEach(code=>{
+          try{hljs.highlightElement(code)}catch(e){console.warn('highlight skipped',e)}
+        });
+      }
+
+      el.querySelectorAll('a').forEach(a=>{
+        const h=a.getAttribute('href')||'';
+        if(h.endsWith('.md')&&!h.startsWith('http')){
+          const base=repoPath.includes('/')?repoPath.substring(0,repoPath.lastIndexOf('/')+1):'';
+          let target=h.startsWith('../')?h:base+h;
+          target=target.replace(/^\.\//,'');
+          a.href='viewer.html?path='+encodeURIComponent('../'+target);
+        }
+      });
+    })
+    .catch(e=>showError(e.message));
+}
 </script></body></html>
