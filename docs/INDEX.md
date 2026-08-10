@@ -2,9 +2,15 @@
 
 This index is the navigation layer for the current Knowledge-OS foundation. It separates canonical decisions from research notes, prompts, schemas, data seeds, and external brainstorming material.
 
+## Start / navigation
+
+- [Repository Explorer](repository-map.html) — live visual map of the current GitHub repository tree with file-type filtering and direct actions.
+- [Markdown Viewer](viewer.html) — renders repository Markdown as styled HTML without maintaining duplicate handwritten HTML files.
+- [Repository Documentation Standard](REPOSITORY-DOCUMENTATION-STANDARD.md) — reusable WytSky/Sky365 standard for README, roadmaps, project memory, repository explorer, Markdown rendering, and visual documentation.
+- [Master Roadmap](../MASTER-ROADMAP.md) — program-level map linking knowledge foundations, graph engineering, dataset production, model training, agentic-runtime research, and product delivery.
+
 ## Canonical foundation
 
-- [Master Roadmap](../MASTER-ROADMAP.md) — program-level map linking knowledge foundations, graph engineering, dataset production, model training, agentic-runtime research, and product delivery.
 - [Vision](VISION.md) — project purpose, boundaries, and epistemic position.
 - [Architecture](ARCHITECTURE.md) — components, data flow, and graph layers.
 - [Execution Plan](EXECUTION-PLAN.md) — classification systems → classification nodes → canonical concepts → graph → datasets.
@@ -39,9 +45,11 @@ This index is the navigation layer for the current Knowledge-OS foundation. It s
 
 - [Stage 3 — MK-7 Knowledge LoRA](training/prompts/STAGE-3-MK7-KNOWLEDGE-LORA-PROMPT.md) — train a new `sky365-gemma-mk7-knowledge-lora-v0.1` adapter on the Mustafian Knowledge dataset without mixing or modifying the ERP intent adapter.
 
-## Visual / infographic documentation
+## Visual / HTML documentation
 
-- [Infographics Hub](infographics/index.html) — HTML hub for the current visual engineering summaries.
+- [Repository Explorer](repository-map.html) — live repository structure, search, filters, Markdown-vs-HTML distinction, and Agent Start Here.
+- [MK7 v2 Learnable Multi-Adapter Runtime](architecture/MK7-V2-LEARNABLE-MULTI-ADAPTER-RUNTIME.html) — native visual architecture page.
+- [Infographics Hub](infographics/index.html) — HTML hub for current visual engineering summaries.
 - [Agent Swarm Orchestration](infographics/agent-swarm-orchestration.html) — delegation, isolation, monitoring, reports, governance, and decision gates for multi-agent execution.
 - [Frontier Models Classification](infographics/frontier-models-classification.html) — research snapshot comparing GPT/Codex, Claude, Kimi, and GLM by task class rather than a single absolute ranking.
 - [Training & Inference Roadmap](infographics/training-inference-roadmap.html) — local-vs-cloud map for LoRA, QLoRA, offloading, quantization, GGUF, hybrid inference, MoE-aware methods, and larger infrastructure.
@@ -74,3 +82,7 @@ This index is the navigation layer for the current Knowledge-OS foundation. It s
 - **Research:** source-backed analysis, not yet a project decision.
 - **Brainstorm:** idea input preserved for comparison; cannot silently override canonical files.
 - **Deprecated:** retained for provenance but not used as current guidance.
+
+## Rendering rule
+
+Markdown remains the preferred source for canonical prose. HTML is reserved for interactive or visual pages, while `viewer.html` provides formatted HTML rendering for Markdown at view time. This avoids maintaining two divergent manual versions of the same document.
