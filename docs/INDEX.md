@@ -4,18 +4,19 @@ This index is the navigation layer for the current Knowledge-OS foundation. It s
 
 ## Canonical foundation
 
+- [Master Roadmap](../MASTER-ROADMAP.md) — program-level map linking knowledge foundations, graph engineering, dataset production, model training, agentic-runtime research, and product delivery.
 - [Vision](VISION.md) — project purpose, boundaries, and epistemic position.
 - [Architecture](ARCHITECTURE.md) — components, data flow, and graph layers.
 - [Execution Plan](EXECUTION-PLAN.md) — classification systems → classification nodes → canonical concepts → graph → datasets.
 - [Data and Legal Policy](DATA-AND-LEGAL-POLICY.md) — provenance, licensing, lawful acquisition, and dataset controls.
-- [Roadmap](../ROADMAP.md) — staged delivery plan.
+- [Core Roadmap](../ROADMAP.md) — staged delivery plan for the Knowledge-OS core implementation.
 
 ## Added foundation documents
 
 - [Mission](MISSION.md) — operational mission and measurable outcomes.
 - [Manifesto](MANIFESTO.md) — principles governing openness, traceability, plurality, and extensibility.
 - [Foundations](FOUNDATIONS.md) — data, information, knowledge, understanding, wisdom, and meta-knowledge distinctions.
-- [Classification Systems](CLASSIFICATION-SYSTEMS.md) — registry model for philosophical, educational, research, library, bibliometric, and model-generated systems.
+- [Classification Systems](CLASSIFICATION-SYSTEMS.md) — registry model for philosophical, educational, research, library, bibliometric, and model-generated systems, including multi-classification mappings from canonical concepts to many external nodes and paths.
 - [Knowledge Factory](KNOWLEDGE-FACTORY.md) — ingestion, normalization, expansion, validation, graph publication, and dataset production.
 - [Training Pipeline](TRAINING-PIPELINE.md) — Sky365 Tiny Training Lab landing page, knowledge-to-training flow, evaluation, and release gates.
 - [Glossary](GLOSSARY.md) — canonical project terms.
