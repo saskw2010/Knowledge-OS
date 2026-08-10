@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "externalPublicRepositories": {
+    "defaultTrust": "untrusted",
+    "defaultMode": "read_only",
+    "firstInteractionMustBeReadOnly": true,
+    "allowCodeExecution": false,
+    "allowDependencyInstall": false,
+    "allowSecretTransmission": false,
+    "allowExternalAuthentication": false,
+    "requireStaticInspectionBeforeExecution": true,
+    "requireReviewForWrite": true,
+    "requireReviewForNetworkAccess": true,
+    "requireReviewForCredentialUse": true,
+    "blockPromptInjectionInstructions": true,
+    "blockDestructiveUnrelatedActions": true
+  },
+  "decisionStates": [
+    "SAFE_READ",
+    "SAFE_WRITE",
+    "REVIEW_REQUIRED",
+    "BLOCKED"
+  ],
+  "defaults": {
+    "preferDryRun": true,
+    "preferLeastPrivilege": true,
+    "preferScopedCredentials": true,
+    "preferStaticAnalysis": true,
+    "scanWritesForSecrets": true
+  }
+}
