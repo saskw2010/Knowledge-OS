@@ -1,0 +1,36 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="data:,"><title>Colibri Current Execution Board</title><style>
+:root{--bg:#071522;--card:#0e2638;--ink:#eef8ff;--muted:#afc6d5;--aqua:#50dbc4;--gold:#ffce6a;--green:#80e39c;--red:#ff928f;--blue:#7bc8ff;--line:#24465c}*{box-sizing:border-box}html,body{max-width:100%;overflow-x:hidden}body{margin:0;background:linear-gradient(135deg,#071522,#0a1f2e);color:var(--ink);font:16px/1.7 "Segoe UI",Tahoma,Arial,sans-serif}main{max-width:1180px;margin:auto;padding:34px 20px 60px}header,.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;margin-bottom:16px}h1{margin:0 0 5px}h2{color:var(--aqua);margin:30px 0 12px}h3{color:var(--gold);margin:0 0 8px}p,li{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}.pill{display:inline-block;border-radius:999px;padding:3px 10px;margin:0 0 6px 5px;background:#173e4f;color:var(--aqua)}.ok{color:var(--green)}.wait{color:var(--gold)}.no{color:var(--red)}.info{color:var(--blue)}table{width:100%;border-collapse:collapse;table-layout:fixed;background:var(--card)}th,td{padding:11px;border-bottom:1px solid var(--line);vertical-align:top;overflow-wrap:anywhere}th{color:var(--aqua)}a{color:#79dcff}code{color:var(--gold);overflow-wrap:anywhere}.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;text-align:center}.flow div{background:#14364b;border-radius:12px;padding:15px;min-width:0}.flow b{display:block;color:var(--aqua)}@media(max-width:650px){main{padding:18px 10px 44px}.flow,.grid{grid-template-columns:minmax(0,1fr)}table{font-size:14px}th,td{padding:8px}}
+</style></head><body><main>
+<header><span class="pill">LIVE EVIDENCE</span><span class="pill">2026-08-13</span><h1>لوحة التنفيذ الحالية — Colibri</h1><p>تفصل بين نجاح بيئة التدريب، نجاح وصفة تقنية، ونجاح المهمة الدلالية. لا يوجد نشر Production ضمن هذه اللوحة.</p></header>
+
+<h2>القرار المعماري المختصر</h2><section class="flow"><div><b>البيانات</b>تعريف المهمة والحدود</div><div><b>التصنيف</b>Constrained selector</div><div><b>العقد</b>Deterministic JSON</div><div><b>الشرح</b>LLM اختياري بعد القرار</div></section>
+
+<h2>البيئات الثلاث</h2><section class="grid">
+<article class="card"><h3>1. Golden Training</h3><p><code>Q:\Colibri\training\venv-py311</code></p><p class="ok">VERIFIED</p><p>Python 3.11، Torch 2.6.0+cu124، PEFT/Transformers، CUDA على Quadro P2000. مرجع FP32 LoRA لا نغيره.</p></article>
+<article class="card"><h3>2. Experimental Training Lab</h3><p><code>E:\Colibri-Environments\training-lab-py311</code></p><p class="ok">VERIFIED — 3 RUNS PASSED</p><p>FP32 control، Adam8bit LoRA، وNF4/QLoRA مع FP32 compute نفذت 100 خطوة وأعادت 100/100 على Intent benchmark الصغيرة.</p></article>
+<article class="card"><h3>3. LM Studio Runtime</h3><p><code>Q:\Users\mosta\.lmstudio\models</code></p><p class="ok">VERIFIED INFERENCE</p><p>تشغيل GGUF فقط: Gemma، GLM، Phi، SmolLM3، Granite. لا يعتبر بيئة تدريب ولا يجعل GGUF قابلًا للتدريب.</p></article>
+</section>
+
+<h2>ما الذي نجح فعلًا؟</h2><table><thead><tr><th>المسار</th><th>النتيجة</th><th>ما تثبته</th><th>ما لا تثبته</th></tr></thead><tbody>
+<tr><td>Intent Stage B/C/D</td><td class="ok">PASS</td><td>التوسع المرحلي، JSON، fresh reload</td><td>لا يثبت MK7 ولا Production</td></tr>
+<tr><td>Lab FP32 LoRA</td><td class="ok">100/100</td><td>مرجع تقني ناجح على P2000</td><td>Benchmark صغيرة ومنظمة</td></tr>
+<tr><td>Lab Adam8bit LoRA</td><td class="ok">100/100</td><td>8-bit optimizer يعمل فعليًا</td><td>ليس LLM.int8 ولا MK7</td></tr>
+<tr><td>Lab NF4/QLoRA</td><td class="ok">100/100</td><td>4-bit NF4 loading + LoRA + FP32 compute يعمل فعليًا</td><td>لا يثبت Unsloth أو نموذجًا كبيرًا</td></tr>
+<tr><td>MK7 Gemma FP32 LoRA v0.3</td><td class="no">NO-GO · F1 .403</td><td>التدريب يعمل بلا OOM</td><td>الدلالة لم تصل للقبول</td></tr>
+<tr><td>MK7 constrained classifier</td><td class="info">BEST · F1 .662</td><td>أفضل مسار حالي، بلا labels مخترعة</td><td>لم يصل Gate .85 بعد</td></tr>
+<tr><td>GLM Edge 1.5B GGUF</td><td class="no">NO-GO · F1 .050</td><td>الاستدلال المحلي يعمل</td><td>لا يبرر تنزيل trainable weights</td></tr>
+<tr><td>FunctionGemma diagnostic</td><td class="no">NO-GO · F1 0</td><td>تعلم شكل function call</td><td>انهار إلى reject_unsupported</td></tr>
+<tr><td>Coding GGUF</td><td class="info">PARTIAL</td><td>Phi-4 Mini أفضل المرشحين محليًا</td><td>لا يوجد benchmark تنفيذي كافٍ للتدريب</td></tr>
+</tbody></table>
+
+<h2>المهام المفتوحة الحقيقية</h2><section class="grid">
+<article class="card"><h3 class="wait">اعتماد MK7 v0.4</h3><p>62 مثالًا تنتظر مراجعة المالك. لا تدريب قبل الاعتماد.</p><p><a href="../../training/datasets/mk7/repair-v0.4-boundary-review/review.html">فتح حزمة المراجعة</a></p></article>
+<article class="card"><h3 class="wait">تواصل الصين</h3><p>رسالتا iFLYTEK وNeusoft جاهزتان. يلزم اسم وصفة وبريد ورقم المرسل؛ لم يُرسل شيء.</p><p><a href="08-WYTSKY-CHINA-HEALTH-AI-OUTREACH-PACK.html">فتح الحزمة</a></p></article>
+<article class="card"><h3 class="no">نقل النماذج إلى H</h3><p>OLMo وByT5 وmT5 محفوظة في Q. القرص H غير ظاهر؛ لا نقل ولا حذف.</p></article>
+<article class="card"><h3 class="info">بعد اعتماد v0.4</h3><p>Freeze hashes → train constrained classifier → frozen Challenge → compare against F1 .662 → owner gate.</p></article>
+</section>
+
+<h2>الترتيب التنفيذي</h2><ol><li>اعتماد أمثلة v0.4 أو تحديد التعديلات.</li><li>تجميد Dataset وتسجيل SHA-256.</li><li>تشغيل المصنف المقيد فقط، ثم Challenge مستقل.</li><li>إذا تجاوز Macro-F1 الحالي بلا تراجع Unknown/MKU، ننتقل إلى مراجعة بشرية.</li><li>لا Router ولا Production ولا تدريب نموذج أكبر قبل اجتياز هذه البوابة.</li></ol>
+
+<footer><p>المصدر: artifacts الحية في Q/E، نتائج fresh reload، Challenge، وTask Inbox. اللوحة لا تعتبر أي نتيجة قديمة Promotion evidence دون schema/hash الحاليين.</p></footer>
+</main></body></html>

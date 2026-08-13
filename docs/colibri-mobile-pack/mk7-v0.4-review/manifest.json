@@ -1,0 +1,14 @@
+{
+  "dataset_id": "mk7-repair-v0.4-boundary-review",
+  "status": "PENDING-OWNER-REVIEW",
+  "records": 62,
+  "categories": {
+    "contrastive-boundary": 30,
+    "cross-lens-anti-collapse": 18,
+    "unknown-boundary": 14
+  },
+  "sha256": "c580a58e40b2ad88cc8893229a43c8e4b16a113cb56d1d140ae15c8e44372b49",
+  "challenge_exact_overlap": 0,
+  "training_authorized": false,
+  "source_evidence": "discriminative-hash-v1 errors: contrastive 10/14 failed; cross_lens 11/11 failed; unknown 1/7 failed"
+}
