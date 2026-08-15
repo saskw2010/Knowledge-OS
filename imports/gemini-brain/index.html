@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Manus–Gemini Import Workspace</title>
+  <style>
+    :root { --bg:#0b1020; --panel:#141b30; --line:#293654; --text:#eef3ff; --muted:#aab6d0; --accent:#7dd3fc; --accent2:#c4b5fd; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Segoe UI,Tahoma,Arial,sans-serif; background:linear-gradient(145deg,#0b1020,#121936 55%,#182244); color:var(--text); line-height:1.7; }
+    .wrap { max-width:1120px; margin:auto; padding:32px 20px 64px; }
+    header { padding:34px 0 22px; border-bottom:1px solid var(--line); }
+    .eyebrow { color:var(--accent); font-weight:700; letter-spacing:.04em; }
+    h1 { font-size:clamp(2rem,5vw,4rem); line-height:1.15; margin:10px 0 14px; }
+    h2 { margin-top:34px; font-size:1.45rem; }
+    p { color:var(--muted); max-width:850px; }
+    .actions { display:flex; flex-wrap:wrap; gap:12px; margin:24px 0 4px; }
+    .button { display:inline-block; padding:10px 16px; border:1px solid var(--line); border-radius:10px; color:var(--text); text-decoration:none; background:#192441; }
+    .button.primary { background:linear-gradient(135deg,#2563eb,#7c3aed); border-color:transparent; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(225px,1fr)); gap:16px; }
+    .card { background:rgba(20,27,48,.88); border:1px solid var(--line); border-radius:14px; padding:20px; min-height:170px; box-shadow:0 10px 30px rgba(0,0,0,.14); }
+    .card h3 { margin:0 0 8px; color:var(--accent2); }
+    .card p { font-size:.95rem; margin:0 0 12px; }
+    .card a { color:var(--accent); text-decoration:none; font-weight:700; }
+    code { color:#dbeafe; background:#0d1428; padding:2px 6px; border-radius:5px; }
+    .flow { display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:18px 0; }
+    .step { padding:10px 13px; border:1px solid var(--line); border-radius:9px; background:#111a31; color:#dbeafe; }
+    .arrow { color:var(--accent); font-size:1.3rem; }
+    footer { margin-top:42px; padding-top:18px; border-top:1px solid var(--line); color:var(--muted); font-size:.9rem; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div class="eyebrow">MANUS · KNOWLEDGE-OS · GEMINI IMPORT</div>
+      <h1>مساحة عمل جيمناى امبورت</h1>
+      <p>هذه الواجهة هي نقطة الدخول البصرية للتنقل بين فهرس المهمة، ملفات المصدر، المعرفة المستخرجة، الخطط، القرارات، الروابط، والمخرجات. ملفات Markdown تبقى مصدر المحتوى، وهذه الصفحة تنظم الوصول إليها.</p>
+      <div class="actions">
+        <a class="button primary" href="https://github.com/saskw2010/Knowledge-OS/blob/main/docs/MANUS-GEMINI-IMPORT-WORKSPACE-INDEX.md">فتح الفهرس الرئيسي</a>
+        <a class="button" href="https://github.com/saskw2010/Knowledge-OS">فتح المستودع على GitHub</a>
+        <a class="button" href="https://github.com/saskw2010/Knowledge-OS/blob/main/README.md">README</a>
+      </div>
+    </header>
+
+    <section>
+      <h2>مسارات العمل</h2>
+      <div class="grid">
+        <article class="card"><h3>المصادر الأصلية</h3><p>ضع ملفات brain الأصلية هنا دون تعديل.</p><a href="https://github.com/saskw2010/Knowledge-OS/tree/main/imports/gemini-brain/raw">فتح raw/</a></article>
+        <article class="card"><h3>الفهرس والكتالوج</h3><p>أسماء الملفات، أنواعها، مصادرها، وحالتها.</p><a href="https://github.com/saskw2010/Knowledge-OS/tree/main/imports/gemini-brain/catalog">فتح catalog/</a></article>
+        <article class="card"><h3>المعرفة المستخرجة</h3><p>الحقائق والملخصات والعلاقات المستخرجة من المصادر.</p><a href="https://github.com/saskw2010/Knowledge-OS/tree/main/imports/gemini-brain/knowledge">فتح knowledge/</a></article>
+        <article class="card"><h3>الخطط</h3><p>المراحل والأولويات ومعايير الإنجاز.</p><a href="https://github.com/saskw2010/Knowledge-OS/tree/main/imports/gemini-brain/plans">فتح plans/</a></article>
+        <article class="card"><h3>القرارات</h3><p>القرارات والافتراضات والأسئلة المفتوحة.</p><a href="https://github.com/saskw2010/Knowledge-OS/tree/main/imports/gemini-brain/decisions">فتح decisions/</a></article>
+        <article class="card"><h3>الروابط</h3><p>رابط جلسة Manus وروابط GitHub وواجهات العرض.</p><a href="https://github.com/saskw2010/Knowledge-OS/blob/main/imports/gemini-brain/links/WORK-LINKS.md">فتح WORK-LINKS.md</a></article>
+        <article class="card"><h3>المخرجات</h3><p>الوثائق والنتائج الجاهزة للمراجعة أو التسليم.</p><a href="https://github.com/saskw2010/Knowledge-OS/tree/main/imports/gemini-brain/deliverables">فتح deliverables/</a></article>
+        <article class="card"><h3>README الخاص بالمهمة</h3><p>شرح سريع لبنية مساحة Gemini Import.</p><a href="https://github.com/saskw2010/Knowledge-OS/blob/main/imports/gemini-brain/README.md">فتح README.md</a></article>
+      </div>
+    </section>
+
+    <section>
+      <h2>تدفق العمل</h2>
+      <div class="flow">
+        <span class="step">Manus</span><span class="arrow">←</span>
+        <span class="step">raw</span><span class="arrow">←</span>
+        <span class="step">catalog</span><span class="arrow">←</span>
+        <span class="step">knowledge</span><span class="arrow">←</span>
+        <span class="step">plans / decisions</span><span class="arrow">←</span>
+        <span class="step">deliverables</span>
+      </div>
+      <p>عند إضافة ملفات brain، ابدأ من <code>raw/</code> ثم أنشئ الفهرس في <code>catalog/</code>، وبعدها انقل المعرفة المنظمة والخطط والنتائج إلى المسارات المخصصة.</p>
+    </section>
+
+    <section>
+      <h2>واجهات المشروع العامة</h2>
+      <div class="actions">
+        <a class="button" href="https://saskw2010.github.io/Knowledge-OS/">GitHub Pages</a>
+        <a class="button" href="https://saskw2010.github.io/Knowledge-OS/repository.html">Repository Explorer</a>
+        <a class="button" href="https://github.com/saskw2010/Knowledge-OS/blob/main/docs/INDEX.md">Documentation Index</a>
+        <a class="button" href="https://github.com/saskw2010/Knowledge-OS/blob/main/imports/gemini-brain/links/WORK-LINKS.md">Work Links</a>
+      </div>
+    </section>
+
+    <footer>Manus–Gemini Import Workspace · Knowledge-OS · يتم تحديث الروابط والوثائق من خلال مستودع GitHub.</footer>
+  </main>
+</body>
+</html>
