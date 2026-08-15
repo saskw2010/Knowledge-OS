@@ -8,6 +8,8 @@ This index is the navigation layer for the current Knowledge-OS foundation. It s
 - [Markdown Viewer](viewer.html) — renders repository Markdown as styled HTML without maintaining duplicate handwritten HTML files.
 - [Repository Documentation Standard](REPOSITORY-DOCUMENTATION-STANDARD.md) — reusable WytSky/Sky365 standard for README, roadmaps, project memory, repository explorer, Markdown rendering, and visual documentation.
 - [Master Roadmap](../MASTER-ROADMAP.md) — program-level map linking knowledge foundations, graph engineering, dataset production, model training, agentic-runtime research, and product delivery.
+- [Manus–Gemini Import Workspace Index](MANUS-GEMINI-IMPORT-WORKSPACE-INDEX.md) — central task index for Gemini Import, Manus planning, source files, plans, decisions, and work links.
+- [Gemini Import Workspace](../imports/gemini-brain/README.md) — organized workspace for raw sources, extracted knowledge, plans, decisions, and deliverables.
 
 ## Canonical foundation
 

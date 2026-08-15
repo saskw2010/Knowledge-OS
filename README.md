@@ -15,7 +15,8 @@ If you are a contributor, coding agent, or reviewer, read these files in this or
 3. [`PROJECT_MEMORY.md`](PROJECT_MEMORY.md) — current operational state and accepted decisions.
 4. [`decisions/`](decisions/) — accepted and proposed Knowledge Decision Records (KDRs).
 5. [`docs/INDEX.md`](docs/INDEX.md) — canonical documentation navigation layer.
-6. [`schemas/`](schemas/) — executable data contracts that code must obey.
+6. [`docs/MANUS-GEMINI-IMPORT-WORKSPACE-INDEX.md`](docs/MANUS-GEMINI-IMPORT-WORKSPACE-INDEX.md) — central index for the Manus–Gemini Import work.
+7. [`schemas/`](schemas/) — executable data contracts that code must obey.
 
 For visual navigation, use the **Repository Explorer**:
 
@@ -235,6 +236,12 @@ The repository is still foundation-first. The core implementation priority remai
 Training, multi-adapter, and agentic-runtime work are active research/engineering tracks, but they must not override the Knowledge-OS source-of-truth and data-governance rules.
 
 For current operational state, always check [`PROJECT_MEMORY.md`](PROJECT_MEMORY.md).
+
+## Gemini Import workspace
+
+- [Manus–Gemini Import Workspace Index](docs/MANUS-GEMINI-IMPORT-WORKSPACE-INDEX.md)
+- [Gemini Import workspace files](imports/gemini-brain/README.md)
+- [Work Links](imports/gemini-brain/links/WORK-LINKS.md)
 
 ## Documentation and visual pages
 
