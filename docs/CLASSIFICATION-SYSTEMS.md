@@ -18,6 +18,37 @@ This document defines how Knowledge-OS registers and preserves systems that orga
 8. **Collaborative knowledge graphs** — Wikidata and similar resources. These are broad entity graphs, not equivalent to a single disciplinary taxonomy.
 9. **Model-reconstructed systems** — GPT, Gemini, Claude, or other model-generated views, recorded as hypotheses rather than official standards.
 
+## Core rule: one concept, many classification projections
+
+Knowledge-OS must not force a canonical concept into a single classification tree or a single parent path.
+
+A topic, discipline, skill, method, or other canonical concept may legitimately appear in multiple classification systems at the same time. Each system represents a different purpose, institutional context, historical lens, or operational use.
+
+The canonical concept therefore remains independent from every source classification. Its positions inside external systems are stored as **classification projections** or mappings.
+
+```text
+Canonical Concept
+├── classified_as → System A / Node X / Path A
+├── classified_as → System B / Node Y / Path B
+├── classified_as → System C / Node Z / Path C
+└── classified_as → System D / Node W / Path D
+```
+
+Example: the same topic may be positioned differently in an educational taxonomy, a research taxonomy, a library taxonomy, a clinical taxonomy, and a model-reconstructed view. These positions must coexist; one projection must not overwrite another.
+
+### Engineering implications
+
+- `Canonical Concept` identity is separate from any classification node identifier.
+- A concept may have zero, one, or many mappings per registered classification system.
+- Each mapping must preserve the source system, source node, source path when available, source label, version, and provenance.
+- Source hierarchy edges remain immutable snapshots of the originating system.
+- Cross-system mappings are enrichment edges, not replacements for source hierarchy.
+- `parent_ids` in the canonical concept graph must not be used as a shortcut for external classification parents.
+- Code, APIs, graph queries, dataset generation, and visualization must assume **many-to-many concept ↔ classification-node relationships**.
+- A view may ask: "How is this concept classified by each registered system?" and return all valid projections side by side.
+
+This rule is foundational for future Knowledge Views and for any code that generates or traverses the multi-classification graph.
+
 ## Required registry fields
 
 Each system record must include:
