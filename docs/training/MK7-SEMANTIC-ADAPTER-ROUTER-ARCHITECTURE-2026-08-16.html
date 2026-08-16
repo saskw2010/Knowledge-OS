@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MK7 | Semantic Adapter Router</title>
+<style>
+:root{--bg:#07111f;--panel:#10233b;--line:#2a5275;--ink:#eaf4ff;--muted:#a9c3d8;--cyan:#54d9e8;--gold:#ffd166;--green:#65e6a1;--red:#ff8d8d}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 20% 0,#173b57 0,#07111f 42%);color:var(--ink);font-family:Segoe UI,Tahoma,Arial,sans-serif;line-height:1.75}.wrap{max-width:1180px;margin:auto;padding:42px 22px 70px}header{padding:34px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(135deg,#102a45dd,#0c1729dd);box-shadow:0 18px 50px #0005}h1{margin:0 0 8px;font-size:clamp(30px,5vw,58px);color:var(--cyan)}h2{color:var(--gold);margin-top:38px}.lead{font-size:20px;color:var(--muted);max-width:920px}.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;align-items:center;margin:26px 0}.node{padding:20px 12px;text-align:center;background:var(--panel);border:2px solid var(--cyan);border-radius:16px;font-weight:700}.arrow{text-align:center;color:var(--gold);font-size:30px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}.card{background:#0d1c30;border:1px solid var(--line);border-radius:16px;padding:20px}.card h3{color:var(--green);margin-top:0}.tag{display:inline-block;padding:4px 10px;border-radius:999px;background:#173d52;color:var(--cyan);margin:3px;font-size:13px}pre{direction:ltr;text-align:left;overflow:auto;background:#050b14;border:1px solid #19334d;border-radius:12px;padding:16px;color:#d5f7ff}.note{border-right:4px solid var(--gold);padding:12px 16px;background:#17263a;color:var(--muted);border-radius:10px}a{color:var(--cyan)}footer{margin-top:42px;color:var(--muted);font-size:14px}@media(max-width:760px){.flow{grid-template-columns:1fr}.arrow{transform:rotate(90deg)}}
+</style></head>
+<body><main class="wrap">
+<header><div class="tag">MK7 Research Architecture</div><h1>Semantic Adapter Router</h1><p class="lead">نموذج أساسي ثابت، Adapters متخصصة قابلة للإضافة، Registry دلالي، وRouter يوجه الطلبات نحو المعرفة أو الأداة أو الـPlugin المناسب.</p></header>
+<h2>الفلو الأساسي</h2><section class="flow"><div class="node">Model Files<br><small>Frozen Base + Tokenizer</small></div><div class="arrow">←</div><div class="node">Adapter Manifest<br><small>الهوية والقدرات والقيود</small></div><div class="arrow">←</div><div class="node">Semantic Registry<br><small>فهرس دلالي قابل للتوسع</small></div><div class="arrow">←</div><div class="node">MK7 Router<br><small>Adapter / Tool / Plugin</small></div></section>
+<h2>كيف يعمل النظام؟</h2><section class="grid"><article class="card"><h3>1 · Dataset</h3><p>بيانات متخصصة لـChat أو Agent أو Coding أو ERP، مع metadata تصف النية والمجال والأداة المطلوبة.</p></article><article class="card"><h3>2 · Adapter</h3><p>تدريب LoRA فوق Base Model ثابت، ثم حفظ الأوزان ونسخة البيانات ونتائج القياس.</p></article><article class="card"><h3>3 · Registry</h3><p>سجل يجمع الوصف الدلالي، القدرات، اللغات، الإصدارات، الأمثلة، القيود، وحالة الاختبارات.</p></article><article class="card"><h3>4 · Router</h3><p>يستخدم Metadata والتشابه الدلالي والقواعد لاختيار Adapter أو أكثر، أو Tool/Plugin مناسب.</p></article></section>
+<h2>إضافة Adapter جديد</h2><pre>{
+  "name": "erp-adapter",
+  "base_model": "gemma-3-270m-it",
+  "domains": ["erp", "sales", "inventory"],
+  "capabilities": ["sql", "tool_calling", "structured_json"],
+  "languages": ["ar", "en"],
+  "dataset_version": "mk7-v0.4",
+  "status": "validated"
+}</pre>
+<div class="note">إضافة Adapter لا تعني إعادة تدريب Router تلقائيًا. نبدأ بالتسجيل والاختبار؛ نعيد تدريب Router فقط إذا ظهرت أخطاء اختيار متكررة أو أُضيف مجال جديد جذريًا.</div>
+<h2>خارطة التنفيذ</h2><section class="grid"><article class="card"><h3>P0 — Contract</h3><span class="tag">Manifest schema</span><span class="tag">Base compatibility</span></article><article class="card"><h3>P1 — Registry</h3><span class="tag">JSON catalog</span><span class="tag">Capabilities</span></article><article class="card"><h3>P2 — First Adapter</h3><span class="tag">Chat / ERP</span><span class="tag">Golden evaluation</span></article><article class="card"><h3>P3 — Multi-Adapter</h3><span class="tag">Separate datasets</span><span class="tag">Router baseline</span></article><article class="card"><h3>P4 — Semantic Routing</h3><span class="tag">Embeddings</span><span class="tag">Rules</span></article><article class="card"><h3>P5 — Plugins</h3><span class="tag">Hot-add</span><span class="tag">Acceptance gate</span></article></section>
+<h2>الحالة العلمية</h2><p><span class="tag">VERIFIED</span> LoRA Experts وRouters اتجاهات بحثية مثبتة. <span class="tag">PARTIAL</span> ربط كل Adapter بمجال عبر Metadata يحتاج اختبار MK7. <span class="tag">PLANNED</span> Semantic Registry وPlugin Contract. <span class="tag">UNRESOLVED</span> كفاية التوجيه الدلالي دون إعادة تدريب Router.</p>
+<h2>مراجع</h2><p><a href="https://arxiv.org/abs/2404.15159">MixLoRA</a> · <a href="https://arxiv.org/abs/2410.18035">MiLoRA</a> · <a href="https://arxiv.org/abs/2404.13628">MoLE</a> · <a href="https://github.com/ulab-uiuc/Router-R1">Router-R1</a></p>
+<footer>MK7 / Colibri · Architecture brief · 2026-08-16</footer></main></body></html>
